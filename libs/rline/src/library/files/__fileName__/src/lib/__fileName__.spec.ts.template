@@ -1,0 +1,7 @@
+import { <%- propertyName %> } from './<%- fileName %>'; 
+
+describe("", ()=>{ 
+    it('should work' , ()=>{ 
+        expect(<%- propertyName %>()).toEqual('<%- propertyName %>')
+    })
+})

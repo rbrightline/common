@@ -4,7 +4,7 @@
   "files": [],
   "references": [
     {
-      "path": "./libs/names"
+      "path": "./libs/rline"
     }
   ]
 }

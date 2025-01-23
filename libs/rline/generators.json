@@ -1,0 +1,19 @@
+{
+  "generators": {
+    "api": {
+      "factory": "./dist/api/api",
+      "schema": "./dist/api/schema.json",
+      "description": "api generator"
+    },
+    "client": {
+      "factory": "./dist/client/client",
+      "schema": "./dist/client/schema.json",
+      "description": "client generator"
+    },
+    "library": {
+      "factory": "./dist/library/library",
+      "schema": "./dist/library/schema.json",
+      "description": "library generator"
+    }
+  }
+}
