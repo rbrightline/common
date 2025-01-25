@@ -1,0 +1,67 @@
+{
+  "name": "@rline/<%- fileName %>",
+  "version": "5.0.1",
+  "description": "JSON Schema type",
+  "author": {
+    "email": "robert.brightline@gmail.com",
+    "name": "Robert Brightline",
+    "url": "https://rbrightline.github.io"
+  },
+  "homepage": "https://rbrightline.github.io/rline/<%- fileName %>",
+  "repository": {
+    "url": "https://github.com/rbrightline/common/tree/main/libs/<%- fileName %>",
+    "type": "github"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "bin": {
+    "<%- fileName %>": "./bin/<%- fileName %>.js"
+  },
+  "keywords": [
+    "json",
+    "compile-json",
+    "schema"
+  ],
+  "dependencies": {
+    "@swc/helpers": "~0.5.11"
+  },
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "bin",
+    "dist",
+    "!**/*.tsbuildinfo"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "module": "./dist/index.js",
+  "nx": {
+    "sourceRoot": "libs/<%- fileName %>/src",
+    "projectType": "library",
+    "targets": {
+      "build": {
+        "executor": "@nx/js:swc",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "libs/<%- fileName %>/dist",
+          "main": "libs/<%- fileName %>/src/index.ts",
+          "tsConfig": "libs/<%- fileName %>/tsconfig.lib.<%- fileName %>",
+          "skipTypeCheck": true,
+          "stripLeadingPaths": true
+        }
+      }
+    },
+    "name": "<%- fileName %>"
+  }
+}

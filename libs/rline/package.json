@@ -1,33 +1,9 @@
 {
   "name": "@rline/rline",
   "version": "0.0.1",
-  "author": {
-    "email": "robert.brightline@gmail.com",
-    "name": "Robert Brightline",
-    "url": "https://rbrightline.github.io"
-  },
-  "homepage": "https://rbrightline.github.io/rline/rline",
-  "repository": {
-    "url": "https://github.com/rbrightline/common/tree/main/libs/names",
-    "type": "github"
-  },
-  "publishConfig": {
-    "access": "public",
-    "tag": "latest"
-  },
-  "keywords": [
-    "generator",
-    "api",
-    "client",
-    "library",
-    "angular",
-    "nestjs",
-    "nx"
-  ],
-  "description": "Project generators",
   "dependencies": {
     "@nx/devkit": "20.3.2",
-    "@swc/helpers": "~0.5.11"
+    "tslib": "^2.3.0"
   },
   "type": "commonjs",
   "main": "./dist/index.js",
@@ -37,7 +13,6 @@
     "!**/*.tsbuildinfo",
     "generators.json"
   ],
-  "module": "./dist/index.js",
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -46,12 +21,13 @@
       "default": "./dist/index.js"
     }
   },
+  "module": "./dist/index.js",
   "nx": {
     "sourceRoot": "libs/rline/src",
     "projectType": "library",
     "targets": {
       "build": {
-        "executor": "@nx/js:swc",
+        "executor": "@nx/js:tsc",
         "outputs": [
           "{options.outputPath}"
         ],
@@ -59,8 +35,8 @@
           "outputPath": "libs/rline/dist",
           "main": "libs/rline/src/index.ts",
           "tsConfig": "libs/rline/tsconfig.lib.json",
-          "skipTypeCheck": true,
-          "stripLeadingPaths": true,
+          "rootDir": "libs/rline/src",
+          "generatePackageJson": false,
           "assets": [
             {
               "input": "./libs/rline/src",

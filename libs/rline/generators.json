@@ -1,19 +1,14 @@
 {
   "generators": {
-    "api": {
-      "factory": "./dist/api/api",
-      "schema": "./dist/api/schema.json",
-      "description": "api generator"
-    },
-    "client": {
-      "factory": "./dist/client/client",
-      "schema": "./dist/client/schema.json",
-      "description": "client generator"
-    },
     "library": {
-      "factory": "./dist/library/library",
-      "schema": "./dist/library/schema.json",
+      "factory": "./dist/generators/library/library",
+      "schema": "./dist/generators/library/schema.json",
       "description": "library generator"
+    },
+    "cli": {
+      "factory": "./dist/generators/cli/cli",
+      "schema": "./dist/generators/cli/schema.json",
+      "description": "cli generator"
     }
   }
 }

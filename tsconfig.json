@@ -4,7 +4,16 @@
   "files": [],
   "references": [
     {
-      "path": "./libs/rline"
+      "path": "./libs/json"
+    },
+    {
+      "path": "./libs/names"
+    },
+    {
+      "path": "./libs/crypto"
+    },
+    {
+      "path": "./libs/some"
     }
   ]
 }

@@ -1,4 +1,3 @@
-// @index(['./**/*.ts', '!./**/*.{spec,test,d}.ts'], f => `export * from '${f.path}'`)
-export * from './api/api';
-export * from './client/client';
-export * from './library/library';
+// @index(['./**/*.ts', '!./**/*.{d,spec}.ts'], f => `export * from '${f.path}'`)
+export * from './generators/cli/cli';
+export * from './generators/library/library';

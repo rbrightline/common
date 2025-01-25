@@ -1,3 +1,3 @@
-# @rline/rline
+# rline
 
 Project generators

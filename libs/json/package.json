@@ -1,0 +1,67 @@
+{
+  "name": "@rline/json",
+  "version": "7.0.5",
+  "description": "JSON Schema type",
+  "author": {
+    "email": "robert.brightline@gmail.com",
+    "name": "Robert Brightline",
+    "url": "https://rbrightline.github.io"
+  },
+  "homepage": "https://rbrightline.github.io/rline/rline",
+  "repository": {
+    "url": "https://github.com/rbrightline/common/tree/main/libs/names",
+    "type": "github"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "bin": {
+    "json": "./bin/json.js"
+  },
+  "keywords": [
+    "json",
+    "compile-json",
+    "schema"
+  ],
+  "dependencies": {
+    "@swc/helpers": "~0.5.11"
+  },
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "bin",
+    "dist",
+    "!**/*.tsbuildinfo"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "module": "./dist/index.js",
+  "nx": {
+    "sourceRoot": "libs/json/src",
+    "projectType": "library",
+    "targets": {
+      "build": {
+        "executor": "@nx/js:swc",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "libs/json/dist",
+          "main": "libs/json/src/index.ts",
+          "tsConfig": "libs/json/tsconfig.lib.json",
+          "skipTypeCheck": true,
+          "stripLeadingPaths": true
+        }
+      }
+    },
+    "name": "json"
+  }
+}

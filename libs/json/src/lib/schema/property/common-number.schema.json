@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "CommonNumberPropertyOptions",
+    "type": "object",
+    "properties": {
+        "numberFormat": {
+            "$ref": "../enum/number-format.schema.json"
+        },
+        "minimum": {
+            "type": "number"
+        },
+        "maximum": {
+            "type": "number"
+        },
+        "moreThanProperty": {
+            "$ref": "../name/property.schema.json"
+        },
+        "lessThanProperty": {
+            "$ref": "../name/property.schema.json"
+        }
+    }
+}
