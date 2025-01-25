@@ -1,7 +1,7 @@
 {
-  "name": "@rline/names",
+  "name": "@rline/barcode",
   "version": "7.1.0",
-  "description": "Project description",
+  "description": "Generate unique barcode",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",
@@ -18,7 +18,11 @@
   },
   "keywords": [
     "rline",
-    "library"
+    "library",
+    "barcode",
+    "ean",
+    "upc",
+    "product"
   ],
   "dependencies": {
     "@swc/helpers": "~0.5.11"
@@ -40,7 +44,7 @@
   },
   "module": "./dist/index.js",
   "nx": {
-    "sourceRoot": "libs/names/src",
+    "sourceRoot": "libs/barcode/src",
     "projectType": "library",
     "targets": {
       "build": {
@@ -49,14 +53,14 @@
           "{options.outputPath}"
         ],
         "options": {
-          "outputPath": "libs/names/dist",
-          "main": "libs/names/src/index.ts",
-          "tsConfig": "libs/names/tsconfig.lib.json",
+          "outputPath": "libs/barcode/dist",
+          "main": "libs/barcode/src/index.ts",
+          "tsConfig": "libs/barcode/tsconfig.lib.json",
           "skipTypeCheck": true,
           "stripLeadingPaths": true
         }
       }
     },
-    "name": "names"
+    "name": "barcode"
   }
 }

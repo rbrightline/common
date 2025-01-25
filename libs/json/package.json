@@ -1,6 +1,6 @@
 {
   "name": "@rline/json",
-  "version": "7.0.5",
+  "version": "7.1.0",
   "description": "JSON Schema type",
   "author": {
     "email": "robert.brightline@gmail.com",
