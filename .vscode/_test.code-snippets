@@ -1,0 +1,24 @@
+{
+    "describe test [ ]": {
+        "prefix": "describe test [ ]",
+        "scope": "typescript,javascript",
+        "body": [
+            "describe('$1', () => {",
+            "    it('$2', () => {",
+            "       expect($3).toEqual($5);",
+            "       $0",
+            "    });",
+            "});",
+        ]
+    },
+    "it should": {
+        "prefix": "it should",
+        "scope": "typescript,javascript",
+        "body": [
+            "it('should $1', async () => {",
+            "   $0",
+            "   expect($2).toEqual($3);",
+            "});",
+        ]
+    }
+}

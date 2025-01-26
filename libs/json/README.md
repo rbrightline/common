@@ -8,17 +8,15 @@ Compile JSON Schemas to a single schema file
 pnpm add -g @rline/json
 ```
 
-## Useage
+## Usage
 
 ```shell
-
 json <rootdir> <main-schema-file> <bundle-schema-name>
-
 ```
 
-## Example
+## Examples
 
-```
+```shell
 /
 ├── bundle.schema.json
 ├── main.schema.json

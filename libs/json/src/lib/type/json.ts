@@ -33,7 +33,7 @@ export type __JSONSchema<T extends SchemaType = SchemaType> = Partial<{
   description: string;
   default: ValueType<T>;
   const: ValueType<T>;
-  items: __JSONSchema;
+  items: __JSONSchema<any>;
   uniqueItems: boolean;
   enum: ValueType<T>[];
   examples: ValueType<T>[];
@@ -60,7 +60,7 @@ export type __JSONSchema<T extends SchemaType = SchemaType> = Partial<{
 
   //
   dependencies: T;
-  properties: Record<string, __JSONSchema>;
+  properties: Record<string, __JSONSchema<any>>;
   additionalItems: __JSONSchema | boolean;
   additionalProperties: __JSONSchema | boolean;
   pattern: RegExp | string;

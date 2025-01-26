@@ -1,0 +1,4 @@
+properties:
+  - name: email
+    type: string
+    stringFormat: email

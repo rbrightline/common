@@ -1,6 +1,27 @@
 {
   "name": "@rline/rline",
   "version": "7.1.0",
+  "description": "A set of project and component generators",
+  "author": {
+    "email": "robert.brightline@gmail.com",
+    "name": "Robert Brightline",
+    "url": "https://rbrightline.github.io"
+  },
+  "homepage": "https://rbrightline.github.io/rline/rline",
+  "repository": {
+    "url": "https://github.com/rbrightline/common/tree/main/libs/rline",
+    "type": "github"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "keywords": [
+    "nx",
+    "generator",
+    "library",
+    "cli"
+  ],
   "dependencies": {
     "@nx/devkit": "20.3.2",
     "tslib": "^2.3.0"

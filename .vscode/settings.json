@@ -1,3 +1,8 @@
 {
-  "eslint.validate": ["json"]
+  "eslint.validate": [
+    "json"
+  ],
+  "yaml.schemas": {
+    "libs/rline/src/generators/init/files/schema/model.schema.json": "**/*.model.yaml"
+  }
 }

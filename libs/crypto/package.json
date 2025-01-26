@@ -1,13 +1,13 @@
 {
   "name": "@rline/crypto",
-  "version": "7.1.0",
+  "version": "7.1.1",
   "description": "Project description",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",
     "url": "https://rbrightline.github.io"
   },
-  "homepage": "https://rbrightline.github.io/rline/rline",
+  "homepage": "https://rbrightline.github.io/rline/crypto",
   "repository": {
     "url": "https://github.com/rbrightline/common/tree/main/libs/names",
     "type": "github"
@@ -18,7 +18,15 @@
   },
   "keywords": [
     "rline",
-    "library"
+    "library",
+    "hash",
+    "encryption",
+    "decryption",
+    "encrypt",
+    "decrypt",
+    "compare",
+    "integrity",
+    "security"
   ],
   "dependencies": {
     "@swc/helpers": "~0.5.11",

@@ -1,1 +1,1 @@
-require('../dist/lib/compile');
+require('../dist/lib/json/json');

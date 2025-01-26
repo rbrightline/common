@@ -1,0 +1,7 @@
+{
+    "export all files [ export all files ]": {
+        "prefix": "export all files [ export all files ]",
+        "body": "// @index(['./**/*.ts', '!./**/*{spec,test,story,stories,index,_*}.ts'], f => `export * from '${f.path}'`)",
+        "scope": "typescript,javascript"
+    }
+}

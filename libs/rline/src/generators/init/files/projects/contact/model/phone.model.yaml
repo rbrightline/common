@@ -1,0 +1,4 @@
+properties:
+  - name: phone
+    type: string
+    stringFormat: phone-number

@@ -1,13 +1,13 @@
 {
   "name": "@rline/names",
   "version": "7.1.0",
-  "description": "Project description",
+  "description": "Provides a set of function to create resource names, paths",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",
     "url": "https://rbrightline.github.io"
   },
-  "homepage": "https://rbrightline.github.io/rline/rline",
+  "homepage": "https://rbrightline.github.io/rline/names",
   "repository": {
     "url": "https://github.com/rbrightline/common/tree/main/libs/names",
     "type": "github"

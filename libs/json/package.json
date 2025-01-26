@@ -1,13 +1,13 @@
 {
   "name": "@rline/json",
   "version": "7.1.0",
-  "description": "JSON Schema type",
+  "description": "JSON Schema compiler",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",
     "url": "https://rbrightline.github.io"
   },
-  "homepage": "https://rbrightline.github.io/rline/rline",
+  "homepage": "https://rbrightline.github.io/rline/json",
   "repository": {
     "url": "https://github.com/rbrightline/common/tree/main/libs/names",
     "type": "github"
@@ -22,10 +22,14 @@
   "keywords": [
     "json",
     "compile-json",
-    "schema"
+    "compiler",
+    "Json compiler",
+    "json schema",
+    "cli"
   ],
   "dependencies": {
-    "@swc/helpers": "~0.5.11"
+    "@swc/helpers": "~0.5.11",
+    "inquirer": "^12.3.2"
   },
   "type": "commonjs",
   "main": "./dist/index.js",

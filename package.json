@@ -2,7 +2,10 @@
   "name": "@common/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build:model-schema": "json libs/rline/src/generators/init/files/schema model.schema.json schemas/model.schema.json",
+    "build:project-schema": "json libs/rline/src/generators/init/files/schema project.schema.json schemas/project.schema.json"
+  },
   "private": true,
   "devDependencies": {
     "@eslint/js": "^9.8.0",

@@ -1,0 +1,7 @@
+{
+    "shebang [ create executable file ]": {
+        "prefix": "shebang [ create executable file ]",
+        "body": "#!/usr/bin/env $1",
+        "scope": "typescript,js,bash"
+    },
+}

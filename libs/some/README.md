@@ -1,3 +1,0 @@
-# @rline/some
-
-Project description

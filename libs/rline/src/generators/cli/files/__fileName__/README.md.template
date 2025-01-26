@@ -1,3 +1,19 @@
 # @rline/<%- fileName %>
 
-Project desription
+- [ ] add description for the library
+
+
+
+## Installation
+
+````shell 
+pnpm add @rline/<%- fileName %>
+````
+
+## Usage
+
+
+- [ ] add example for the librarys
+````typescript
+
+````
