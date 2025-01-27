@@ -1,3 +1,0 @@
-# yaml-language-server: $schema=./relation.schema.json
-type: many-to-many
-target: __ Add model names

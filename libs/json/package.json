@@ -1,6 +1,6 @@
 {
   "name": "@rline/json",
-  "version": "7.1.0",
+  "version": "7.3.1",
   "description": "JSON Schema compiler",
   "author": {
     "email": "robert.brightline@gmail.com",
@@ -29,7 +29,7 @@
   ],
   "dependencies": {
     "@swc/helpers": "~0.5.11",
-    "inquirer": "^12.3.2"
+    "commander": "^13.1.0"
   },
   "type": "commonjs",
   "main": "./dist/index.js",

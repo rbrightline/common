@@ -1,1 +1,1 @@
-require('../dist/lib/json/json');
+require('../dist/lib/program.js');
