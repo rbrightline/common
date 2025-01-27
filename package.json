@@ -1,7 +1,6 @@
 {
-  "name": "@common/source",
-  "version": "0.0.0",
-  "license": "MIT",
+  "name": "@rline/common",
+  "version": "0.0.1",
   "scripts": {
     "build:model-schema": "json libs/rline/src/generators/init/files/schema model.schema.json schemas/model.schema.json",
     "build:project-schema": "json libs/rline/src/generators/init/files/schema project.schema.json schemas/project.schema.json"
