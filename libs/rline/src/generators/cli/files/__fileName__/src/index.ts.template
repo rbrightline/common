@@ -1,1 +1,1 @@
-export const <%- propertyname %> = 'cli';
+export const <%- propertyName %> = 'cli';

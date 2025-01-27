@@ -136,7 +136,13 @@
                             <a href="#ObjectLiteral" title="libs/type/src/lib/common/object-literal.ts" ><b>ObjectLiteral</b>&nbsp;&nbsp;&nbsp;(libs/.../object-literal.ts)</a>
                         </li>
                         <li>
+                            <a href="#PackageJSON" title="libs/type/src/lib/json/package-json.ts" ><b>PackageJSON</b>&nbsp;&nbsp;&nbsp;(libs/.../package-json.ts)</a>
+                        </li>
+                        <li>
                             <a href="#PrimitiveJSONSchema" title="libs/type/src/lib/json/primitive-json.ts" ><b>PrimitiveJSONSchema</b>&nbsp;&nbsp;&nbsp;(libs/.../primitive-json.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PrimitiveValueType" title="libs/type/src/lib/common/property-type.ts" ><b>PrimitiveValueType</b>&nbsp;&nbsp;&nbsp;(libs/.../property-type.ts)</a>
                         </li>
                         <li>
                             <a href="#PropertyOption" title="libs/type/src/lib/common/property-option.ts" ><b>PropertyOption</b>&nbsp;&nbsp;&nbsp;(libs/.../property-option.ts)</a>
@@ -293,6 +299,24 @@
             </tr>
         </tbody>
     </table>
+</section>    <h3>libs/type/src/lib/json/package-json.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PackageJSON"></a>
+                    <span class="name "><b>PackageJSON</b><a href="#PackageJSON"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>    <h3>libs/type/src/lib/json/primitive-json.ts</h3>
     <section data-compodoc="block-typealias">
     <table class="table table-sm table-bordered">
@@ -311,32 +335,24 @@
             </tr>
         </tbody>
     </table>
-</section>    <h3>libs/type/src/lib/common/property-option.ts</h3>
+</section>    <h3>libs/type/src/lib/common/property-type.ts</h3>
     <section data-compodoc="block-typealias">
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="PropertyOption"></a>
-                    <span class="name "><b>PropertyOption</b><a href="#PropertyOption"><span class="icon ion-ios-link"></span></a></span>
+                    <a name="PrimitiveValueType"></a>
+                    <span class="name "><b>PrimitiveValueType</b><a href="#PrimitiveValueType"><span class="icon ion-ios-link"></span></a></span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Create a record of object properties</p>
-</div>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <code>    <code>Record&lt;C | O&gt;</code>
+                    <code>    <code>string | number | boolean</code>
 </code>
                 </td>
             </tr>
         </tbody>
     </table>
-</section>    <h3>libs/type/src/lib/common/property-type.ts</h3>
-    <section data-compodoc="block-typealias">
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -363,7 +379,31 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <code>        <code><a href="../interfaces/Type.html" target="_self" >string | number | boolean | ObjectLiteral | Array&lt;ValueType&gt;</a></code>
+                    <code>        <code><a href="../interfaces/Type.html" target="_self" >PrimitiveValueType | ObjectLiteral | Array&lt;ValueType&gt;</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/type/src/lib/common/property-option.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PropertyOption"></a>
+                    <span class="name "><b>PropertyOption</b><a href="#PropertyOption"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Create a record of object properties</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>Record&lt;C | O&gt;</code>
 </code>
                 </td>
             </tr>

@@ -6,6 +6,7 @@ export * from './conditional';
 export * from './json';
 export * from './number';
 export * from './object';
+export * from './package-json';
 export * from './primitive-json';
 export * from './schema-config';
 export * from './string';

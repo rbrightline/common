@@ -1,11 +1,8 @@
 import { ObjectLiteral } from './object-literal';
 
-export type ValueType =
-  | string
-  | number
-  | boolean
-  | ObjectLiteral
-  | Array<ValueType>;
+export type PrimitiveValueType = string | number | boolean;
+
+export type ValueType = PrimitiveValueType | ObjectLiteral | Array<ValueType>;
 
 export type PropertyType =
   | 'string'
