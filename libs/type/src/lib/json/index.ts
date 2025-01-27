@@ -7,5 +7,6 @@ export * from './json';
 export * from './number';
 export * from './object';
 export * from './primitive-json';
+export * from './schema-config';
 export * from './string';
 export * from './type';

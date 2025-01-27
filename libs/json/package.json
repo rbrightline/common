@@ -28,6 +28,7 @@
     "cli"
   ],
   "dependencies": {
+    "@rline/type": "workspace:^",
     "@swc/helpers": "~0.5.11",
     "commander": "^13.1.0"
   },
@@ -37,6 +38,7 @@
   "files": [
     "bin",
     "dist",
+    "assets",
     "!**/*.tsbuildinfo"
   ],
   "exports": {

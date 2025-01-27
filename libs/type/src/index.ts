@@ -12,5 +12,6 @@ export * from './lib/json/json';
 export * from './lib/json/number';
 export * from './lib/json/object';
 export * from './lib/json/primitive-json';
+export * from './lib/json/schema-config';
 export * from './lib/json/string';
 export * from './lib/json/type';

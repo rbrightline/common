@@ -3,6 +3,9 @@
     "title": "SchemaCompilerConfig",
     "description": "Schema is for the `@rline/json` schema compiler. This file is generated using `json init`",
     "properties": {
+        "$schema": {
+            "type": "string"
+        },
         "root": {
             "type": "string",
             "description": "Project's root directory, the relative path to the directory of the main schema file such as `./schemas` and `./src`"

@@ -1,1 +1,3 @@
-export function schema() {}
+export function schema() {
+  //
+}
