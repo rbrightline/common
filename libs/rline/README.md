@@ -1,4 +1,8 @@
-# rline
+<div align="center">
+  <img src="https://raw.githubusercontent.com/rbrightline/common/refs/heads/main/libs/rline/favicon.png" alt="Logo" width="200"/>
+</div>
+
+# @rline/rline
 
 Code generator
 

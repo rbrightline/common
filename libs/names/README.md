@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="https://raw.githubusercontent.com/rbrightline/common/refs/heads/main/libs/names/favicon.png" alt="Logo" width="200"/>
+</div>
+
 # @rline/names
 
 Utilities to create names, restfull api paths, and authentication service paths.

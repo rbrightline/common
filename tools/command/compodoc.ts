@@ -1,6 +1,6 @@
 import { exec } from 'child_process';
 import { join } from 'path';
-import { DOCSDIR, ROOTDIR } from '../common/constants';
+import { DOCSDIR, LIBRARYDIR, ROOTDIR } from '../common/constants';
 import { chdir } from 'process';
 
 /**
@@ -10,6 +10,13 @@ import { chdir } from 'process';
 export function compodoc(libraryName: string) {
   chdir(ROOTDIR);
   const docsdir = join(DOCSDIR, libraryName);
-  const tsconfig = join(ROOTDIR, libraryName, 'tsconfig.json');
-  exec(`compodoc -d ${docsdir} -p ${tsconfig} -n ${libraryName}`);
+  const tsconfig = join(LIBRARYDIR, libraryName, 'tsconfig.json');
+  exec(
+    `compodoc -d ${docsdir} -p ${tsconfig} -n ${libraryName}`,
+    (err, stdout, stderr) => {
+      console.error(err);
+      console.log(stdout);
+      console.error(stderr);
+    }
+  );
 }

@@ -1,7 +1,10 @@
+<div align="center">
+  <img src="https://raw.githubusercontent.com/rbrightline/common/refs/heads/main/libs/json/favicon.png" alt="Logo" width="200"/>
+</div>
+
 # @rline/json
 
-Compile JSON schema to a single schema file.
-Compile JSON schema to typescript types
+JSON schema compiler and typescript parser. Create a schema project, compile, and transform it into typescript types.
 
 ## Installation
 

@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="https://raw.githubusercontent.com/rbrightline/common/refs/heads/main/libs/crypto/favicon.png" alt="Logo" width="200"/>
+</div>
+
 # @rline/crypto
 
 Encrypt, decrypt, hash, and compare hash value.
