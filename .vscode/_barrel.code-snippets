@@ -1,7 +1,8 @@
 {
     "export all files [ export all files ]": {
         "prefix": "export all files [ export all files ]",
-        "body": "// @index(['./**/*.ts', '!./**/*{spec,test,story,stories,index,_*}.ts'], f => `export * from '${f.path}'`)",
-        "scope": "typescript,javascript"
+        "body": "// @index(['./**/*.ts', '!./**/__*/**', '!./**/*{spec,test,story,stories,index,__*}.ts'], f => `export * from '${f.path}'`)",
+        "scope": "typescript,javascript",
+        "description": "Index (exports generator). Export all files under the main directory but the ones stars with double underscore"
     }
 }

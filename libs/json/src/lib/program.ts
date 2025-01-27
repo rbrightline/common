@@ -1,9 +1,9 @@
 #!/usr/bin/env ts-node
 
 import { program } from 'commander';
-import { tsTypes } from './ts-types/ts-types';
-import { jsonSchema } from './json-schema/json-schema';
 import { join } from 'path';
+import { schema } from './schema/schema';
+import { type } from './type/type';
 
 program
   .name('json compiler')
@@ -13,13 +13,13 @@ program
   .version('7.3.1');
 
 program
-  .command('compile')
-  .name('compile')
+  .command('schema')
+  .name('schema')
   .description('Compile json schemas into a single schema')
   .argument('<string>', 'main schema file')
   .argument('<string>', 'output path')
-  .action((filePath: string, output: string) => {
-    jsonSchema(join(filePath, '..'), filePath, output);
+  .action((root: string, filePath: string, output: string) => {
+    schema();
   });
 
 program
@@ -28,8 +28,8 @@ program
   .description('Compile json schemas into a typescript type')
   .argument('<string>', 'main schema file')
   .argument('<string>', 'output filename')
-  .action((filePath: string, output: string) => {
-    tsTypes(join(filePath, '..'), filePath, output);
+  .action((root: string, filePath: string, output: string) => {
+    type();
   });
 
 program.parse();
