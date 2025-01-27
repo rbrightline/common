@@ -15,7 +15,6 @@
                 },
                 "isIn": {
                     "type": "array",
-                    "description": "Is the vlaue in the provided list?",
                     "items": {
                         "oneOf": [
                             {
@@ -26,7 +25,6 @@
                 },
                 "isNotIn": {
                     "type": "array",
-                    "description": "Is the value not in the provided list?",
                     "items": {
                         "oneOf": [
                             {

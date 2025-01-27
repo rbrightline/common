@@ -1,7 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "PropertyName",
-    "description": "Name of the property names used accross the projects",
     "enum": [
         "firstName",
         "lastName",

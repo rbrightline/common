@@ -22,8 +22,7 @@
                 },
                 "eager": {
                     "type": "boolean",
-                    "default": true,
-                    "description": "Load the relation data by default"
+                    "default": true
                 },
                 "join": {
                     "description": "should join the column/table?",
@@ -54,7 +53,7 @@
     ],
     "definitions": {
         "RelationType": {
-            "title": "RelationType",
+            "title": "Relation Type",
             "enum": [
                 "many-to-many",
                 "many-to-one",
@@ -63,7 +62,6 @@
             ]
         },
         "OnDelete": {
-            "title": "OnDelete",
             "enum": [
                 "RESTRICT",
                 "CASCADE",
@@ -74,7 +72,6 @@
             "default": "SET NULL"
         },
         "OnUpdate": {
-            "title": "OnUpdate",
             "enum": [
                 "RESTRICT",
                 "CASCADE",

@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "IntegerPropertyOptions",
+    "title": "NumberPropertyOptions",
     "allOf": [
         {
             "$ref": "./common-number.schema.json"
@@ -8,29 +8,27 @@
         {
             "properties": {
                 "type": {
-                    "const": "integer"
+                    "const": "number"
                 },
                 "default": {
-                    "type": "integer"
+                    "type": "number"
                 },
                 "isIn": {
                     "type": "array",
-                    "description": "Is the vlaue in the provided list?",
                     "items": {
                         "oneOf": [
                             {
-                                "type": "integer"
+                                "type": "number"
                             }
                         ]
                     }
                 },
                 "isNotIn": {
                     "type": "array",
-                    "description": "Is the value not in the provided list?",
                     "items": {
                         "oneOf": [
                             {
-                                "type": "integer"
+                                "type": "number"
                             }
                         ]
                     }

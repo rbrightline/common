@@ -1,27 +1,40 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "CommonNumberPropertyOptions",
+    "description": "Common number property options",
     "properties": {
         "isEven": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is the number even?"
         },
         "isOdd": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is the number odd?"
         },
         "numberFormat": {
             "$ref": "../enum/number-format.schema.json"
         },
         "minimum": {
-            "type": "number"
+            "type": "number",
+            "description": "Minimum allowed value for the number"
         },
         "maximum": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum allowed value for the number"
         },
         "moreThanProperty": {
-            "$ref": "../name/property.schema.json"
+            "type": "array",
+            "description": "Is the value more than the provided properties' value?",
+            "items": {
+                "$ref": "../name/property.schema.json"
+            }
         },
         "lessThanProperty": {
-            "$ref": "../name/property.schema.json"
+            "type": "array",
+            "description": "Is the value less than the provided properties' value?",
+            "items": {
+                "$ref": "../name/property.schema.json"
+            }
         }
     }
 }

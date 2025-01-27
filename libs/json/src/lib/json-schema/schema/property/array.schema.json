@@ -1,7 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "ArrayPropertyOptions",
-    "description": "Array property options",
     "properties": {
         "type": {
             "const": "array"
@@ -17,14 +16,6 @@
         },
         "items": {
             "$ref": "./property.schema.json"
-        },
-        "contain": {
-            "type": "array",
-            "description": "Should the array contain a list of value?"
-        },
-        "notContain": {
-            "type": "array",
-            "description": "Should the array NOT contain a list of value?"
         }
     },
     "required": [

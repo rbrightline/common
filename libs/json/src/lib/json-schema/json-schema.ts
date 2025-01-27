@@ -17,7 +17,7 @@ export function jsonSchema(root: string, fileName: string, output: string) {
   const map = mapSchemaFiles(root);
 
   map.forEach((value, key) => {
-    resolveReferences(key, value, value);
+    resolveReferences(key, value);
   });
 
   map.forEach((value, key) => {

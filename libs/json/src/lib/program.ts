@@ -3,6 +3,7 @@
 import { program } from 'commander';
 import { tsTypes } from './ts-types/ts-types';
 import { jsonSchema } from './json-schema/json-schema';
+import { join } from 'path';
 
 program
   .name('json compiler')
@@ -18,7 +19,7 @@ program
   .argument('<string>', 'main schema file')
   .argument('<string>', 'output path')
   .action((filePath: string, output: string) => {
-    jsonSchema('./', filePath, output);
+    jsonSchema(join(filePath, '..'), filePath, output);
   });
 
 program
@@ -28,7 +29,7 @@ program
   .argument('<string>', 'main schema file')
   .argument('<string>', 'output filename')
   .action((filePath: string, output: string) => {
-    tsTypes('./', filePath, output);
+    tsTypes(join(filePath, '..'), filePath, output);
   });
 
 program.parse();

@@ -12,12 +12,10 @@
             "$ref": "../enum/string-format.schema.json"
         },
         "minLength": {
-            "type": "integer",
-            "description": "Minimum allowed length for the string value."
+            "type": "integer"
         },
         "maxLength": {
-            "type": "integer",
-            "description": "Maximum allowed length for the string value."
+            "type": "integer"
         },
         "isIn": {
             "type": "array",

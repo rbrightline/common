@@ -38,24 +38,27 @@ export function mapSchemaFiles(directory: string) {
  * Convet all relative references into absolute ones
  * @param absoluteFilePath
  * @param schema
- * @param subSchema
  */
 export function resolveReferences(
   absoluteFilePath: string,
-  schema: JSONSchema,
-  subSchema: JSONSchema
+  schema: JSONSchema
 ) {
-  const entries = Object.entries(subSchema);
+  const entries = Object.entries(schema);
 
-  for (const [key, sub] of entries) {
-    if (key == '$ref') {
-      if (isNotDefinitionPath(sub)) {
-        subSchema.$ref = join(absoluteFilePath, '..', sub);
+  if (entries.length > 0)
+    for (const [key, sub] of entries) {
+      if (key == '$ref') {
+        if (isNotDefinitionPath(sub)) {
+          schema.$ref = join(absoluteFilePath, '..', sub);
+
+          console.log(schema.$ref, '<<<<<<<<<<<<<');
+        }
+      } else {
+        if (typeof sub == 'object') {
+          resolveReferences(absoluteFilePath, sub as JSONSchema);
+        }
       }
-    } else if (typeof sub == 'object') {
-      resolveReferences(absoluteFilePath, schema, sub as JSONSchema);
     }
-  }
 }
 
 export function convertReferencesToDefinitions(
@@ -78,7 +81,7 @@ export function convertReferencesToDefinitions(
         const mainSchema = map.get(mainFilePath);
         if (!mainSchema) throw new Error(`main schema could not get`);
         if (!mainSchema?.definitions) mainSchema.definitions = {};
-        mainSchema.definitions[defSchemaTitle] = defSchema;
+        mainSchema.definitions[defSchemaTitle] = clone(defSchema);
       }
     } else if (typeof sub == 'object') {
       convertReferencesToDefinitions(

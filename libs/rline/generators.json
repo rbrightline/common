@@ -3,22 +3,22 @@
     "library": {
       "factory": "./dist/generators/library/library",
       "schema": "./dist/generators/library/schema.json",
-      "description": "library generator"
+      "description": "Generate library project"
     },
     "cli": {
       "factory": "./dist/generators/cli/cli",
       "schema": "./dist/generators/cli/schema.json",
-      "description": "cli generator"
+      "description": "Generate cli project"
     },
     "init": {
       "factory": "./dist/generators/init/init",
       "schema": "./dist/generators/init/schema.json",
-      "description": "cli generator"
+      "description": "initialize plugin (generate schema files)"
     },
     "sync": {
       "factory": "./dist/generators/sync/sync",
       "schema": "./dist/generators/sync/schema.json",
-      "description": "sync generator"
+      "description": "scynronize schema with code"
     }
   }
 }

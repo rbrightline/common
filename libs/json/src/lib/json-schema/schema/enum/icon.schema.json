@@ -1,6 +1,5 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "description": "Google Material Symbols",
     "title": "Icon",
     "enum": [
         "search",
