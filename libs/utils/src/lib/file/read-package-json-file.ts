@@ -2,10 +2,12 @@ import { PackageJSON } from '@rline/type';
 import { readJSONFile } from './read-json-file';
 
 /**
- * Read and transform json file
- * @param filePath
+ * Read and transform package.json file
+ * @param packageJsonFilePath
  * @returns
  */
-export function readPackageJSONFile(filePath: string) {
-  return readJSONFile<PackageJSON>(filePath);
+export function readPackageJSONFile(
+  packageJsonFilePath: string
+): Promise<PackageJSON> {
+  return readJSONFile<PackageJSON>(packageJsonFilePath);
 }

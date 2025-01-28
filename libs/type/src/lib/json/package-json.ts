@@ -1,7 +1,7 @@
 export type PackageJSON = {
-  name?: string;
-  version?: string;
-  description?: string;
+  name: string;
+  version: string;
+  description: string;
   author?: {
     email?: string;
     name?: string;

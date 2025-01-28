@@ -19,8 +19,6 @@ export function stat(filename: string): Promise<Stats> {
  */
 export async function isDirectory(filepath: string): Promise<boolean> {
   const s = await stat(filepath);
-
-  console.log(s, s.isDirectory());
   return s.isDirectory();
 }
 

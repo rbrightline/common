@@ -1,14 +1,14 @@
-import { existsSync, readdirSync, statSync } from 'fs';
+#!/usr/bin/env
+
+import { asyncFilter, dirs, isDirectory } from '@rline/utils';
 import { APPSDIR } from './constants';
 import { join } from 'path';
 
-export const apps = () =>
-  readdirSync(APPSDIR).filter((e) => {
-    const isDirectory = statSync(join(APPSDIR, e)).isDirectory();
-    const hasProjectJSON = existsSync(join(APPSDIR, e, 'project.json'));
-    return isDirectory && hasProjectJSON;
-  });
-
-export function foreachApp(callback: (app: string) => void) {
-  apps().forEach(callback);
+/**
+ * Get the list of app names
+ * @returns
+ */
+export async function apps() {
+  const __dirs = await dirs(APPSDIR);
+  return await asyncFilter(__dirs, (v) => isDirectory(join(APPSDIR, v)));
 }

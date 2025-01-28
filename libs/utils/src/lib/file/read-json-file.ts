@@ -1,3 +1,4 @@
+import { ObjectLiteral } from '@rline/type';
 import { readFile } from 'fs';
 
 /**
@@ -5,7 +6,9 @@ import { readFile } from 'fs';
  * @param filePath
  * @returns object
  */
-export async function readJSONFile<T>(filePath: string): Promise<T> {
+export async function readJSONFile<T extends ObjectLiteral>(
+  filePath: string
+): Promise<T> {
   return new Promise<T>((res, rej) => {
     readFile(filePath, (err, data) => {
       if (err) {

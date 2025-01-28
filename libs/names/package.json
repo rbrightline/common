@@ -1,6 +1,6 @@
 {
   "name": "@rline/names",
-  "version": "8.0.1",
+  "version": "8.1.0",
   "description": "Provides a set of function to create resource names, paths",
   "author": {
     "email": "robert.brightline@gmail.com",

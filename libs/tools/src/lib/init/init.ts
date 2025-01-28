@@ -6,9 +6,9 @@ export function init() {
   console.table({
     ROOTDIR,
     LIBRARYDIR,
-    LIB_NAMES: libs,
+    LIB_NAMES: libs(),
     APPSDIR,
-    APP_NAMES: apps,
+    APP_NAMES: apps(),
   });
   //
 }
