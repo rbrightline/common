@@ -1,5 +1,3 @@
-#!/usr/bin/env
-
 import { asyncFilter, dirs, isDirectory } from '@rline/utils';
 import { APPSDIR } from './constants';
 import { join } from 'path';
