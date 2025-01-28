@@ -1,6 +1,6 @@
 {
   "name": "@rline/common",
-  "version": "0.0.1",
+  "version": "8.1.1",
   "scripts": {
     "build:model-schema": "json libs/rline/src/generators/init/files/schema model.schema.json schemas/model.schema.json",
     "build:project-schema": "json libs/rline/src/generators/init/files/schema project.schema.json schemas/project.schema.json"

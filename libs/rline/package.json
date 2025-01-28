@@ -1,6 +1,6 @@
 {
   "name": "@rline/rline",
-  "version": "8.1.0",
+  "version": "8.1.1",
   "description": "A set of project and component generators",
   "author": {
     "email": "robert.brightline@gmail.com",

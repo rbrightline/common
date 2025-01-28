@@ -4,5 +4,10 @@
   ],
   "yaml.schemas": {
     "libs/rline/src/generators/init/files/schema/model.schema.json": "**/*.model.yaml"
+  },
+  "editor.codeActionsOnSave": {
+    "source.removeUnusedImports": "always",
+    "source.sortImports": "always",
+    "source.organizeImports": "always"
   }
 }

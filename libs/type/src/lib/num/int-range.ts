@@ -17,6 +17,8 @@ export type Rate = IntRange<0, 5>;
 
 export type Percent = IntRange<0, 100>;
 
+export type TaxRate = IntRange<0, 100>;
+
 export type HumanAge = IntRange<0, 200>;
 
 export type Hour = IntRange<0, 23>;

@@ -74,6 +74,15 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <li class="link">
                                 <a href="classes/JSONStringSchema.html" data-type="entity-link" >JSONStringSchema</a>
                             </li>
+                            <li class="link">
+                                <a href="classes/NotEmptyArrayError.html" data-type="entity-link" >NotEmptyArrayError</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/NumberNotInRangeError.html" data-type="entity-link" >NumberNotInRangeError</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/RequiredError.html" data-type="entity-link" >RequiredError</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="chapter">
@@ -97,6 +106,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="miscellaneous-links"' : 'id="xs-miscellaneous-links"' }>
+                            <li class="link">
+                                <a href="miscellaneous/functions.html" data-type="entity-link">Functions</a>
+                            </li>
                             <li class="link">
                                 <a href="miscellaneous/typealiases.html" data-type="entity-link">Type aliases</a>
                             </li>

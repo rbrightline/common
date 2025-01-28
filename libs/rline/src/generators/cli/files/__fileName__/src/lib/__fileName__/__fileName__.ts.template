@@ -1,0 +1,3 @@
+export function <%- propertyName %>(){ 
+    console.log('<%- propertyName %> is working.');
+}

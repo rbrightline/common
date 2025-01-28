@@ -1,5 +1,6 @@
-export function schema() {
-  //
+import { readJSONFile } from '@rline/fs';
 
-  console.log('compiling schema');
+export async function schema() {
+  const result = await readJSONFile('./main.schema.json');
+  console.log(result);
 }

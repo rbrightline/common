@@ -1,9 +1,9 @@
 #!/usr/bin/env ts-node
 
 import { program } from 'commander';
+import { init } from './init/init';
 import { schema } from './schema/schema';
 import { type } from './type/type';
-import { init } from './init/init';
 
 program
   .name('json compiler')
@@ -19,8 +19,8 @@ program
   .action(init);
 
 program
-  .command('build')
-  .name('build')
+  .command('schema')
+  .name('schema')
   .description('Compile json schemas into a single schema')
   .action(schema);
 

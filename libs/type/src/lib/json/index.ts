@@ -3,7 +3,7 @@ export * from './array';
 export * from './boolean';
 export * from './common';
 export * from './conditional';
-export * from './json';
+export * from './json-schema';
 export * from './number';
 export * from './object';
 export * from './package-json';

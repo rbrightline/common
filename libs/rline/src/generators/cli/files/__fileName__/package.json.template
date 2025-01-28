@@ -1,7 +1,7 @@
 {
   "name": "@rline/<%- fileName %>",
-  "version": "5.0.1",
-  "description": "JSON Schema type",
+  "version": "0.0.1",
+  "description": "<%- fileName %> CLI",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",
@@ -25,7 +25,8 @@
     "schema"
   ],
   "dependencies": {
-    "@swc/helpers": "~0.5.11"
+    "@swc/helpers": "~0.5.11",
+    "commander": "^13.1.0"
   },
   "type": "commonjs",
   "main": "./dist/index.js",

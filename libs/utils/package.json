@@ -1,6 +1,6 @@
 {
   "name": "@rline/utils",
-  "version": "8.1.0",
+  "version": "8.1.1",
   "description": "Project description",
   "author": {
     "email": "robert.brightline@gmail.com",
@@ -21,7 +21,6 @@
     "library"
   ],
   "dependencies": {
-    "@rline/type": "^8.1.0",
     "@swc/helpers": "~0.5.11"
   },
   "type": "commonjs",

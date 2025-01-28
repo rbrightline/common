@@ -18,12 +18,15 @@
         ],
         "scope": "typescript,javascript"
     },
-    "is in range": {
-        "prefix": "is in range",
+    "error class": {
+        "prefix": "error class",
         "body": [
-            "if (value > $1) {",
-            "throw new Error('value is not in range');",
-            "}"
+            " export class $1Error extends Error {",
+            "     static readonly message = '$2';",
+            "     constructor() {",
+            "       super($1Error.message);",
+            "     }",
+            "   }",
         ],
         "scope": "typescript,javascript"
     },

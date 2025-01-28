@@ -1,1 +1,34 @@
-{"extends":"./tsconfig.base.json","compileOnSave":false,"files":[],"references":[{"path":"./libs/json"},{"path":"./libs/names"},{"path":"./libs/crypto"},{"path":"./libs/barcode"},{"path":"./libs/printer"},{"path":"./libs/type"},{"path":"./libs/tools"},{"path":"./libs/utils"}]}
+{
+    "extends": "./tsconfig.base.json",
+    "compileOnSave": false,
+    "files": [],
+    "references": [
+        {
+            "path": "./libs/json"
+        },
+        {
+            "path": "./libs/names"
+        },
+        {
+            "path": "./libs/crypto"
+        },
+        {
+            "path": "./libs/barcode"
+        },
+        {
+            "path": "./libs/printer"
+        },
+        {
+            "path": "./libs/type"
+        },
+        {
+            "path": "./libs/tools"
+        },
+        {
+            "path": "./libs/utils"
+        },
+        {
+            "path": "./libs/fs"
+        }
+    ]
+}
