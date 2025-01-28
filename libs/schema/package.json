@@ -1,6 +1,6 @@
 {
   "name": "@rline/schema",
-  "version": "1.0.1",
+  "version": "8.0.1",
   "description": "Project description",
   "author": {
     "email": "robert.brightline@gmail.com",
@@ -34,25 +34,8 @@
       "default": "./dist/index.js"
     }
   },
-  "module": "./dist/index.js",
   "nx": {
-    "sourceRoot": "libs/schema/src",
     "projectType": "library",
-    "targets": {
-      "build": {
-        "executor": "@nx/js:swc",
-        "outputs": [
-          "{options.outputPath}"
-        ],
-        "options": {
-          "outputPath": "libs/schema/dist",
-          "main": "libs/schema/src/index.ts",
-          "tsConfig": "libs/schema/tsconfig.lib.json",
-          "skipTypeCheck": true,
-          "stripLeadingPaths": true
-        }
-      }
-    },
     "name": "schema"
   }
 }

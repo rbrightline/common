@@ -3,6 +3,7 @@
 import { program } from 'commander';
 import { init } from './init/init';
 import { compodoc } from './command/compodoc';
+import { foreachLibrary } from './common/library';
 
 program
   .name('Project Dev Tools')
@@ -22,8 +23,12 @@ program
   .name('doc')
   .description('Generate compodoc documentation')
   .argument('library', 'library name')
-  .action((libraryName) => {
-    compodoc(libraryName);
-  });
+  .action(compodoc);
+
+program
+  .command('docs')
+  .name('docs')
+  .description('Generate compodoc documentations')
+  .action(() => foreachLibrary(compodoc));
 
 program.parse();

@@ -16,24 +16,18 @@ program
   .command('init')
   .name('init')
   .description('Initialize the schema project')
-  .action(() => {
-    init();
-  });
+  .action(init);
 
 program
   .command('build')
   .name('build')
   .description('Compile json schemas into a single schema')
-  .action(() => {
-    schema();
-  });
+  .action(schema);
 
 program
   .command('tsc')
   .name('tsc')
   .description('Compile json schemas into a typescript type')
-  .action(() => {
-    type();
-  });
+  .action(type);
 
 program.parse();

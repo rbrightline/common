@@ -1,6 +1,6 @@
 {
   "name": "@rline/type",
-  "version": "7.2.5",
+  "version": "8.0.1",
   "description": "Project description",
   "author": {
     "email": "robert.brightline@gmail.com",
@@ -17,8 +17,8 @@
     "tag": "latest"
   },
   "keywords": [
-    "rline",
-    "library"
+    "types",
+    "common"
   ],
   "dependencies": {
     "@swc/helpers": "~0.5.11"

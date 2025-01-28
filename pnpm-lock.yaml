@@ -116,8 +116,11 @@ importers:
   libs/json:
     dependencies:
       '@rline/type':
-        specifier: workspace:^
-        version: link:../type
+        specifier: ^8.0.1
+        version: 8.0.1
+      '@rline/utils':
+        specifier: ^8.0.3
+        version: 8.0.3
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -134,11 +137,11 @@ importers:
   libs/printer:
     dependencies:
       '@rline/names':
-        specifier: workspace:^
-        version: link:../names
+        specifier: 8.0.1
+        version: 8.0.1
       '@rline/type':
-        specifier: workspace:^
-        version: link:../type
+        specifier: 8.0.1
+        version: 8.0.1
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -164,8 +167,11 @@ importers:
         specifier: ^20.3.2
         version: 20.3.2(nx@20.3.2(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.6.3))(@swc/core@1.5.29(@swc/helpers@0.5.15)))
       '@rline/type':
-        specifier: ^7.2.2
-        version: 7.2.2
+        specifier: ^8.0.1
+        version: 8.0.1
+      '@rline/utils':
+        specifier: ^8.0.1
+        version: 8.0.1
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -182,8 +188,8 @@ importers:
   libs/utils:
     dependencies:
       '@rline/type':
-        specifier: ^7.2.4
-        version: 7.2.4
+        specifier: ^8.0.1
+        version: 8.0.1
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -1386,11 +1392,17 @@ packages:
   '@polka/url@1.0.0-next.28':
     resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==}
 
-  '@rline/type@7.2.2':
-    resolution: {integrity: sha512-Y+PMHkPmHTMgs3dBLtMRMmbX62pLQy2nmZIYQGuX9W05tCsAZkmgQx0ed9z+pvWTlqhmFQqt1FhwGjHpZWCJiw==}
+  '@rline/names@8.0.1':
+    resolution: {integrity: sha512-AGRzts/+3kU1gy0s+mlwqYudj2ol/4pkd67Gp7D8ryK7NNMbB+qP0RYk0Hl5I7BCTBlenBjHww+AitN0/xcB2w==}
 
-  '@rline/type@7.2.4':
-    resolution: {integrity: sha512-Onlkm/JTwJJny9yaoEEDwNye0myCIAvublZQO9IHx2AK/wNnwCer+nA/17crnpIMHVAHe741DABqhLjxj1zfDw==}
+  '@rline/type@8.0.1':
+    resolution: {integrity: sha512-VO0oV93tBn9i/umf2yf03dcGNJgwPF6w6aX0J9b4thLHQNBRC3uqy6egPwMnRtcYZuUKmZKg8/0Fu/CE03lemA==}
+
+  '@rline/utils@8.0.1':
+    resolution: {integrity: sha512-7WEzwUjlb6aj6Y/u0VHXCYOvPGULt1vOYv6WokD8S4Y7w/KXMmd9dGpnJifynmJe3CJsyf82oD6IScp7/P7P5g==}
+
+  '@rline/utils@8.0.3':
+    resolution: {integrity: sha512-MucaxChivN38KLy+EBaVl/LSzK/YDIq65/YnZkoGEjGzZLcokTtG29J+qU+gXfPH8BEWQIHkKTOBfB/z67B71w==}
 
   '@rollup/rollup-android-arm-eabi@4.31.0':
     resolution: {integrity: sha512-9NrR4033uCbUBRgvLcBrJofa2KY9DzxL2UKZ1/4xA/mnTNyhZCWBuD8X3tPm1n4KxcgaraOYgrFKSgwjASfmlA==}
@@ -7325,12 +7337,22 @@ snapshots:
 
   '@polka/url@1.0.0-next.28': {}
 
-  '@rline/type@7.2.2':
+  '@rline/names@8.0.1':
     dependencies:
       '@swc/helpers': 0.5.15
 
-  '@rline/type@7.2.4':
+  '@rline/type@8.0.1':
     dependencies:
+      '@swc/helpers': 0.5.15
+
+  '@rline/utils@8.0.1':
+    dependencies:
+      '@rline/type': 8.0.1
+      '@swc/helpers': 0.5.15
+
+  '@rline/utils@8.0.3':
+    dependencies:
+      '@rline/type': 8.0.1
       '@swc/helpers': 0.5.15
 
   '@rollup/rollup-android-arm-eabi@4.31.0':

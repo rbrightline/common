@@ -1,6 +1,6 @@
 {
   "name": "@rline/tools",
-  "version": "7.0.0",
+  "version": "8.0.1",
   "description": "Cli Program",
   "author": {
     "email": "robert.brightline@gmail.com",
@@ -31,7 +31,8 @@
     "@nx/devkit": "^20.3.2"
   },
   "dependencies": {
-    "@rline/type": "^7.2.2",
+    "@rline/type": "^8.0.1",
+    "@rline/utils": "^8.0.1",
     "@swc/helpers": "~0.5.11",
     "commander": "^13.1.0"
   },

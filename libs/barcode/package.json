@@ -1,6 +1,6 @@
 {
   "name": "@rline/barcode",
-  "version": "7.1.0",
+  "version": "8.0.1",
   "description": "Generate unique barcode",
   "author": {
     "email": "robert.brightline@gmail.com",

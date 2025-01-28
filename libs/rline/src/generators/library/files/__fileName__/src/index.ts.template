@@ -1,2 +1,2 @@
-// @index(['./**/*.ts', '!./**/*{spec,test,story,stories,index,_*}.ts'], f => `export * from '${f.path}'`)
+// @index(['./**/*.ts', '!./**/__*/**', '!./**/*{spec,test,story,stories,index,program,__*}.ts'], f => `export * from '${f.path}'`)
 export * from './lib/<%- fileName %>'; 

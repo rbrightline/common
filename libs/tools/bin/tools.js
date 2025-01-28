@@ -1,1 +1,1 @@
-require('../dist/lib/tools');
+require('../dist/lib/program');

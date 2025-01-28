@@ -11,23 +11,3 @@ Common utilities
 ```shell
 pnpm add @rline/utils
 ```
-
-## Usage
-
-### File
-
-```typescript
-readJSONFIle<T>():Promise<T>;
-readPakcageJSONFile():Promise<PackageJSON>;
-```
-
-### Array
-
-```typescript
-
-unique<T>(value:T[]):T[];
-
-uniqueBy<T >(value:T[], key:string):T[];
-
-
-```
