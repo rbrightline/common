@@ -1,3 +1,3 @@
 export function type() {
-  throw new Error('Not implemented');
+  console.log('compiling to types');
 }
