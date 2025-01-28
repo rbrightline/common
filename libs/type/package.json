@@ -1,13 +1,13 @@
 {
   "name": "@rline/type",
   "version": "8.1.1",
-  "description": "Project description",
+  "description": "Common types",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",
     "url": "https://rbrightline.github.io"
   },
-  "homepage": "https://rbrightline.github.io/rline/type",
+  "homepage": "https://rbrightline.github.io/common/type",
   "repository": {
     "url": "https://github.com/rbrightline/common/tree/main/libs/type",
     "type": "github"

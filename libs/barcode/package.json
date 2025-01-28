@@ -9,7 +9,7 @@
   },
   "homepage": "https://rbrightline.github.io/rline/barcode",
   "repository": {
-    "url": "https://github.com/rbrightline/common/tree/main/libs/names",
+    "url": "https://github.com/rbrightline/common/tree/main/libs/barcode",
     "type": "github"
   },
   "publishConfig": {

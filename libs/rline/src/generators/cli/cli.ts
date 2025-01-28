@@ -1,7 +1,7 @@
 import { formatFiles, generateFiles, names, Tree } from '@nx/devkit';
+import { readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { CliGeneratorSchema } from './schema';
-import { readFileSync, writeFileSync } from 'fs';
 
 export async function cliGenerator(tree: Tree, options: CliGeneratorSchema) {
   const TARGET_DIR = 'libs';

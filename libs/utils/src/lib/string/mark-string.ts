@@ -1,4 +1,4 @@
-import { ValueType, $M } from '@rline/type';
+import { $M, ValueType } from '@rline/type';
 
 /**
  * Wrap a content with a marker such as `<__marker__>content<__marker>` this allows to quickly find the content in the text
@@ -25,6 +25,12 @@ export function getMarkedContent(content: string, raw = false): string[] {
   );
 }
 
+/**
+ * Repalce the marked-string part with the repalcement
+ * @param content
+ * @param replacements
+ * @returns
+ */
 export function replaceMarkedContentWith(
   content: string,
   replacements: any[]

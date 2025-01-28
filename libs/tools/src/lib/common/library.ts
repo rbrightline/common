@@ -1,7 +1,7 @@
-import { existsSync, statSync } from 'fs';
-import { LIBRARYDIR } from './constants';
-import { join } from 'path';
 import { asyncFilter, dirs } from '@rline/utils';
+import { existsSync, statSync } from 'fs';
+import { join } from 'path';
+import { LIBRARYDIR } from './constants';
 
 /**
  * Library path

@@ -1,5 +1,11 @@
 import { Change } from '@rline/type';
-
+/**
+ * Find the difference betweeen two strings
+ * @param previous
+ * @param current
+ * @param delimeter
+ * @returns
+ */
 export function diff(
   previous: string,
   current: string,

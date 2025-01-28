@@ -1,13 +1,13 @@
 {
   "name": "@rline/utils",
   "version": "8.1.1",
-  "description": "Project description",
+  "description": "Common utilities",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",
     "url": "https://rbrightline.github.io"
   },
-  "homepage": "https://rbrightline.github.io/rline/utils",
+  "homepage": "https://rbrightline.github.io/common/utils",
   "repository": {
     "url": "https://github.com/rbrightline/common/tree/main/libs/utils",
     "type": "github"
@@ -17,8 +17,9 @@
     "tag": "latest"
   },
   "keywords": [
-    "rline",
-    "library"
+    "utils",
+    "helpers",
+    "common"
   ],
   "dependencies": {
     "@swc/helpers": "~0.5.11"

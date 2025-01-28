@@ -1,5 +1,11 @@
 import { Key, ObjectLiteral } from '@rline/type';
 
+/**
+ * Pick the keys from the object
+ * @param object
+ * @param keys
+ * @returns
+ */
 export function pick<T extends ObjectLiteral, K extends Key<T> & string>(
   object: T,
   keys: K[]

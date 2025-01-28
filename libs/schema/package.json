@@ -1,7 +1,7 @@
 {
   "name": "@rline/schema",
   "version": "8.1.1",
-  "description": "Project description",
+  "description": "Common json schemas",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",

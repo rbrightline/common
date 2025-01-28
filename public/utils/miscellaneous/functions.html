@@ -115,6 +115,9 @@
                             <a href="#asyncFilter" title="libs/utils/src/lib/array/async-filter.ts" ><b>asyncFilter</b>&nbsp;&nbsp;&nbsp;(libs/.../async-filter.ts)</a>
                         </li>
                         <li>
+                            <a href="#beta" title="libs/utils/src/lib/version/version.ts" ><b>beta</b>&nbsp;&nbsp;&nbsp;(libs/.../version.ts)</a>
+                        </li>
+                        <li>
                             <a href="#clone" title="libs/utils/src/lib/data/clone.ts" ><b>clone</b>&nbsp;&nbsp;&nbsp;(libs/.../clone.ts)</a>
                         </li>
                         <li>
@@ -136,6 +139,9 @@
                             <a href="#last" title="libs/utils/src/lib/array/last.ts" ><b>last</b>&nbsp;&nbsp;&nbsp;(libs/.../last.ts)</a>
                         </li>
                         <li>
+                            <a href="#major" title="libs/utils/src/lib/version/version.ts" ><b>major</b>&nbsp;&nbsp;&nbsp;(libs/.../version.ts)</a>
+                        </li>
+                        <li>
                             <a href="#markContent" title="libs/utils/src/lib/string/mark-string.ts" ><b>markContent</b>&nbsp;&nbsp;&nbsp;(libs/.../mark-string.ts)</a>
                         </li>
                         <li>
@@ -145,6 +151,9 @@
                             <a href="#min" title="libs/utils/src/lib/number/min.ts" ><b>min</b>&nbsp;&nbsp;&nbsp;(libs/.../min.ts)</a>
                         </li>
                         <li>
+                            <a href="#minor" title="libs/utils/src/lib/version/version.ts" ><b>minor</b>&nbsp;&nbsp;&nbsp;(libs/.../version.ts)</a>
+                        </li>
+                        <li>
                             <a href="#omit" title="libs/utils/src/lib/data/omit.ts" ><b>omit</b>&nbsp;&nbsp;&nbsp;(libs/.../omit.ts)</a>
                         </li>
                         <li>
@@ -152,6 +161,9 @@
                         </li>
                         <li>
                             <a href="#padStart" title="libs/utils/src/lib/string/pad.ts" ><b>padStart</b>&nbsp;&nbsp;&nbsp;(libs/.../pad.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#patch" title="libs/utils/src/lib/version/version.ts" ><b>patch</b>&nbsp;&nbsp;&nbsp;(libs/.../version.ts)</a>
                         </li>
                         <li>
                             <a href="#pick" title="libs/utils/src/lib/data/pick.ts" ><b>pick</b>&nbsp;&nbsp;&nbsp;(libs/.../pick.ts)</a>
@@ -211,6 +223,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Filter array of items asyncroniouslys</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -245,6 +259,304 @@
                                                     No
                                             </td>
 
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/utils/src/lib/version/version.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="beta"></a>
+                    <span class="name">
+                        <span ><b>beta</b></span>
+                        <a href="#beta"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>beta(version: VersionType, up: PatchVersion)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Change version by beta</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>version</td>
+                                            <td>
+                                                        <code>VersionType</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                                <td>up</td>
+                                            <td>
+                                                        <code>PatchVersion</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>&#x27;1-beta&#x27;</code>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="major"></a>
+                    <span class="name">
+                        <span ><b>major</b></span>
+                        <a href="#major"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>major(version: VersionType, up: VersionNumber)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Change version by major</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>version</td>
+                                            <td>
+                                                        <code>VersionType</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                                <td>up</td>
+                                            <td>
+                                                        <code>VersionNumber</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>1</code>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="minor"></a>
+                    <span class="name">
+                        <span ><b>minor</b></span>
+                        <a href="#minor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>minor(version: VersionType, up: VersionNumber)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Change version by minor</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>version</td>
+                                            <td>
+                                                        <code>VersionType</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                                <td>up</td>
+                                            <td>
+                                                        <code>VersionNumber</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>1</code>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="patch"></a>
+                    <span class="name">
+                        <span ><b>patch</b></span>
+                        <a href="#patch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>patch(version: VersionType, up: PatchVersion)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Change version by patch</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>version</td>
+                                            <td>
+                                                        <code>VersionType</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                                <td>up</td>
+                                            <td>
+                                                        <code>PatchVersion</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>1</code>
+                                            </td>
 
                                         </tr>
                                     </tbody>
@@ -343,6 +655,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Concat strings</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -402,6 +716,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Find the difference betweeen two strings</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -497,6 +813,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Get the first of the array</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -549,6 +867,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Get last segment of the path/url</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -748,6 +1068,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Repalce the marked-string part with the repalcement</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -822,6 +1144,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Get the last item of the array</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -874,6 +1198,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Find the maximum number in the array</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -933,6 +1259,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Find the minimum number in the array</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -992,6 +1320,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Omit the keys from the object.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -1066,6 +1396,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Add pad after the stringn value</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -1132,6 +1464,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Add pad before the string value</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -1200,6 +1534,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Pick the keys from the object</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -1274,6 +1610,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Get all segments of the path/url</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -1301,6 +1639,13 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>string[]</code>
+
+                        </div>
+                            <div class="io-description">
+                                
                             </div>
                 </td>
             </tr>
@@ -1330,6 +1675,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Update the last segment of the path/url</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -1405,6 +1752,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Suffix file name</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -1615,6 +1964,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Update the item of the array by the index of the item.s</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -1701,6 +2052,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Create pairs with the items in the same index location.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>

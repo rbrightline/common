@@ -116,11 +116,11 @@ importers:
   libs/fs:
     dependencies:
       '@rline/type':
-        specifier: workspace:^
-        version: link:../type
+        specifier: 8.1.1
+        version: 8.1.1
       '@rline/utils':
-        specifier: workspace:^
-        version: link:../utils
+        specifier: 8.1.1
+        version: 8.1.1
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -128,14 +128,14 @@ importers:
   libs/json:
     dependencies:
       '@rline/fs':
-        specifier: workspace:^
-        version: link:../fs
+        specifier: 8.1.1
+        version: 8.1.1
       '@rline/type':
-        specifier: workspace:^
-        version: link:../type
+        specifier: 8.1.1
+        version: 8.1.1
       '@rline/utils':
-        specifier: workspace:^
-        version: link:../utils
+        specifier: 8.1.1
+        version: 8.1.1
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -152,11 +152,11 @@ importers:
   libs/printer:
     dependencies:
       '@rline/names':
-        specifier: 8.1.0
-        version: 8.1.0
+        specifier: 8.1.1
+        version: 8.1.1
       '@rline/type':
-        specifier: 8.1.0
-        version: 8.1.0
+        specifier: 8.1.1
+        version: 8.1.1
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -179,11 +179,11 @@ importers:
   libs/tools:
     dependencies:
       '@rline/type':
-        specifier: workspace:^
-        version: link:../type
+        specifier: 8.1.1
+        version: 8.1.1
       '@rline/utils':
-        specifier: workspace:^
-        version: link:../utils
+        specifier: 8.1.1
+        version: 8.1.1
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -199,15 +199,6 @@ importers:
 
   libs/utils:
     dependencies:
-      '@swc/helpers':
-        specifier: ~0.5.11
-        version: 0.5.15
-
-  libs/validation:
-    dependencies:
-      '@rline/type':
-        specifier: workspace:^
-        version: link:../type
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -1410,11 +1401,17 @@ packages:
   '@polka/url@1.0.0-next.28':
     resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==}
 
-  '@rline/names@8.1.0':
-    resolution: {integrity: sha512-SKviXPoYcWXmfqitYII+SO5+vszi/q4sgBi8tSWVwFO80la/PG6X2y90p6QPOEadEY/TdpAGhHZUxNHjcT30/w==}
+  '@rline/fs@8.1.1':
+    resolution: {integrity: sha512-I9L5DwGV1lrmfI3O29XWLe2Nzd84MZJ+k1ue8Ycw/GEBodIP/NU+bpsWh8+zdiwEKTPzP+WFwU+OfotXBIKIIw==}
 
-  '@rline/type@8.1.0':
-    resolution: {integrity: sha512-jFPD/9kCruvzIGfq1/2K6uTyRZvM3acAU8CHrRHwTZMh4p6mInkcnlRaBApKiWLRPytA1MdJ9EExHZfVSJRAKA==}
+  '@rline/names@8.1.1':
+    resolution: {integrity: sha512-94ZgUXwWTmsVqgqH6vo8d4FV2IF1XQdMvHWJHZWCki7OwDTHViFKpxD4dVXdvSfeZ05V8yWKns2HD/B9xbP7Lg==}
+
+  '@rline/type@8.1.1':
+    resolution: {integrity: sha512-3CM+i7QaaJB7pqzM2dQJtyLdzj967CjzyVSksgw6vjm9bTzi0d8h3gZL0LU3AfiytR9Hq+bswrCZS8yAFFzxXw==}
+
+  '@rline/utils@8.1.1':
+    resolution: {integrity: sha512-ieHwycNpvMons+KexUlWbuTxb39g9GjV9dB0bTS+Dauymn0IwKqMYXcpKCXKL1rQOAIQYE1DtuuVFqY2lvEdLg==}
 
   '@rollup/rollup-android-arm-eabi@4.31.0':
     resolution: {integrity: sha512-9NrR4033uCbUBRgvLcBrJofa2KY9DzxL2UKZ1/4xA/mnTNyhZCWBuD8X3tPm1n4KxcgaraOYgrFKSgwjASfmlA==}
@@ -7349,11 +7346,21 @@ snapshots:
 
   '@polka/url@1.0.0-next.28': {}
 
-  '@rline/names@8.1.0':
+  '@rline/fs@8.1.1':
+    dependencies:
+      '@rline/type': 8.1.1
+      '@rline/utils': 8.1.1
+      '@swc/helpers': 0.5.15
+
+  '@rline/names@8.1.1':
     dependencies:
       '@swc/helpers': 0.5.15
 
-  '@rline/type@8.1.0':
+  '@rline/type@8.1.1':
+    dependencies:
+      '@swc/helpers': 0.5.15
+
+  '@rline/utils@8.1.1':
     dependencies:
       '@swc/helpers': 0.5.15
 

@@ -2,8 +2,11 @@
   "name": "@rline/common",
   "version": "8.1.1",
   "scripts": {
-    "build:model-schema": "json libs/rline/src/generators/init/files/schema model.schema.json schemas/model.schema.json",
-    "build:project-schema": "json libs/rline/src/generators/init/files/schema project.schema.json schemas/project.schema.json"
+    "build": "ts-node ./tools/build.ts",
+    "publish": "npx nx release publish",
+    "patch": "npx nx release version patch",
+    "minor": "npx nx release version minor",
+    "major": "npx nx release version major"
   },
   "private": true,
   "devDependencies": {

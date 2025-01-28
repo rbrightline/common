@@ -1,7 +1,7 @@
 {
   "name": "@rline/rline",
   "version": "8.1.1",
-  "description": "A set of project and component generators",
+  "description": "Code generator",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",
@@ -20,7 +20,9 @@
     "nx",
     "generator",
     "library",
-    "cli"
+    "cli",
+    "json",
+    "schema"
   ],
   "dependencies": {
     "@nx/devkit": "20.3.2",

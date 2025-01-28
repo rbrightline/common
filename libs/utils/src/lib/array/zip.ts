@@ -1,6 +1,12 @@
 import { Optional, Pair } from '@rline/type';
 import { max } from '../number';
 
+/**
+ * Create pairs with the items in the same index location.
+ * @param first
+ * @param second
+ * @returns
+ */
 export function zip<F, S>(
   first: F[],
   second: S[]

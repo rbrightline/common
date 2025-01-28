@@ -1,7 +1,7 @@
 {
   "name": "@rline/crypto",
   "version": "8.1.1",
-  "description": "Project description",
+  "description": "Hashing, enciption, and decryption",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",
@@ -9,7 +9,7 @@
   },
   "homepage": "https://rbrightline.github.io/rline/crypto",
   "repository": {
-    "url": "https://github.com/rbrightline/common/tree/main/libs/names",
+    "url": "https://github.com/rbrightline/common/tree/main/libs/crypto",
     "type": "github"
   },
   "publishConfig": {

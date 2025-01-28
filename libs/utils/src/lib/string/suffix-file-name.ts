@@ -1,3 +1,9 @@
+/**
+ * Suffix file name
+ * @param name
+ * @param suffix
+ * @returns
+ */
 export function suffixFileName(name: string, suffix: string): string {
   const parts = name.split('');
   const lastIndex = name.lastIndexOf('.');

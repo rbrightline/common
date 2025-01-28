@@ -1,6 +1,6 @@
 import { asyncFilter, dirs, isDirectory } from '@rline/utils';
-import { APPSDIR } from './constants';
 import { join } from 'path';
+import { APPSDIR } from './constants';
 
 /**
  * Get the list of app names

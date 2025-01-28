@@ -1,7 +1,7 @@
 {
   "name": "@rline/printer",
   "version": "8.1.1",
-  "description": "Project description",
+  "description": "Convert json schema into code.",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",
@@ -18,7 +18,15 @@
   },
   "keywords": [
     "rline",
-    "library"
+    "library",
+    "printer",
+    "code generator",
+    "helper",
+    "class pritner",
+    "type pritner",
+    "dto printer",
+    "schema",
+    "compiler"
   ],
   "dependencies": {
     "@rline/type": "8.1.1",

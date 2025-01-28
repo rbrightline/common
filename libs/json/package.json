@@ -9,7 +9,7 @@
   },
   "homepage": "https://rbrightline.github.io/rline/json",
   "repository": {
-    "url": "https://github.com/rbrightline/common/tree/main/libs/names",
+    "url": "https://github.com/rbrightline/common/tree/main/libs/json",
     "type": "github"
   },
   "publishConfig": {

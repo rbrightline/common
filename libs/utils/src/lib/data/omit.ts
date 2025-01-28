@@ -1,5 +1,11 @@
 import { Key, ObjectLiteral } from '@rline/type';
 
+/**
+ * Omit the keys from the object.
+ * @param object
+ * @param keys
+ * @returns
+ */
 export function omit<T extends ObjectLiteral, K extends Key<T> & string>(
   object: T,
   keys: K[]

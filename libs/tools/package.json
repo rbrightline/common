@@ -1,7 +1,7 @@
 {
   "name": "@rline/tools",
   "version": "8.1.1",
-  "description": "Cli Program",
+  "description": "Dev tools ( CLI )",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",
@@ -20,12 +20,12 @@
     "tools": "./bin/tools.js"
   },
   "keywords": [
-    "project",
-    "build",
-    "doc",
-    "transform",
-    "update",
-    "bulk"
+    "cli",
+    "compodoc",
+    "project-management",
+    "package",
+    "version",
+    "filesystem"
   ],
   "dependencies": {
     "@rline/type": "8.1.1",

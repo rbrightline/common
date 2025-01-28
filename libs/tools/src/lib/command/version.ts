@@ -1,6 +1,6 @@
 import { readPackageJSONFile } from '@rline/utils';
-import { foreachLibrary, lib } from '../common/library';
 import { join } from 'path';
+import { foreachLibrary, lib } from '../common/library';
 /**
  * Print the version of the library
  * @param library

@@ -7,7 +7,7 @@
     "name": "Robert Brightline",
     "url": "https://rbrightline.github.io"
   },
-  "homepage": "https://rbrightline.github.io/rline/<%- fileName %>",
+  "homepage": "https://rbrightline.github.io/common/<%- fileName %>",
   "repository": {
     "url": "https://github.com/rbrightline/common/tree/main/libs/<%- fileName %>",
     "type": "github"

@@ -1,7 +1,7 @@
 {
   "name": "@rline/names",
   "version": "8.1.1",
-  "description": "Provides a set of function to create resource names, paths",
+  "description": "All version of names and resource paths",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",
@@ -17,8 +17,15 @@
     "tag": "latest"
   },
   "keywords": [
+    "name",
+    "names",
     "rline",
-    "library"
+    "plural",
+    "api",
+    "id",
+    "paths",
+    "open-api",
+    "api paths"
   ],
   "dependencies": {
     "@swc/helpers": "~0.5.11"
