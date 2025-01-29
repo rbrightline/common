@@ -130,6 +130,9 @@ importers:
       '@rline/fs':
         specifier: workspace:*
         version: link:../fs
+      '@rline/names':
+        specifier: workspace:^
+        version: link:../names
       '@rline/type':
         specifier: workspace:*
         version: link:../type

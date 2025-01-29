@@ -5,7 +5,7 @@ import { join } from 'path';
 /**
  * map each schema under the root directory
  */
-export async function mapSchemaFiles(
+export async function toSchemaMap(
   root: string
 ): Promise<Map<string, JSONSchema>> {
   const map = new Map<string, JSONSchema>();

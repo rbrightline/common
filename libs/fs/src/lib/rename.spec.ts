@@ -1,9 +1,9 @@
 import { existsSync } from 'fs';
 import { join } from 'path';
-import { rename } from './filename';
 import { files } from './files';
+import { rename } from './rename';
 
-describe('filename', () => {
+describe('rename', () => {
   it('should rename file', async () => {
     const d = await files(join(__dirname, './test/dirs'));
     const oldFileName = d[0];

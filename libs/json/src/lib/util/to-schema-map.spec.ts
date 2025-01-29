@@ -1,10 +1,10 @@
 import { readJSONFile } from '@rline/fs';
 import { JSONSchema } from '@rline/type';
-import { mapSchemaFiles } from './map-schema-files';
+import { toSchemaMap } from './to-schema-map';
 
-describe('Map schema files', () => {
+describe('toMap', () => {
   it('should map schema files', async () => {
-    const map = await mapSchemaFiles('../../test');
+    const map = await toSchemaMap('../../test');
 
     expect(map).toBeTruthy();
     expect(map.size).greaterThan(0);

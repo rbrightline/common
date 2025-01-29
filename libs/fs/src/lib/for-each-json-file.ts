@@ -1,3 +1,4 @@
+import { join } from 'path';
 import { forEachFile } from './for-each-file';
 
 export async function forEachJSONFile(
@@ -16,6 +17,7 @@ export async function forEachJSONSchemaFile(
   callback: (filepath: string) => Promise<void>
 ): Promise<void> {
   return await forEachFile(root, async (filepath: string) => {
+    filepath = join(root, filepath);
     if (filepath.endsWith('.schema.json')) {
       await callback(filepath);
     }

@@ -30,6 +30,7 @@
   ],
   "dependencies": {
     "@rline/fs": "workspace:*",
+    "@rline/names": "workspace:^",
     "@rline/type": "workspace:*",
     "@rline/utils": "8.1.1",
     "@swc/helpers": "~0.5.11",

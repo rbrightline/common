@@ -1,16 +1,16 @@
 import { writeJSONFile } from '@rline/fs';
 import { join } from 'path';
-import { mapSchemaFiles } from './map-schema-files';
-import { resolveReferencePaths } from './resolve-reference-paths';
+import { toAbsolutePaths } from './to-absolute-paths';
+import { toSchemaMap } from './to-schema-map';
 
-describe('resolveReferencePaths', () => {
-  it('shuold resolve reference paths', async () => {
+describe('toAbsolutePaths', () => {
+  it('should convert relative $ref values into absolute paths', async () => {
     const root = join(__dirname, './test/schema');
     const dist = join(__dirname, './test/dist');
 
-    const map = await mapSchemaFiles(root);
+    const map = await toSchemaMap(root);
 
-    resolveReferencePaths(map);
+    toAbsolutePaths(map);
 
     for (const [key, value] of map.entries()) {
       await writeJSONFile(key.replace(root, dist), value);
