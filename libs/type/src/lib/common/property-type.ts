@@ -1,8 +1,6 @@
-import { ObjectLiteral } from './object-literal';
-
 export type PrimitiveValueType = string | number | boolean;
 
-export type ValueType = PrimitiveValueType | ObjectLiteral | Array<ValueType>;
+export type ValueType = PrimitiveValueType | object | Array<ValueType>;
 
 export type PropertyType =
   | 'string'

@@ -1,4 +1,2 @@
-import { ObjectLiteral } from './object-literal';
-
-export type Keys<T extends ObjectLiteral> = (keyof T)[];
-export type Key<T extends ObjectLiteral> = keyof T;
+export type Keys<T extends object> = (keyof T)[];
+export type Key<T extends object> = keyof T;

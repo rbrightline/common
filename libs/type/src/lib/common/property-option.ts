@@ -3,5 +3,4 @@
  * @C class type
  * @O options type
  */
-
 export type PropertyOption<C, O> = Record<keyof C, O>;

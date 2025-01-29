@@ -1,5 +1,9 @@
 import { Digit, IntRange } from '../num';
 
+export type MajarVersion = IntRange<0, 50>;
+export type MinorVersion = Digit;
+export type PatchVersion = Digit;
+
 export type VersionExtension =
   | ''
   | '-alpha' // Early development stage
@@ -17,4 +21,5 @@ export type VersionExtension =
   | '-experimental' // Experimental features
   | '-custom'; // Custom build
 
-export type Version = `${IntRange<0, 50>}.${Digit}.${Digit}${VersionExtension}`;
+export type Version =
+  `${MajarVersion}.${MinorVersion}.${PatchVersion}${VersionExtension}`;

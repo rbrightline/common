@@ -1,4 +1,2 @@
-import { ObjectLiteral } from './object-literal';
-
-export type PickRequired<T extends ObjectLiteral, P extends keyof T> = T &
+export type PickRequired<T extends object, P extends keyof T> = T &
   Required<Pick<T, P>>;

@@ -2,10 +2,16 @@ import { join } from 'path';
 import { files } from './files';
 import { isDirectory, isFile } from './stat';
 
-export async function forEachFile(
-  root: string,
-  callback: (filepath: string) => Promise<void>
-) {
+/**
+ * @param filepath absolute filepath
+ */
+export type ForEachFileCallBack = (filepath: string) => Promise<void>;
+/**
+ * Go through for each filename under the root directory including the deepest files
+ * @param root absolute path recommended for bug prevention
+ * @param callback callback {@link ForEachFileCallBack}
+ */
+export async function forEachFile(root: string, callback: ForEachFileCallBack) {
   const directories = await files(root, true);
 
   for (const dir of directories) {
