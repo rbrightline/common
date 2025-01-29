@@ -37,9 +37,6 @@ export class SchemaManager {
     this.main = options?.mainFilePath ?? SchemaManager.defaultMainFilePath;
   }
 
-  protected isDefinitionPath(referencepath: string): boolean {
-    return referencepath.startsWith('#/');
-  }
   /**
    * Read JSONSchema file by filepath and return the schema
    * @param filepath
@@ -87,7 +84,7 @@ export class SchemaManager {
         /**
          * If the reference is definition reference, skip the operation
          */
-        if (schema.$ref.startsWith('#/')) return;
+        if (isDefinitionPath(schema.$ref)) return;
 
         schema.$ref = join(schema.$dirpath, schema.$ref);
       } else {

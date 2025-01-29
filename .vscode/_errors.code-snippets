@@ -1,0 +1,14 @@
+{
+    "error class": {
+        "prefix": "error class",
+        "body": [
+            " export class $1Error extends Error {",
+            "     static readonly message = '$2';",
+            "     constructor() {",
+            "       super($1Error.message);",
+            "     }",
+            "   }",
+        ],
+        "scope": "typescript,javascript"
+    },
+}
