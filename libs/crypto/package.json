@@ -2,6 +2,7 @@
   "name": "@rline/crypto",
   "version": "8.1.1",
   "description": "Hashing, enciption, and decryption",
+  "license": "MIT",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",

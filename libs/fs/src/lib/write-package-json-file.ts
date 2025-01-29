@@ -1,5 +1,5 @@
 import { PackageJSON } from '@rline/type';
-import { writeFile } from './write-file';
+import { writeJSONFile } from './write-json-file';
 
 /**
  * Write package.json file
@@ -9,5 +9,5 @@ export async function writePackageJSONFile(
   filePath: string,
   content: PackageJSON
 ): Promise<void> {
-  return await writeFile(filePath, content);
+  return await writeJSONFile(filePath, content);
 }

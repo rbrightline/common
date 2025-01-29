@@ -2,6 +2,7 @@
   "name": "@rline/utils",
   "version": "8.1.1",
   "description": "Common utilities",
+  "license": "MIT",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",
@@ -22,6 +23,7 @@
     "common"
   ],
   "dependencies": {
+    "@rline/type": "workspace:^",
     "@swc/helpers": "~0.5.11"
   },
   "type": "commonjs",

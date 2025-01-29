@@ -112,19 +112,34 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
+                            <a href="#__resolveReferencePaths" title="libs/json/src/lib/util/resolve-reference-paths.ts" ><b>__resolveReferencePaths</b>&nbsp;&nbsp;&nbsp;(libs/.../resolve-reference-paths.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#compileSchema" title="libs/json/src/lib/util/compile-schema.ts" ><b>compileSchema</b>&nbsp;&nbsp;&nbsp;(libs/.../compile-schema.ts)</a>
+                        </li>
+                        <li>
                             <a href="#getConfig" title="libs/json/src/lib/util/get-config.ts" ><b>getConfig</b>&nbsp;&nbsp;&nbsp;(libs/.../get-config.ts)</a>
                         </li>
                         <li>
                             <a href="#init" title="libs/json/src/lib/init/init.ts" ><b>init</b>&nbsp;&nbsp;&nbsp;(libs/.../init.ts)</a>
                         </li>
                         <li>
+                            <a href="#mapSchemaFiles" title="libs/json/src/lib/util/map-schema-files.ts" ><b>mapSchemaFiles</b>&nbsp;&nbsp;&nbsp;(libs/.../map-schema-files.ts)</a>
+                        </li>
+                        <li>
                             <a href="#me" title="libs/json/src/lib/util/me.ts" ><b>me</b>&nbsp;&nbsp;&nbsp;(libs/.../me.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#resolveReferencePaths" title="libs/json/src/lib/util/resolve-reference-paths.ts" ><b>resolveReferencePaths</b>&nbsp;&nbsp;&nbsp;(libs/.../resolve-reference-paths.ts)</a>
                         </li>
                         <li>
                             <a href="#schema" title="libs/json/src/lib/schema/schema.ts" ><b>schema</b>&nbsp;&nbsp;&nbsp;(libs/.../schema.ts)</a>
                         </li>
                         <li>
                             <a href="#type" title="libs/json/src/lib/type/type.ts" ><b>type</b>&nbsp;&nbsp;&nbsp;(libs/.../type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#validateAndTransformSchema" title="libs/json/src/lib/util/validate-and-transform-schema.ts" ><b>validateAndTransformSchema</b>&nbsp;&nbsp;&nbsp;(libs/.../validate-and-transform-schema.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -133,7 +148,224 @@
     </table>
 </section>
 
-    <h3>libs/json/src/lib/util/get-config.ts</h3>
+    <h3>libs/json/src/lib/util/resolve-reference-paths.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="__resolveReferencePaths"></a>
+                    <span class="name">
+                        <span ><b>__resolveReferencePaths</b></span>
+                        <a href="#__resolveReferencePaths"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>__resolveReferencePaths(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, schema: JSONSchema)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>root</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>schema</td>
+                                            <td>
+                                                        <code>JSONSchema</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resolveReferencePaths"></a>
+                    <span class="name">
+                        <span ><b>resolveReferencePaths</b></span>
+                        <a href="#resolveReferencePaths"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resolveReferencePaths(map: Map)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>map</td>
+                                            <td>
+                                                        <code>Map</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/json/src/lib/util/compile-schema.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="compileSchema"></a>
+                    <span class="name">
+                        <span ><b>compileSchema</b></span>
+                        <a href="#compileSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>compileSchema(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, mainFileName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>root</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>&#x27;&#x27;</code>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                                <td>mainFileName</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/json/src/lib/util/get-config.ts</h3>
     <section data-compodoc="block-methods">
     <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
@@ -188,6 +420,71 @@
 
 
 
+        </tbody>
+    </table>
+</section>    <h3>libs/json/src/lib/util/map-schema-files.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapSchemaFiles"></a>
+                    <span class="name">
+                        <span ><b>mapSchemaFiles</b></span>
+                        <a href="#mapSchemaFiles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mapSchemaFiles(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>map each schema under the root directory</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>root</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;Map&lt;string, JSONSchema&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
         </tbody>
     </table>
 </section>    <h3>libs/json/src/lib/util/me.ts</h3>
@@ -245,6 +542,13 @@
 
 
 
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>JSON <a href="http://json-schema.org/draft-07/schema#">schema</a> compiler</p>
+</div>
+
+                </td>
+            </tr>
         </tbody>
     </table>
 </section>    <h3>libs/json/src/lib/type/type.ts</h3>
@@ -269,6 +573,69 @@
 
 
 
+        </tbody>
+    </table>
+</section>    <h3>libs/json/src/lib/util/validate-and-transform-schema.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validateAndTransformSchema"></a>
+                    <span class="name">
+                        <span ><b>validateAndTransformSchema</b></span>
+                        <a href="#validateAndTransformSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>validateAndTransformSchema(schema: JSONSchema)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>schema</td>
+                                            <td>
+                                                        <code>JSONSchema</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Required&lt;JSONSchema&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
         </tbody>
     </table>
 </section>

@@ -5,5 +5,5 @@ export async function writeJSONFile<T extends ObjectLiteral>(
   filePath: string,
   content: T
 ): Promise<void> {
-  return await writeFile(filePath, content);
+  return await writeFile(filePath, JSON.stringify(content));
 }

@@ -1,5 +1,8 @@
 import { JSONCommonSchema } from './common';
 
-export class JSONBooleanSchema extends JSONCommonSchema<boolean> {
+export type JSONBooleanSchema = JSONCommonSchema<boolean> & {
+  /**
+   * schema type
+   */
   type: 'boolean';
-}
+};

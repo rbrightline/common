@@ -1,7 +1,8 @@
 {
   "name": "@rline/printer",
   "version": "8.1.1",
-  "description": "Convert json schema into code.",
+  "description": "Convert json schema into code",
+  "license": "MIT",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",

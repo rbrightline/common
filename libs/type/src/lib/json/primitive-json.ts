@@ -3,5 +3,5 @@ import { JSONConditionalSchema } from './conditional';
 import { JSONNumberSchema } from './number';
 import { JSONStringSchema } from './string';
 
-export type PrimitiveJSONSchema = JSONConditionalSchema<PrimitiveJSONSchema> &
+export type JSONPrimitiveSchema = JSONConditionalSchema &
   (JSONStringSchema | JSONNumberSchema | JSONBooleanSchema);

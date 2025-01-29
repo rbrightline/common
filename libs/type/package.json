@@ -1,7 +1,8 @@
 {
   "name": "@rline/type",
-  "version": "8.1.1",
+  "version": "8.1.2",
   "description": "Common types",
+  "license": "MIT",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",

@@ -1,5 +1,4 @@
 // @index(['./**/*.ts', '!./**/*{spec,test,story,stories,index,_*}.ts'], f => `export * from '${f.path}'`)
-export * from './lib/common/printable';
 export * from './lib/typescript/class/base-class-printer';
 export * from './lib/typescript/class/dto-class.printer';
 export * from './lib/typescript/class/entity-class.printer';

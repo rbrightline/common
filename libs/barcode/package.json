@@ -2,6 +2,7 @@
   "name": "@rline/barcode",
   "version": "8.1.1",
   "description": "Generate unique barcode",
+  "license": "MIT",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",

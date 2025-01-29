@@ -1,4 +1,7 @@
-export class JSONConditionalSchema<S> {
+/**
+ * Other common schema properties
+ */
+export type JSONConditionalSchema<S = any> = {
   /**
    * Describes the format expected for the value. By default, not used for validation
    */
@@ -36,5 +39,8 @@ export class JSONConditionalSchema<S> {
    */
   oneOf?: S[];
 
-  definitions?: Record<string, S>;
-}
+  /**
+   * schema defintions used in the schema
+   */
+  definitions?: { [key: string]: S };
+};

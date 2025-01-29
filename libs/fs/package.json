@@ -2,6 +2,7 @@
   "name": "@rline/fs",
   "version": "8.1.1",
   "description": "Read, write, manage files and directories",
+  "license": "MIT",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",
@@ -24,8 +25,8 @@
     "directory"
   ],
   "dependencies": {
-    "@rline/type": "8.1.1",
-    "@rline/utils": "8.1.1",
+    "@rline/type": "workspace:*",
+    "@rline/utils": "workspace:*",
     "@swc/helpers": "~0.5.11"
   },
   "type": "commonjs",

@@ -2,6 +2,7 @@
   "name": "@rline/tools",
   "version": "8.1.1",
   "description": "Dev tools ( CLI )",
+  "license": "MIT",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",

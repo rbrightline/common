@@ -1,12 +1,12 @@
 import { BasicModelOptions, BasicPropertyOptions } from '@rline/type';
 import { PrintableClass } from '../../common';
-import { ClassPropertyPrinter } from '../property';
 import {
   importsFromProperties,
   importsFromRelations,
   relationToProperty,
   unique,
 } from '../common';
+import { ClassPropertyPrinter } from '../property';
 
 export class BaseClassPrinter<
   P extends BasicPropertyOptions = BasicPropertyOptions,

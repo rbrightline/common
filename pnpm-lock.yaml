@@ -116,11 +116,11 @@ importers:
   libs/fs:
     dependencies:
       '@rline/type':
-        specifier: 8.1.1
-        version: 8.1.1
+        specifier: workspace:*
+        version: link:../type
       '@rline/utils':
-        specifier: 8.1.1
-        version: 8.1.1
+        specifier: workspace:*
+        version: link:../utils
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -128,11 +128,11 @@ importers:
   libs/json:
     dependencies:
       '@rline/fs':
-        specifier: 8.1.1
-        version: 8.1.1
+        specifier: workspace:*
+        version: link:../fs
       '@rline/type':
-        specifier: 8.1.1
-        version: 8.1.1
+        specifier: workspace:*
+        version: link:../type
       '@rline/utils':
         specifier: 8.1.1
         version: 8.1.1
@@ -199,6 +199,9 @@ importers:
 
   libs/utils:
     dependencies:
+      '@rline/type':
+        specifier: workspace:^
+        version: link:../type
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -1400,9 +1403,6 @@ packages:
 
   '@polka/url@1.0.0-next.28':
     resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==}
-
-  '@rline/fs@8.1.1':
-    resolution: {integrity: sha512-I9L5DwGV1lrmfI3O29XWLe2Nzd84MZJ+k1ue8Ycw/GEBodIP/NU+bpsWh8+zdiwEKTPzP+WFwU+OfotXBIKIIw==}
 
   '@rline/names@8.1.1':
     resolution: {integrity: sha512-94ZgUXwWTmsVqgqH6vo8d4FV2IF1XQdMvHWJHZWCki7OwDTHViFKpxD4dVXdvSfeZ05V8yWKns2HD/B9xbP7Lg==}
@@ -7345,12 +7345,6 @@ snapshots:
       typescript: 5.6.3
 
   '@polka/url@1.0.0-next.28': {}
-
-  '@rline/fs@8.1.1':
-    dependencies:
-      '@rline/type': 8.1.1
-      '@rline/utils': 8.1.1
-      '@swc/helpers': 0.5.15
 
   '@rline/names@8.1.1':
     dependencies:

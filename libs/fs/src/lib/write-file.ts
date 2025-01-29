@@ -1,5 +1,6 @@
 import { ValueType } from '@rline/type';
-import { writeFile as __writeFile } from 'fs';
+import { writeFile as __writeFile, mkdirSync } from 'fs';
+import { join } from 'path';
 
 /**
  * Read file async
@@ -12,6 +13,10 @@ export async function writeFile<T extends ValueType>(
 ): Promise<void> {
   return new Promise((res, rej) => {
     try {
+      /**
+       * - [ ] create async function for this
+       */
+      mkdirSync(join(filepath, '..'), { recursive: true });
       __writeFile(filepath, content.toString(), (err) => {
         if (err) {
           rej(err);

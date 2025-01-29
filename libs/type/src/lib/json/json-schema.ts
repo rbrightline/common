@@ -1,26 +1,17 @@
 import { ObjectLiteral, ValueType } from '../common';
 import { __JSONArraySchema } from './array';
+import { JSONConditionalSchema } from './conditional';
 import { __JSONObjectSchema } from './object';
-import { PrimitiveJSONSchema } from './primitive-json';
+import { JSONPrimitiveSchema } from './primitive-json';
 
-export type JSONObjectSchema<T extends ValueType> = __JSONObjectSchema<
-  __JSONSchema<T>
->;
-export type JSONArraySchema<T extends ValueType> = __JSONArraySchema<
-  __JSONSchema<T>,
-  T[]
->;
+export type __JSONSchema<
+  S = any,
+  O extends ObjectLiteral = ObjectLiteral,
+  T extends ValueType = ValueType
+> = JSONConditionalSchema &
+  (JSONPrimitiveSchema | __JSONObjectSchema<S, O> | __JSONArraySchema<T>);
 
-export type __JSONSchema<T extends ValueType = ValueType> =
-  | PrimitiveJSONSchema
-  | JSONObjectSchema<T>
-  | JSONArraySchema<T>;
+export type JSONSchema = __JSONSchema<__JSONSchema<__JSONSchema<any>>>;
 
-export type JSONSchema<O extends ObjectLiteral = ObjectLiteral> =
-  ObjectLiteral &
-    (
-      | __JSONSchema<string>
-      | __JSONSchema<number>
-      | __JSONSchema<boolean>
-      | __JSONSchema<O>
-    );
+export type JSONObjectSchema = __JSONObjectSchema<JSONSchema>;
+export type JSONArraySchema = __JSONArraySchema<JSONSchema>;

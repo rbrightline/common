@@ -112,6 +112,12 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
+                            <a href="#__JSONArraySchema" title="libs/type/src/lib/json/array.ts" ><b>__JSONArraySchema</b>&nbsp;&nbsp;&nbsp;(libs/.../array.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#__JSONObjectSchema" title="libs/type/src/lib/json/object.ts" ><b>__JSONObjectSchema</b>&nbsp;&nbsp;&nbsp;(libs/.../object.ts)</a>
+                        </li>
+                        <li>
                             <a href="#__JSONSchema" title="libs/type/src/lib/json/json-schema.ts" ><b>__JSONSchema</b>&nbsp;&nbsp;&nbsp;(libs/.../json-schema.ts)</a>
                         </li>
                         <li>
@@ -157,13 +163,31 @@
                             <a href="#JSONArraySchema" title="libs/type/src/lib/json/json-schema.ts" ><b>JSONArraySchema</b>&nbsp;&nbsp;&nbsp;(libs/.../json-schema.ts)</a>
                         </li>
                         <li>
+                            <a href="#JSONBooleanSchema" title="libs/type/src/lib/json/boolean.ts" ><b>JSONBooleanSchema</b>&nbsp;&nbsp;&nbsp;(libs/.../boolean.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#JSONCommonSchema" title="libs/type/src/lib/json/common.ts" ><b>JSONCommonSchema</b>&nbsp;&nbsp;&nbsp;(libs/.../common.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#JSONConditionalSchema" title="libs/type/src/lib/json/conditional.ts" ><b>JSONConditionalSchema</b>&nbsp;&nbsp;&nbsp;(libs/.../conditional.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#JSONNumberSchema" title="libs/type/src/lib/json/number.ts" ><b>JSONNumberSchema</b>&nbsp;&nbsp;&nbsp;(libs/.../number.ts)</a>
+                        </li>
+                        <li>
                             <a href="#JSONObjectSchema" title="libs/type/src/lib/json/json-schema.ts" ><b>JSONObjectSchema</b>&nbsp;&nbsp;&nbsp;(libs/.../json-schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#JSONPrimitiveSchema" title="libs/type/src/lib/json/primitive-json.ts" ><b>JSONPrimitiveSchema</b>&nbsp;&nbsp;&nbsp;(libs/.../primitive-json.ts)</a>
                         </li>
                         <li>
                             <a href="#JSONSchema" title="libs/type/src/lib/json/json-schema.ts" ><b>JSONSchema</b>&nbsp;&nbsp;&nbsp;(libs/.../json-schema.ts)</a>
                         </li>
                         <li>
                             <a href="#JSONSchemaType" title="libs/type/src/lib/json/type.ts" ><b>JSONSchemaType</b>&nbsp;&nbsp;&nbsp;(libs/.../type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#JSONStringSchema" title="libs/type/src/lib/json/string.ts" ><b>JSONStringSchema</b>&nbsp;&nbsp;&nbsp;(libs/.../string.ts)</a>
                         </li>
                         <li>
                             <a href="#Key" title="libs/type/src/lib/common/keys.ts" ><b>Key</b>&nbsp;&nbsp;&nbsp;(libs/.../keys.ts)</a>
@@ -193,7 +217,7 @@
                             <a href="#Optional" title="libs/type/src/lib/common/optional.ts" ><b>Optional</b>&nbsp;&nbsp;&nbsp;(libs/.../optional.ts)</a>
                         </li>
                         <li>
-                            <a href="#PackageJSON" title="libs/type/src/lib/json/package-json.ts" ><b>PackageJSON</b>&nbsp;&nbsp;&nbsp;(libs/.../package-json.ts)</a>
+                            <a href="#PackageJSON" title="libs/type/src/lib/common/package-json.ts" ><b>PackageJSON</b>&nbsp;&nbsp;&nbsp;(libs/.../package-json.ts)</a>
                         </li>
                         <li>
                             <a href="#Pair" title="libs/type/src/lib/common/pair.ts" ><b>Pair</b>&nbsp;&nbsp;&nbsp;(libs/.../pair.ts)</a>
@@ -208,9 +232,6 @@
                             <a href="#Predicate" title="libs/type/src/lib/workflow/predicate.ts" ><b>Predicate</b>&nbsp;&nbsp;&nbsp;(libs/.../predicate.ts)</a>
                         </li>
                         <li>
-                            <a href="#PrimitiveJSONSchema" title="libs/type/src/lib/json/primitive-json.ts" ><b>PrimitiveJSONSchema</b>&nbsp;&nbsp;&nbsp;(libs/.../primitive-json.ts)</a>
-                        </li>
-                        <li>
                             <a href="#PrimitiveValueType" title="libs/type/src/lib/common/property-type.ts" ><b>PrimitiveValueType</b>&nbsp;&nbsp;&nbsp;(libs/.../property-type.ts)</a>
                         </li>
                         <li>
@@ -223,7 +244,7 @@
                             <a href="#Rate" title="libs/type/src/lib/num/int-range.ts" ><b>Rate</b>&nbsp;&nbsp;&nbsp;(libs/.../int-range.ts)</a>
                         </li>
                         <li>
-                            <a href="#SchemaConfig" title="libs/type/src/lib/json/schema-config.ts" ><b>SchemaConfig</b>&nbsp;&nbsp;&nbsp;(libs/.../schema-config.ts)</a>
+                            <a href="#SchemaConfig" title="libs/type/src/lib/common/schema-config.ts" ><b>SchemaConfig</b>&nbsp;&nbsp;&nbsp;(libs/.../schema-config.ts)</a>
                         </li>
                         <li>
                             <a href="#Second" title="libs/type/src/lib/num/int-range.ts" ><b>Second</b>&nbsp;&nbsp;&nbsp;(libs/.../int-range.ts)</a>
@@ -259,7 +280,49 @@
     </table>
 </section>
 
-    <h3>libs/type/src/lib/json/json-schema.ts</h3>
+    <h3>libs/type/src/lib/json/array.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="__JSONArraySchema"></a>
+                    <span class="name "><b>__JSONArraySchema</b><a href="#__JSONArraySchema"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Array scheme</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/type/src/lib/json/object.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="__JSONObjectSchema"></a>
+                    <span class="name "><b>__JSONObjectSchema</b><a href="#__JSONObjectSchema"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/type/src/lib/json/json-schema.ts</h3>
     <section data-compodoc="block-typealias">
     <table class="table table-sm table-bordered">
         <tbody>
@@ -271,7 +334,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <code>    <code>PrimitiveJSONSchema | JSONObjectSchema&lt;T&gt; | JSONArraySchema&lt;T&gt;</code>
+                    <code>    <code></code>
 </code>
                 </td>
             </tr>
@@ -287,7 +350,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <code>        <code><a href="../classes/__JSONArraySchema.html" target="_self" >___JSONArraySchema&lt;___JSONSchema&lt;T&gt; | T[]&gt;</a></code>
+                    <code>        <code><a href="../miscellaneous/variables.html#ArraySchema" target="_self" >___JSONArraySchema&lt;JSONSchema&gt;</a></code>
 </code>
                 </td>
             </tr>
@@ -303,7 +366,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <code>        <code><a href="../classes/__JSONObjectSchema.html" target="_self" >___JSONObjectSchema&lt;___JSONSchema&lt;T&gt;&gt;</a></code>
+                    <code>    <code>___JSONObjectSchema&lt;JSONSchema&gt;</code>
 </code>
                 </td>
             </tr>
@@ -319,7 +382,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <code>    <code></code>
+                    <code>    <code>___JSONSchema&lt;___JSONSchema&lt;___JSONSchema&lt;any&gt;&gt;&gt;</code>
 </code>
                 </td>
             </tr>
@@ -767,6 +830,102 @@
             </tr>
         </tbody>
     </table>
+</section>    <h3>libs/type/src/lib/json/boolean.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="JSONBooleanSchema"></a>
+                    <span class="name "><b>JSONBooleanSchema</b><a href="#JSONBooleanSchema"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/type/src/lib/json/common.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="JSONCommonSchema"></a>
+                    <span class="name "><b>JSONCommonSchema</b><a href="#JSONCommonSchema"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/type/src/lib/json/conditional.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="JSONConditionalSchema"></a>
+                    <span class="name "><b>JSONConditionalSchema</b><a href="#JSONConditionalSchema"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Other common schema properties</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/type/src/lib/json/number.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="JSONNumberSchema"></a>
+                    <span class="name "><b>JSONNumberSchema</b><a href="#JSONNumberSchema"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/type/src/lib/json/primitive-json.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="JSONPrimitiveSchema"></a>
+                    <span class="name "><b>JSONPrimitiveSchema</b><a href="#JSONPrimitiveSchema"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>    <h3>libs/type/src/lib/json/type.ts</h3>
     <section data-compodoc="block-typealias">
     <table class="table table-sm table-bordered">
@@ -780,6 +939,24 @@
             <tr>
                 <td class="col-md-4">
                     <code>    <code>&quot;string&quot; | &quot;number&quot; | &quot;integer&quot; | &quot;object&quot; | &quot;boolean&quot; | &quot;null&quot; | &quot;array&quot;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/type/src/lib/json/string.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="JSONStringSchema"></a>
+                    <span class="name "><b>JSONStringSchema</b><a href="#JSONStringSchema"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
 </code>
                 </td>
             </tr>
@@ -855,7 +1032,7 @@
             </tr>
         </tbody>
     </table>
-</section>    <h3>libs/type/src/lib/json/package-json.ts</h3>
+</section>    <h3>libs/type/src/lib/common/package-json.ts</h3>
     <section data-compodoc="block-typealias">
     <table class="table table-sm table-bordered">
         <tbody>
@@ -941,24 +1118,6 @@
             </tr>
         </tbody>
     </table>
-</section>    <h3>libs/type/src/lib/json/primitive-json.ts</h3>
-    <section data-compodoc="block-typealias">
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="PrimitiveJSONSchema"></a>
-                    <span class="name "><b>PrimitiveJSONSchema</b><a href="#PrimitiveJSONSchema"><span class="icon ion-ios-link"></span></a></span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <code>    <code></code>
-</code>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </section>    <h3>libs/type/src/lib/common/property-type.ts</h3>
     <section data-compodoc="block-typealias">
     <table class="table table-sm table-bordered">
@@ -1033,7 +1192,7 @@
             </tr>
         </tbody>
     </table>
-</section>    <h3>libs/type/src/lib/json/schema-config.ts</h3>
+</section>    <h3>libs/type/src/lib/common/schema-config.ts</h3>
     <section data-compodoc="block-typealias">
     <table class="table table-sm table-bordered">
         <tbody>

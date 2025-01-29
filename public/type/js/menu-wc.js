@@ -54,27 +54,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
                             <li class="link">
-                                <a href="classes/__JSONArraySchema.html" data-type="entity-link" >__JSONArraySchema</a>
-                            </li>
-                            <li class="link">
-                                <a href="classes/__JSONObjectSchema.html" data-type="entity-link" >__JSONObjectSchema</a>
-                            </li>
-                            <li class="link">
-                                <a href="classes/JSONBooleanSchema.html" data-type="entity-link" >JSONBooleanSchema</a>
-                            </li>
-                            <li class="link">
-                                <a href="classes/JSONCommonSchema.html" data-type="entity-link" >JSONCommonSchema</a>
-                            </li>
-                            <li class="link">
-                                <a href="classes/JSONConditionalSchema.html" data-type="entity-link" >JSONConditionalSchema</a>
-                            </li>
-                            <li class="link">
-                                <a href="classes/JSONNumberSchema.html" data-type="entity-link" >JSONNumberSchema</a>
-                            </li>
-                            <li class="link">
-                                <a href="classes/JSONStringSchema.html" data-type="entity-link" >JSONStringSchema</a>
-                            </li>
-                            <li class="link">
                                 <a href="classes/NotEmptyArrayError.html" data-type="entity-link" >NotEmptyArrayError</a>
                             </li>
                             <li class="link">

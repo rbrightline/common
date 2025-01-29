@@ -1,5 +1,5 @@
 import { ObjectLiteral } from '@rline/type';
-import { readFile } from 'fs';
+import { readFile } from './read-file';
 
 /**
  * Read and transform json file
@@ -9,13 +9,6 @@ import { readFile } from 'fs';
 export async function readJSONFile<T extends ObjectLiteral>(
   filePath: string
 ): Promise<T> {
-  return new Promise<T>((res, rej) => {
-    readFile(filePath, (err, data) => {
-      if (err) {
-        rej(err);
-      } else {
-        res(JSON.parse(data.toString()));
-      }
-    });
-  });
+  const content = await readFile(filePath);
+  return JSON.parse(content);
 }

@@ -3,6 +3,8 @@ export * from './append-file';
 export * from './dirs';
 export * from './filename';
 export * from './files';
+export * from './for-each-file';
+export * from './for-each-json-file';
 export * from './read-file';
 export * from './read-json-file';
 export * from './read-package-json-file';
