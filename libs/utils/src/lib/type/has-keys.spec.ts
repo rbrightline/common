@@ -1,3 +1,5 @@
+import { hasKeys } from './has-keys';
+
 describe('hasKeys', () => {
   it('should check the object has keys or not', () => {
     type Value = {
@@ -10,5 +12,11 @@ describe('hasKeys', () => {
       b: 200,
       c: 300,
     };
+    if (hasKeys(value, ['a'])) {
+      const nValue: number = value.a;
+    } else {
+      // Compilation errot
+      // const nValue: number = value.a;
+    }
   });
 });

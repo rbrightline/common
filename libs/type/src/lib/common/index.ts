@@ -5,6 +5,7 @@ export * from './object-literal';
 export * from './optional';
 export * from './package-json';
 export * from './pair';
+export * from './pick-optional';
 export * from './pick-required';
 export * from './property-option';
 export * from './property-type';
