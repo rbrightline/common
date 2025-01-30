@@ -1,7 +1,7 @@
 import { __readFile } from './__fs__';
 
 /**
- * Read file async
+ * Read file
  * @param filepath
  * @returns
  */

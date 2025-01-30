@@ -5,14 +5,26 @@ import {
 } from '@rline/utils';
 import { __rename } from './__fs__';
 
+/**
+ * Rename filename
+ * @param filepath Relative or absolute filepath
+ *
+ * @param newFilename new filename
+ *
+ * @returns
+ *
+ * ````typescript
+ *    await rename('./file.md', 'new-file-name.md');
+ * ````
+ */
 export async function rename(
-  filePath: string,
-  updatedName: string
+  filepath: string,
+  newFilename: string
 ): Promise<void> {
   return new Promise((res, rej) => {
-    const newPath = setLastSegment(filePath, updatedName);
+    const newFilepath = setLastSegment(filepath, newFilename);
     try {
-      __rename(filePath, newPath, (err) => {
+      __rename(filepath, newFilepath, (err) => {
         if (err) {
           rej(err);
         } else {

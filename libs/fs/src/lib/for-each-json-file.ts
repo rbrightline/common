@@ -5,11 +5,8 @@ import {
 } from './for-each-file';
 
 /**
- * Run the callback function for each filepath under the root directory (by default recursively)
- * @param root root directory
- * @param callback callback {@link ForEachFileCallBack}
- * @param options options {@linkk ForEachFileOptions} recursive by default
- * @returns
+ * The only difference from the {@link forEachFile} is that the function only operate for files with `.json` extention
+ * For more information, have a look at {@link forEachFile}
  */
 export async function forEachJSONFile(
   root: string,

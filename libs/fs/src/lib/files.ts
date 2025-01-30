@@ -4,18 +4,42 @@ import { join } from 'path';
 import { isFile } from './stat';
 
 /**
- * Get the list of files under the directory
- * @param directory
- * @param includeDirs if true, include the directories
+ *
+ * List the absolute path of the files ( optionly directories ) under the root directory
+ *
+ * @param root Relative or absolute directory path
+ *
+ * ````typescript
+ * './directory'
+ * '/directory/directory'
+ * ````
+ *
+ * @param includeDirs When set true, output includes directories as well
+ *
  * @returns
+ *
+ * ````markdown
+ * |- root
+ *    |- dir1
+ *      |- file1.md
+ *      |- file2.md
+ *    |- dir2
+ *    |- dir3
+ * ````
+ *
+ * ````typescript
+ *    await files('./root'); // output: ['/....../dir1/file1.md', '/....../dir1/file2.md']
+ *
+ * ````
+ *
  */
 export async function files(
-  directory: string,
+  root: string,
   includeDirs = false
 ): Promise<string[]> {
   return new Promise((res, rej) => {
     try {
-      __readdir(directory, async (err, allFiles) => {
+      __readdir(root, async (err, allFiles) => {
         if (err) {
           res([]);
         } else {
@@ -23,7 +47,7 @@ export async function files(
             res(allFiles);
           } else {
             const dirs = await asyncFilter(allFiles, (e) =>
-              isFile(join(directory, e))
+              isFile(join(root, e))
             );
             res(dirs);
           }

@@ -6,7 +6,7 @@ describe('mkdir', () => {
   const root = safepath('./mkdir');
   const items = ['dir1', 'dir2'].map((e) => safepath(root, e));
   beforeAll(async () => {
-    await Promise.all(items.map((e) => mkdir(e)));
+    await mkdir(...items);
   });
 
   afterAll(async () => {

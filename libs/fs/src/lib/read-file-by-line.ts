@@ -1,7 +1,20 @@
 import fs from 'fs';
 import readline from 'readline';
 
-// Function to create a line-by-line reader
+/**
+ * Create a reader to read file line by line
+ *
+ * @param filePath Relative or absolute file path
+ *
+ * @returns
+ *
+ * ````typescript
+ *    const content = readFileByLike('./README.md');
+ *    await content.next(); // return the next line in the life
+ *    await content.next(); // return the next line in the life
+ *    await content.next(); // return the next line in the life
+ * ````
+ */
 export function readFileByLine(filePath: string) {
   // Create a readable stream
   const fileStream = fs.createReadStream(filePath, { encoding: 'utf-8' });

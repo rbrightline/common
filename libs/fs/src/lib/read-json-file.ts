@@ -2,9 +2,10 @@ import { ObjectLiteral } from '@rline/type';
 import { readFile } from './read-file';
 
 /**
- * Read and transform json file
- * @param filePath
- * @returns object
+ * Read json file
+ * @param filePath Relative or absolute filepath
+ * @returns T {@link ObjectLiteral}
+ *
  */
 export async function readJSONFile<T extends ObjectLiteral>(
   filePath: string

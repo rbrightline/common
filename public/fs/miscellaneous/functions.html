@@ -115,10 +115,22 @@
                             <a href="#appendFile" title="libs/fs/src/lib/append-file.ts" ><b>appendFile</b>&nbsp;&nbsp;&nbsp;(libs/.../append-file.ts)</a>
                         </li>
                         <li>
+                            <a href="#appendFileByLine" title="libs/fs/src/lib/append-file-by-line.ts" ><b>appendFileByLine</b>&nbsp;&nbsp;&nbsp;(libs/.../append-file-by-line.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#createPathScope" title="libs/fs/src/lib/create-path-scope.ts" ><b>createPathScope</b>&nbsp;&nbsp;&nbsp;(libs/.../create-path-scope.ts)</a>
+                        </li>
+                        <li>
                             <a href="#dirs" title="libs/fs/src/lib/dirs.ts" ><b>dirs</b>&nbsp;&nbsp;&nbsp;(libs/.../dirs.ts)</a>
                         </li>
                         <li>
+                            <a href="#fileContain" title="libs/fs/src/lib/file-contain.ts" ><b>fileContain</b>&nbsp;&nbsp;&nbsp;(libs/.../file-contain.ts)</a>
+                        </li>
+                        <li>
                             <a href="#files" title="libs/fs/src/lib/files.ts" ><b>files</b>&nbsp;&nbsp;&nbsp;(libs/.../files.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#forEachDirectory" title="libs/fs/src/lib/for-each-directory.ts" ><b>forEachDirectory</b>&nbsp;&nbsp;&nbsp;(libs/.../for-each-directory.ts)</a>
                         </li>
                         <li>
                             <a href="#forEachFile" title="libs/fs/src/lib/for-each-file.ts" ><b>forEachFile</b>&nbsp;&nbsp;&nbsp;(libs/.../for-each-file.ts)</a>
@@ -127,7 +139,7 @@
                             <a href="#forEachJSONFile" title="libs/fs/src/lib/for-each-json-file.ts" ><b>forEachJSONFile</b>&nbsp;&nbsp;&nbsp;(libs/.../for-each-json-file.ts)</a>
                         </li>
                         <li>
-                            <a href="#forEachJSONSchemaFile" title="libs/fs/src/lib/for-each-json-file.ts" ><b>forEachJSONSchemaFile</b>&nbsp;&nbsp;&nbsp;(libs/.../for-each-json-file.ts)</a>
+                            <a href="#forEachJSONSchemaFile" title="libs/fs/src/lib/for-each-json-schema-file.ts" ><b>forEachJSONSchemaFile</b>&nbsp;&nbsp;&nbsp;(libs/.../for-each-json-schema-file.ts)</a>
                         </li>
                         <li>
                             <a href="#isDirectory" title="libs/fs/src/lib/stat.ts" ><b>isDirectory</b>&nbsp;&nbsp;&nbsp;(libs/.../stat.ts)</a>
@@ -136,10 +148,16 @@
                             <a href="#isFile" title="libs/fs/src/lib/stat.ts" ><b>isFile</b>&nbsp;&nbsp;&nbsp;(libs/.../stat.ts)</a>
                         </li>
                         <li>
-                            <a href="#prefixFileName" title="libs/fs/src/lib/filename.ts" ><b>prefixFileName</b>&nbsp;&nbsp;&nbsp;(libs/.../filename.ts)</a>
+                            <a href="#mkdir" title="libs/fs/src/lib/mkdir.ts" ><b>mkdir</b>&nbsp;&nbsp;&nbsp;(libs/.../mkdir.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#prefixFileName" title="libs/fs/src/lib/rename.ts" ><b>prefixFileName</b>&nbsp;&nbsp;&nbsp;(libs/.../rename.ts)</a>
                         </li>
                         <li>
                             <a href="#readFile" title="libs/fs/src/lib/read-file.ts" ><b>readFile</b>&nbsp;&nbsp;&nbsp;(libs/.../read-file.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#readFileByLine" title="libs/fs/src/lib/read-file-by-line.ts" ><b>readFileByLine</b>&nbsp;&nbsp;&nbsp;(libs/.../read-file-by-line.ts)</a>
                         </li>
                         <li>
                             <a href="#readJSONFile" title="libs/fs/src/lib/read-json-file.ts" ><b>readJSONFile</b>&nbsp;&nbsp;&nbsp;(libs/.../read-json-file.ts)</a>
@@ -148,13 +166,19 @@
                             <a href="#readPackageJSONFile" title="libs/fs/src/lib/read-package-json-file.ts" ><b>readPackageJSONFile</b>&nbsp;&nbsp;&nbsp;(libs/.../read-package-json-file.ts)</a>
                         </li>
                         <li>
-                            <a href="#rename" title="libs/fs/src/lib/filename.ts" ><b>rename</b>&nbsp;&nbsp;&nbsp;(libs/.../filename.ts)</a>
+                            <a href="#rename" title="libs/fs/src/lib/rename.ts" ><b>rename</b>&nbsp;&nbsp;&nbsp;(libs/.../rename.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#rm" title="libs/fs/src/lib/rm.ts" ><b>rm</b>&nbsp;&nbsp;&nbsp;(libs/.../rm.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#rmdir" title="libs/fs/src/lib/rmdir.ts" ><b>rmdir</b>&nbsp;&nbsp;&nbsp;(libs/.../rmdir.ts)</a>
                         </li>
                         <li>
                             <a href="#stat" title="libs/fs/src/lib/stat.ts" ><b>stat</b>&nbsp;&nbsp;&nbsp;(libs/.../stat.ts)</a>
                         </li>
                         <li>
-                            <a href="#suffixFileName" title="libs/fs/src/lib/filename.ts" ><b>suffixFileName</b>&nbsp;&nbsp;&nbsp;(libs/.../filename.ts)</a>
+                            <a href="#suffixFileName" title="libs/fs/src/lib/rename.ts" ><b>suffixFileName</b>&nbsp;&nbsp;&nbsp;(libs/.../rename.ts)</a>
                         </li>
                         <li>
                             <a href="#writeFile" title="libs/fs/src/lib/write-file.ts" ><b>writeFile</b>&nbsp;&nbsp;&nbsp;(libs/.../write-file.ts)</a>
@@ -196,6 +220,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Append file</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -206,6 +232,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -220,6 +247,11 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Relative or absolute file path</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">&#39;./filename.md&#39;
+&#39;/files/filename.md&#39;</code></pre></div>
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>content</td>
@@ -232,6 +264,16 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Any contenet that extends <a href="ToString">ToString</a> interface</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">const content:T =  true
+const content:T =  false
+const content:T =  { some:&#39;some&#39;}
+const content:T =  &#39;text content&#39;,
+const content:T =  [&#39;Array&#39;, &#39;Content&#39;]
+const content:T =  1233445
+const content:T =  Buffer.from([...])</code></pre></div>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -241,7 +283,181 @@
 
                         </div>
                             <div class="io-description">
+                                <b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">   await appendFile(&#39;./README.MD&#39;, &#39;h&#39;)
+   await appendFile(&#39;./README.MD&#39;, &#39;e&#39;)
+   await appendFile(&#39;./README.MD&#39;, &#39;l&#39;)
+   await appendFile(&#39;./README.MD&#39;, &#39;l&#39;)
+   await appendFile(&#39;./README.MD&#39;, &#39;o&#39;)</code></pre></div><b>Example :</b><div><pre class="line-numbers"><code class="language-markdown">   # README.MD
+
+   hello
+</code></pre></div>
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/fs/src/lib/append-file-by-line.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="appendFileByLine"></a>
+                    <span class="name">
+                        <span ><b>appendFileByLine</b></span>
+                        <a href="#appendFileByLine"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>appendFileByLine(filepath: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, content: T)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Append file line by line</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
                                 
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>filepath</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Relative or absolute file path</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">&#39;./filename.md&#39;
+&#39;/files/filename.md&#39;</code></pre></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>content</td>
+                                            <td>
+                                                        <code>T</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Any contenet that extends <a href="ToString">ToString</a> interface</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">const content:T =  true
+const content:T =  false
+const content:T =  { some:&#39;some&#39;}
+const content:T =  &#39;text content&#39;,
+const content:T =  [&#39;Array&#39;, &#39;Content&#39;]
+const content:T =  1233445
+const content:T =  Buffer.from([...])</code></pre></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">
+   await  appendFileByLine(&#39;./README.md&#39;, &#39;- first line&#39;);
+   await  appendFileByLine(&#39;./README.md&#39;, &#39;- second line&#39;);
+   await  appendFileByLine(&#39;./README.md&#39;, &#39;- third line&#39;);
+</code></pre></div><b>Example :</b><div><pre class="line-numbers"><code class="language-markdown">
+   # README.MD
+
+   - first line
+   - second line
+   - third line
+ </code></pre></div>
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/fs/src/lib/create-path-scope.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createPathScope"></a>
+                    <span class="name">
+                        <span ><b>createPathScope</b></span>
+                        <a href="#createPathScope"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createPathScope(scopePath: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Create a path resolver that restrict the access to the provided root directory only</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>scopePath</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Relative or absolute directory path</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">&#39;./directory&#39;
+&#39;/directory/directory&#39;</code></pre></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                 </td>
             </tr>
@@ -262,7 +478,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>dirs(directory: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, includeFiles)</code>
+<code>dirs(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, includeFiles)</code>
                 </td>
             </tr>
 
@@ -271,7 +487,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Get the list of directories under the directory</p>
+                        <div class="io-description"><p>List the absolute path of the directories ( optionly files ) under the root directory</p>
 </div>
 
                             <div class="io-description">
@@ -289,7 +505,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>directory</td>
+                                                <td>root</td>
                                             <td>
                                                             <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                             </td>
@@ -302,6 +518,9 @@
                                             </td>
 
                                             <td>
+                                                    <p>Relative or absolute directory path</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">&#39;./directory&#39;
+&#39;/directory/directory&#39;</code></pre></div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -318,7 +537,7 @@
                                             </td>
 
                                             <td>
-                                                    <p>if true, include the files</p>
+                                                    <p>When set true, output includes files as well</p>
 
                                             </td>
                                         </tr>
@@ -330,7 +549,112 @@
 
                         </div>
                             <div class="io-description">
+                                <b>Example :</b><div><pre class="line-numbers"><code class="language-markdown">   |- root
+      |- dir1
+      |- dir2
+      |- dir3</code></pre></div><b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">
+    await dirs(&#39;./root&#39;); // output: [&#39;/....../dir1&#39;, &#39;/......./dir2&#39;, &#39;/...../dir3&#39;]
+</code></pre></div>
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/fs/src/lib/file-contain.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fileContain"></a>
+                    <span class="name">
+                        <span ><b>fileContain</b></span>
+                        <a href="#fileContain"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fileContain(filepath: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, content: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Read file content ( using stream ) and check that the file contains the <code>content</code></p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
                                 
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>filepath</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Relative or absolute file path</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">&#39;./filename.md&#39;
+&#39;/files/filename.md&#39;</code></pre></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>content</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Any contenet that extends <a href="ToString">ToString</a> interface</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">const content:T =  true
+const content:T =  false
+const content:T =  { some:&#39;some&#39;}
+const content:T =  &#39;text content&#39;,
+const content:T =  [&#39;Array&#39;, &#39;Content&#39;]
+const content:T =  1233445
+const content:T =  Buffer.from([...])</code></pre></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <b>Example :</b><div><pre class="line-numbers"><code class="language-markdown">   // ./README.md file
+   # Title
+
+   Sample mark down file
+</code></pre></div><b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">
+   await  fileContain(&#39;./README.md&#39;, &#39;# Title&#39;); // output: true
+   await  fileContain(&#39;./README.md&#39;, &#39;# None&#39;);  // output: false
+</code></pre></div>
                             </div>
                 </td>
             </tr>
@@ -351,7 +675,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>files(directory: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, includeDirs)</code>
+<code>files(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, includeDirs)</code>
                 </td>
             </tr>
 
@@ -360,7 +684,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Get the list of files under the directory</p>
+                        <div class="io-description"><p>List the absolute path of the files ( optionly directories ) under the root directory</p>
 </div>
 
                             <div class="io-description">
@@ -378,7 +702,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>directory</td>
+                                                <td>root</td>
                                             <td>
                                                             <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                             </td>
@@ -391,6 +715,9 @@
                                             </td>
 
                                             <td>
+                                                    <p>Relative or absolute directory path</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">&#39;./directory&#39;
+&#39;/directory/directory&#39;</code></pre></div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -407,7 +734,7 @@
                                             </td>
 
                                             <td>
-                                                    <p>if true, include the directories</p>
+                                                    <p>When set true, output includes directories as well</p>
 
                                             </td>
                                         </tr>
@@ -419,7 +746,113 @@
 
                         </div>
                             <div class="io-description">
+                                <b>Example :</b><div><pre class="line-numbers"><code class="language-markdown">|- root
+   |- dir1
+     |- file1.md
+     |- file2.md
+   |- dir2
+   |- dir3</code></pre></div><b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">   await files(&#39;./root&#39;); // output: [&#39;/....../dir1/file1.md&#39;, &#39;/....../dir1/file2.md&#39;]
+</code></pre></div>
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/fs/src/lib/for-each-directory.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="forEachDirectory"></a>
+                    <span class="name">
+                        <span ><b>forEachDirectory</b></span>
+                        <a href="#forEachDirectory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>forEachDirectory(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, callback: <a href="../undefineds/ForEachDirectoryCallBack.html" target="_self">ForEachDirectoryCallBack</a>, options?: <a href="../undefineds/ForEachDirectoryOptions.html" target="_self">ForEachDirectoryOptions</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Go through for each directory under the <code>root</code> directory,
+and run the provided callback function with the absolute path of the each sub directory</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
                                 
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>root</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Absolute or relative directory path</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">&#39;./directory&#39;
+&#39;./directory/directory&#39;
+&#39;//directory/directory&#39;</code></pre></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>callback</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#ForEachDirectoryCallBack" target="_self" >ForEachDirectoryCallBack</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>callback function <a href="../miscellaneous/typealiases.html#ForEachDirectoryCallBack">ForEachDirectoryCallBack</a></p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">(absolutePath:string)=&gt;{ console.log(absolutePath)}</code></pre></div><b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">async (absolutePath:string)=&gt;{ await (....)}</code></pre></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>options</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#ForEachDirectoryOptions" target="_self" >ForEachDirectoryOptions</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                            <td>
+                                                    <p>options <a href="../miscellaneous/typealiases.html#ForEachDirectoryOptions">ForEachDirectoryOptions</a></p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">{
+recursive: true
+}</code></pre></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                 </td>
             </tr>
@@ -440,7 +873,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>forEachFile(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, callback)</code>
+<code>forEachFile(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, callback: <a href="../undefineds/ForEachFileCallBack.html" target="_self">ForEachFileCallBack</a>, options?: <a href="../undefineds/ForEachFileOptions.html" target="_self">ForEachFileOptions</a>)</code>
                 </td>
             </tr>
 
@@ -449,6 +882,9 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Go through for each file under the <code>root</code> file,
+and run the provided callback function with the absolute path of the each file</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -459,6 +895,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -473,10 +910,17 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Absolute or relative directory path</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">&#39;./directory&#39;
+&#39;./directory/directory&#39;
+&#39;/directory/directory&#39;</code></pre></div>
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>callback</td>
                                             <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#ForEachFileCallBack" target="_self" >ForEachFileCallBack</a></code>
                                             </td>
 
                                             <td>
@@ -484,6 +928,28 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>callback function <a href="../miscellaneous/typealiases.html#ForEachFileCallBack">ForEachFileCallBack</a></p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">(absoluteFilePath:string)=&gt;{ console.log(absoluteFilePath)}</code></pre></div><b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">async (absoluteFilePath:string)=&gt;{ await (....)}</code></pre></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>options</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#ForEachFileOptions" target="_self" >ForEachFileOptions</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                            <td>
+                                                    <p>options <a href="../miscellaneous/typealiases.html#ForEachFileOptions">ForEachFileOptions</a></p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">{
+recursive: true
+}</code></pre></div>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -507,7 +973,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>forEachJSONFile(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, callback)</code>
+<code>forEachJSONFile(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, callback: <a href="../miscellaneouss/ForEachFileCallBack.html" target="_self">ForEachFileCallBack</a>, options: <a href="../miscellaneouss/ForEachFileOptions.html" target="_self">ForEachFileOptions</a>)</code>
                 </td>
             </tr>
 
@@ -516,6 +982,9 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>The only difference from the <a href="../miscellaneous/functions.html#forEachFile">forEachFile</a> is that the function only operate for files with <code>.json</code> extention
+For more information, have a look at <a href="../miscellaneous/functions.html#forEachFile">forEachFile</a></p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -526,6 +995,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Default value</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -539,17 +1009,37 @@
                                                     No
                                             </td>
 
+                                            <td>
+                                            </td>
 
                                         </tr>
                                         <tr>
                                                 <td>callback</td>
                                             <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#ForEachFileCallBack" target="_self" >ForEachFileCallBack</a></code>
                                             </td>
 
                                             <td>
                                                     No
                                             </td>
 
+                                            <td>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                                <td>options</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#ForEachFileOptions" target="_self" >ForEachFileOptions</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>{ recursive: true }</code>
+                                            </td>
 
                                         </tr>
                                     </tbody>
@@ -566,7 +1056,9 @@
             </tr>
         </tbody>
     </table>
-    <table class="table table-sm table-bordered">
+</section>    <h3>libs/fs/src/lib/for-each-json-schema-file.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
@@ -588,6 +1080,9 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>The only difference from the <a href="../miscellaneous/functions.html#forEachFile">forEachFile</a> is that the function only operate for files with <code>.schema.json</code> extention
+For more information, have a look at <a href="../miscellaneous/functions.html#forEachFile">forEachFile</a></p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -827,7 +1322,66 @@
             </tr>
         </tbody>
     </table>
-</section>    <h3>libs/fs/src/lib/filename.ts</h3>
+</section>    <h3>libs/fs/src/lib/mkdir.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mkdir"></a>
+                    <span class="name">
+                        <span ><b>mkdir</b></span>
+                        <a href="#mkdir"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mkdir(...directories: undefined)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>directories</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/fs/src/lib/rename.ts</h3>
     <section data-compodoc="block-methods">
     <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
@@ -915,7 +1469,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>rename(filePath: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, updatedName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>rename(filepath: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, newFilename: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -924,6 +1478,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Rename filename</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -934,11 +1490,12 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>filePath</td>
+                                                <td>filepath</td>
                                             <td>
                                                             <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                             </td>
@@ -948,9 +1505,13 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Relative or absolute filepath</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
-                                                <td>updatedName</td>
+                                                <td>newFilename</td>
                                             <td>
                                                             <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                             </td>
@@ -960,6 +1521,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>new filename</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -969,7 +1534,7 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">   await rename(&#39;./file.md&#39;, &#39;new-file-name.md&#39;);</code></pre></div>
                             </div>
                 </td>
             </tr>
@@ -1072,7 +1637,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Read file async</p>
+                        <div class="io-description"><p>Read file</p>
 </div>
 
                             <div class="io-description">
@@ -1103,11 +1668,74 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>Promise&lt;string&gt;</code>
+                            <b>Returns : </b>    <code>Promise&lt;string | never&gt;</code>
 
                         </div>
                             <div class="io-description">
                                 
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/fs/src/lib/read-file-by-line.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="readFileByLine"></a>
+                    <span class="name">
+                        <span ><b>readFileByLine</b></span>
+                        <a href="#readFileByLine"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>readFileByLine(filePath: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Create a reader to read file line by line</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>filePath</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Relative or absolute file path</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                 </td>
             </tr>
@@ -1137,7 +1765,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Read and transform json file</p>
+                        <div class="io-description"><p>Read json file</p>
 </div>
 
                             <div class="io-description">
@@ -1149,6 +1777,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1163,16 +1792,20 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Relative or absolute filepath</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>Promise&lt;T&gt;</code>
+                            <b>Returns : </b>    <code>Promise&lt;T | never&gt;</code>
 
                         </div>
                             <div class="io-description">
-                                <p>object</p>
+                                <p>T {@link ObjectLiteral}</p>
 
                             </div>
                 </td>
@@ -1203,7 +1836,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Read and transform package.json file</p>
+                        <div class="io-description"><p>This function only adds the type <a href="PackageJSON">PackageJSON</a> to the response, for more information, have a look at <a href="../miscellaneous/functions.html#readJSONFile">readJSONFile</a> function</p>
 </div>
 
                             <div class="io-description">
@@ -1238,7 +1871,166 @@
 
                         </div>
                             <div class="io-description">
+                                <p>content {@link PackageJSON}</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/fs/src/lib/rm.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="rm"></a>
+                    <span class="name">
+                        <span ><b>rm</b></span>
+                        <a href="#rm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>rm(filepath: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Remove file</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
                                 
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>filepath</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Relative or absolute filepath</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">   await rm(&#39;./filename.md&#39;);</code></pre></div>
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/fs/src/lib/rmdir.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="rmdir"></a>
+                    <span class="name">
+                        <span ><b>rmdir</b></span>
+                        <a href="#rmdir"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>rmdir(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, options?: <a href="../undefineds/RmdirOptions.html" target="_self">RmdirOptions</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Remove the directory</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>root</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>options</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#RmdirOptions" target="_self" >RmdirOptions</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                            <td>
+                                                    <p>options <a href="../miscellaneous/typealiases.html#RmdirOptions">RmdirOptions</a></p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">   await rmdir(&#39;./root&#39;) //output: if root directory is not empty, throw error
+   await rmdir(&#39;./root&#39;, { recursive: true}) //output: remove everything under the root directory</code></pre></div><ul>
+<li><input disabled="" type="checkbox"> When set recursive true, it should remove everythin gunder the root directory</li>
+</ul>
+
                             </div>
                 </td>
             </tr>

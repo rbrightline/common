@@ -1,5 +1,15 @@
 import { __rm } from './__fs__';
 
+/**
+ * Remove file
+ *
+ * @param filepath Relative or absolute filepath
+ *
+ * @returns
+ * ````typescript
+ *    await rm('./filename.md');
+ * ````
+ */
 export function rm(filepath: string): Promise<void> {
   return new Promise((res, rej) => {
     try {

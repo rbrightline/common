@@ -10,10 +10,17 @@ export type ForEachDirectoryOptions = {
 };
 
 /**
- * @param dirpath absolute
+ * Callback function type for {@link forEachDirectory} function
+ *
+ * @param absoluteDirectory ##Absolute## directory path
  */
-export type ForEachDirectoryCallBack = (dirpath: string) => Promise<void>;
+export type ForEachDirectoryCallBack = (
+  absoluteDirectory: string
+) => Promise<void>;
 
+/**
+ * @ignore
+ */
 export async function ____forEachDirectory(
   root: string,
   callback: ForEachDirectoryCallBack,
@@ -40,9 +47,43 @@ export async function ____forEachDirectory(
 }
 
 /**
- * Go through for each directory under the root directory including the deepest directories
- * @param root absolute path recommended for bug prevention
- * @param callback callback {@link ForEachDirectoryCallBack}
+ * Go through for each directory under the `root` directory,
+ * and run the provided callback function with the absolute path of the each sub directory
+ *
+ * @param root Absolute or relative directory path
+ *
+ * ````typescript
+ *    './directory'
+ *    './directory/directory'
+ *    '//directory/directory'
+ * ````
+ *
+ * @param callback callback function {@link ForEachDirectoryCallBack}
+ *
+ * ````typescript
+ *    (absolutePath:string)=>{ console.log(absolutePath)}
+ * ````
+ *
+ * ````typescript
+ *    async (absolutePath:string)=>{ await (....)}
+ * ````
+ *
+ * @param options options {@link ForEachDirectoryOptions}
+ *
+ * ````typescript
+ *    {
+ *        recursive: true
+ *    }
+ * ````
+ *
+ * @returns
+ *
+ * ````typescript
+ *    forEachDirectory('./directory', (absolutePath:string)=>{
+ *        // do for each absolute paths under the directory
+ *    })
+ * ````
+ *
  */
 export async function forEachDirectory(
   root: string,

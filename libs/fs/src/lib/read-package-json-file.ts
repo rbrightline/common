@@ -2,9 +2,12 @@ import { PackageJSON } from '@rline/type';
 import { readJSONFile } from './read-json-file';
 
 /**
- * Read and transform package.json file
+ * This function only adds the type {@link PackageJSON} to the response, for more information, have a look at {@link readJSONFile} function
+ *
  * @param packageJsonFilePath
- * @returns
+ *
+ * @returns content {@link PackageJSON}
+ *
  */
 export function readPackageJSONFile(
   packageJsonFilePath: string

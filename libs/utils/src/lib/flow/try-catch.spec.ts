@@ -30,4 +30,19 @@ describe('tryCatch', () => {
       //
     }
   });
+
+  it('should do async', async () => {
+    async function some(value: number) {
+      return new Promise((r, e) => {
+        setTimeout(() => {
+          const t = new Date().getTime();
+          r({ value, t });
+          console.table({
+            value,
+            t,
+          });
+        }, value);
+      });
+    }
+  });
 });

@@ -2,8 +2,7 @@ import { PackageJSON } from '@rline/type';
 import { writeJSONFile } from './write-json-file';
 
 /**
- * Write package.json file
- * It does not have a distict difference from writeFiles
+ * The function is not different from the {@link writeJSONFile} but the content must be {@link PackageJSON} type
  */
 export async function writePackageJSONFile(
   filePath: string,

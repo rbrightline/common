@@ -3,18 +3,57 @@ import { files } from './files';
 import { isDirectory, isFile } from './stat';
 
 /**
+ *
  * @param filepath absolute filepath
+ *
  */
 export type ForEachFileCallBack = (filepath: string) => void | Promise<void>;
 
 export type ForEachFileOptions = {
+  /**
+   * When true, the operation includes files under the sub directories as well
+   */
   recursive?: boolean;
 };
 
 /**
- * Go through for each filename under the root directory including the deepest files
- * @param root absolute path recommended for bug prevention
- * @param callback callback {@link ForEachFileCallBack}
+ * Go through for each file under the `root` file,
+ * and run the provided callback function with the absolute path of the each file
+ *
+ * @param root Absolute or relative directory path
+ *
+ * ````typescript
+ *    './directory'
+ *    './directory/directory'
+ *    '/directory/directory'
+ * ````
+ *
+ * @param callback callback function {@link ForEachFileCallBack}
+ *
+ * ````typescript
+ *    (absoluteFilePath:string)=>{ console.log(absoluteFilePath)}
+ * ````
+ *
+ * ````typescript
+ *    async (absoluteFilePath:string)=>{ await (....)}
+ * ````
+ *
+ * @param options options {@link ForEachFileOptions}
+ *
+ * ````typescript
+ *    {
+ *        recursive: true
+ *    }
+ * ````
+ *
+ * @returns
+ *
+ * ````typescript
+ *    forEachFile('./directory', (absoluteFilePath:string)=>{
+ *        // do for each absolute file path under the directory
+ *    })
+ * ````
+ *
  */
 export async function forEachFile(
   root: string,
