@@ -5,6 +5,8 @@ export {
   readdir as __readdir,
   readFile as __readFile,
   rename as __rename,
+  rm as __rm,
+  rmdir as __rmdir,
   stat as __stat,
   unwatchFile as __unwatchFile,
   watchFile as __watchFile,

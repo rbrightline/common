@@ -115,11 +115,14 @@ importers:
 
   libs/fs:
     dependencies:
+      '@rline/names':
+        specifier: workspace:^
+        version: link:../names
       '@rline/type':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../type
       '@rline/utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../utils
       '@swc/helpers':
         specifier: ~0.5.11

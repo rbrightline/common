@@ -24,9 +24,15 @@
     "file",
     "directory"
   ],
+  "scripts": {
+    "workspace:remove": "pnpm remove @rline/names @rline/type @rline/utils",
+    "workspace:add": "pnpm add --workspace @rline/names @rline/type @rline/utils",
+    "workspace": "pnpm workspace:remove && pnpm workspace:add"
+  },
   "dependencies": {
-    "@rline/type": "workspace:*",
-    "@rline/utils": "workspace:*",
+    "@rline/names": "workspace:^",
+    "@rline/type": "workspace:^",
+    "@rline/utils": "workspace:^",
     "@swc/helpers": "~0.5.11"
   },
   "type": "commonjs",

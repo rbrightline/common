@@ -1,6 +1,6 @@
 // Colors
 
-import { StringLike } from '../string';
+import { ToString } from '@rline/type';
 
 export const BLACK = '\x1b[30m';
 export const RED = '\x1b[31m';
@@ -27,71 +27,71 @@ export const UNDERLINE = '\x1b[4m';
 export const REVERSE = '\x1b[7m';
 export const RESET_ALL_STYLE = '\x1b[0m';
 
-export function black<T extends StringLike>(...logs: T[]): string {
+export function black<T extends ToString>(...logs: T[]): string {
   return `${BLACK}${logs}${WHITE}`;
 }
 
 //     \x1b[31m - Red
-export function red<T extends StringLike>(...logs: T[]): string {
+export function red<T extends ToString>(...logs: T[]): string {
   return `${RED}${logs}${WHITE}`;
 }
 
-export function green<T extends StringLike>(...logs: T[]): string {
+export function green<T extends ToString>(...logs: T[]): string {
   return `${GREEN}${logs}${WHITE}`;
 }
 
-export function yellow<T extends StringLike>(...logs: T[]): string {
+export function yellow<T extends ToString>(...logs: T[]): string {
   return `${YELLOW}${logs}${WHITE}`;
 }
 
-export function blue<T extends StringLike>(...logs: T[]): string {
+export function blue<T extends ToString>(...logs: T[]): string {
   return `${BLUE}${logs}${WHITE}`;
 }
 
-export function magenta<T extends StringLike>(...logs: T[]): string {
+export function magenta<T extends ToString>(...logs: T[]): string {
   return `${MAGENTA}${logs}${WHITE}`;
 }
 
-export function cyan<T extends StringLike>(...logs: T[]): string {
+export function cyan<T extends ToString>(...logs: T[]): string {
   return `${CYAN}${logs}${WHITE}`;
 }
 
-export function white<T extends StringLike>(...logs: T[]): string {
+export function white<T extends ToString>(...logs: T[]): string {
   return `${WHITE}${logs}${WHITE}`;
 }
 
-export function bgBlack(...logs: StringLike[]): string {
+export function bgBlack(...logs: ToString[]): string {
   return `${BG_BLACK}${logs}${BG_BLACK}`;
 }
-export function bgRed(...logs: StringLike[]): string {
+export function bgRed(...logs: ToString[]): string {
   return `${BG_RED}${logs}${BG_BLACK}`;
 }
-export function bgGreen(...logs: StringLike[]): string {
+export function bgGreen(...logs: ToString[]): string {
   return `${BG_GREEN}${logs}${BG_BLACK}`;
 }
-export function bgYellow(...logs: StringLike[]): string {
+export function bgYellow(...logs: ToString[]): string {
   return `${BG_YELLOW}${logs}${BG_BLACK}`;
 }
-export function bgBlue(...logs: StringLike[]): string {
+export function bgBlue(...logs: ToString[]): string {
   return `${BG_BLUE}${logs}${BG_BLACK}`;
 }
-export function bgMagenta(...logs: StringLike[]): string {
+export function bgMagenta(...logs: ToString[]): string {
   return `${BG_MAGENTA}${logs}${BG_BLACK}`;
 }
-export function bgCyan(...logs: StringLike[]): string {
+export function bgCyan(...logs: ToString[]): string {
   return `${BG_CYAN}${logs}${BG_BLACK}`;
 }
-export function bgWhite(...logs: StringLike[]): string {
+export function bgWhite(...logs: ToString[]): string {
   return `${BG_WHITE}${logs}${BG_BLACK}`;
 }
 
 // Style
-export function bold(...logs: StringLike[]): string {
+export function bold(...logs: ToString[]): string {
   return `${BOLD}${logs}${RESET_ALL_STYLE}`;
 }
-export function underline(...logs: StringLike[]): string {
+export function underline(...logs: ToString[]): string {
   return `${UNDERLINE}${logs}${RESET_ALL_STYLE}`;
 }
-export function reverse(...logs: StringLike[]): string {
+export function reverse(...logs: ToString[]): string {
   return `${REVERSE}${logs}${RESET_ALL_STYLE}`;
 }

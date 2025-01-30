@@ -17,6 +17,7 @@ export async function writeFile<T extends ValueType>(
        * - [ ] create async function for this
        */
       mkdirSync(join(filepath, '..'), { recursive: true });
+
       __writeFile(filepath, content.toString(), (err) => {
         if (err) {
           rej(err);

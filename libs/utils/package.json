@@ -1,6 +1,6 @@
 {
   "name": "@rline/utils",
-  "version": "8.1.4",
+  "version": "8.1.5",
   "description": "Common utilities",
   "license": "MIT",
   "author": {
@@ -22,6 +22,11 @@
     "helpers",
     "common"
   ],
+  "scripts": {
+    "workspace:remove": "pnpm remove  @rline/type",
+    "workspace:add": "pnpm add --workspace  @rline/type",
+    "workspace": "pnpm workspace:remove && pnpm workspace:add"
+  },
   "dependencies": {
     "@rline/type": "workspace:^",
     "@swc/helpers": "~0.5.11"

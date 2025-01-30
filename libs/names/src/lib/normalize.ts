@@ -25,5 +25,5 @@ export function normalize(
       .toLowerCase();
   }
 
-  throw new Error(`Invalid input string: ${value}`);
+  throw new Error(`The name string value is not valid:  ${value}`);
 }

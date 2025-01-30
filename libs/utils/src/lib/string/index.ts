@@ -3,5 +3,4 @@ export * from './concat';
 export * from './diff';
 export * from './mark-string';
 export * from './pad';
-export * from './string-like';
 export * from './suffix-file-name';

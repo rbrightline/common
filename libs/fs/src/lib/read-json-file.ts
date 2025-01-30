@@ -8,7 +8,7 @@ import { readFile } from './read-file';
  */
 export async function readJSONFile<T extends ObjectLiteral>(
   filePath: string
-): Promise<T> {
+): Promise<T | never> {
   const content = await readFile(filePath);
   return JSON.parse(content);
 }

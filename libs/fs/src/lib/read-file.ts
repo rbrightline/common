@@ -1,11 +1,11 @@
-import { readFile as __readFile } from 'fs';
+import { __readFile } from './__fs__';
 
 /**
  * Read file async
  * @param filepath
  * @returns
  */
-export async function readFile(filepath: string): Promise<string> {
+export async function readFile(filepath: string): Promise<string | never> {
   return new Promise((res, rej) => {
     try {
       __readFile(filepath, 'utf-8', (err, data) => {

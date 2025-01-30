@@ -1,4 +1,5 @@
 // @index(['./**/*.ts', '!./**/__*/**', '!./**/*{spec,test,story,stories,index,__*}.ts'], f => `export * from '${f.path}'`)
 export * from './get-last-segment';
+export * from './normalize-paths';
 export * from './segments';
 export * from './set-last-segment';

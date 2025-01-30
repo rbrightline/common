@@ -1,4 +1,5 @@
 // @index(['./**/*.ts', '!./**/__*/**', '!./**/*{spec,test,story,stories,index,__*}.ts'], f => `export * from '${f.path}'`)
+export * from './access-denied';
 export * from './item-not-found.error';
 export * from './key-not-found.error';
 export * from './not-absolute-path.error';

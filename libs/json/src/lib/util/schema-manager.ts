@@ -1,4 +1,4 @@
-import { forEachFile, readJSONFile, writeJSONFile } from '@rline/fs';
+import { forEachJSONSchemaFile, readJSONFile, writeJSONFile } from '@rline/fs';
 import { names } from '@rline/names';
 import { JSONSchema, NotAbsolutePathError, PickRequired } from '@rline/type';
 import { getLastSegment, hasKeys, isDefinitionPath } from '@rline/utils';
@@ -26,7 +26,7 @@ export type SchemaManagerOptions = {
  */
 export type ReadyJSONSchema = PickRequired<
   JSONSchema,
-  'title' | '$filepath' | '$dirpath'
+  'title' | '$filepath' | '$dirpath' | 'definitions'
 >;
 
 export class SchemaManager {
@@ -93,22 +93,23 @@ export class SchemaManager {
    * Then map them by their own absolute filename path so which will be unique for each file
    */
   protected async readAndMapSchemasByAbsolutePath() {
-    await forEachFile(this.root, async (p: string) => {
+    await forEachJSONSchemaFile(this.root, async (filepath: string) => {
       // read the schema file
-      const schema = await this.read(p);
+      const schema = await this.read(filepath);
 
       // Extract filename from pathF
-      const shortFilename = getLastSegment(p);
+      const shortFilename = getLastSegment(filepath);
+
       // Set schema title
       schema.title = names(shortFilename).pascalCase;
-      schema.$filepath = p;
-      schema.$dirpath = join(p, '..');
+      schema.$filepath = filepath;
+      schema.$dirpath = join(filepath, '..');
 
       if (!hasKeys(schema, ['definitions'])) schema.definitions = {};
       if (hasKeys(schema, ['title', '$filepath', '$dirpath', 'definitions'])) {
-        this.map.set(p, schema);
+        this.map.set(filepath, schema);
       } else {
-        throw new Error(`The schema is not prepared ${p}`);
+        throw new Error(`The schema is not prepared ${filepath}`);
       }
     });
   }
@@ -118,7 +119,10 @@ export class SchemaManager {
    * @param schema
    */
   protected toAbsoluteReferencePaths(): void {
-    const __toAbsoluteReferencePaths = (schema: ReadyJSONSchema) => {
+    const __toAbsoluteReferencePaths = (
+      schema: ReadyJSONSchema,
+      $filepath: string
+    ) => {
       const pairs = Object.entries(schema);
 
       if (pairs.length > 0) {
@@ -128,11 +132,11 @@ export class SchemaManager {
           // if reference is absolute path, then skip
           if (isAbsolute(schema.$ref)) return;
 
-          schema.$ref = join(schema.$dirpath, schema.$ref);
+          schema.$ref = join($filepath, '..', schema.$ref);
         } else {
           for (const [, value] of pairs) {
             if (typeof value == 'object') {
-              __toAbsoluteReferencePaths(value);
+              __toAbsoluteReferencePaths(value, $filepath);
             }
           }
         }
@@ -152,5 +156,6 @@ export class SchemaManager {
   async compile() {
     await this.readAndMapSchemasByAbsolutePath();
     this.toAbsoluteReferencePaths();
+    await this.write();
   }
 }

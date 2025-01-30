@@ -6,7 +6,7 @@ describe('SchemaManager', () => {
     const manager = new SchemaManager({
       rootPath: join(__dirname, './test/schema'),
       mainFilePath: join(__dirname, './test/schema/model.schema.json'),
-      output: join(__dirname, 'test/dist'),
+      output: join(__dirname, './test/dist'),
     });
 
     await manager.compile();

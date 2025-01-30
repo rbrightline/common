@@ -1,7 +1,7 @@
-import { ValueType } from '@rline/type';
+import { StringLike } from '@rline/utils';
 import { __appendFile } from './__fs__';
 
-export async function appendFile<T extends ValueType>(
+export async function appendFile<T extends StringLike>(
   filepath: string,
   content: T
 ): Promise<void> {
