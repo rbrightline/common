@@ -142,7 +142,16 @@
                             <a href="#forEachJSONSchemaFile" title="libs/fs/src/lib/for-each-json-schema-file.ts" ><b>forEachJSONSchemaFile</b>&nbsp;&nbsp;&nbsp;(libs/.../for-each-json-schema-file.ts)</a>
                         </li>
                         <li>
+                            <a href="#getAllFilesAndDirs" title="libs/fs/src/lib/get-all-files-and-dirs.ts" ><b>getAllFilesAndDirs</b>&nbsp;&nbsp;&nbsp;(libs/.../get-all-files-and-dirs.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#hasFile" title="libs/fs/src/lib/has-file.ts" ><b>hasFile</b>&nbsp;&nbsp;&nbsp;(libs/.../has-file.ts)</a>
+                        </li>
+                        <li>
                             <a href="#isDirectory" title="libs/fs/src/lib/stat.ts" ><b>isDirectory</b>&nbsp;&nbsp;&nbsp;(libs/.../stat.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#isEmptyDir" title="libs/fs/src/lib/is-empty-dir.ts" ><b>isEmptyDir</b>&nbsp;&nbsp;&nbsp;(libs/.../is-empty-dir.ts)</a>
                         </li>
                         <li>
                             <a href="#isFile" title="libs/fs/src/lib/stat.ts" ><b>isFile</b>&nbsp;&nbsp;&nbsp;(libs/.../stat.ts)</a>
@@ -1133,6 +1142,132 @@ For more information, have a look at <a href="../miscellaneous/functions.html#fo
             </tr>
         </tbody>
     </table>
+</section>    <h3>libs/fs/src/lib/get-all-files-and-dirs.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllFilesAndDirs"></a>
+                    <span class="name">
+                        <span ><b>getAllFilesAndDirs</b></span>
+                        <a href="#getAllFilesAndDirs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAllFilesAndDirs(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Recursively gets all files and directories in a given directory and return it</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>root</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Relative or absolute direpath</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;string[]&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/fs/src/lib/has-file.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasFile"></a>
+                    <span class="name">
+                        <span ><b>hasFile</b></span>
+                        <a href="#hasFile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hasFile(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>root</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>    <h3>libs/fs/src/lib/stat.ts</h3>
     <section data-compodoc="block-methods">
     <h3></h3>    <table class="table table-sm table-bordered">
@@ -1313,6 +1448,69 @@ For more information, have a look at <a href="../miscellaneous/functions.html#fo
                             </div>
                         <div class="io-description">
                             <b>Returns : </b>    <code>Promise&lt;Stats&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/fs/src/lib/is-empty-dir.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isEmptyDir"></a>
+                    <span class="name">
+                        <span ><b>isEmptyDir</b></span>
+                        <a href="#isEmptyDir"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isEmptyDir(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>root</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
 
                         </div>
                             <div class="io-description">
@@ -2137,6 +2335,8 @@ For more information, have a look at <a href="../miscellaneous/functions.html#fo
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Write json file (using JSON.stringify)</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -2147,6 +2347,7 @@ For more information, have a look at <a href="../miscellaneous/functions.html#fo
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -2161,6 +2362,10 @@ For more information, have a look at <a href="../miscellaneous/functions.html#fo
                                             </td>
 
 
+                                            <td>
+                                                    <p>Relative or absolute filepath</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>content</td>
@@ -2173,6 +2378,10 @@ For more information, have a look at <a href="../miscellaneous/functions.html#fo
                                             </td>
 
 
+                                            <td>
+                                                    <p>contnet object</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -2212,8 +2421,7 @@ For more information, have a look at <a href="../miscellaneous/functions.html#fo
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Write package.json file
-It does not have a distict difference from writeFiles</p>
+                        <div class="io-description"><p>The function is not different from the <a href="../miscellaneous/functions.html#writeJSONFile">writeJSONFile</a> but the content must be <a href="PackageJSON">PackageJSON</a> type</p>
 </div>
 
                             <div class="io-description">

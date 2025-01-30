@@ -1,6 +1,6 @@
 {
   "name": "@rline/printer",
-  "version": "8.1.1",
+  "version": "8.2.0",
   "description": "Convert json schema into code",
   "license": "MIT",
   "author": {

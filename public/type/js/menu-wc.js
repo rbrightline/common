@@ -54,6 +54,18 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
                             <li class="link">
+                                <a href="classes/AccessDeniedError.html" data-type="entity-link" >AccessDeniedError</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ItemNotFoundError.html" data-type="entity-link" >ItemNotFoundError</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/KeyNotFoundError.html" data-type="entity-link" >KeyNotFoundError</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/NotAbsolutePathError.html" data-type="entity-link" >NotAbsolutePathError</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/NotEmptyArrayError.html" data-type="entity-link" >NotEmptyArrayError</a>
                             </li>
                             <li class="link">

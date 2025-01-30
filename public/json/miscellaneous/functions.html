@@ -112,10 +112,10 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
-                            <a href="#__resolveReferencePaths" title="libs/json/src/lib/util/resolve-reference-paths.ts" ><b>__resolveReferencePaths</b>&nbsp;&nbsp;&nbsp;(libs/.../resolve-reference-paths.ts)</a>
+                            <a href="#__toAbsolutePaths" title="libs/json/src/lib/util/to-absolute-paths.ts" ><b>__toAbsolutePaths</b>&nbsp;&nbsp;&nbsp;(libs/.../to-absolute-paths.ts)</a>
                         </li>
                         <li>
-                            <a href="#compileSchema" title="libs/json/src/lib/util/compile-schema.ts" ><b>compileSchema</b>&nbsp;&nbsp;&nbsp;(libs/.../compile-schema.ts)</a>
+                            <a href="#__toDefinition" title="libs/json/src/lib/util/to-definitions.ts" ><b>__toDefinition</b>&nbsp;&nbsp;&nbsp;(libs/.../to-definitions.ts)</a>
                         </li>
                         <li>
                             <a href="#getConfig" title="libs/json/src/lib/util/get-config.ts" ><b>getConfig</b>&nbsp;&nbsp;&nbsp;(libs/.../get-config.ts)</a>
@@ -124,22 +124,34 @@
                             <a href="#init" title="libs/json/src/lib/init/init.ts" ><b>init</b>&nbsp;&nbsp;&nbsp;(libs/.../init.ts)</a>
                         </li>
                         <li>
-                            <a href="#mapSchemaFiles" title="libs/json/src/lib/util/map-schema-files.ts" ><b>mapSchemaFiles</b>&nbsp;&nbsp;&nbsp;(libs/.../map-schema-files.ts)</a>
-                        </li>
-                        <li>
                             <a href="#me" title="libs/json/src/lib/util/me.ts" ><b>me</b>&nbsp;&nbsp;&nbsp;(libs/.../me.ts)</a>
                         </li>
                         <li>
-                            <a href="#resolveReferencePaths" title="libs/json/src/lib/util/resolve-reference-paths.ts" ><b>resolveReferencePaths</b>&nbsp;&nbsp;&nbsp;(libs/.../resolve-reference-paths.ts)</a>
+                            <a href="#readJSONSchemaFile" title="libs/json/src/lib/util/read-json-schema-file.ts" ><b>readJSONSchemaFile</b>&nbsp;&nbsp;&nbsp;(libs/.../read-json-schema-file.ts)</a>
                         </li>
                         <li>
                             <a href="#schema" title="libs/json/src/lib/schema/schema.ts" ><b>schema</b>&nbsp;&nbsp;&nbsp;(libs/.../schema.ts)</a>
                         </li>
                         <li>
+                            <a href="#setDefaultValues" title="libs/json/src/lib/util/set-default-values.ts" ><b>setDefaultValues</b>&nbsp;&nbsp;&nbsp;(libs/.../set-default-values.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#toAbsolutePaths" title="libs/json/src/lib/util/to-absolute-paths.ts" ><b>toAbsolutePaths</b>&nbsp;&nbsp;&nbsp;(libs/.../to-absolute-paths.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#toDefinitions" title="libs/json/src/lib/util/to-definitions.ts" ><b>toDefinitions</b>&nbsp;&nbsp;&nbsp;(libs/.../to-definitions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#toSchemaMap" title="libs/json/src/lib/util/to-schema-map.ts" ><b>toSchemaMap</b>&nbsp;&nbsp;&nbsp;(libs/.../to-schema-map.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#toSingleFile" title="libs/json/src/lib/util/to-single-file.ts" ><b>toSingleFile</b>&nbsp;&nbsp;&nbsp;(libs/.../to-single-file.ts)</a>
+                        </li>
+                        <li>
                             <a href="#type" title="libs/json/src/lib/type/type.ts" ><b>type</b>&nbsp;&nbsp;&nbsp;(libs/.../type.ts)</a>
                         </li>
                         <li>
-                            <a href="#validateAndTransformSchema" title="libs/json/src/lib/util/validate-and-transform-schema.ts" ><b>validateAndTransformSchema</b>&nbsp;&nbsp;&nbsp;(libs/.../validate-and-transform-schema.ts)</a>
+                            <a href="#validateSchema" title="libs/json/src/lib/util/validate-schema.ts" ><b>validateSchema</b>&nbsp;&nbsp;&nbsp;(libs/.../validate-schema.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -148,22 +160,22 @@
     </table>
 </section>
 
-    <h3>libs/json/src/lib/util/resolve-reference-paths.ts</h3>
+    <h3>libs/json/src/lib/util/to-absolute-paths.ts</h3>
     <section data-compodoc="block-methods">
     <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="__resolveReferencePaths"></a>
+                    <a name="__toAbsolutePaths"></a>
                     <span class="name">
-                        <span ><b>__resolveReferencePaths</b></span>
-                        <a href="#__resolveReferencePaths"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>__toAbsolutePaths</b></span>
+                        <a href="#__toAbsolutePaths"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>__resolveReferencePaths(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, schema: JSONSchema)</code>
+<code>__toAbsolutePaths(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, schema: JSONSchema)</code>
                 </td>
             </tr>
 
@@ -172,6 +184,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Convert relative $ref values into absolute paths</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -227,16 +241,16 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="resolveReferencePaths"></a>
+                    <a name="toAbsolutePaths"></a>
                     <span class="name">
-                        <span ><b>resolveReferencePaths</b></span>
-                        <a href="#resolveReferencePaths"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>toAbsolutePaths</b></span>
+                        <a href="#toAbsolutePaths"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>resolveReferencePaths(map: Map)</code>
+<code>toAbsolutePaths(map: Map)</code>
                 </td>
             </tr>
 
@@ -245,6 +259,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Convert relative $ref values into absolute paths</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -284,22 +300,22 @@
             </tr>
         </tbody>
     </table>
-</section>    <h3>libs/json/src/lib/util/compile-schema.ts</h3>
+</section>    <h3>libs/json/src/lib/util/to-definitions.ts</h3>
     <section data-compodoc="block-methods">
     <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="compileSchema"></a>
+                    <a name="__toDefinition"></a>
                     <span class="name">
-                        <span ><b>compileSchema</b></span>
-                        <a href="#compileSchema"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>__toDefinition</b></span>
+                        <a href="#__toDefinition"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>compileSchema(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, mainFileName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>__toDefinition(jsonSchema: JSONSchema)</code>
                 </td>
             </tr>
 
@@ -308,6 +324,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Read the $ref path and store the content as definition in the schema</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -318,37 +336,82 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
-                                                <td>Default value</td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>root</td>
+                                                <td>jsonSchema</td>
                                             <td>
-                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        <code>JSONSchema</code>
                                             </td>
 
                                             <td>
                                                     No
                                             </td>
 
-                                            <td>
-                                                    <code>&#x27;&#x27;</code>
-                                            </td>
 
                                         </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toDefinitions"></a>
+                    <span class="name">
+                        <span ><b>toDefinitions</b></span>
+                        <a href="#toDefinitions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toDefinitions(map: Map)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Read reference content, create definition, and store the definition into main schema definitions</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
                                         <tr>
-                                                <td>mainFileName</td>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>map</td>
                                             <td>
-                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        <code>Map</code>
                                             </td>
 
                                             <td>
                                                     No
                                             </td>
 
-                                            <td>
-                                            </td>
 
                                         </tr>
                                     </tbody>
@@ -422,22 +485,217 @@
 
         </tbody>
     </table>
-</section>    <h3>libs/json/src/lib/util/map-schema-files.ts</h3>
+</section>    <h3>libs/json/src/lib/util/me.ts</h3>
     <section data-compodoc="block-methods">
     <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="mapSchemaFiles"></a>
+                    <a name="me"></a>
                     <span class="name">
-                        <span ><b>mapSchemaFiles</b></span>
-                        <a href="#mapSchemaFiles"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>me</b></span>
+                        <a href="#me"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>mapSchemaFiles(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>me()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;PackageJSON&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/json/src/lib/util/read-json-schema-file.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="readJSONSchemaFile"></a>
+                    <span class="name">
+                        <span ><b>readJSONSchemaFile</b></span>
+                        <a href="#readJSONSchemaFile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>readJSONSchemaFile(filepath: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Read the json schema file, if it does not have a title, set title using names library
+if definitions are undefined, set it empty object.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>filepath</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;JSONSchema&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/json/src/lib/schema/schema.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="schema"></a>
+                    <span class="name">
+                        <span ><b>schema</b></span>
+                        <a href="#schema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>schema()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>JSON <a href="http://json-schema.org/draft-07/schema#">schema</a> compiler</p>
+</div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/json/src/lib/util/set-default-values.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setDefaultValues"></a>
+                    <span class="name">
+                        <span ><b>setDefaultValues</b></span>
+                        <a href="#setDefaultValues"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setDefaultValues(jsonSchema: JSONSchema)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>prepare the json schema object for operations by setting default values</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>jsonSchema</td>
+                                            <td>
+                                                        <code>JSONSchema</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;Required&lt;JSONSchema&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/json/src/lib/util/to-schema-map.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toSchemaMap"></a>
+                    <span class="name">
+                        <span ><b>toSchemaMap</b></span>
+                        <a href="#toSchemaMap"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toSchemaMap(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -487,22 +745,22 @@
             </tr>
         </tbody>
     </table>
-</section>    <h3>libs/json/src/lib/util/me.ts</h3>
+</section>    <h3>libs/json/src/lib/util/to-single-file.ts</h3>
     <section data-compodoc="block-methods">
     <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="me"></a>
+                    <a name="toSingleFile"></a>
                     <span class="name">
-                        <span ><b>me</b></span>
-                        <a href="#me"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>toSingleFile</b></span>
+                        <a href="#toSingleFile"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>me()</code>
+<code>toSingleFile(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, mainFileName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -512,41 +770,58 @@
             <tr>
                 <td class="col-md-4">
 
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>root</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>&#x27;&#x27;</code>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                                <td>mainFileName</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>Promise&lt;PackageJSON&gt;</code>
+                            <b>Returns : </b>    <code>Promise&lt;JSONSchema&gt;</code>
 
                         </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>    <h3>libs/json/src/lib/schema/schema.ts</h3>
-    <section data-compodoc="block-methods">
-    <h3></h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="schema"></a>
-                    <span class="name">
-                        <span ><b>schema</b></span>
-                        <a href="#schema"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>schema()</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-description"><p>JSON <a href="http://json-schema.org/draft-07/schema#">schema</a> compiler</p>
-</div>
-
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -575,22 +850,22 @@
 
         </tbody>
     </table>
-</section>    <h3>libs/json/src/lib/util/validate-and-transform-schema.ts</h3>
+</section>    <h3>libs/json/src/lib/util/validate-schema.ts</h3>
     <section data-compodoc="block-methods">
     <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="validateAndTransformSchema"></a>
+                    <a name="validateSchema"></a>
                     <span class="name">
-                        <span ><b>validateAndTransformSchema</b></span>
-                        <a href="#validateAndTransformSchema"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>validateSchema</b></span>
+                        <a href="#validateSchema"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>validateAndTransformSchema(schema: JSONSchema)</code>
+<code>validateSchema(schema: JSONSchema)</code>
                 </td>
             </tr>
 
@@ -599,6 +874,11 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Validate the schema and initialize required properties
+for referenced schemas, the title is required to create definition key
+for all schemas, type is required
+definitions are an empty object by default</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>

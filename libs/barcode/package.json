@@ -1,6 +1,6 @@
 {
   "name": "@rline/barcode",
-  "version": "8.1.1",
+  "version": "8.2.0",
   "description": "Generate unique barcode",
   "license": "MIT",
   "author": {

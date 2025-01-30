@@ -9,25 +9,6 @@ export type RmdirOptions = {
 };
 
 /**
- * @ignore
- */
-export async function ____rmdir(directory: string): Promise<void> {
-  return new Promise((res, rej) => {
-    try {
-      __rmdir(directory, (err) => {
-        if (err) {
-          rej(err);
-        } else {
-          res();
-        }
-      });
-    } catch (err) {
-      rej(err);
-    }
-  });
-}
-
-/**
  * Remove the directory
  * @param root
  * @param options options {@link RmdirOptions}
@@ -47,6 +28,18 @@ export async function rmdir(
     const all = await getAllFilesAndDirs(root);
     await Promise.all(all.map((e) => rmdir(e)));
   } else {
-    await ____rmdir(root);
+    return await new Promise((res, rej) => {
+      try {
+        __rmdir(root, (err) => {
+          if (err) {
+            rej(err);
+          } else {
+            res();
+          }
+        });
+      } catch (err) {
+        rej(err);
+      }
+    });
   }
 }
