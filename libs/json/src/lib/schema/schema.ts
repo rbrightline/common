@@ -1,15 +1,16 @@
-import { writeJSONFile } from '@rline/fs';
-import { join } from 'path';
-import { getConfig, toSingleFile } from '../util';
+import { getConfig, SchemaManager } from '../util';
 
 /**
  * JSON [schema](http://json-schema.org/draft-07/schema#) compiler
  */
 export async function schema() {
   const config = await getConfig();
-  const schemaOutputPath = join(config.root, config.output.schema);
 
-  const schema = await toSingleFile(config.root, config.main);
+  const schemaMangaer = new SchemaManager({
+    mainFilePath: config.main,
+    output: config.output.schema,
+    rootPath: config.root,
+  });
 
-  await writeJSONFile(schemaOutputPath, schema);
+  await schemaMangaer.compile();
 }
