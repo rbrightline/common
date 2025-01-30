@@ -1,4 +1,4 @@
-import { forEachDirectory, mkdir } from '../lib';
+import { forEachDirectory, mkdir, rmdir } from '../lib';
 import { safepath } from './__test-utils';
 
 describe('forEachDirectory', () => {
@@ -11,8 +11,7 @@ describe('forEachDirectory', () => {
   });
 
   afterAll(async () => {
-    // await rmdir(root, { recursive: true });
-    // await rmdir(root);
+    await rmdir(root, { recursive: true });
   });
 
   it('should go through each directory', async () => {

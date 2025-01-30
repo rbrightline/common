@@ -21,15 +21,21 @@ export async function ____rmdir(directory: string): Promise<void> {
   });
 }
 
+/**
+ * Remove directories directory
+ * @param dirpath
+ * @param options
+ * @returns
+ */
 export async function rmdir(
-  root: string,
+  dirpath: string,
   options?: RemoveDirectoryOptions
 ): Promise<void> {
   if (options?.recursive) {
-    return await forEachDirectory(root, ____rmdir, {
+    return await forEachDirectory(dirpath, ____rmdir, {
       recursive: options?.recursive,
     });
   } else {
-    await ____rmdir(root);
+    await ____rmdir(dirpath);
   }
 }

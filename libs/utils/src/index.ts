@@ -10,6 +10,8 @@ export * from './lib/data/clone';
 export * from './lib/data/omit';
 export * from './lib/data/pick';
 export * from './lib/flow/foreach';
+export * from './lib/flow/oshit';
+export * from './lib/flow/try-catch';
 export * from './lib/json/is-definision-path';
 export * from './lib/number/is-number';
 export * from './lib/number/max';

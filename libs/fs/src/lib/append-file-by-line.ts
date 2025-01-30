@@ -1,4 +1,4 @@
-import { StringLike } from '@rline/utils';
+import { ToString } from '@rline/type';
 import { appendFile } from './append-file';
 
 /**
@@ -7,7 +7,7 @@ import { appendFile } from './append-file';
  * @param content
  * @returns
  */
-export async function appendFileByLine<T extends StringLike>(
+export async function appendFileByLine<T extends ToString>(
   filepath: string,
   content: T
 ) {
