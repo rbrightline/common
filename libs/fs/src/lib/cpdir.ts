@@ -25,17 +25,4 @@ export async function cpdir(source: string, target: string): Promise<void> {
     },
     { recursive: true }
   );
-  //   return new Promise((res, rej) => {
-  //     try {
-  //       cp(source, target, (err) => {
-  //         if (err) {
-  //           rej(err);
-  //         } else {
-  //           res();
-  //         }
-  //       });
-  //     } catch (err) {
-  //       rej(err);
-  //     }
-  //   });
 }

@@ -169,6 +169,9 @@
                             <a href="#foreach" title="libs/utils/src/lib/flow/foreach.ts" ><b>foreach</b>&nbsp;&nbsp;&nbsp;(libs/.../foreach.ts)</a>
                         </li>
                         <li>
+                            <a href="#forEachKey" title="libs/utils/src/lib/object/for-each-key.ts" ><b>forEachKey</b>&nbsp;&nbsp;&nbsp;(libs/.../for-each-key.ts)</a>
+                        </li>
+                        <li>
                             <a href="#getLastSegment" title="libs/utils/src/lib/url/get-last-segment.ts" ><b>getLastSegment</b>&nbsp;&nbsp;&nbsp;(libs/.../get-last-segment.ts)</a>
                         </li>
                         <li>
@@ -191,6 +194,9 @@
                         </li>
                         <li>
                             <a href="#isNumber" title="libs/utils/src/lib/number/is-number.ts" ><b>isNumber</b>&nbsp;&nbsp;&nbsp;(libs/.../is-number.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#isRef" title="libs/utils/src/lib/json/is-ref.ts" ><b>isRef</b>&nbsp;&nbsp;&nbsp;(libs/.../is-ref.ts)</a>
                         </li>
                         <li>
                             <a href="#isUndefined" title="libs/utils/src/lib/type/is-undefined.ts" ><b>isUndefined</b>&nbsp;&nbsp;&nbsp;(libs/.../is-undefined.ts)</a>
@@ -1734,6 +1740,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Get object&#39;s key-value pairs/entries (using Object.entries())</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -1789,11 +1797,12 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>[]</code>
+                            <b>Returns : </b>    <code>[] | never</code>
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>the key-value pairs of an object {@link Pair}</p>
+
                             </div>
                 </td>
             </tr>
@@ -1923,6 +1932,94 @@
                                                     <p>callback <a href="../miscellaneous/typealiases.html#ForEachCallback">ForEachCallback</a></p>
 
                                             </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/utils/src/lib/object/for-each-key.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="forEachKey"></a>
+                    <span class="name">
+                        <span ><b>forEachKey</b></span>
+                        <a href="#forEachKey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>forEachKey(object: T, key, callback: <a href="../undefineds/ForEachKeyCallBack.html" target="_self">ForEachKeyCallBack</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Find all occurance of the <code>key</code> and run the callback function</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>object</td>
+                                            <td>
+                                                        <code>T</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>key</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>callback</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#ForEachKeyCallBack" target="_self" >ForEachKeyCallBack</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
                                         </tr>
                                     </tbody>
                                 </table>
@@ -2578,6 +2675,71 @@
                             </div>
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/utils/src/lib/json/is-ref.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isRef"></a>
+                    <span class="name">
+                        <span ><b>isRef</b></span>
+                        <a href="#isRef"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isRef(schema: JSONSchema)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Check the schema is a reference schema</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>schema</td>
+                                            <td>
+                                                        <code>JSONSchema</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../miscellaneous/functions.html#red" target="_self" >PickRequired&lt;JSONSchema | $ref&gt;</a></code>
 
                         </div>
                             <div class="io-description">

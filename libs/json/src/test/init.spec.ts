@@ -8,7 +8,12 @@ describe('init', () => {
   const root = safepath('./init');
 
   afterAll(async () => {
-    await rmdir(root, { recursive: true });
+    setTimeout(() => {});
+    try {
+      await rmdir(root, { recursive: true });
+    } catch (err) {
+      console.error(err);
+    }
   });
 
   it('should init', async () => {

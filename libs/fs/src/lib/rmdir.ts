@@ -28,7 +28,6 @@ export async function rmdir(
 ): Promise<void> {
   if (options?.recursive) {
     const all = await getAllFilesAndDirs(root);
-
     for (const e of all) {
       if (await isFile(e)) {
         await rm(e);
@@ -41,7 +40,9 @@ export async function rmdir(
       }
     }
 
-    await rmdir(root);
+    if ((await isDirectory(root)) || (await isFile(root))) {
+      await rmdir(root);
+    }
   } else {
     return new Promise<void>((res, rej) => {
       try {

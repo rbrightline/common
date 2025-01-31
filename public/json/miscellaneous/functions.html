@@ -112,13 +112,19 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
+                            <a href="#forEachRef" title="libs/json/src/lib/util/for-each-ref.ts" ><b>forEachRef</b>&nbsp;&nbsp;&nbsp;(libs/.../for-each-ref.ts)</a>
+                        </li>
+                        <li>
                             <a href="#init" title="libs/json/src/lib/init/init.ts" ><b>init</b>&nbsp;&nbsp;&nbsp;(libs/.../init.ts)</a>
                         </li>
                         <li>
                             <a href="#schema" title="libs/json/src/lib/schema/schema.ts" ><b>schema</b>&nbsp;&nbsp;&nbsp;(libs/.../schema.ts)</a>
                         </li>
                         <li>
-                            <a href="#type" title="libs/json/src/lib/type/type.ts" ><b>type</b>&nbsp;&nbsp;&nbsp;(libs/.../type.ts)</a>
+                            <a href="#schemaConfig" title="libs/json/src/lib/util/schema-config.ts" ><b>schemaConfig</b>&nbsp;&nbsp;&nbsp;(libs/.../schema-config.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#tsc" title="libs/json/src/lib/tsc/tsc.ts" ><b>tsc</b>&nbsp;&nbsp;&nbsp;(libs/.../tsc.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -127,7 +133,84 @@
     </table>
 </section>
 
-    <h3>libs/json/src/lib/init/init.ts</h3>
+    <h3>libs/json/src/lib/util/for-each-ref.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="forEachRef"></a>
+                    <span class="name">
+                        <span ><b>forEachRef</b></span>
+                        <a href="#forEachRef"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>forEachRef(schema: <a href="../undefineds/ReadyJSONSchema.html" target="_self">ReadyJSONSchema</a>, callback: ForEachKeyCallBack)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Go through for each ref ,with root-schema</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>schema</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#ReadyJSONSchema" target="_self" >ReadyJSONSchema</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>callback</td>
+                                            <td>
+                                                        <code>ForEachKeyCallBack</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/json/src/lib/init/init.ts</h3>
     <section data-compodoc="block-methods">
     <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
@@ -142,7 +225,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>init(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, configRoot: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>init(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, templateFileDir: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -179,7 +262,7 @@
 
                                         </tr>
                                         <tr>
-                                                <td>configRoot</td>
+                                                <td>templateFileDir</td>
                                             <td>
                                                             <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                             </td>
@@ -255,22 +338,85 @@
             </tr>
         </tbody>
     </table>
-</section>    <h3>libs/json/src/lib/type/type.ts</h3>
+</section>    <h3>libs/json/src/lib/util/schema-config.ts</h3>
     <section data-compodoc="block-methods">
     <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="type"></a>
+                    <a name="schemaConfig"></a>
                     <span class="name">
-                        <span ><b>type</b></span>
-                        <a href="#type"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>schemaConfig</b></span>
+                        <a href="#schemaConfig"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>type()</code>
+<code>schemaConfig(root: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>root</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/SchemaManager.html" target="_self" >Promise&lt;SchemaManagerOptions&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/json/src/lib/tsc/tsc.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tsc"></a>
+                    <span class="name">
+                        <span ><b>tsc</b></span>
+                        <a href="#tsc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>tsc()</code>
                 </td>
             </tr>
 

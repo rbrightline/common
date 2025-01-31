@@ -57,6 +57,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/AccessDeniedError.html" data-type="entity-link" >AccessDeniedError</a>
                             </li>
                             <li class="link">
+                                <a href="classes/EmptyArrayError.html" data-type="entity-link" >EmptyArrayError</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/EmptyObjectError.html" data-type="entity-link" >EmptyObjectError</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/ItemNotFoundError.html" data-type="entity-link" >ItemNotFoundError</a>
                             </li>
                             <li class="link">
@@ -64,9 +70,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="classes/NotAbsolutePathError.html" data-type="entity-link" >NotAbsolutePathError</a>
-                            </li>
-                            <li class="link">
-                                <a href="classes/NotEmptyArrayError.html" data-type="entity-link" >NotEmptyArrayError</a>
                             </li>
                             <li class="link">
                                 <a href="classes/NotFileError.html" data-type="entity-link" >NotFileError</a>

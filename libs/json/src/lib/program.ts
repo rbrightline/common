@@ -1,5 +1,6 @@
 #!/usr/bin/env ts-node
 
+import { createPathScope } from '@rline/fs';
 import { program } from 'commander';
 import { join } from 'path';
 import { cwd } from 'process';
@@ -13,7 +14,7 @@ program
   .description(
     'CLI to compile json schemas into a single schema file and typescript types'
   )
-  .version('7.3.1');
+  .version('8.4.0');
 
 program
   .command('init')
@@ -28,8 +29,13 @@ program
   .name('schema')
   .description('Compile json schemas into a single schema')
   .action(async () => {
-    const config = await schemaConfig(cwd());
-    await schema(config);
+    const safepath = createPathScope(cwd());
+    let { main, output, root } = await schemaConfig(cwd());
+    await schema({
+      root: safepath(root),
+      main: safepath(root, main),
+      output: safepath(root, output),
+    });
   });
 
 program
