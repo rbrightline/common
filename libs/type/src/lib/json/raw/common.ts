@@ -1,6 +1,12 @@
-import { ValueType } from '../common';
+import { ReferencePattern } from 'src/lib/pattern';
+import { JSONSchemaType } from './type';
 
-export type JSONCommonSchema<T extends ValueType = ValueType> = {
+export type CommonSchema<ValueType> = {
+  type?: JSONSchemaType;
+  /**
+   * Reference to another schema
+   */
+  $ref?: ReferencePattern;
   /**
    * The absolute schema file path
    */
@@ -10,6 +16,7 @@ export type JSONCommonSchema<T extends ValueType = ValueType> = {
    * The absolute scheme dir path
    */
   $dirpath?: string;
+
   /**
    * Schema path
    */
@@ -31,11 +38,6 @@ export type JSONCommonSchema<T extends ValueType = ValueType> = {
   $comment?: string;
 
   /**
-   * Reference to another schema
-   */
-  $ref?: string;
-
-  /**
    * Schema description
    */
   description?: string;
@@ -43,17 +45,17 @@ export type JSONCommonSchema<T extends ValueType = ValueType> = {
   /**
    * Examples for the schema
    */
-  examples?: T[];
+  examples?: ValueType[];
 
   /**
    * Default value for the schemea
    */
-  default?: T;
+  default?: ValueType;
 
   /**
    * Constant value for the schema
    */
-  const?: T;
+  const?: ValueType;
 
   /**
    * Value format

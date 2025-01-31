@@ -1,10 +1,8 @@
-import { JSONCommonSchema } from './common';
-
-export type JSONNumberSchema = JSONCommonSchema<number> & {
+export type NumberSchemaRaw = {
   /**
    * schema type
    */
-  type: 'number' | 'integer';
+  type?: 'number' | 'integer';
 
   /**
    * list of allowed number values

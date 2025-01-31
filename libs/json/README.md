@@ -46,3 +46,7 @@ The command will convert the json schema into the typescript types
 ```shell
 json tsc ./output.schema.json ./output.ts
 ```
+
+## Tasks
+
+- [ ] complete and test @rline/json pacakge

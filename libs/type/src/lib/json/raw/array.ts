@@ -1,17 +1,11 @@
-import { ValueType } from '../common';
-import { JSONCommonSchema } from './common';
-
 /**
  * Array scheme
  */
-export type __JSONArraySchema<
-  S = any,
-  T extends ValueType = ValueType
-> = JSONCommonSchema<T[]> & {
+export type ArraySchemaRaw<S> = {
   /**
    * schema type
    */
-  type: 'array';
+  type?: 'array';
 
   /**
    * schema definition for the items

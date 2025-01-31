@@ -1,7 +1,7 @@
 /**
  * Other common schema properties
  */
-export type JSONConditionalSchema<S = any> = {
+export type ExtraSchema<S> = {
   /**
    * Describes the format expected for the value. By default, not used for validation
    */
@@ -42,5 +42,5 @@ export type JSONConditionalSchema<S = any> = {
   /**
    * schema defintions used in the schema
    */
-  definitions?: { [key: string]: S };
+  definitions?: Record<string, S>;
 };

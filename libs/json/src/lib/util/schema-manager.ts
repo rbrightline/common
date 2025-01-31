@@ -1,8 +1,15 @@
 import { forEachJSONSchemaFile, readJSONFile, writeJSONFile } from '@rline/fs';
 import { names } from '@rline/names';
-import { JSONSchema, NotAbsolutePathError, PickRequired } from '@rline/type';
+import {
+  JSONSchema,
+  KeyNotFoundError,
+  NotAbsolutePathError,
+  PickRequired,
+  RequiredError,
+} from '@rline/type';
 import { getLastSegment, hasKeys, isDefinitionPath } from '@rline/utils';
 import { isAbsolute, join } from 'path';
+import { forEachRef } from './for-each-ref';
 
 export type SchemaManagerOptions = {
   /**
@@ -26,7 +33,7 @@ export type SchemaManagerOptions = {
  */
 export type ReadyJSONSchema = PickRequired<
   JSONSchema,
-  'title' | '$filepath' | '$dirpath' | 'definitions'
+  'type' | 'title' | '$filepath' | '$dirpath' | 'definitions'
 >;
 
 export class SchemaManager {
@@ -146,6 +153,30 @@ export class SchemaManager {
     this.map.forEach(__toAbsoluteReferencePaths);
   }
 
+  protected initializeDefinitionsIfNot() {
+    this.map.forEach((e) => {
+      if (!e.definitions) e.definitions = {};
+    });
+  }
+
+  /**
+   * Convert absolute $ref values into definitions
+   */
+  protected toDefinitions() {
+    this.map.forEach((e) => {
+      forEachRef(e, async (rootSchema, referenceSchema) => {
+        const refSchema = this.map.get(referenceSchema.$ref);
+        if (refSchema) {
+          if (!refSchema.title) throw new RequiredError();
+
+          rootSchema.definitions[refSchema.title] = refSchema;
+        } else {
+          throw new KeyNotFoundError();
+        }
+      });
+    });
+  }
+
   async write() {
     this.map.forEach(async (value, filepath) => {
       const distFilepath = filepath.replace(this.root, this.output);
@@ -156,6 +187,8 @@ export class SchemaManager {
   async compile() {
     await this.readAndMapSchemasByAbsolutePath();
     this.toAbsoluteReferencePaths();
+    this.initializeDefinitionsIfNot();
+
     await this.write();
   }
 }

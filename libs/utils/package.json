@@ -28,7 +28,7 @@
     "workspace": "pnpm workspace:remove && pnpm workspace:add"
   },
   "dependencies": {
-    "@rline/type": "8.3.0",
+    "@rline/type": "workspace:^",
     "@swc/helpers": "~0.5.11"
   },
   "type": "commonjs",
@@ -60,7 +60,7 @@
           "outputPath": "libs/utils/dist",
           "main": "libs/utils/src/index.ts",
           "tsConfig": "libs/utils/tsconfig.lib.json",
-          "skipTypeCheck": true,
+          "skipTypeCheck": false,
           "stripLeadingPaths": true
         }
       }

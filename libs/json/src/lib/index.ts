@@ -2,4 +2,5 @@
 export * from './init/init';
 export * from './schema/schema';
 export * from './type/type';
+export * from './util/for-each-ref';
 export * from './util/schema-manager';

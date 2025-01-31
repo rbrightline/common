@@ -1,6 +1,6 @@
 {
   "name": "@rline/type",
-  "version": "8.3.0",
+  "version": "8.3.1",
   "description": "Common types",
   "license": "MIT",
   "author": {
@@ -54,7 +54,7 @@
           "outputPath": "libs/type/dist",
           "main": "libs/type/src/index.ts",
           "tsConfig": "libs/type/tsconfig.lib.json",
-          "skipTypeCheck": true,
+          "skipTypeCheck": false,
           "stripLeadingPaths": true
         }
       }

@@ -1,4 +1,8 @@
+/**
+ * JSON schema type
+ */
 export type JSONSchemaType =
+  | 'ref'
   | 'string'
   | 'number'
   | 'integer'

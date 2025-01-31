@@ -1,14 +1,8 @@
-import { ObjectLiteral } from '../common';
-import { JSONCommonSchema } from './common';
-
-export type __JSONObjectSchema<
-  S = any,
-  O extends ObjectLiteral = ObjectLiteral
-> = JSONCommonSchema<O> & {
+export type ObjectSchemaRaw<S> = {
   /**
    * schema type
    */
-  type: 'object';
+  type?: 'object';
 
   /**
    * record of properties

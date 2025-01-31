@@ -1,17 +1,38 @@
 import { ObjectLiteral, ValueType } from '../common';
-import { __JSONArraySchema } from './array';
-import { JSONConditionalSchema } from './conditional';
-import { __JSONObjectSchema } from './object';
-import { JSONPrimitiveSchema } from './primitive-json';
+import {
+  ArraySchemaRaw,
+  BooleanSchemaRaw,
+  CommonSchema,
+  ExtraSchema,
+  NumberSchemaRaw,
+  ObjectSchemaRaw,
+  StringSchemaRaw,
+} from './raw';
 
-export type __JSONSchema<
-  S = any,
-  O extends ObjectLiteral = ObjectLiteral,
-  T extends ValueType = ValueType
-> = JSONConditionalSchema &
-  (JSONPrimitiveSchema | __JSONObjectSchema<S, O> | __JSONArraySchema<T>);
+export type CT<Schema, RawSchema, ValueType> = CommonSchema<ValueType> &
+  ExtraSchema<Schema> &
+  RawSchema;
 
-export type JSONSchema = __JSONSchema<__JSONSchema<__JSONSchema<any>>>;
+export type StringSchema<Schema> = CT<Schema, StringSchemaRaw, string>;
+export type NumberSchema<Schema> = CT<Schema, NumberSchemaRaw, number>;
+export type BooleanSchema<Schema> = CT<Schema, BooleanSchemaRaw, boolean>;
+export type ObjectSchema<Schema> = CT<
+  Schema,
+  ObjectSchemaRaw<Schema>,
+  ObjectLiteral
+>;
 
-export type JSONObjectSchema = __JSONObjectSchema<JSONSchema>;
-export type JSONArraySchema = __JSONArraySchema<JSONSchema>;
+export type ArraySchema<Schema> = ExtraSchema<Schema> &
+  CommonSchema<ValueType[]> &
+  ArraySchemaRaw<Schema>;
+
+export type __JSONSchema<Schema> =
+  | StringSchema<Schema>
+  | NumberSchema<Schema>
+  | BooleanSchema<Schema>
+  | ObjectSchema<Schema>
+  | ArraySchema<Schema>;
+
+export type JSONSchema = __JSONSchema<
+  __JSONSchema<__JSONSchema<__JSONSchema<__JSONSchema<any>>>>
+>;
