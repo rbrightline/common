@@ -1,5 +1,5 @@
 import { AccessDeniedError } from '@rline/type';
-import { resolve } from 'path';
+import { normalize, resolve } from 'path';
 
 export type PathScope = (path: string) => string | never;
 
@@ -20,7 +20,7 @@ export type PathScope = (path: string) => string | never;
  *
  * ````typescript
  *
- *    const scope = createPathScope(__dirname, 'secure');
+ *    const scope = createPathScope(join(__dirname,'secure'));
  *    const filepath = scope('../../../../secured-file.md);
  *
  * ````
@@ -30,6 +30,6 @@ export function createPathScope(scopePath: string) {
   return (...paths: string[]) => {
     const resolved = resolve(scopePath, ...paths);
     if (!resolved.startsWith(scopePath)) throw new AccessDeniedError();
-    return resolved;
+    return normalize(resolved);
   };
 }

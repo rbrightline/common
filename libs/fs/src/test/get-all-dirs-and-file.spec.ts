@@ -2,9 +2,9 @@ import { getAllFilesAndDirs } from '../lib';
 import { safepath } from './__test-utils';
 
 describe('getAllDirsAndFiles', () => {
-  const root = safepath('rmdir');
+  const root = safepath('./');
   it('should get all dirs and files', async () => {
-    const result = await getAllFilesAndDirs(root);
-    console.log(result);
+    const allDirs = await getAllFilesAndDirs(root);
+    expect(allDirs.length).greaterThan(10);
   });
 });

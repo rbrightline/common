@@ -131,16 +131,16 @@ importers:
   libs/json:
     dependencies:
       '@rline/fs':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../fs
       '@rline/names':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../names
       '@rline/type':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../type
       '@rline/utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../utils
       '@swc/helpers':
         specifier: ~0.5.11

@@ -3,4 +3,4 @@ import { createPathScope } from '../lib';
 /**
  * Under tmp file scope
  */
-export const safepath = createPathScope(join(__dirname, 'tmp'));
+export const safepath = createPathScope(join(__dirname, 'data'));

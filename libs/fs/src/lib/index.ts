@@ -1,6 +1,7 @@
 // @index(['./**/*.ts', '!./**/__*/**', '!./**/*{spec,test,story,stories,index,__*}.ts'], f => `export * from '${f.path}'`)
 export * from './append-file';
 export * from './append-file-by-line';
+export * from './cp';
 export * from './create-path-scope';
 export * from './dirs';
 export * from './file-contain';

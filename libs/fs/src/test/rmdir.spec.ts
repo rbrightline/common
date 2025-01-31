@@ -1,4 +1,3 @@
-import { tryCatch } from '@rline/utils';
 import { dirs, mkdir, rmdir } from '../lib';
 import { safepath } from './__test-utils';
 
@@ -20,9 +19,8 @@ describe('rmdir', () => {
   });
 
   it('should work', async () => {
-    await tryCatch(async () => await rmdir(root, { recursive: true }));
-    expect(await dirs(root)).toEqual([]);
-
     await rmdir(root, { recursive: true });
+
+    expect(await dirs(root)).toEqual([]);
   });
 });

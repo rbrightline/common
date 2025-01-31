@@ -1,12 +1,11 @@
-import { copyFileSync } from 'fs';
+import { cp } from '@rline/fs';
 import { join } from 'path';
 
 export const SCHEMA_CONFIG_FILE_NAME = 'schema.config.json';
 
-export function init() {
-  const root = '';
-  copyFileSync(
-    join(__dirname, `../../../assets/${SCHEMA_CONFIG_FILE_NAME}`),
-    join(root, SCHEMA_CONFIG_FILE_NAME)
-  );
+/**
+ * Generate the configuration file
+ */
+export async function init(root: string, configFileSource: string) {
+  await cp(configFileSource, join(root, SCHEMA_CONFIG_FILE_NAME));
 }

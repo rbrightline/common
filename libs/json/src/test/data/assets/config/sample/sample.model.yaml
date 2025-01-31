@@ -1,0 +1,7 @@
+# yaml-language-server: $schema=../model.schema.json
+name: User
+properties:
+  - type: string
+    name: username
+    minLength: 3
+    maxLength: 100

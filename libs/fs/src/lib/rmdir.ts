@@ -1,5 +1,7 @@
 import { __rmdir } from './__fs__';
 import { getAllFilesAndDirs } from './get-all-files-and-dirs';
+import { rm } from './rm';
+import { isDirectory } from './stat';
 
 export type RmdirOptions = {
   /**
@@ -26,7 +28,15 @@ export async function rmdir(
 ): Promise<void> {
   if (options?.recursive) {
     const all = await getAllFilesAndDirs(root);
-    await Promise.all(all.map((e) => rmdir(e)));
+    await Promise.all(
+      all.map(async (e) => {
+        if (await isDirectory(e)) {
+          return await rmdir(e);
+        }
+        return await rm(e);
+      })
+    );
+    await rmdir(root);
   } else {
     return await new Promise((res, rej) => {
       try {

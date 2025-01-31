@@ -1,6 +1,7 @@
 // @index(['./**/*.ts', '!./**/__*/**', '!./**/*{spec,test,story,stories,index,program,__*}.ts'], f => `export * from '${f.path}'`)
 export * from './lib/append-file';
 export * from './lib/append-file-by-line';
+export * from './lib/cp';
 export * from './lib/create-path-scope';
 export * from './lib/dirs';
 export * from './lib/file-contain';
