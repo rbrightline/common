@@ -69,6 +69,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/NotEmptyArrayError.html" data-type="entity-link" >NotEmptyArrayError</a>
                             </li>
                             <li class="link">
+                                <a href="classes/NotFileError.html" data-type="entity-link" >NotFileError</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/NumberNotInRangeError.html" data-type="entity-link" >NumberNotInRangeError</a>
                             </li>
                             <li class="link">

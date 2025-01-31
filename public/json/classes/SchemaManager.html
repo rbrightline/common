@@ -764,17 +764,17 @@ export type SchemaManagerOptions &#x3D; {
   /**
    * Main schema filepath
    */
-  mainFilePath?: string;
+  main: string;
 
   /**
    * Root directory of the schemas or The parent directory of the main schema file
    */
-  rootPath?: string;
+  root: string;
 
   /**
    * Output directory, by default dist
    */
-  output?: string;
+  output: string;
 };
 
 /**
@@ -824,8 +824,8 @@ export class SchemaManager {
 
   constructor(options?: SchemaManagerOptions) {
     // setting default values
-    this.root &#x3D; options?.rootPath ?? SchemaManager.defaultRootPath;
-    this.main &#x3D; options?.mainFilePath ?? SchemaManager.defaultMainFilePath;
+    this.root &#x3D; options?.root ?? SchemaManager.defaultRootPath;
+    this.main &#x3D; options?.main ?? SchemaManager.defaultMainFilePath;
     this.output &#x3D; options?.output ?? SchemaManager.defaultOutuptPath;
 
     // validating

@@ -1,6 +1,6 @@
 {
   "name": "@rline/fs",
-  "version": "8.2.2",
+  "version": "8.3.0",
   "description": "Read, write, manage files and directories",
   "license": "MIT",
   "author": {
@@ -30,9 +30,9 @@
     "workspace": "pnpm workspace:remove && pnpm workspace:add"
   },
   "dependencies": {
-    "@rline/names": "workspace:^",
-    "@rline/type": "workspace:^",
-    "@rline/utils": "workspace:^",
+    "@rline/names": "8.3.0",
+    "@rline/type": "8.3.0",
+    "@rline/utils": "8.3.0",
     "@swc/helpers": "~0.5.11"
   },
   "type": "commonjs",
