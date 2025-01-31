@@ -1,7 +1,7 @@
 import { ValueType } from '@rline/type';
 
 /**
- * Update the item of the array by the index of the item.s
+ * Update array item by index
  * @param arr
  * @param newValue
  * @param index

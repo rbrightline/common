@@ -1,7 +1,7 @@
 import { Key, ObjectLiteral } from '@rline/type';
 
 /**
- * Pick the keys from the object
+ * Pick a list of keys from an object
  * @param object
  * @param keys
  * @returns

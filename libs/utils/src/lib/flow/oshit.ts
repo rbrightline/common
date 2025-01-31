@@ -1,7 +1,7 @@
 import { Type } from '@rline/type';
 
 /**
- * throw Error
+ * Throw error ( throw new Type<E>(message) )
  * @param error optional error class to throw such as FileNotFoundError
  * @param message optional error message
  */

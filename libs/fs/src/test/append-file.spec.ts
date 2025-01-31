@@ -1,12 +1,17 @@
 import { fail } from 'assert';
-import { appendFile, readFileByLine, writeFile } from '../lib';
+import { appendFile, readFileByLine, rmdir, writeFile } from '../lib';
 import { safepath } from './__test-utils';
 
 describe('appendFile', () => {
-  const filepath = safepath('./append-file.md');
+  const root = safepath('./appendFile');
+  const filepath = safepath(root, 'append-file.md');
 
   beforeAll(async () => {
     await writeFile(filepath, '# append file test\n## Timestamps \n');
+  });
+
+  afterAll(async () => {
+    await rmdir(root, { recursive: true });
   });
   it('should append file', async () => {
     const timestamp = new Date().toISOString();

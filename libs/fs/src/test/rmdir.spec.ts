@@ -11,16 +11,12 @@ describe('rmdir', () => {
     .flat();
 
   beforeAll(async () => {
-    await mkdir(...subItemPaths);
-  });
-
-  afterAll(async () => {
+    await mkdir(root);
     await mkdir(...subItemPaths);
   });
 
   it('should work', async () => {
     await rmdir(root, { recursive: true });
-
-    expect(await dirs(root)).toEqual([]);
+    expect(await dirs(safepath())).not.include('rmdir');
   });
 });

@@ -1,4 +1,4 @@
-import { cp, isFile, rm, writeFile } from '../lib';
+import { cp, isFile, rmdir, writeFile } from '../lib';
 import { safepath } from './__test-utils';
 
 describe('cp', () => {
@@ -11,8 +11,7 @@ describe('cp', () => {
   });
 
   afterAll(async () => {
-    await rm(filepath);
-    await rm(targetpath);
+    await rmdir(root, { recursive: true });
   });
 
   it('should return list of cp', async () => {

@@ -1,8 +1,9 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
+import { sortPaths } from './sort-paths';
 
 /**
- * Recursively gets all files and directories in a given directory and return it
+ * Recursively get all files and directories in a given directory and return it
  * @param root Relative or absolute direpath
  * @returns
  */
@@ -22,8 +23,8 @@ export async function getAllFilesAndDirs(root: string): Promise<string[]> {
       }
     }
   } catch (error) {
-    console.error(`Error reading directory ${root}:`, error);
+    throw error;
   }
 
-  return results.sort((a, b) => (a.length > b.length ? -1 : 1));
+  return sortPaths(results);
 }

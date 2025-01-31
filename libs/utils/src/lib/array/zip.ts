@@ -2,7 +2,7 @@ import { Optional, Pair } from '@rline/type';
 import { max } from '../number';
 
 /**
- * Create pairs with the items in the same index location.
+ * Create pair from two arrays by coupling the same index with each other
  * @param first
  * @param second
  * @returns

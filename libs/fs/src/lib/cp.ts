@@ -6,8 +6,17 @@ import { mkdir } from './mkdir';
 import { isFile } from './stat';
 
 /**
- * copy file from target to destination
- * @param filepath
+ * Copy file from target to destination
+ * @param source source file path
+ * @param target target file path
+ *
+ * @returns
+ *
+ * ````typescript
+ *    await cp('./file.md', './new-file.md');
+ *    await cp('./file.md', '../other/new-file.md');
+ *    await cp('./other/file.md', '../some/new-file.md');
+ * ````
  */
 export async function cp(source: string, target: string): Promise<void> {
   if (await isFile(source)) {

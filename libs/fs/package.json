@@ -1,6 +1,6 @@
 {
   "name": "@rline/fs",
-  "version": "8.2.1",
+  "version": "8.2.2",
   "description": "Read, write, manage files and directories",
   "license": "MIT",
   "author": {

@@ -1,7 +1,7 @@
 import { Key, ObjectLiteral } from '@rline/type';
 
 /**
- * Omit the keys from the object.
+ * Omit a list of keys from an object
  * @param object
  * @param keys
  * @returns

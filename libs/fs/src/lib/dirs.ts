@@ -40,13 +40,14 @@ export async function dirs(
     try {
       __readdir(root, async (err, data) => {
         if (err) {
-          res([]);
+          rej(err);
         } else {
           if (includeFiles == true) {
             res(data);
           } else {
-            const dirs = await asyncFilter(data, (e) =>
-              isDirectory(join(root, e))
+            const dirs = await asyncFilter(
+              data,
+              async (e) => !!(await isDirectory(join(root, e)))
             );
 
             res(dirs);

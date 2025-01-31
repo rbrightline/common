@@ -17,9 +17,13 @@ export async function stat(filename: string): Promise<Stats> {
  * @param filepath
  * @returns
  */
-export async function isDirectory(filepath: string): Promise<boolean> {
-  const s = await stat(filepath);
-  return s.isDirectory();
+export async function isDirectory(filepath: string): Promise<boolean | null> {
+  try {
+    const s = await stat(filepath);
+    return s.isDirectory();
+  } catch (err) {
+    return null;
+  }
 }
 
 /**
@@ -27,7 +31,11 @@ export async function isDirectory(filepath: string): Promise<boolean> {
  * @param filepath
  * @returns
  */
-export async function isFile(filepath: string): Promise<boolean> {
-  const s = await stat(filepath);
-  return s.isFile();
+export async function isFile(filepath: string): Promise<boolean | null> {
+  try {
+    const s = await stat(filepath);
+    return s.isFile();
+  } catch (err) {
+    return null;
+  }
 }

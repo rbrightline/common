@@ -1,4 +1,4 @@
-import { cpdir, forEachFile, isDirectory, isFile, rm, writeFile } from '../lib';
+import { cpdir, isDirectory, isFile, rmdir, writeFile } from '../lib';
 import { safepath } from './__test-utils';
 
 describe('cpdir', () => {
@@ -13,7 +13,7 @@ describe('cpdir', () => {
   });
 
   afterAll(async () => {
-    await forEachFile(root, rm, { recursive: true });
+    await rmdir(root, { recursive: true });
   });
 
   it('should return list of cpdir', async () => {

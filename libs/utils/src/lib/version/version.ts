@@ -29,7 +29,7 @@ export function minor(version: Version) {
  */
 export function patch(version: Version) {
   const [f, s, t] = version.split('.');
-  const __t = parseInt(t.split('-').shift() || '0') + '' + 1;
+  const __t = parseInt(t.split('-').shift() || '0') + 1;
   return [f, s, __t].join('.');
 }
 

@@ -1,5 +1,5 @@
 /**
- * Get the first of the array
+ * Get the first item of the array
  * @param arr
  * @returns
  */

@@ -1,5 +1,5 @@
 /**
- * Deep clone object
+ * Clone object (using JSON.parse(JSON.stringify(data))))
  * @param value
  * @returns
  */

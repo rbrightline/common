@@ -34,11 +34,13 @@ export async function rmdir(
         await rm(e);
       }
     }
+
     for (const e of all) {
       if (await isDirectory(e)) {
         await rmdir(e);
       }
     }
+
     await rmdir(root);
   } else {
     return new Promise<void>((res, rej) => {

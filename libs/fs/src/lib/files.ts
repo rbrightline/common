@@ -39,15 +39,16 @@ export async function files(
 ): Promise<string[]> {
   return new Promise((res, rej) => {
     try {
-      __readdir(root, async (err, allFiles) => {
+      __readdir(root, async (err, __files) => {
         if (err) {
-          res([]);
+          rej(err);
         } else {
           if (includeDirs == true) {
-            res(allFiles);
+            res(__files);
           } else {
-            const dirs = await asyncFilter(allFiles, (e) =>
-              isFile(join(root, e))
+            const dirs = await asyncFilter(
+              __files,
+              async (e) => !!(await isFile(join(root, e)))
             );
             res(dirs);
           }
