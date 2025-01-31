@@ -2,5 +2,4 @@
 export * from './init/init';
 export * from './schema/schema';
 export * from './type/type';
-export * from './util/get-config';
 export * from './util/schema-manager';

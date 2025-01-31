@@ -2,6 +2,7 @@
 export * from './append-file';
 export * from './append-file-by-line';
 export * from './cp';
+export * from './cpdir';
 export * from './create-path-scope';
 export * from './dirs';
 export * from './file-contain';

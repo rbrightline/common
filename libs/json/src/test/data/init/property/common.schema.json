@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "CommonPropertyOptions",
+    "properties": {
+        "name": {
+            "$ref": "../enum/property.schema.json"
+        }
+    },
+    "required": [
+        "name"
+    ]
+}

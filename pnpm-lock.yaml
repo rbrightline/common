@@ -116,14 +116,14 @@ importers:
   libs/fs:
     dependencies:
       '@rline/names':
-        specifier: 8.2.0
-        version: 8.2.0
+        specifier: workspace:^
+        version: link:../names
       '@rline/type':
-        specifier: 8.2.0
-        version: 8.2.0
+        specifier: workspace:^
+        version: link:../type
       '@rline/utils':
-        specifier: 8.2.0
-        version: 8.2.0
+        specifier: workspace:^
+        version: link:../utils
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -1413,9 +1413,6 @@ packages:
   '@rline/names@8.1.1':
     resolution: {integrity: sha512-94ZgUXwWTmsVqgqH6vo8d4FV2IF1XQdMvHWJHZWCki7OwDTHViFKpxD4dVXdvSfeZ05V8yWKns2HD/B9xbP7Lg==}
 
-  '@rline/names@8.2.0':
-    resolution: {integrity: sha512-T6x48P6v8F9oLsSavl80KxU1c0tkJh2LyRvtmIHrTYiKG3CQUUL5KsyfC3YrvOWYy98U/uOfHnGGeLgUjnzVZQ==}
-
   '@rline/type@8.1.1':
     resolution: {integrity: sha512-3CM+i7QaaJB7pqzM2dQJtyLdzj967CjzyVSksgw6vjm9bTzi0d8h3gZL0LU3AfiytR9Hq+bswrCZS8yAFFzxXw==}
 
@@ -1424,9 +1421,6 @@ packages:
 
   '@rline/utils@8.1.1':
     resolution: {integrity: sha512-ieHwycNpvMons+KexUlWbuTxb39g9GjV9dB0bTS+Dauymn0IwKqMYXcpKCXKL1rQOAIQYE1DtuuVFqY2lvEdLg==}
-
-  '@rline/utils@8.2.0':
-    resolution: {integrity: sha512-s3AKi9DTOkjq2YIlgbi/YQbH/2qO0NcuXxMjCL3lATRe51QNEUbw1nT+Ey63XRx2gXL6dyJcuhdH+aUQzA9zNg==}
 
   '@rollup/rollup-android-arm-eabi@4.31.0':
     resolution: {integrity: sha512-9NrR4033uCbUBRgvLcBrJofa2KY9DzxL2UKZ1/4xA/mnTNyhZCWBuD8X3tPm1n4KxcgaraOYgrFKSgwjASfmlA==}
@@ -7365,10 +7359,6 @@ snapshots:
     dependencies:
       '@swc/helpers': 0.5.15
 
-  '@rline/names@8.2.0':
-    dependencies:
-      '@swc/helpers': 0.5.15
-
   '@rline/type@8.1.1':
     dependencies:
       '@swc/helpers': 0.5.15
@@ -7379,11 +7369,6 @@ snapshots:
 
   '@rline/utils@8.1.1':
     dependencies:
-      '@swc/helpers': 0.5.15
-
-  '@rline/utils@8.2.0':
-    dependencies:
-      '@rline/type': 8.2.0
       '@swc/helpers': 0.5.15
 
   '@rollup/rollup-android-arm-eabi@4.31.0':

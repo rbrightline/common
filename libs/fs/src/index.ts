@@ -2,6 +2,7 @@
 export * from './lib/append-file';
 export * from './lib/append-file-by-line';
 export * from './lib/cp';
+export * from './lib/cpdir';
 export * from './lib/create-path-scope';
 export * from './lib/dirs';
 export * from './lib/file-contain';
