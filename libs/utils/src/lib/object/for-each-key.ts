@@ -1,4 +1,5 @@
 import { entries } from './entries';
+import { keys } from './keys';
 
 export type ForEachKeyCallBack<T, R extends Partial<T>> = (
   rootSchema: T,
@@ -17,6 +18,8 @@ export function __forEachKey<T extends object, R extends Partial<T>>(
   key: keyof R,
   callback: ForEachKeyCallBack<T, R>
 ): void {
+  if (keys(schema).length == 0) return;
+
   const pairs = entries(schema);
 
   for (const [_key, value] of pairs) {

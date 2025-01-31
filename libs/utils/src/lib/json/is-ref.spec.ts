@@ -5,10 +5,12 @@ describe('isRef', () => {
   it('should check the schema is a reference schema', () => {
     const stringSchema: JSONSchema = { type: 'string' };
     const numberSchema: JSONSchema = { type: 'number' };
-    const refSchema: JSONSchema = { $ref: '' };
+    const invalidRef: JSONSchema = { $ref: '' };
+    const validREf: JSONSchema = { $ref: './some' };
 
     expect(isRef(stringSchema)).toEqual(false);
     expect(isRef(numberSchema)).toEqual(false);
-    expect(isRef(refSchema)).toEqual(true);
+    expect(isRef(invalidRef)).toEqual(false);
+    expect(isRef(validREf)).toEqual(true);
   });
 });

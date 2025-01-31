@@ -3,7 +3,7 @@
     "title": "CommonPropertyOptions",
     "properties": {
         "name": {
-            "$ref": "../enum/property.schema.json"
+            "$ref": "../enum/property-name.schema.json"
         }
     },
     "required": [

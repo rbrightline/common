@@ -4,11 +4,11 @@ import {
   JSONSchema,
   KeyNotFoundError,
   NotAbsolutePathError,
-  PickRequired,
   RequiredError,
 } from '@rline/type';
-import { getLastSegment, hasKeys, isDefinitionPath } from '@rline/utils';
+import { clone, getLastSegment, hasKeys, isDefinitionPath } from '@rline/utils';
 import { isAbsolute, join } from 'path';
+import { ReadyJSONSchema } from '../type';
 import { forEachRef } from './for-each-ref';
 
 export type SchemaManagerOptions = {
@@ -27,14 +27,6 @@ export type SchemaManagerOptions = {
    */
   output: string;
 };
-
-/**
- * The schema type that ready to use by the SchemaManager
- */
-export type ReadyJSONSchema = PickRequired<
-  JSONSchema,
-  'type' | 'title' | '$filepath' | '$dirpath' | 'definitions'
->;
 
 export class SchemaManager {
   /**
@@ -112,11 +104,18 @@ export class SchemaManager {
       schema.$filepath = filepath;
       schema.$dirpath = join(filepath, '..');
 
-      if (!hasKeys(schema, ['definitions'])) schema.definitions = {};
-      if (hasKeys(schema, ['title', '$filepath', '$dirpath', 'definitions'])) {
+      if (
+        hasKeys(schema, [
+          'type',
+          'title',
+          '$filepath',
+          '$dirpath',
+          'definitions',
+        ])
+      ) {
         this.map.set(filepath, schema);
       } else {
-        throw new Error(`The schema is not prepared ${filepath}`);
+        throw new KeyNotFoundError();
       }
     });
   }
@@ -153,9 +152,24 @@ export class SchemaManager {
     this.map.forEach(__toAbsoluteReferencePaths);
   }
 
-  protected initializeDefinitionsIfNot() {
+  /**
+   * Definitions keys is used to store references. So, this function set default value ({}) for each schema
+   **/
+  protected initializeEachDiefintionsIfUndefined() {
     this.map.forEach((e) => {
       if (!e.definitions) e.definitions = {};
+    });
+  }
+
+  /**
+   * The ready-schema must have title, $filepath, $dirpath, and definitions key defined.
+   */
+  protected validateSchemas() {
+    this.map.forEach((e) => {
+      if (!e.title) throw new RequiredError();
+      if (!e.$filepath) throw new RequiredError();
+      if (!e.$dirpath) throw new RequiredError();
+      if (!e.definitions) throw new RequiredError();
     });
   }
 
@@ -163,32 +177,59 @@ export class SchemaManager {
    * Convert absolute $ref values into definitions
    */
   protected toDefinitions() {
-    this.map.forEach((e) => {
-      forEachRef(e, async (rootSchema, referenceSchema) => {
+    for (const e of this.map.values()) {
+      forEachRef(e, (rootSchema, referenceSchema) => {
         const refSchema = this.map.get(referenceSchema.$ref);
         if (refSchema) {
-          if (!refSchema.title) throw new RequiredError();
-
-          rootSchema.definitions[refSchema.title] = refSchema;
+          if (rootSchema.title != refSchema.title) {
+            rootSchema.definitions[refSchema.title] =
+              this.toDefinitionSchema(refSchema);
+          }
         } else {
           throw new KeyNotFoundError();
         }
       });
-    });
+    }
+
+    // Transform $ref paths into
+    for (const e of this.map.values()) {
+      forEachRef(e, (rootSchema, referenceSchema) => {
+        if (isDefinitionPath(referenceSchema.$ref)) return;
+        const refSchema = this.map.get(referenceSchema.$ref);
+        if (refSchema) {
+          referenceSchema.$ref = `#/${refSchema.title}`;
+        } else {
+          throw new KeyNotFoundError();
+        }
+      });
+    }
+  }
+
+  protected toDefinitionSchema(schema: ReadyJSONSchema): JSONSchema {
+    const cSchema = clone<JSONSchema>(schema);
+    delete cSchema.title;
+    delete cSchema.$schema;
+    delete cSchema.$dirpath;
+    delete cSchema.$filepath;
+    delete cSchema.definitions;
+    return cSchema;
   }
 
   async write() {
-    this.map.forEach(async (value, filepath) => {
-      const distFilepath = filepath.replace(this.root, this.output);
-      await writeJSONFile(distFilepath, value);
-    });
+    for (const e of this.map.values()) {
+      const filepath = e.$filepath.replace(this.root, this.output);
+      delete (e as JSONSchema).$filepath;
+      delete (e as JSONSchema).$dirpath;
+      await writeJSONFile(filepath, e);
+    }
   }
 
   async compile() {
     await this.readAndMapSchemasByAbsolutePath();
     this.toAbsoluteReferencePaths();
-    this.initializeDefinitionsIfNot();
-
+    this.initializeEachDiefintionsIfUndefined();
+    this.toDefinitions();
+    this.validateSchemas();
     await this.write();
   }
 }

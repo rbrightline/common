@@ -3,7 +3,7 @@
     "title": "ModelOptions",
     "properties": {
         "name": {
-            "$ref": "./enum/model.schema.json"
+            "$ref": "./enum/model-name.schema.json"
         },
         "properties": {
             "type": "array",

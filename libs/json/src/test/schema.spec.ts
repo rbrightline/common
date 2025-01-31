@@ -1,4 +1,3 @@
-import { rmdir } from '@rline/fs';
 import { init, schema, SchemaManagerOptions } from '../lib';
 import { safepath } from './__test-utils';
 import { SCHEMA_CONFIG_TEMPLATE } from './init.spec';
@@ -15,11 +14,11 @@ describe('schema', () => {
     await init(root, SCHEMA_CONFIG_TEMPLATE);
   });
 
-  afterAll(async () => {
-    await rmdir(options.root, { recursive: true });
-  });
+  // afterAll(async () => {
+  //   await rmdir(options.root, { recursive: true });
+  // });
 
-  it('should work', async () => {
+  it('should compile schemea', async () => {
     await schema(options);
   });
 });

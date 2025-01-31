@@ -18,6 +18,11 @@ export type CommonSchema<ValueType> = {
   $dirpath?: string;
 
   /**
+   * Is schema ready for operation
+   */
+  $ready?: boolean;
+
+  /**
    * Schema path
    */
   $schema?: string;

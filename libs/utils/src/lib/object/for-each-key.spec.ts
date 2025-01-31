@@ -24,4 +24,13 @@ describe('forEachKey', () => {
 
     expect(obj.$comment).toEqual('./some./other');
   });
+
+  it('should not go through if there not key', () => {
+    let result = '';
+    forEachKey({}, 'some', (r, s) => {
+      result += (s.some as string) + '';
+    });
+
+    expect(result).toEqual('');
+  });
 });

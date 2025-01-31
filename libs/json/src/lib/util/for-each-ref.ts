@@ -1,5 +1,5 @@
-import { JSONSchema } from '@rline/type';
 import { forEachKey, ForEachKeyCallBack } from '@rline/utils';
+import { ReadyJSONSchema } from '../type';
 
 /**
  * Go through for each ref ,with root-schema
@@ -7,8 +7,8 @@ import { forEachKey, ForEachKeyCallBack } from '@rline/utils';
  * @param callback
  */
 export function forEachRef(
-  schema: JSONSchema,
-  callback: ForEachKeyCallBack<JSONSchema, JSONSchema>
+  schema: ReadyJSONSchema,
+  callback: ForEachKeyCallBack<ReadyJSONSchema, ReadyJSONSchema>
 ): void {
-  forEachKey<JSONSchema, JSONSchema>(schema, '$ref', callback);
+  forEachKey<ReadyJSONSchema, ReadyJSONSchema>(schema, '$ref', callback);
 }
