@@ -1,9 +1,12 @@
 #!/usr/bin/env ts-node
 
 import { program } from 'commander';
+import { join } from 'path';
+import { cwd } from 'process';
 import { init } from './init/init';
 import { schema } from './schema/schema';
-import { type } from './type/type';
+import { tsc } from './tsc';
+import { schemaConfig } from './util';
 
 program
   .name('json compiler')
@@ -16,18 +19,25 @@ program
   .command('init')
   .name('init')
   .description('Initialize the schema project')
-  .action(init);
+  .action(async () => {
+    await init(cwd(), join(__dirname, '../../assets'));
+  });
 
 program
   .command('schema')
   .name('schema')
   .description('Compile json schemas into a single schema')
-  .action(schema);
+  .action(async () => {
+    const config = await schemaConfig(cwd());
+    await schema(config);
+  });
 
 program
   .command('tsc')
   .name('tsc')
   .description('Compile json schemas into a typescript type')
-  .action(type);
+  .action(async () => {
+    tsc();
+  });
 
 program.parse();

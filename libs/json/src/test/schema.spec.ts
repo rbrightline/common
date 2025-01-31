@@ -6,7 +6,7 @@ describe('schema', () => {
   const options: SchemaManagerOptions = {
     root: safepath('schema'),
     output: safepath('schema-dist'),
-    main: safepath('schema', 'main.schema.json'),
+    main: safepath('schema', 'model.schema.json'),
   };
   const root = safepath('schema');
 

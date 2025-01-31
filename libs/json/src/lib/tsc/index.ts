@@ -1,3 +1,2 @@
 // @index(['./**/*.ts', '!./**/__*/**', '!./**/*{spec,test,story,stories,index,__*}.ts', '!./**/program.ts'], f => `export * from '${f.path}'`)
-export * from './ready-schema';
-export * from './type';
+export * from './tsc';

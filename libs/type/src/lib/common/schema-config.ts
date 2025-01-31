@@ -1,4 +1,5 @@
 /**
+ * @deprecated
  * Schemea proejct configuration
  */
 export type SchemaConfig = {

@@ -1,14 +1,14 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "ModelSchemaJson",
+    "title": "Model",
     "properties": {
         "name": {
-            "$ref": "#/ModelNameSchemaJson"
+            "$ref": "#/definitions/ModelName"
         },
         "properties": {
             "type": "array",
             "items": {
-                "$ref": "#/PropertySchemaJson"
+                "$ref": "#/definitions/Property"
             }
         }
     },
@@ -16,33 +16,33 @@
         "name"
     ],
     "definitions": {
-        "ModelNameSchemaJson": {
+        "ModelName": {
             "enum": [
                 "User",
                 "Product"
             ]
         },
-        "PropertySchemaJson": {
+        "Property": {
             "allOf": [
                 {
-                    "$ref": "#/CommonSchemaJson"
+                    "$ref": "#/definitions/Common"
                 },
                 {
-                    "$ref": "#/StringSchemaJson"
+                    "$ref": "#/definitions/String"
                 }
             ]
         },
-        "CommonSchemaJson": {
+        "Common": {
             "properties": {
                 "name": {
-                    "$ref": "#/PropertyNameSchemaJson"
+                    "$ref": "#/definitions/PropertyName"
                 }
             },
             "required": [
                 "name"
             ]
         },
-        "StringSchemaJson": {
+        "String": {
             "properties": {
                 "type": {
                     "const": "string"
@@ -56,6 +56,12 @@
                     "default": 100
                 }
             }
+        },
+        "PropertyName": {
+            "enum": [
+                "username",
+                "password"
+            ]
         }
     }
 }

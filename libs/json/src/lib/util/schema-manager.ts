@@ -8,8 +8,8 @@ import {
 } from '@rline/type';
 import { clone, getLastSegment, hasKeys, isDefinitionPath } from '@rline/utils';
 import { isAbsolute, join } from 'path';
-import { ReadyJSONSchema } from '../type';
 import { forEachRef } from './for-each-ref';
+import { ReadyJSONSchema } from './ready-schema';
 
 export type SchemaManagerOptions = {
   /**
@@ -86,6 +86,11 @@ export class SchemaManager {
     return await readJSONFile<JSONSchema>(filepath);
   }
 
+  protected title(filepath: string): string {
+    return names(getLastSegment(filepath).replace('.schema.json', ''))
+      .pascalCase;
+  }
+
   /**
    * Read all descendant schemas under the root directory,
    * Then set default (required values), $filepath, $dirpath, title, and definitions
@@ -96,13 +101,10 @@ export class SchemaManager {
       // read the schema file
       const schema = await this.read(filepath);
 
-      // Extract filename from pathF
-      const shortFilename = getLastSegment(filepath);
-
       // Set schema title
-      schema.title = names(shortFilename).pascalCase;
+      schema.title = this.title(filepath);
       schema.$filepath = filepath;
-      schema.$dirpath = join(filepath, '..');
+      schema.$dirpath = join(schema.$filepath, '..');
 
       if (
         hasKeys(schema, [
@@ -113,7 +115,7 @@ export class SchemaManager {
           'definitions',
         ])
       ) {
-        this.map.set(filepath, schema);
+        this.map.set(schema.title, schema);
       } else {
         throw new KeyNotFoundError();
       }
@@ -173,15 +175,34 @@ export class SchemaManager {
     });
   }
 
+  protected getRootSchema(): ReadyJSONSchema | never {
+    const rootSchema = this.map.get(this.title(this.main));
+    if (!rootSchema) throw new KeyNotFoundError();
+    return rootSchema;
+  }
+
+  protected toDefinitionSchema(schema: ReadyJSONSchema): JSONSchema {
+    const cSchema = clone<JSONSchema>(schema);
+    delete cSchema.title;
+    delete cSchema.$schema;
+    delete cSchema.$dirpath;
+    delete cSchema.$filepath;
+    delete cSchema.definitions;
+    return cSchema;
+  }
+
   /**
    * Convert absolute $ref values into definitions
    */
   protected toDefinitions() {
+    const rootSchema = this.getRootSchema();
     for (const e of this.map.values()) {
-      forEachRef(e, (rootSchema, referenceSchema) => {
-        const refSchema = this.map.get(referenceSchema.$ref);
+      forEachRef(e, (schema, referenceSchema) => {
+        console.log('>>>>>>>>>>>>> ', referenceSchema.title);
+        console.log('>>>>>>>>>>>>> ', this.map.keys());
+        const refSchema = this.map.get(this.title(referenceSchema.$ref));
         if (refSchema) {
-          if (rootSchema.title != refSchema.title) {
+          if (schema.title != refSchema.title) {
             rootSchema.definitions[refSchema.title] =
               this.toDefinitionSchema(refSchema);
           }
@@ -195,9 +216,9 @@ export class SchemaManager {
     for (const e of this.map.values()) {
       forEachRef(e, (rootSchema, referenceSchema) => {
         if (isDefinitionPath(referenceSchema.$ref)) return;
-        const refSchema = this.map.get(referenceSchema.$ref);
+        const refSchema = this.map.get(this.title(referenceSchema.$ref));
         if (refSchema) {
-          referenceSchema.$ref = `#/${refSchema.title}`;
+          referenceSchema.$ref = `#/definitions/${refSchema.title}`;
         } else {
           throw new KeyNotFoundError();
         }
@@ -205,23 +226,12 @@ export class SchemaManager {
     }
   }
 
-  protected toDefinitionSchema(schema: ReadyJSONSchema): JSONSchema {
-    const cSchema = clone<JSONSchema>(schema);
-    delete cSchema.title;
-    delete cSchema.$schema;
-    delete cSchema.$dirpath;
-    delete cSchema.$filepath;
-    delete cSchema.definitions;
-    return cSchema;
-  }
-
   async write() {
-    for (const e of this.map.values()) {
-      const filepath = e.$filepath.replace(this.root, this.output);
-      delete (e as JSONSchema).$filepath;
-      delete (e as JSONSchema).$dirpath;
-      await writeJSONFile(filepath, e);
-    }
+    const rootSchema = this.getRootSchema() as JSONSchema;
+    delete rootSchema.$dirpath;
+    delete rootSchema.$filepath;
+
+    await writeJSONFile(this.main.replace(this.root, this.output), rootSchema);
   }
 
   async compile() {

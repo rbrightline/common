@@ -1,3 +1,3 @@
-export function type() {
+export function tsc() {
   console.log('compiling to types');
 }
