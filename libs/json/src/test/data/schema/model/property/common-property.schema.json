@@ -1,0 +1,96 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "CommonPropertyOptions",
+    "allOf": [
+        {
+            "$ref": "#/definitions/General"
+        },
+        {
+            "$ref": "#/definitions/Transform"
+        },
+        {
+            "$ref": "#/definitions/Validation"
+        },
+        {
+            "$ref": "#/definitions/Encryption"
+        },
+        {
+            "$ref": "#/definitions/Dto"
+        }
+    ],
+    "definitions": {
+        "General": {
+            "properties": {
+                "name": {
+                    "$ref": "../name/property-name.schema.json"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "required": {
+                    "type": "boolean",
+                    "default": true
+                },
+                "unique": {
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        },
+        "Transform": {
+            "properties": {
+                "acceptString": {
+                    "type": "boolean",
+                    "description": "transform string values into the actual type before any operations",
+                    "default": true
+                }
+            }
+        },
+        "Validation": {
+            "properties": {
+                "equalToProperty": {
+                    "$ref": "../name/property-name.schema.json",
+                    "description": "Check the value is equal to the value of the property"
+                },
+                "notEqualToProperty": {
+                    "$ref": "../name/property-name.schema.json",
+                    "description": "Check the value is not equal to the value of the property"
+                }
+            }
+        },
+        "Encryption": {
+            "properties": {
+                "hash": {
+                    "type": "boolean",
+                    "default": true
+                },
+                "encrypt": {
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        },
+        "Dto": {
+            "properties": {
+                "write": {
+                    "type": "boolean",
+                    "description": "Is the property writable or internal"
+                },
+                "read": {
+                    "type": "boolean",
+                    "description": "Is the property visible in the data load?",
+                    "default": true
+                },
+                "udpate": {
+                    "type": "boolean",
+                    "description": "Is proprety updatable?",
+                    "default": true
+                }
+            }
+        }
+    },
+    "required": [
+        "type",
+        "name"
+    ]
+}

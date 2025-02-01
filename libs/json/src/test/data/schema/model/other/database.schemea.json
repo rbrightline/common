@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "DatabaseSchema",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "database name"
+        },
+        "username": {
+            "type": "string",
+            "description": "database username"
+        },
+        "password": {
+            "type": "string",
+            "description": "database password"
+        },
+        "type": {
+            "type": "string",
+            "description": "database type",
+            "enum": [
+                "postgres",
+                "better-sqlite3",
+                "mysql"
+            ]
+        }
+    }
+}

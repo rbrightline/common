@@ -69,7 +69,7 @@ export async function forEachFile(
     } else if (await isDirectory(filePath)) {
       if (options?.recursive === true) {
         const newRoot = resolve(root, dir);
-        await forEachFile(newRoot, callback);
+        await forEachFile(newRoot, callback, options);
       }
     }
   }

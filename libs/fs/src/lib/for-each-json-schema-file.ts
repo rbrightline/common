@@ -1,4 +1,5 @@
 import { resolve } from 'path';
+import { ForEachFileOptions } from './for-each-file';
 import { forEachJSONFile } from './for-each-json-file';
 
 /**
@@ -7,10 +8,15 @@ import { forEachJSONFile } from './for-each-json-file';
  */
 export async function forEachJSONSchemaFile(
   root: string,
-  callback: (filepath: string) => Promise<void>
+  callback: (filepath: string) => Promise<void>,
+  options?: ForEachFileOptions
 ): Promise<void> {
-  return await forEachJSONFile(root, async (filepath: string) => {
-    filepath = resolve(root, filepath);
-    if (filepath.endsWith('.schema.json')) await callback(filepath);
-  });
+  return await forEachJSONFile(
+    root,
+    async (filepath: string) => {
+      filepath = resolve(root, filepath);
+      if (filepath.endsWith('.schema.json')) await callback(filepath);
+    },
+    options
+  );
 }

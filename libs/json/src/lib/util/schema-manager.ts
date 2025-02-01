@@ -3,10 +3,18 @@ import { names } from '@rline/names';
 import {
   JSONSchema,
   KeyNotFoundError,
+  MissingPropertyError,
   NotAbsolutePathError,
   RequiredError,
 } from '@rline/type';
-import { clone, getLastSegment, hasKeys, isDefinitionPath } from '@rline/utils';
+import {
+  clone,
+  entries,
+  getLastSegment,
+  hasKeys,
+  isDefinitionPath,
+  keys,
+} from '@rline/utils';
 import { isAbsolute, join } from 'path';
 import { forEachRef } from './for-each-ref';
 import { ReadyJSONSchema } from './ready-schema';
@@ -97,29 +105,33 @@ export class SchemaManager {
    * Then map them by their own absolute filename path so which will be unique for each file
    */
   protected async readAndMapSchemasByAbsolutePath() {
-    await forEachJSONSchemaFile(this.root, async (filepath: string) => {
-      // read the schema file
-      const schema = await this.read(filepath);
+    await forEachJSONSchemaFile(
+      this.root,
+      async (filepath: string) => {
+        // read the schema file
+        const schema = await this.read(filepath);
 
-      // Set schema title
-      schema.title = this.title(filepath);
-      schema.$filepath = filepath;
-      schema.$dirpath = join(schema.$filepath, '..');
+        // Set schema title
+        schema.title = this.title(filepath);
+        schema.$filepath = filepath;
+        schema.$dirpath = join(schema.$filepath, '..');
 
-      if (
-        hasKeys(schema, [
-          'type',
-          'title',
-          '$filepath',
-          '$dirpath',
-          'definitions',
-        ])
-      ) {
-        this.map.set(schema.title, schema);
-      } else {
-        throw new KeyNotFoundError();
-      }
-    });
+        if (
+          hasKeys(schema, [
+            'type',
+            'title',
+            '$filepath',
+            '$dirpath',
+            'definitions',
+          ])
+        ) {
+          this.map.set(schema.title, schema);
+        } else {
+          throw new MissingPropertyError();
+        }
+      },
+      { recursive: true }
+    );
   }
 
   /**
@@ -151,7 +163,9 @@ export class SchemaManager {
       }
     };
 
-    this.map.forEach(__toAbsoluteReferencePaths);
+    this.map.forEach((value, key) => {
+      __toAbsoluteReferencePaths(value, value.$filepath);
+    });
   }
 
   /**
@@ -197,25 +211,41 @@ export class SchemaManager {
   protected toDefinitions() {
     const rootSchema = this.getRootSchema();
     for (const e of this.map.values()) {
-      forEachRef(e, (schema, referenceSchema) => {
-        console.log('>>>>>>>>>>>>> ', referenceSchema.title);
-        console.log('>>>>>>>>>>>>> ', this.map.keys());
-        const refSchema = this.map.get(this.title(referenceSchema.$ref));
+      forEachRef(e, (schema, __refSchema) => {
+        if (isDefinitionPath(__refSchema.$ref)) return;
+
+        const refTitle = this.title(__refSchema.$ref);
+        const refSchema = this.map.get(refTitle);
+
         if (refSchema) {
           if (schema.title != refSchema.title) {
             rootSchema.definitions[refSchema.title] =
               this.toDefinitionSchema(refSchema);
+
+            if (keys(refSchema.definitions).length > 0) {
+              const refDefinitions = entries(refSchema.definitions);
+              for (const [key, value] of refDefinitions) {
+                rootSchema.definitions[key] = value;
+              }
+            }
           }
         } else {
+          console.log('>>>>> ', __refSchema.$ref);
+          console.log('>>>>> ', __refSchema);
+          console.log('>>>>> ', refTitle);
+
+          console.log(this.map.keys());
+
           throw new KeyNotFoundError();
         }
       });
     }
 
-    // Transform $ref paths into
+    // Transform $ref paths definition paths
     for (const e of this.map.values()) {
       forEachRef(e, (rootSchema, referenceSchema) => {
         if (isDefinitionPath(referenceSchema.$ref)) return;
+
         const refSchema = this.map.get(this.title(referenceSchema.$ref));
         if (refSchema) {
           referenceSchema.$ref = `#/definitions/${refSchema.title}`;
@@ -238,6 +268,9 @@ export class SchemaManager {
     await this.readAndMapSchemasByAbsolutePath();
     this.toAbsoluteReferencePaths();
     this.initializeEachDiefintionsIfUndefined();
+
+    console.log('------------------------------------');
+    console.log(this.map);
     this.toDefinitions();
     this.validateSchemas();
     await this.write();

@@ -34,7 +34,7 @@ program
     await schema({
       root: safepath(root),
       main: safepath(root, main),
-      output: safepath(root, output),
+      output: safepath(root, output.schema),
     });
   });
 

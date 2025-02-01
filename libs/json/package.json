@@ -34,10 +34,10 @@
     "workspace": "pnpm workspace:remove && pnpm workspace:add"
   },
   "dependencies": {
-    "@rline/fs": "8.4.0",
-    "@rline/names": "8.4.0",
-    "@rline/type": "8.4.0",
-    "@rline/utils": "8.4.0",
+    "@rline/fs": "workspace:^",
+    "@rline/names": "workspace:^",
+    "@rline/type": "workspace:^",
+    "@rline/utils": "workspace:^",
     "@swc/helpers": "~0.5.11",
     "commander": "^13.1.0"
   },

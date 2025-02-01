@@ -1,11 +1,7 @@
 import { readJSONFile } from '@rline/fs';
+import { SchemaConfig } from '@rline/type';
 import { join } from 'path';
-import { SchemaManagerOptions } from './schema-manager';
 
-export async function schemaConfig(
-  root: string
-): Promise<SchemaManagerOptions> {
-  return await readJSONFile<SchemaManagerOptions>(
-    join(root, 'schema.config.json')
-  );
+export async function schemaConfig(root: string): Promise<SchemaConfig> {
+  return await readJSONFile<SchemaConfig>(join(root, 'schema.config.json'));
 }

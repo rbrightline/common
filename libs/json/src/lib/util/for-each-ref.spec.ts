@@ -1,5 +1,6 @@
 import { JSONSchema } from '@rline/type';
 import { forEachRef } from './for-each-ref';
+import { ReadyJSONSchema } from './ready-schema';
 describe('forEachRef', () => {
   it('should go through for each $ref', () => {
     const schema: JSONSchema = {
@@ -16,7 +17,7 @@ describe('forEachRef', () => {
       },
     };
     let result = '';
-    forEachRef(schema, (s, r) => {
+    forEachRef(schema as ReadyJSONSchema, (s, r) => {
       result += r.$ref;
       r.$ref = r.$ref + 'updated';
     });

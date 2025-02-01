@@ -49,4 +49,4 @@ json tsc ./output.schema.json ./output.ts
 
 ## Tasks
 
-- [ ] complete and test @rline/json pacakge
+- [ ] Move all definitions from sub to main schema
