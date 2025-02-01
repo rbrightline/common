@@ -5,8 +5,8 @@ import { compareSync, genSaltSync, hashSync } from 'bcrypt';
  * @param value
  * @returns
  */
-export function hash(value: string) {
-  return hashSync(value, genSaltSync(8));
+export function hash<T extends { toString(): string }>(value: T) {
+  return hashSync(value.toString(), genSaltSync(8));
 }
 
 /**

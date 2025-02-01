@@ -1,4 +1,4 @@
-import { dirs, mkdir, rmdir } from '../lib';
+import { dirs, mkdir, rmdir, RmdirOptions } from '../lib';
 import { safepath } from './__test-utils';
 
 describe('rmdir', () => {
@@ -18,5 +18,11 @@ describe('rmdir', () => {
   it('should work', async () => {
     await rmdir(root, { recursive: true });
     expect(await dirs(safepath())).not.include('rmdir');
+  });
+
+  it('should compile RmDirOptions', () => {
+    const options: RmdirOptions = {
+      recursive: true,
+    };
   });
 });

@@ -1,5 +1,3 @@
-#!/usr/bin/env ts-node
-
 import { program } from 'commander';
 import { <%- propertyName %> } from './<%- fileName %>/<%- fileName %>';
 

@@ -1,6 +1,6 @@
 {
   "name": "@rline/tools",
-  "version": "9.0.2",
+  "version": "9.0.3",
   "description": "Dev tools ( CLI )",
   "license": "MIT",
   "author": {
@@ -34,6 +34,10 @@
     "workspace": "pnpm workspace:remove && pnpm workspace:add"
   },
   "dependencies": {
+    "@rline/fs": "workspace:^",
+    "@rline/names": "workspace:^",
+    "@rline/type": "workspace:^",
+    "@rline/utils": "workspace:^",
     "@swc/helpers": "~0.5.11",
     "commander": "^13.1.0"
   },

@@ -20,9 +20,9 @@
     "<%- fileName %>": "./bin/<%- fileName %>.js"
   },
   "keywords": [
-    "json",
-    "compile-json",
-    "schema"
+    "cli", 
+    "command", 
+    "cmd"
   ],
   "dependencies": {
     "@swc/helpers": "~0.5.11",
@@ -58,7 +58,7 @@
           "outputPath": "libs/<%- fileName %>/dist",
           "main": "libs/<%- fileName %>/src/index.ts",
           "tsConfig": "libs/<%- fileName %>/tsconfig.lib.<%- fileName %>",
-          "skipTypeCheck": true,
+          "skipTypeCheck": false,
           "stripLeadingPaths": true
         }
       }

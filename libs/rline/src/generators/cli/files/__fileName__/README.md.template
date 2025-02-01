@@ -15,10 +15,15 @@
 pnpm add @rline/<%- fileName %>
 ````
 
+
 ## Usage
 
-
-- [ ] add example for the librarys
+- [ ] add example for the <%- fileName %> library
 ````typescript
-
+    <%- propertyName %>(); // output: <%- propertyNaem %>
 ````
+
+
+## Documentation
+
+Detailed documentation [Documentation](https://rbrightline.github.io/common/<%- fileName %>/)

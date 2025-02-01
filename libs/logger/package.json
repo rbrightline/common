@@ -1,15 +1,15 @@
 {
-  "name": "@rline/<%- fileName %>",
+  "name": "@rline/logger",
   "version": "0.0.1",
-  "description": "<% fileName %> library",
+  "description": " library",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",
     "url": "https://rbrightline.github.io"
   },
-  "homepage": "https://rbrightline.github.io/common/<%- fileName %>",
+  "homepage": "https://rbrightline.github.io/common/logger",
   "repository": {
-    "url": "https://github.com/rbrightline/common/tree/main/libs/<%- fileName %>",
+    "url": "https://github.com/rbrightline/common/tree/main/libs/logger",
     "type": "github"
   },
   "publishConfig": {
@@ -17,7 +17,7 @@
     "tag": "latest"
   },
   "keywords": [
-    "rline", 
+    "rline",
     "library"
   ],
   "dependencies": {
@@ -40,7 +40,7 @@
   },
   "module": "./dist/index.js",
   "nx": {
-    "sourceRoot": "libs/<%- fileName %>/src",
+    "sourceRoot": "libs/logger/src",
     "projectType": "library",
     "targets": {
       "build": {
@@ -49,14 +49,14 @@
           "{options.outputPath}"
         ],
         "options": {
-          "outputPath": "libs/<%- fileName %>/dist",
-          "main": "libs/<%- fileName %>/src/index.ts",
-          "tsConfig": "libs/<%- fileName %>/tsconfig.lib.json",
+          "outputPath": "libs/logger/dist",
+          "main": "libs/logger/src/index.ts",
+          "tsConfig": "libs/logger/tsconfig.lib.json",
           "skipTypeCheck": false,
           "stripLeadingPaths": true
         }
       }
     },
-    "name": "<%- fileName %>"
+    "name": "logger"
   }
 }
