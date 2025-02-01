@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=./model.schema.json
+properties:
+  - type: array
+    name: socialMedia
+    items:
+      type: string

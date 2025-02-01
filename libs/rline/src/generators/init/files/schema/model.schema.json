@@ -15,20 +15,20 @@
             "type": "array",
             "description": "Which abstract model is extended by the entity?",
             "items": {
-                "$ref": "./name/model.schema.json"
+                "$ref": "./name/model-name.schema.json"
             }
         },
         "extendings": {
             "type": "array",
             "items": {
-                "$ref": "./name/model.schema.json",
+                "$ref": "./name/model-name.schema.json",
                 "description": "Which abstract model is extended by the entity?"
             }
         },
         "uniques": {
             "type": "array",
             "items": {
-                "$ref": "./name/property.schema.json"
+                "$ref": "./name/property-name.schema.json"
             }
         },
         "properties": {

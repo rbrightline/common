@@ -6,7 +6,7 @@
             "type": "string"
         },
         "mapTo": {
-            "$ref": "../name/property.schema.json"
+            "$ref": "../name/property-name.schema.json"
         },
         "inputType": {
             "$ref": "../enum/input-type.schema.json"
@@ -24,7 +24,7 @@
             "$ref": "../enum/icon.schema.json"
         },
         "dependsOn": {
-            "$ref": "../name/property.schema.json"
+            "$ref": "../name/property-name.schema.json"
         },
         "group": {
             "type": "string"

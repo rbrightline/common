@@ -8,17 +8,17 @@
         {
             "properties": {
                 "name": {
-                    "$ref": "../name/property.schema.json"
+                    "$ref": "../name/property-name.schema.json"
                 },
                 "type": {
                     "$ref": "#/definitions/RelationType"
                 },
                 "target": {
-                    "$ref": "../name/model.schema.json"
+                    "$ref": "../name/model-name.schema.json"
                 },
                 "targetProperty": {
                     "description": "Reference property in the target entity",
-                    "$ref": "../name/property.schema.json"
+                    "$ref": "../name/property-name.schema.json"
                 },
                 "eager": {
                     "type": "boolean",

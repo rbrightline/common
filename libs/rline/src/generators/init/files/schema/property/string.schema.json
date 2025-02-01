@@ -60,16 +60,16 @@
             "type": "string"
         },
         "containProperty": {
-            "$ref": "../name/property.schema.json"
+            "$ref": "../name/property-name.schema.json"
         },
         "notContainProperty": {
-            "$ref": "../name/property.schema.json"
+            "$ref": "../name/property-name.schema.json"
         },
         "longerThanProperty": {
-            "$ref": "../name/property.schema.json"
+            "$ref": "../name/property-name.schema.json"
         },
         "shorterThanProperty": {
-            "$ref": "../name/property.schema.json"
+            "$ref": "../name/property-name.schema.json"
         }
     }
 }

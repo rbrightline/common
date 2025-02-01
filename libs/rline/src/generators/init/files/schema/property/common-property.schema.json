@@ -23,7 +23,7 @@
         "General": {
             "properties": {
                 "name": {
-                    "$ref": "../name/property.schema.json"
+                    "$ref": "../name/property-name.schema.json"
                 },
                 "description": {
                     "type": "string",
@@ -53,11 +53,11 @@
         "Validation": {
             "properties": {
                 "equalToProperty": {
-                    "$ref": "../name/property.schema.json",
+                    "$ref": "../name/property-name.schema.json",
                     "description": "Check the value is equal to the value of the property"
                 },
                 "notEqualToProperty": {
-                    "$ref": "../name/property.schema.json",
+                    "$ref": "../name/property-name.schema.json",
                     "description": "Check the value is not equal to the value of the property"
                 }
             }
@@ -96,7 +96,6 @@
         }
     },
     "required": [
-        "type",
-        "name"
+        "type"
     ]
 }

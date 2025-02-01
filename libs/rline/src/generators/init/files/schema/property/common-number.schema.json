@@ -26,14 +26,14 @@
             "type": "array",
             "description": "Is the value more than the provided properties' value?",
             "items": {
-                "$ref": "../name/property.schema.json"
+                "$ref": "../name/property-name.schema.json"
             }
         },
         "lessThanProperty": {
             "type": "array",
             "description": "Is the value less than the provided properties' value?",
             "items": {
-                "$ref": "../name/property.schema.json"
+                "$ref": "../name/property-name.schema.json"
             }
         }
     }

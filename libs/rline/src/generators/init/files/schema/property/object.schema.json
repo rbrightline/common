@@ -6,7 +6,7 @@
             "const": "object"
         },
         "target": {
-            "$ref": "../name/model.schema.json"
+            "$ref": "../name/model-name.schema.json"
         },
         "default": {
             "type": "object"
