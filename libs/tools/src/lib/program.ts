@@ -1,10 +1,10 @@
 #!/usr/bin/env ts-node
 
 import { program } from 'commander';
-import { init } from './init/init';
 import { compodoc } from './command/compodoc';
 import { foreachLibrary } from './common/library';
 import { me } from './common/me';
+import { init } from './init/init';
 
 export async function boot() {
   const { name, description, version } = await me();

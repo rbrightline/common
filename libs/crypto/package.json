@@ -1,6 +1,6 @@
 {
   "name": "@rline/crypto",
-  "version": "9.0.0",
+  "version": "9.0.1",
   "description": "Hashing, enciption, and decryption",
   "license": "MIT",
   "author": {
@@ -8,7 +8,7 @@
     "name": "Robert Brightline",
     "url": "https://rbrightline.github.io"
   },
-  "homepage": "https://rbrightline.github.io/rline/crypto",
+  "homepage": "https://rbrightline.github.io/common/crypto",
   "repository": {
     "url": "https://github.com/rbrightline/common/tree/main/libs/crypto",
     "type": "github"

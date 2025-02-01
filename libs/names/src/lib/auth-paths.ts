@@ -7,7 +7,11 @@ export type AuthPaths = {
   forgotPassword: string;
   resetPassword: string;
 };
-
+/**
+ * Generate auth-rest-api paths
+ * @param prefix
+ * @returns
+ */
 export function authPaths(prefix = ''): AuthPaths {
   const px = prefix ? prefix + '/' : '';
   return {

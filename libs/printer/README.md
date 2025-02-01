@@ -6,18 +6,6 @@
 
 A set of fullstack app component printer including type, entity, dto, resource controller, form-component, rest, and crud module.
 
-## Installation
+## Status
 
-```shell
-pnpm add @rline/printer
-```
-
-## Usage
-
-- [ ] add example for the librarys
-
-```typescript
-
-@
-
-```
+Not Ready

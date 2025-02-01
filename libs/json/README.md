@@ -4,7 +4,10 @@
 
 # @rline/json
 
-JSON schema compiler and typescript parser. Create a schema project, compile, and transform it into typescript types.
+JSON Compiler CLI
+
+- JSON Schema compiler, compiles multiple schemas into a single portable schema file by resolving all references.
+- Typescript type generator, generate types from json schemas. Supports, `allof`,`oneOf`, other complex JSON schema properties.
 
 ## Installation
 
@@ -14,39 +17,42 @@ pnpm add -g @rline/json
 
 ## Usage
 
-### Schema Compiler
+Before using any command, the schema project must be initialized.
 
-The commond will compile the schemas and create a bundle (outputPath)
+## Initialize Project
+
+The following command creates a new JSON-Schema project has a `schema.config.json` file to configure project variables.
 
 ```shell
-json compile <mainSchemaFile> <outputFilePath>
+json init
+
+```
+
+### Schema Compiler
+
+Compiles JSON-Schema files into a single portable schema file
+
+```shell
+
+json schema
 ```
 
 ### Example (Schema Compiler)
 
-The command must be run outside the schema directory
-The command will compile all schemas under the `./schema` directory, and write it to the `./dist/output.schema.json` file
+The compiled schema will be saved in the `output` directory provided in `schema.config.json`
 
 ```shell
-json compile ./schemas/main.schema.json ./dist/output.schema.json
+json schema
 ```
 
 ### Typescript Compiler
 
-Before runing this command, compile the schema file first because this command only works for a single file. The command will compile the schema file into typescript types.
+The compiled type will be saved in the `output` directory provided in the `schema.config.json`
 
 ```shell
-json tsc <mainSchemaFile> <outputFilePath
+json tsc
 ```
 
-### Example (Typescript Compiler)
+## Documentation
 
-The command will convert the json schema into the typescript types
-
-```shell
-json tsc ./output.schema.json ./output.ts
-```
-
-## Tasks
-
-- [ ] Move all definitions from sub to main schema
+Detailed documentation [Documentation](https://rbrightline.github.io/common/json/)

@@ -5,3 +5,7 @@
 # @rline/type
 
 - Common types
+
+## Documentation
+
+Detailed documentation [Documentation](https://rbrightline.github.io/common/type/)

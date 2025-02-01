@@ -11,3 +11,7 @@ Common utilities
 ```shell
 pnpm add @rline/utils
 ```
+
+## Documentation
+
+Detailed documentation [Documentation](https://rbrightline.github.io/common/utils/)

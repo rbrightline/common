@@ -6,6 +6,10 @@
 
 - [ ] add description for the library
 
+## Status
+
+Not Ready
+
 ## Installation
 
 ```shell
@@ -19,3 +23,7 @@ pnpm add @rline/tools
 ```typescript
 
 ```
+
+## Documentation
+
+Detailed documentation [Documentation](https://rbrightline.github.io/common/tools/)

@@ -25,3 +25,7 @@ const data = 'Hello';
 const encryptedData = encrypt(data, key, iv); // output: { iv, data(encrypted) }
 const decryptedData = decrypt(encryptedData, key, iv); // output: "Hello"
 ```
+
+## Documentation
+
+Detailed documentation [Documentation](https://rbrightline.github.io/common/crypto)

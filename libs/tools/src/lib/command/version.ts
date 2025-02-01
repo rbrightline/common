@@ -1,4 +1,4 @@
-import { readPackageJSONFile } from '@rline/utils';
+import { readJSONFile } from '@rline/fs';
 import { join } from 'path';
 import { foreachLibrary, lib } from '../common/library';
 /**
@@ -8,9 +8,7 @@ import { foreachLibrary, lib } from '../common/library';
 export async function version(library: string): Promise<void> {
   const __library = lib(library);
 
-  const { name, version } = await readPackageJSONFile(
-    join(__library, 'package.json')
-  );
+  const { name, version } = await readJSONFile(join(__library, 'package.json'));
 
   console.table({ name, version });
 }

@@ -4,7 +4,7 @@
 
 # @rline/fs
 
-File system
+File system manager
 
 ## Installation
 
@@ -12,11 +12,6 @@ File system
 pnpm add @rline/fs
 ```
 
-## Usage
+## Documentation
 
-```typescript
-async readFile(filePath):Promise<string>
-async writeFile(filePath):Promise<void>
-async dirs(filePath):Promise<string[]>
-async files(filePath):Promise<string[]>
-```
+Detailed documentation [Documentation](https://rbrightline.github.io/common/fs/)

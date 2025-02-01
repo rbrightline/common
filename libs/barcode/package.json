@@ -1,6 +1,6 @@
 {
   "name": "@rline/barcode",
-  "version": "9.0.0",
+  "version": "9.0.1",
   "description": "Generate unique barcode",
   "license": "MIT",
   "author": {
@@ -8,7 +8,7 @@
     "name": "Robert Brightline",
     "url": "https://rbrightline.github.io"
   },
-  "homepage": "https://rbrightline.github.io/rline/barcode",
+  "homepage": "https://rbrightline.github.io/common/barcode",
   "repository": {
     "url": "https://github.com/rbrightline/common/tree/main/libs/barcode",
     "type": "github"

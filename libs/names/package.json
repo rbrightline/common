@@ -1,6 +1,6 @@
 {
   "name": "@rline/names",
-  "version": "9.0.0",
+  "version": "9.0.1",
   "description": "All version of names and resource paths",
   "license": "MIT",
   "author": {
@@ -8,7 +8,7 @@
     "name": "Robert Brightline",
     "url": "https://rbrightline.github.io"
   },
-  "homepage": "https://rbrightline.github.io/rline/names",
+  "homepage": "https://rbrightline.github.io/common/names",
   "repository": {
     "url": "https://github.com/rbrightline/common/tree/main/libs/names",
     "type": "github"

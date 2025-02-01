@@ -29,3 +29,7 @@ The command generates a cli library project under libs directory in the root nx 
 ```shell
 npx nx g @rline/rline:cli <cli-name>
 ```
+
+## Documentation
+
+Detailed documentation [Documentation](https://rbrightline.github.io/common/rline/)

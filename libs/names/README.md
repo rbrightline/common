@@ -64,3 +64,7 @@ Names.moduleName; // output:  'ExampleNameModule',
 Names.sentenceCase; // output:  'Example name',
 Names.dotCase; // output:  'example.name',
 ```
+
+## Documentation
+
+Detailed documentation [Documentation](https://rbrightline.github.io/common/names/)

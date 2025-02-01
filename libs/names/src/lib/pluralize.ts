@@ -1,3 +1,8 @@
+/**
+ * Pluralize string following english grammer
+ * @param word
+ * @returns
+ */
 export function pluralize(word: string): string {
   const lowercase = word.toLowerCase();
 

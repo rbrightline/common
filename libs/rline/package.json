@@ -1,6 +1,6 @@
 {
   "name": "@rline/rline",
-  "version": "9.0.0",
+  "version": "9.0.1",
   "description": "Code generator",
   "license": "MIT",
   "author": {
@@ -8,7 +8,7 @@
     "name": "Robert Brightline",
     "url": "https://rbrightline.github.io"
   },
-  "homepage": "https://rbrightline.github.io/rline/rline",
+  "homepage": "https://rbrightline.github.io/common/rline",
   "repository": {
     "url": "https://github.com/rbrightline/common/tree/main/libs/rline",
     "type": "github"
