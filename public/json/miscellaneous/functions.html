@@ -157,7 +157,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Go through for each ref ,with root-schema</p>
+                        <div class="io-description"><p>Go through for each refpath</p>
 </div>
 
                             <div class="io-description">
@@ -234,7 +234,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Generate the configuration file</p>
+                        <div class="io-description"><p>Create a json schema project</p>
 </div>
 
                             <div class="io-description">
@@ -246,6 +246,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -260,6 +261,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>project&#39;s root directory</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>templateFileDir</td>
@@ -272,6 +277,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>the template (default) <code>schema.config.json</code> file</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -304,7 +313,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>JSON <a href="http://json-schema.org/draft-07/schema#">schema</a> compiler</p>
+                        <div class="io-description"><p>Compile schema files into a single schema file resolving $refs and definitions.</p>
 </div>
 
                             <div class="io-description">
@@ -316,6 +325,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -330,6 +340,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>options <a href="../miscellaneous/typealiases.html#SchemaManagerOptions">SchemaManagerOptions</a></p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -362,6 +376,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Get the content of schema configuration file <code>schema.config.json</code></p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -416,13 +432,47 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>tsc()</code>
+<code>tsc(options: <a href="../undefineds/TscOptions.html" target="_self">TscOptions</a>)</code>
                 </td>
             </tr>
 
 
 
 
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Compile JSON schemas into typescript types</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>options</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#TscOptions" target="_self" >TscOptions</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                </td>
+            </tr>
         </tbody>
     </table>
 </section>

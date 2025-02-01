@@ -94,6 +94,11 @@ export class SchemaManager {
     return await readJSONFile<JSONSchema>(filepath);
   }
 
+  /**
+   * Create schema title from schema filepath
+   * @param filepath
+   * @returns
+   */
   protected title(filepath: string): string {
     return names(getLastSegment(filepath).replace('.schema.json', ''))
       .pascalCase;
@@ -195,6 +200,11 @@ export class SchemaManager {
     return rootSchema;
   }
 
+  /**
+   * Transform a regular schema file into definition by removing unnecessary properties
+   * @param schema
+   * @returns
+   */
   protected toDefinitionSchema(schema: ReadyJSONSchema): JSONSchema {
     const cSchema = clone<JSONSchema>(schema);
     delete cSchema.title;
@@ -230,12 +240,6 @@ export class SchemaManager {
             }
           }
         } else {
-          console.log('>>>>> ', __refSchema.$ref);
-          console.log('>>>>> ', __refSchema);
-          console.log('>>>>> ', refTitle);
-
-          console.log(this.map.keys());
-
           throw new KeyNotFoundError();
         }
       });
@@ -256,6 +260,9 @@ export class SchemaManager {
     }
   }
 
+  /**
+   * Write the compiled schema into file
+   */
   async write() {
     const rootSchema = this.getRootSchema() as JSONSchema;
     delete rootSchema.$dirpath;
@@ -264,13 +271,13 @@ export class SchemaManager {
     await writeJSONFile(this.main.replace(this.root, this.output), rootSchema);
   }
 
+  /**
+   * Compile schema
+   */
   async compile() {
     await this.readAndMapSchemasByAbsolutePath();
     this.toAbsoluteReferencePaths();
     this.initializeEachDiefintionsIfUndefined();
-
-    console.log('------------------------------------');
-    console.log(this.map);
     this.toDefinitions();
     this.validateSchemas();
     await this.write();

@@ -2,7 +2,7 @@ import { forEachKey, ForEachKeyCallBack } from '@rline/utils';
 import { ReadyJSONSchema } from './ready-schema';
 
 /**
- * Go through for each ref ,with root-schema
+ * Go through for each refpath
  * @param schema
  * @param callback
  */

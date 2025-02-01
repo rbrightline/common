@@ -22,6 +22,7 @@ export * from './lib/errors/key-not-found.error';
 export * from './lib/errors/missing-property';
 export * from './lib/errors/not-absolute-path.error';
 export * from './lib/errors/not-file.error';
+export * from './lib/errors/not-implemented';
 export * from './lib/errors/number-not-in-range.error';
 export * from './lib/errors/required.error';
 export * from './lib/initialize/primitive';

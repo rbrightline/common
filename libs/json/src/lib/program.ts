@@ -43,7 +43,14 @@ program
   .name('tsc')
   .description('Compile json schemas into a typescript type')
   .action(async () => {
-    tsc();
+    const safepath = createPathScope(cwd());
+
+    const { output, root } = await schemaConfig(cwd());
+
+    tsc({
+      root: safepath(root),
+      output: safepath(output.type),
+    });
   });
 
 program.parse();

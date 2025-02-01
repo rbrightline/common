@@ -8,5 +8,6 @@ export * from './key-not-found.error';
 export * from './missing-property';
 export * from './not-absolute-path.error';
 export * from './not-file.error';
+export * from './not-implemented';
 export * from './number-not-in-range.error';
 export * from './required.error';
