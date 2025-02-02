@@ -1,6 +1,7 @@
 {
   "name": "@rline/common",
   "version": "8.1.1",
+  "description": "Common libraries by Brightline Software",
   "scripts": {
     "build": "ts-node ./tools/build.ts",
     "publish": "npx nx release publish",

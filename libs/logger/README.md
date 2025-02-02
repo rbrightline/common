@@ -102,6 +102,17 @@ We choose the following colors to use for accessability purposes
 - Purple (#CC79A7) – Provides good contrast without being confused with red or blue. (debug)
 - Vermilion (#D55E00) - It’s a deep orange-red that remains distinguishable for most types of color blindness. (error)
 
+```typescript
+export const colors = {
+  blue: '\x1b[34m', // Title
+  orange: '\x1b[38;5;214m', // Warning (closest ANSI approximation for Orange)
+  green: '\x1b[32m', // Info
+  purple: '\x1b[35m', // Debug
+  vermilion: '\x1b[31m', // Error (red is closest to vermilion)
+  reset: '\x1b[0m', // Reset color
+};
+```
+
 ## Documentation
 
 Detailed documentation [Documentation](https://rbrightline.github.io/common/logger/)
