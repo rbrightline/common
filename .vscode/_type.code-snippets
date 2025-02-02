@@ -1,0 +1,47 @@
+{
+    "is boolean": {
+        "prefix": "is boolean",
+        "body": "typeof ${1:value} ==='boolean'",
+        "scope": "typescript,javascript"
+    },
+    "is number": {
+        "prefix": "is number",
+        "body": "typeof ${1:value} ==='number'",
+        "scope": "typescript,javascript"
+    },
+    "is string": {
+        "prefix": "is string",
+        "body": "typeof ${1:value} ==='string'",
+        "scope": "typescript,javascript"
+    },
+    "is object": {
+        "prefix": "is object",
+        "body": "typeof ${1:value} ==='object' && ${1:value} !==null && !Array.isArray(${1:value})",
+        "scope": "typescript,javascript"
+    },
+    "is array": {
+        "prefix": "is array",
+        "body": "Array.isArray(${1:value})",
+        "scope": "typescript,javascript"
+    },
+    "is bigint": {
+        "prefix": "is bigint",
+        "body": "typeof ${1:value} ==='bigint'",
+        "scope": "typescript,javascript"
+    },
+    "is undefined": {
+        "prefix": "is undefined",
+        "body": "${1:value} === undefined",
+        "scope": "typescript,javascript"
+    },
+    "is null": {
+        "prefix": "is null",
+        "body": "${1:value} === null",
+        "scope": "typescript,javascript"
+    },
+    "is defined": {
+        "prefix": "is defined",
+        "body": " ${1:value} != undefined && !isNaN(value as number)",
+        "scope": "typescript,javascript"
+    },
+}

@@ -1,0 +1,11 @@
+{
+    "func": {
+        "prefix": "func",
+        "body": [
+            "export function ${1:f}(${2:arg}:${3:unknown})${4| ,:void,:boolean,:string,:number|}{",
+            "$5",
+            "}"
+        ],
+        "scope": "typescript,javascript"
+    }
+}

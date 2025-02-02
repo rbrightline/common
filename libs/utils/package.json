@@ -1,6 +1,6 @@
 {
   "name": "@rline/utils",
-  "version": "9.0.2",
+  "version": "9.1.0",
   "description": "Common utilities",
   "license": "MIT",
   "author": {
@@ -28,7 +28,7 @@
     "workspace": "pnpm workspace:remove && pnpm workspace:add"
   },
   "dependencies": {
-    "@rline/type": "9.0.1",
+    "@rline/type": "9.1.0",
     "@swc/helpers": "~0.5.11"
   },
   "type": "commonjs",

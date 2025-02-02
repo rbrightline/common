@@ -1,0 +1,64 @@
+{
+  "name": "@rline/is",
+  "version": "9.1.0",
+  "description": "Utilities for better typescript types",
+  "author": {
+    "email": "robert.brightline@gmail.com",
+    "name": "Robert Brightline",
+    "url": "https://rbrightline.github.io"
+  },
+  "homepage": "https://rbrightline.github.io/common/is",
+  "repository": {
+    "url": "https://github.com/rbrightline/common/tree/main/libs/is",
+    "type": "github"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "keywords": [
+    "type",
+    "initializer",
+    "type-safety",
+    "typescript"
+  ],
+  "dependencies": {
+    "@swc/helpers": "~0.5.11"
+  },
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "module": "./dist/index.js",
+  "nx": {
+    "sourceRoot": "libs/is/src",
+    "projectType": "library",
+    "targets": {
+      "build": {
+        "executor": "@nx/js:swc",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "libs/is/dist",
+          "main": "libs/is/src/index.ts",
+          "tsConfig": "libs/is/tsconfig.lib.json",
+          "skipTypeCheck": false,
+          "stripLeadingPaths": true
+        }
+      }
+    },
+    "name": "is"
+  }
+}

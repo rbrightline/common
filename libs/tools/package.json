@@ -1,6 +1,6 @@
 {
   "name": "@rline/tools",
-  "version": "9.0.3",
+  "version": "9.1.0",
   "description": "Dev tools ( CLI )",
   "license": "MIT",
   "author": {
@@ -34,10 +34,10 @@
     "workspace": "pnpm workspace:remove && pnpm workspace:add"
   },
   "dependencies": {
-    "@rline/fs": "workspace:^",
-    "@rline/names": "workspace:^",
-    "@rline/type": "workspace:^",
-    "@rline/utils": "workspace:^",
+    "@rline/fs": "9.1.0",
+    "@rline/names": "9.1.0",
+    "@rline/type": "9.1.0",
+    "@rline/utils": "9.1.0",
     "@swc/helpers": "~0.5.11",
     "commander": "^13.1.0"
   },
@@ -70,7 +70,7 @@
         "options": {
           "outputPath": "libs/tools/dist",
           "main": "libs/tools/src/index.ts",
-          "tsConfig": "libs/tools/tsconfig.lib.tools",
+          "tsConfig": "libs/tools/tsconfig.lib.json",
           "skipTypeCheck": false,
           "stripLeadingPaths": true
         }

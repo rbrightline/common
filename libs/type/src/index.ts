@@ -26,6 +26,7 @@ export * from './lib/errors/not-implemented';
 export * from './lib/errors/number-not-in-range.error';
 export * from './lib/errors/required.error';
 export * from './lib/initialize/primitive';
+export * from './lib/interfaces/logger';
 export * from './lib/json/json-schema';
 export * from './lib/json/raw/array';
 export * from './lib/json/raw/boolean';

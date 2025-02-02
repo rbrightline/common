@@ -57,7 +57,7 @@
         "options": {
           "outputPath": "libs/<%- fileName %>/dist",
           "main": "libs/<%- fileName %>/src/index.ts",
-          "tsConfig": "libs/<%- fileName %>/tsconfig.lib.<%- fileName %>",
+          "tsConfig": "libs/<%- fileName %>/tsconfig.lib.json",
           "skipTypeCheck": false,
           "stripLeadingPaths": true
         }
