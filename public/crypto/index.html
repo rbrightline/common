@@ -82,8 +82,24 @@
                <div class="content getting-started">
                    <div class="content-data">
 
-<h1>Brighline Software Comon Packages</h1>
-<p>Common packages</p>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/rbrightline/common/refs/heads/main/libs/crypto/favicon.png" alt="Logo" width="200"/>
+</div>
+
+<h1>@rline/crypto</h1>
+<p>Encrypt, decrypt, hash, and compare hash value.</p>
+<h2>Installation</h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-shell">pnpm add &#64;rline/crypto</code></pre></div><h2>Usage</h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">import { randomBytes } from &#39;crypto&#39;;
+import { encrypt } from &#39;&#64;rline/crypto&#39;;
+
+const key = randomBytes(32);
+const iv = randomBytes(32);
+
+const data = &#39;Hello&#39;;
+const encryptedData = encrypt(data, key, iv); // output: { iv, data(encrypted) }
+const decryptedData = decrypt(encryptedData, key, iv); // output: &quot;Hello&quot;</code></pre></div><h2>Documentation</h2>
+<p>Detailed documentation <a href="https://rbrightline.github.io/common/crypto">Documentation</a></p>
 
 
 

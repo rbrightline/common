@@ -82,8 +82,84 @@
                <div class="content getting-started">
                    <div class="content-data">
 
-<h1>Brighline Software Comon Packages</h1>
-<p>Common packages</p>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/rbrightline/common/refs/heads/main/libs/logger/favicon.png" alt="Logo" width="200"/>
+</div>
+
+<h1>@rline/logger</h1>
+<p>Logger built with extensive features and accessbility in mind.</p>
+<h2>Features</h2>
+<h3>1. <strong>Log Levels</strong></h3>
+<p>Different levels help categorize the importance of logs:</p>
+<ul>
+<li><strong>DEBUG</strong> – Detailed information, typically of interest only when diagnosing problems.</li>
+<li><strong>INFO</strong> – Confirmation that things are working as expected.</li>
+<li><strong>WARNING</strong> – An indication that something unexpected happened or indicative of some problem in the near future.</li>
+<li><strong>ERROR</strong> – Due to a more serious problem, the software has not been able to perform some function.</li>
+<li><strong>FATAL</strong> – A serious error, indicating that the program itself may be unable to continue running.</li>
+</ul>
+<h3>2. <strong>Log Formatting</strong></h3>
+<p>Readable and informative logs, with customizable formats including:</p>
+<ul>
+<li>Timestamps (e.g., ISO 8601 format)</li>
+<li>Log level indicators</li>
+<li>Namesapce, File name, line number, and function name</li>
+<li>Plain, JSON, JSON + HTML</li>
+</ul>
+<h3>3. <strong>Log Rotation &amp; Retention</strong></h3>
+<p>Automatically manage log files by size, time, or number of files. Keeps disk usage in check without losing important data.</p>
+<h3>4. <strong>Asynchronous Logging</strong></h3>
+<p>Non-blocking logging ensures your application’s performance isn’t hindered by logging operations, especially useful for high-performance applications.</p>
+<h3>5. <strong>Contextual Information</strong></h3>
+<p>Attach contextual data (e.g., user ID, session ID) to logs to understand the state of the application when the log was recorded.</p>
+<h3>6. <strong>External Integrations</strong></h3>
+<p>Support for sending logs to external systems:</p>
+<ul>
+<li><strong>Log management platforms</strong> (e.g., ELK stack, Splunk)</li>
+<li><strong>Cloud services</strong> (e.g., AWS CloudWatch, Azure Monitor)</li>
+<li><strong>Alerting systems</strong> (e.g., PagerDuty, Slack)</li>
+</ul>
+<h3>7. <strong>Filtering and Searching</strong></h3>
+<p>Easily filter and search logs based on level, keywords, or context—critical for fast troubleshooting.</p>
+<h3>8. <strong>Performance Monitoring</strong></h3>
+<p>Ability to measure execution time or memory usage associated with specific operations.</p>
+<h3>9. <strong>Security Features</strong></h3>
+<p>Ability to predict sensitive data and notify developer</p>
+<ul>
+<li><strong>Anonymization</strong>: Masking sensitive information.</li>
+<li><strong>Access Control</strong>: Restricting log access based on user roles.</li>
+</ul>
+<h3>10. <strong>Customization and Extensibility</strong></h3>
+<p>Ability to create custom log levels, formats, and handlers to fit specific needs.</p>
+<p>A combination of these features makes a logger robust, reliable, and user-friendly. Do you have a specific use case in mind, like a web app or a microservice setup?</p>
+<h3>11. <strong>Dynamic Configuration</strong></h3>
+<p>Ability to configure logger without stopping the application</p>
+<h3>12. <strong>Cross Platform</strong></h3>
+<p>Compatabile to all operating-systems (OS) and Web browsers</p>
+<h2>Installation</h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-shell">pnpm add &#64;rline/logger</code></pre></div><h2>Usage</h2>
+<ul>
+<li><input disabled="" type="checkbox"> add example for the logger library</li>
+</ul>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">logger(); // output: logger</code></pre></div><h2>Accessability</h2>
+<h3>Color Choice</h3>
+<p>We choose the following colors to use for accessability purposes</p>
+<ul>
+<li>Blue (#0072B2) – Easily distinguishable and vibrant. (title)</li>
+<li>Orange (#E69F00) – Stands out well without blending into other hues. (warning)</li>
+<li>Green (#009E73) – Works for most types of color blindness. (info)</li>
+<li>Purple (#CC79A7) – Provides good contrast without being confused with red or blue. (debug)</li>
+<li>Vermilion (#D55E00) - It’s a deep orange-red that remains distinguishable for most types of color blindness. (error)</li>
+</ul>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">export const colors = {
+  blue: &#39;\x1b[34m&#39;, // Title
+  orange: &#39;\x1b[38;5;214m&#39;, // Warning (closest ANSI approximation for Orange)
+  green: &#39;\x1b[32m&#39;, // Info
+  purple: &#39;\x1b[35m&#39;, // Debug
+  vermilion: &#39;\x1b[31m&#39;, // Error (red is closest to vermilion)
+  reset: &#39;\x1b[0m&#39;, // Reset color
+};</code></pre></div><h2>Documentation</h2>
+<p>Detailed documentation <a href="https://rbrightline.github.io/common/logger/">Documentation</a></p>
 
 
 

@@ -1,14 +1,15 @@
 import { exec } from 'child_process';
 import { join } from 'path';
-import { DOCSDIR, LIBRARYDIR, ROOTDIR } from '../common/constants';
 import { chdir } from 'process';
+import { DOCSDIR, LIBRARYDIR } from '../common/constants';
 
 /**
  * Generate documentation
  * @param libraryName
  */
 export function compodoc(libraryName: string) {
-  chdir(ROOTDIR);
+  chdir(join(LIBRARYDIR, libraryName));
+  LIBRARYDIR;
   const docsdir = join(DOCSDIR, libraryName);
   const tsconfig = join(LIBRARYDIR, libraryName, 'tsconfig.json');
   exec(

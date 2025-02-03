@@ -1,6 +1,6 @@
 {
   "name": "@rline/logger",
-  "version": "9.1.1",
+  "version": "9.2.0",
   "description": " library",
   "author": {
     "email": "robert.brightline@gmail.com",
@@ -26,8 +26,8 @@
     "workspace": "pnpm workspace:remove && pnpm workspace:add"
   },
   "dependencies": {
-    "@rline/color": "workspace:^",
-    "@rline/type": "workspace:^",
+    "@rline/color": "9.2.0",
+    "@rline/type": "9.2.0",
     "@swc/helpers": "~0.5.11"
   },
   "type": "commonjs",

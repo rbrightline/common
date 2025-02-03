@@ -82,8 +82,19 @@
                <div class="content getting-started">
                    <div class="content-data">
 
-<h1>Brighline Software Comon Packages</h1>
-<p>Common packages</p>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/rbrightline/common/refs/heads/main/libs/barcode/favicon.png" alt="Logo" width="200"/>
+</div>
+
+<h1>@rline/barcode</h1>
+<p>Generate barcode</p>
+<h2>Installation</h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-shell">pnpm add &#64;rline/barcode</code></pre></div><h2>Usage</h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">const barcode = generateBarcode(&#39;UPC-A&#39;);
+expect(barcode).toMatch(/^\d{12}$/); // UPC-A should be 12 digits
+const barcode = generateBarcode(&#39;Code128&#39;);
+expect(barcode).toMatch(/^[A-Za-z0-9]{8,12}$/); // Code128 should be 8-12 alphanumeric characters</code></pre></div><h2>Documentation</h2>
+<p>Detailed documentation <a href="https://rbrightline.github.io/common/barcode">Documentation</a></p>
 
 
 

@@ -82,8 +82,31 @@
                <div class="content getting-started">
                    <div class="content-data">
 
-<h1>Brighline Software Comon Packages</h1>
-<p>Common packages</p>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/rbrightline/common/refs/heads/main/libs/json/favicon.png" alt="Logo" width="200"/>
+</div>
+
+<h1>@rline/json</h1>
+<p>JSON Compiler CLI</p>
+<ul>
+<li>JSON Schema compiler, compiles multiple schemas into a single portable schema file by resolving all references.</li>
+<li>Typescript type generator, generate types from json schemas. Supports, <code>allof</code>,<code>oneOf</code>, other complex JSON schema properties.</li>
+</ul>
+<h2>Installation</h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">pnpm add -g &#64;rline/json</code></pre></div><h2>Usage</h2>
+<p>Before using any command, the schema project must be initialized.</p>
+<h2>Initialize Project</h2>
+<p>The following command creates a new JSON-Schema project has a <code>schema.config.json</code> file to configure project variables.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-shell">json init
+</code></pre></div><h3>Schema Compiler</h3>
+<p>Compiles JSON-Schema files into a single portable schema file</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-shell">
+json schema</code></pre></div><h3>Example (Schema Compiler)</h3>
+<p>The compiled schema will be saved in the <code>output</code> directory provided in <code>schema.config.json</code></p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-shell">json schema</code></pre></div><h3>Typescript Compiler</h3>
+<p>The compiled type will be saved in the <code>output</code> directory provided in the <code>schema.config.json</code></p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-shell">json tsc</code></pre></div><h2>Documentation</h2>
+<p>Detailed documentation <a href="https://rbrightline.github.io/common/json/">Documentation</a></p>
 
 
 

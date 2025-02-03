@@ -82,8 +82,49 @@
                <div class="content getting-started">
                    <div class="content-data">
 
-<h1>Brighline Software Comon Packages</h1>
-<p>Common packages</p>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/rbrightline/common/refs/heads/main/libs/is/favicon.png" alt="Logo" width="200"/>
+</div>
+
+<h1>@rline/is</h1>
+<p>Better and safer typescript</p>
+<h2>Goal</h2>
+<ol>
+<li>any variable in the code must be one of valid string, number, boolean, object, or array. The variables must be able to use in their relative operations without any error. For example, <code>NaN</code> is typeof number but it does not work with any numeric operations.</li>
+</ol>
+<h2>Valid Values</h2>
+<ul>
+<li>string: none-empty string</li>
+<li>number: none-zero</li>
+<li>boolen</li>
+<li>object: none-empty object</li>
+<li>array: none-empty array, also throw error when all values are null or undefined</li>
+</ul>
+<h2>Installation</h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-shell">pnpm add &#64;rline/is</code></pre></div><h2>Naming Convention</h2>
+<h3>Type and value checking functions</h3>
+<ul>
+<li>First one or two letters are the type of the function such as <code>t</code> stands for <code>isType</code>, <code>e</code> is <code>isEmpty</code>, <code>ne</code> is <code>isNotEmpty</code>, any function starts with these prefixes return <code>boolean</code></li>
+</ul>
+<h2>Usage</h2>
+<ul>
+<li><input disabled="" type="checkbox"> add example for the is library</li>
+</ul>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">const strValue: string | undefiend = val(&#39;some&#39;);
+const strValue: number | undefiend = val(1);
+const boolValue: boolean | undefiend = val(true);
+const objectValue: Some | undefiend = val&lt;Some&gt;(undefined);
+const arrValue: [] | undefiend = val([]);
+
+const rstrValue: string = val(&#39;some&#39;, { required: true });
+const rstrValue: number = val(1, { required: true });
+const rboolValue: boolean = val(true, { required: true });
+const robjectValue: Some = val&lt;Some&gt;(undefined, { required: true });
+const rarrValue: O[] = val&lt;O&gt;([], { required: true });
+
+const readonlyObjectValue: O[] = val&lt;O&gt;([], { required: true, readonly: true });
+const readonlyArrValue: O[] = val&lt;O&gt;([], { required: true, readonly: true });</code></pre></div><h2>Documentation</h2>
+<p>Detailed documentation <a href="https://rbrightline.github.io/common/is/">Documentation</a></p>
 
 
 

@@ -56,6 +56,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <li class="link">
                                 <a href="classes/SchemaManager.html" data-type="entity-link" >SchemaManager</a>
                             </li>
+                            <li class="link">
+                                <a href="classes/TypeManager.html" data-type="entity-link" >TypeManager</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="chapter">

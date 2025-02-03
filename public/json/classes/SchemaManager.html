@@ -119,7 +119,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>libs/json/src/lib/util/schema-manager.ts</code>
+            <code>src/lib/json-compiler/schema-manager.ts</code>
         </p>
 
 
@@ -164,11 +164,6 @@
                             <li>
                                     <span class="modifier">Protected</span>
                                     <span class="modifier">Readonly</span>
-                                <a href="#output" >output</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Protected</span>
-                                    <span class="modifier">Readonly</span>
                                 <a href="#root" >root</a>
                             </li>
                         </ul>
@@ -183,6 +178,11 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#cleanExtras" >cleanExtras</a>
+                            </li>
                             <li>
                                     <span class="modifier">Async</span>
                                 <a href="#compile" >compile</a>
@@ -225,10 +225,6 @@
                                     <span class="modifier">Protected</span>
                                 <a href="#validateSchemas" >validateSchemas</a>
                             </li>
-                            <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#write" >write</a>
-                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -247,12 +243,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(options?: <a href="../undefineds/SchemaManagerOptions.html" target="_self">SchemaManagerOptions</a>)</code>
+<code>constructor(options?: SchemaConfig)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">libs/json/src/lib/util/schema-manager.ts:74</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/lib/json-compiler/schema-manager.ts:53</a></div>
                             </td>
                         </tr>
 
@@ -273,7 +269,7 @@
                                                         <td>options</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../miscellaneous/typealiases.html#SchemaManagerOptions" target="_self" >SchemaManagerOptions</a></code>
+                                                                    <code>SchemaConfig</code>
                                                         </td>
                                                   
                                                     <td>
@@ -314,7 +310,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">libs/json/src/lib/util/schema-manager.ts:48</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/lib/json-compiler/schema-manager.ts:32</a></div>
                         </td>
                     </tr>
 
@@ -346,7 +342,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">libs/json/src/lib/util/schema-manager.ts:53</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/lib/json-compiler/schema-manager.ts:37</a></div>
                         </td>
                     </tr>
 
@@ -378,7 +374,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">libs/json/src/lib/util/schema-manager.ts:43</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/lib/json-compiler/schema-manager.ts:27</a></div>
                         </td>
                     </tr>
 
@@ -412,7 +408,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">libs/json/src/lib/util/schema-manager.ts:62</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/lib/json-compiler/schema-manager.ts:46</a></div>
                         </td>
                     </tr>
 
@@ -445,47 +441,13 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">libs/json/src/lib/util/schema-manager.ts:74</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/lib/json-compiler/schema-manager.ts:53</a></div>
                         </td>
                     </tr>
 
             <tr>
                 <td class="col-md-4">
                     <div class="io-description"><p>Schema map</p>
-</div>
-                </td>
-            </tr>
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="output"></a>
-                    <span class="name">
-                            <span class="modifier">Protected</span>
-                            <span class="modifier">Readonly</span>
-                        <span ><b>output</b></span>
-                        <a href="#output"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">libs/json/src/lib/util/schema-manager.ts:67</a></div>
-                        </td>
-                    </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Output directory (Dist)</p>
 </div>
                 </td>
             </tr>
@@ -513,7 +475,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">libs/json/src/lib/util/schema-manager.ts:58</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/lib/json-compiler/schema-manager.ts:42</a></div>
                         </td>
                     </tr>
 
@@ -537,6 +499,78 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="cleanExtras"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>cleanExtras</b></span>
+                        <a href="#cleanExtras"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cleanExtras(schema: JSONSchema)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="243"
+                                    class="link-to-prism">src/lib/json-compiler/schema-manager.ts:243</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Write the compiled schema into file</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>schema</td>
+                                            <td>
+                                                        <code>JSONSchema</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="compile"></a>
                     <span class="name">
                             <span class="modifier">Async</span>
@@ -555,8 +589,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="277"
-                                    class="link-to-prism">libs/json/src/lib/util/schema-manager.ts:277</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="253"
+                                    class="link-to-prism">src/lib/json-compiler/schema-manager.ts:253</a></div>
                         </td>
                     </tr>
 
@@ -567,7 +601,7 @@
 </div>
 
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                            <b>Returns : </b>    <code>unknown</code>
 
                         </div>
                 </td>
@@ -596,8 +630,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="197"
-                                    class="link-to-prism">libs/json/src/lib/util/schema-manager.ts:197</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="174"
+                                    class="link-to-prism">src/lib/json-compiler/schema-manager.ts:174</a></div>
                         </td>
                     </tr>
 
@@ -606,7 +640,7 @@
                 <td class="col-md-4">
 
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#ReadyJSONSchema" target="_self" >ReadyJSONSchema | never</a></code>
+                            <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >ReadyJSONSchema | never</a></code>
 
                         </div>
                 </td>
@@ -635,8 +669,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="179"
-                                    class="link-to-prism">libs/json/src/lib/util/schema-manager.ts:179</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="156"
+                                    class="link-to-prism">src/lib/json-compiler/schema-manager.ts:156</a></div>
                         </td>
                     </tr>
 
@@ -647,7 +681,7 @@
 </div>
 
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                            <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
 
                         </div>
                 </td>
@@ -677,8 +711,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="93"
-                                    class="link-to-prism">libs/json/src/lib/util/schema-manager.ts:93</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="70"
+                                    class="link-to-prism">src/lib/json-compiler/schema-manager.ts:70</a></div>
                         </td>
                     </tr>
 
@@ -749,8 +783,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="112"
-                                    class="link-to-prism">libs/json/src/lib/util/schema-manager.ts:112</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="89"
+                                    class="link-to-prism">src/lib/json-compiler/schema-manager.ts:89</a></div>
                         </td>
                     </tr>
 
@@ -792,8 +826,8 @@ Then map them by their own absolute filename path so which will be unique for ea
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="102"
-                                    class="link-to-prism">libs/json/src/lib/util/schema-manager.ts:102</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="79"
+                                    class="link-to-prism">src/lib/json-compiler/schema-manager.ts:79</a></div>
                         </td>
                     </tr>
 
@@ -863,8 +897,8 @@ Then map them by their own absolute filename path so which will be unique for ea
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="146"
-                                    class="link-to-prism">libs/json/src/lib/util/schema-manager.ts:146</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="123"
+                                    class="link-to-prism">src/lib/json-compiler/schema-manager.ts:123</a></div>
                         </td>
                     </tr>
 
@@ -875,7 +909,7 @@ Then map them by their own absolute filename path so which will be unique for ea
 </div>
 
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                            <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
 
                         </div>
                 </td>
@@ -904,8 +938,8 @@ Then map them by their own absolute filename path so which will be unique for ea
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="221"
-                                    class="link-to-prism">libs/json/src/lib/util/schema-manager.ts:221</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="198"
+                                    class="link-to-prism">src/lib/json-compiler/schema-manager.ts:198</a></div>
                         </td>
                     </tr>
 
@@ -916,7 +950,7 @@ Then map them by their own absolute filename path so which will be unique for ea
 </div>
 
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                            <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
 
                         </div>
                 </td>
@@ -945,8 +979,8 @@ Then map them by their own absolute filename path so which will be unique for ea
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="208"
-                                    class="link-to-prism">libs/json/src/lib/util/schema-manager.ts:208</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="185"
+                                    class="link-to-prism">src/lib/json-compiler/schema-manager.ts:185</a></div>
                         </td>
                     </tr>
 
@@ -1016,8 +1050,8 @@ Then map them by their own absolute filename path so which will be unique for ea
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="188"
-                                    class="link-to-prism">libs/json/src/lib/util/schema-manager.ts:188</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="165"
+                                    class="link-to-prism">src/lib/json-compiler/schema-manager.ts:165</a></div>
                         </td>
                     </tr>
 
@@ -1028,48 +1062,7 @@ Then map them by their own absolute filename path so which will be unique for ea
 </div>
 
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                        </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="write"></a>
-                    <span class="name">
-                            <span class="modifier">Async</span>
-                        <span ><b>write</b></span>
-                        <a href="#write"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>write()</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="266"
-                                    class="link-to-prism">libs/json/src/lib/util/schema-manager.ts:266</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-description"><p>Write the compiled schema into file</p>
-</div>
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                            <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
 
                         </div>
                 </td>
@@ -1086,7 +1079,7 @@ Then map them by their own absolute filename path so which will be unique for ea
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { forEachJSONSchemaFile, readJSONFile, writeJSONFile } from &#x27;@rline/fs&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { forEachJSONSchemaFile, readJSONFile } from &#x27;@rline/fs&#x27;;
 import { names } from &#x27;@rline/names&#x27;;
 import {
   JSONSchema,
@@ -1094,6 +1087,7 @@ import {
   MissingPropertyError,
   NotAbsolutePathError,
   RequiredError,
+  SchemaConfig,
 } from &#x27;@rline/type&#x27;;
 import {
   clone,
@@ -1106,23 +1100,6 @@ import {
 import { isAbsolute, join } from &#x27;path&#x27;;
 import { forEachRef } from &#x27;./for-each-ref&#x27;;
 import { ReadyJSONSchema } from &#x27;./ready-schema&#x27;;
-
-export type SchemaManagerOptions &#x3D; {
-  /**
-   * Main schema filepath
-   */
-  main: string;
-
-  /**
-   * Root directory of the schemas or The parent directory of the main schema file
-   */
-  root: string;
-
-  /**
-   * Output directory, by default dist
-   */
-  output: string;
-};
 
 export class SchemaManager {
   /**
@@ -1150,27 +1127,20 @@ export class SchemaManager {
   protected readonly main: string;
 
   /**
-   * Output directory (Dist)
-   */
-  protected readonly output: string;
-
-  /**
    * Schema map
    * @key key absolute filepath
    * @value schema {@link ReadyJSONSchema}
    */
   protected readonly map &#x3D; new Map&lt;string, ReadyJSONSchema&gt;();
 
-  constructor(options?: SchemaManagerOptions) {
+  constructor(options?: SchemaConfig) {
     // setting default values
     this.root &#x3D; options?.root ?? SchemaManager.defaultRootPath;
     this.main &#x3D; options?.main ?? SchemaManager.defaultMainFilePath;
-    this.output &#x3D; options?.output ?? SchemaManager.defaultOutuptPath;
 
     // validating
     if (!isAbsolute(this.root)) throw new NotAbsolutePathError();
     if (!isAbsolute(this.main)) throw new NotAbsolutePathError();
-    if (!isAbsolute(this.output)) throw new NotAbsolutePathError();
   }
 
   /**
@@ -1351,12 +1321,11 @@ export class SchemaManager {
   /**
    * Write the compiled schema into file
    */
-  async write() {
-    const rootSchema &#x3D; this.getRootSchema() as JSONSchema;
-    delete rootSchema.$dirpath;
-    delete rootSchema.$filepath;
+  protected async cleanExtras(schema: JSONSchema) {
+    delete schema.$dirpath;
+    delete schema.$filepath;
 
-    await writeJSONFile(this.main.replace(this.root, this.output), rootSchema);
+    return schema;
   }
 
   /**
@@ -1368,7 +1337,9 @@ export class SchemaManager {
     this.initializeEachDiefintionsIfUndefined();
     this.toDefinitions();
     this.validateSchemas();
-    await this.write();
+    const schema &#x3D; clone(this.getRootSchema());
+
+    return this.cleanExtras(schema);
   }
 }
 </code></pre>
