@@ -7,6 +7,7 @@
 JSON Compiler CLI
 
 - JSON Schema compiler, compiles multiple schemas into a single portable schema file by resolving all references.
+
 - Typescript type generator, generate types from json schemas. Supports, `allof`,`oneOf`, other complex JSON schema properties.
 
 ## Installation
