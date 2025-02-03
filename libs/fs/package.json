@@ -1,7 +1,7 @@
 {
   "name": "@rline/fs",
   "version": "9.2.0",
-  "description": "Read, write, manage files and directories",
+  "description": "Async IO and Utilities",
   "license": "MIT",
   "author": {
     "email": "robert.brightline@gmail.com",
@@ -19,10 +19,13 @@
   },
   "keywords": [
     "io",
+    "async",
     "read",
     "write",
-    "file",
-    "directory"
+    "append",
+    "dirs",
+    "files",
+    "foreach"
   ],
   "scripts": {
     "workspace:remove": "pnpm remove @rline/names @rline/type @rline/utils",
@@ -30,9 +33,9 @@
     "workspace": "pnpm workspace:remove && pnpm workspace:add"
   },
   "dependencies": {
-    "@rline/names": "9.2.0",
-    "@rline/type": "8.3.0",
-    "@rline/utils": "9.0.1",
+    "@rline/names": "workspace:^",
+    "@rline/type": "workspace:^",
+    "@rline/utils": "workspace:^",
     "@swc/helpers": "~0.5.11"
   },
   "type": "commonjs",

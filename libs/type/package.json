@@ -1,7 +1,7 @@
 {
   "name": "@rline/type",
   "version": "9.2.0",
-  "description": "Common types",
+  "description": "All types and interfaces utilized across the applications",
   "license": "MIT",
   "author": {
     "email": "robert.brightline@gmail.com",

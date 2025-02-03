@@ -4,7 +4,7 @@
 
 # @rline/type
 
-- Common types
+- All types and interfaces utilized across the applications
 
 ## Documentation
 
