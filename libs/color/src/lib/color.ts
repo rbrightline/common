@@ -8,7 +8,7 @@ export type Color = {
   orange: string;
   green: string;
   purple: string;
-  vermilion: string;
+  red: string;
   reset: string;
 };
 /**
@@ -21,7 +21,7 @@ export const HexColor: Color = {
   orange: 'color: #E69F00',
   green: 'color: #009E73',
   purple: 'color: #CC79A7',
-  vermilion: 'color: #D55E00',
+  red: 'color: #D55E00',
   reset: 'color: #000000',
 };
 
@@ -35,7 +35,7 @@ export const AnsiColor: Color = {
   orange: '\x1b[38;5;214m', // Warning (closest ANSI approximation for Orange)
   green: '\x1b[32m', // Info
   purple: '\x1b[35m', // Debug
-  vermilion: '\x1b[31m', // Error (red is closest to vermilion)
+  red: '\x1b[31m', // Error (red is closest to vermilion)
   reset: '\x1b[0m', // Reset color
 };
 
@@ -49,6 +49,6 @@ export const AnsiBgColor: Color = {
   orange: '\x1b[48;5;214m', // Warning - Orange Background (closest ANSI approximation)
   green: '\x1b[42m', // Info - Green Background
   purple: '\x1b[45m', // Debug - Purple Background
-  vermilion: '\x1b[41m', // Error - Red Background (closest to Vermilion)
+  red: '\x1b[41m', // Error - Red Background (closest to Vermilion)
   reset: '\x1b[0m', // Reset color
 };

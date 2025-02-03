@@ -33,6 +33,7 @@ export function createBoxPrinter(boxset: Boxset) {
         rpadding += ' ';
       }
     }
+
     const template = [
       [tl, hLine, tr].join(''),
       [vl, lpadding, title, rpadding, vl, message].join(''),

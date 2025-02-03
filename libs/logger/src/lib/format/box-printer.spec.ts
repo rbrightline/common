@@ -1,7 +1,9 @@
+import { AnsiColor } from '@rline/color';
 import { dotBox, roundBox, sharpBox, wavyBox } from './box-printer';
 
 describe('borderText', () => {
-  it('should print sharp box', () => sharpBox('Title', 'message goes here'));
+  it('should print sharp box', () =>
+    sharpBox(`${AnsiColor.red}Title${AnsiColor.reset}`, 'message goes here'));
   it('should print round box', () => roundBox('Title', 'message goes here'));
   it('should print wavy box', () => wavyBox('Title', 'message goes here'));
   it('should print dot box', () => dotBox('Title', 'message goes here'));
