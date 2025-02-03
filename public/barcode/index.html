@@ -87,13 +87,85 @@
 </div>
 
 <h1>@rline/barcode</h1>
-<p>Generate barcode</p>
+<p>Barcode generator</p>
 <h2>Installation</h2>
 <b>Example :</b><div><pre class="line-numbers"><code class="language-shell">pnpm add &#64;rline/barcode</code></pre></div><h2>Usage</h2>
-<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">const barcode = generateBarcode(&#39;UPC-A&#39;);
-expect(barcode).toMatch(/^\d{12}$/); // UPC-A should be 12 digits
-const barcode = generateBarcode(&#39;Code128&#39;);
-expect(barcode).toMatch(/^[A-Za-z0-9]{8,12}$/); // Code128 should be 8-12 alphanumeric characters</code></pre></div><h2>Documentation</h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">import { generateBarcode } from &#39;&#64;rline/barcode&#39;;
+
+generateBarcode(&#39;UPC-A&#39;);
+
+generateBarcode(&#39;Code128&#39;);</code></pre></div><h2>UPC-A</h2>
+<p>The <strong>UPC-A (Universal Product Code-A)</strong> barcode is a 12-digit barcode used primarily in the retail industry for tracking and identifying products at the point of sale. It is the most common barcode format in the United States and Canada.</p>
+<h3><strong>Key Features of UPC-A:</strong></h3>
+<ol>
+<li><p><strong>Structure:</strong></p>
+<ul>
+<li>The UPC-A barcode consists of 12 numeric digits:<ul>
+<li><strong>First digit:</strong> A number system character indicating the type of product.</li>
+<li><strong>Next five digits:</strong> Manufacturer identification number.</li>
+<li><strong>Following five digits:</strong> Product code assigned by the manufacturer.</li>
+<li><strong>Last digit:</strong> A check digit used for error detection.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Encoding:</strong></p>
+<ul>
+<li>Uses black bars and white spaces to encode numbers in a way that can be read by barcode scanners.</li>
+<li>Encodes data using <strong>scannable patterns</strong> that represent numbers from 0 to 9.</li>
+</ul>
+</li>
+<li><p><strong>Usage:</strong></p>
+<ul>
+<li>Found on nearly all retail products for <strong>inventory management, pricing, and checkout scanning</strong>.</li>
+<li>Commonly used in supermarkets, department stores, and e-commerce.</li>
+</ul>
+</li>
+<li><p><strong>Comparison with Other UPC Versions:</strong></p>
+<ul>
+<li><strong>UPC-A</strong> (12 digits) is the standard format.</li>
+<li><strong>UPC-E</strong> (8 digits) is a compressed version used for smaller packages.</li>
+<li>UPC-A is also compatible with <strong>EAN-13</strong>, which is used internationally.</li>
+</ul>
+</li>
+</ol>
+<h2>Code128</h2>
+<p><strong>Code 128</strong> is a high-density, alphanumeric barcode used primarily in logistics, shipping, and supply chain management. It is more versatile than UPC-A because it can encode <strong>numbers, letters (both uppercase and lowercase), and special characters</strong>.</p>
+<h3><strong>Key Features of Code 128:</strong></h3>
+<ol>
+<li><p><strong>Structure:</strong></p>
+<ul>
+<li>Uses a <strong>variable-length</strong> format, meaning it can encode <strong>any number of characters</strong> (compared to UPC-A, which is fixed at 12 digits).</li>
+<li>Includes <strong>start and stop characters</strong>, data characters, and a check digit for error detection.</li>
+</ul>
+</li>
+<li><p><strong>Encoding:</strong></p>
+<ul>
+<li>Uses <strong>three character sets (A, B, and C):</strong><ul>
+<li><strong>Set A</strong>: Uppercase letters, numbers, and control characters.</li>
+<li><strong>Set B</strong>: Uppercase and lowercase letters, numbers, and symbols.</li>
+<li><strong>Set C</strong>: Numeric-only encoding (highly efficient for long numbers).</li>
+</ul>
+</li>
+<li>Supports <strong>automatic switching</strong> between these sets for optimal space efficiency.</li>
+</ul>
+</li>
+<li><p><strong>Usage:</strong></p>
+<ul>
+<li>Commonly used in <strong>shipping and logistics</strong> (e.g., FedEx, UPS, and USPS tracking labels).</li>
+<li>Found in <strong>inventory systems, medical labeling, and product serialization</strong>.</li>
+<li>Used for <strong>GS1-128 (formerly UCC/EAN-128)</strong>, a variation used in the retail and supply chain industries.</li>
+</ul>
+</li>
+<li><p><strong>Comparison with Other Barcodes:</strong></p>
+<ul>
+<li>More <strong>data-dense</strong> than UPC-A, making it suitable for compact labels.</li>
+<li>Unlike <strong>UPC and EAN</strong>, which are numeric-only, Code 128 supports <strong>letters and special characters</strong>.</li>
+<li>Used in applications where <strong>serial numbers, batch numbers, and detailed information</strong> need to be encoded.</li>
+</ul>
+</li>
+</ol>
+<h2>Documentation</h2>
 <p>Detailed documentation <a href="https://rbrightline.github.io/common/barcode">Documentation</a></p>
 
 
