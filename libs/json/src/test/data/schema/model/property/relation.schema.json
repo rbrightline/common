@@ -6,6 +6,44 @@
             "$ref": "./ui-property.schema.json"
         },
         {
+            "$ref": "#/definitions/RelationPropertyOptionsRaw"
+        }
+    ],
+    "definitions": {
+        "RelationType": {
+            "title": "Relation Type",
+            "type": "string",
+            "enum": [
+                "many-to-many",
+                "many-to-one",
+                "one-to-one",
+                "one-to-many"
+            ]
+        },
+        "OnDelete": {
+            "type": "string",
+            "enum": [
+                "RESTRICT",
+                "CASCADE",
+                "SET NULL",
+                "DEFAULT",
+                "NO ACTION"
+            ],
+            "default": "SET NULL"
+        },
+        "OnUpdate": {
+            "type": "string",
+            "enum": [
+                "RESTRICT",
+                "CASCADE",
+                "SET NULL",
+                "DEFAULT",
+                "NO ACTION"
+            ],
+            "default": "SET NULL"
+        },
+        "RelationPropertyOptionsRaw": {
+            "type": "object",
             "properties": {
                 "name": {
                     "$ref": "../name/property-name.schema.json"
@@ -49,37 +87,6 @@
                 "type",
                 "target"
             ]
-        }
-    ],
-    "definitions": {
-        "RelationType": {
-            "title": "Relation Type",
-            "enum": [
-                "many-to-many",
-                "many-to-one",
-                "one-to-one",
-                "one-to-many"
-            ]
-        },
-        "OnDelete": {
-            "enum": [
-                "RESTRICT",
-                "CASCADE",
-                "SET NULL",
-                "DEFAULT",
-                "NO ACTION"
-            ],
-            "default": "SET NULL"
-        },
-        "OnUpdate": {
-            "enum": [
-                "RESTRICT",
-                "CASCADE",
-                "SET NULL",
-                "DEFAULT",
-                "NO ACTION"
-            ],
-            "default": "SET NULL"
         }
     }
 }

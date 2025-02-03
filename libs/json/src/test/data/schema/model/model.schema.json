@@ -1,8 +1,10 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "ModelSchema",
+    "type": "object",
     "properties": {
         "type": {
+            "type": "string",
             "enum": [
                 "class",
                 "enum",
@@ -35,7 +37,15 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-                "$ref": "./property/property.schema.json"
+                "allOf": [
+                    {
+                        "$ref": "./property/property.schema.json"
+                    }
+                ],
+                "required": [
+                    "type",
+                    "name"
+                ]
             }
         },
         "relations": {

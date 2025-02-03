@@ -145,6 +145,9 @@ importers:
       '@rline/fs':
         specifier: 9.1.0
         version: 9.1.0
+      '@rline/is':
+        specifier: workspace:^
+        version: link:../is
       '@rline/names':
         specifier: 9.1.0
         version: 9.1.0

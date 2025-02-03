@@ -6,6 +6,7 @@
             "$ref": "./common-number.schema.json"
         },
         {
+            "type": "object",
             "properties": {
                 "type": {
                     "const": "number"

@@ -2,6 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "description": "Required constants for security",
     "title": "SecuritySchema",
+    "type": "object",
     "properties": {
         "secret": {
             "description": "JWT secret",

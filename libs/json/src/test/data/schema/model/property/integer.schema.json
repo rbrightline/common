@@ -6,6 +6,12 @@
             "$ref": "./common-number.schema.json"
         },
         {
+            "$ref": "#/definitions/IntergerPropertyOptionsRaw"
+        }
+    ],
+    "definitions": {
+        "IntergerPropertyOptionsRaw": {
+            "type": "object",
             "properties": {
                 "type": {
                     "const": "integer"
@@ -38,5 +44,5 @@
                 "type"
             ]
         }
-    ]
+    }
 }

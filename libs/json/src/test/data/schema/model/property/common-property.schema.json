@@ -20,9 +20,13 @@
     ],
     "definitions": {
         "General": {
+            "type": "object",
             "properties": {
                 "name": {
                     "$ref": "../name/property-name.schema.json"
+                },
+                "type": {
+                    "$ref": "../enum/property-type.schema.json"
                 },
                 "description": {
                     "type": "string"
@@ -38,6 +42,7 @@
             }
         },
         "Transform": {
+            "type": "object",
             "properties": {
                 "acceptString": {
                     "type": "boolean",
@@ -47,6 +52,7 @@
             }
         },
         "Validation": {
+            "type": "object",
             "properties": {
                 "equalToProperty": {
                     "$ref": "../name/property-name.schema.json",
@@ -59,6 +65,7 @@
             }
         },
         "Encryption": {
+            "type": "object",
             "properties": {
                 "hash": {
                     "type": "boolean",
@@ -71,6 +78,7 @@
             }
         },
         "Dto": {
+            "type": "object",
             "properties": {
                 "write": {
                     "type": "boolean",
@@ -90,7 +98,6 @@
         }
     },
     "required": [
-        "type",
-        "name"
+        "type"
     ]
 }

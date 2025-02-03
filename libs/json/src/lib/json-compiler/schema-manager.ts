@@ -1,4 +1,4 @@
-import { forEachJSONSchemaFile, readJSONFile, writeJSONFile } from '@rline/fs';
+import { forEachJSONSchemaFile, readJSONFile } from '@rline/fs';
 import { names } from '@rline/names';
 import {
   JSONSchema,
@@ -6,6 +6,7 @@ import {
   MissingPropertyError,
   NotAbsolutePathError,
   RequiredError,
+  SchemaConfig,
 } from '@rline/type';
 import {
   clone,
@@ -18,23 +19,6 @@ import {
 import { isAbsolute, join } from 'path';
 import { forEachRef } from './for-each-ref';
 import { ReadyJSONSchema } from './ready-schema';
-
-export type SchemaManagerOptions = {
-  /**
-   * Main schema filepath
-   */
-  main: string;
-
-  /**
-   * Root directory of the schemas or The parent directory of the main schema file
-   */
-  root: string;
-
-  /**
-   * Output directory, by default dist
-   */
-  output: string;
-};
 
 export class SchemaManager {
   /**
@@ -62,27 +46,20 @@ export class SchemaManager {
   protected readonly main: string;
 
   /**
-   * Output directory (Dist)
-   */
-  protected readonly output: string;
-
-  /**
    * Schema map
    * @key key absolute filepath
    * @value schema {@link ReadyJSONSchema}
    */
   protected readonly map = new Map<string, ReadyJSONSchema>();
 
-  constructor(options?: SchemaManagerOptions) {
+  constructor(options?: SchemaConfig) {
     // setting default values
     this.root = options?.root ?? SchemaManager.defaultRootPath;
     this.main = options?.main ?? SchemaManager.defaultMainFilePath;
-    this.output = options?.output ?? SchemaManager.defaultOutuptPath;
 
     // validating
     if (!isAbsolute(this.root)) throw new NotAbsolutePathError();
     if (!isAbsolute(this.main)) throw new NotAbsolutePathError();
-    if (!isAbsolute(this.output)) throw new NotAbsolutePathError();
   }
 
   /**
@@ -263,12 +240,11 @@ export class SchemaManager {
   /**
    * Write the compiled schema into file
    */
-  async write() {
-    const rootSchema = this.getRootSchema() as JSONSchema;
-    delete rootSchema.$dirpath;
-    delete rootSchema.$filepath;
+  protected async cleanExtras(schema: JSONSchema) {
+    delete schema.$dirpath;
+    delete schema.$filepath;
 
-    await writeJSONFile(this.main.replace(this.root, this.output), rootSchema);
+    return schema;
   }
 
   /**
@@ -280,6 +256,8 @@ export class SchemaManager {
     this.initializeEachDiefintionsIfUndefined();
     this.toDefinitions();
     this.validateSchemas();
-    await this.write();
+    const schema = clone(this.getRootSchema());
+
+    return this.cleanExtras(schema);
   }
 }

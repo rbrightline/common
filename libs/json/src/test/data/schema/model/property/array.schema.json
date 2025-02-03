@@ -1,12 +1,16 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "ArrayPropertyOptions",
+    "type": "object",
     "properties": {
         "type": {
             "const": "array"
         },
         "default": {
-            "type": "array"
+            "type": "array",
+            "items": {
+                "$ref": "./property.schema.json"
+            }
         },
         "minSize": {
             "type": "integer"

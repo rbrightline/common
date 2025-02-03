@@ -1,13 +1,16 @@
-#!/usr/bin/env ts-node
-
 import { createPathScope } from '@rline/fs';
 import { program } from 'commander';
 import { join } from 'path';
 import { cwd } from 'process';
-import { init } from './init/init';
-import { schema } from './schema/schema';
+import { init } from './init';
+import { schemaConfig } from './json-compiler';
+import { schema } from './schema';
 import { tsc } from './tsc';
-import { schemaConfig } from './util';
+
+/**
+ * Safe path
+ */
+const p = createPathScope(cwd());
 
 program
   .name('json compiler')
@@ -29,12 +32,14 @@ program
   .name('schema')
   .description('Compile json schemas into a single schema')
   .action(async () => {
-    const safepath = createPathScope(cwd());
     let { main, output, root } = await schemaConfig(cwd());
     await schema({
-      root: safepath(root),
-      main: safepath(root, main),
-      output: safepath(root, output.schema),
+      root: p(root),
+      main: p(root, main),
+      output: {
+        schema: p(root, output.schema),
+        type: '',
+      },
     });
   });
 
@@ -44,12 +49,15 @@ program
   .description('Compile json schemas into a typescript type')
   .action(async () => {
     const safepath = createPathScope(cwd());
+    let { output, root } = await schemaConfig(cwd());
 
-    const { output, root } = await schemaConfig(cwd());
-
-    tsc({
+    await tsc({
       root: safepath(root),
-      output: safepath(output.type),
+      main: safepath(root, output.schema),
+      output: {
+        type: safepath(root, output.type),
+        schema: '',
+      },
     });
   });
 

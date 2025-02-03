@@ -1,6 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "StringFormat",
+    "type": "string",
     "description": "String format such as email, password, uuid, ip6, ip4 and so more",
     "enum": [
         "short",

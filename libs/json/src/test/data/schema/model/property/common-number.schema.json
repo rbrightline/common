@@ -1,6 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "CommonNumberPropertyOptions",
+    "type": "object",
     "properties": {
         "isEven": {
             "type": "boolean"
