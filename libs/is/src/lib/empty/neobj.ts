@@ -1,4 +1,5 @@
 import { Obj } from '../type';
+import { def } from '../val/def';
 import { eobj } from './eobj';
 
 /**
@@ -7,5 +8,6 @@ import { eobj } from './eobj';
  * @returns
  */
 export function neobj(value: Obj): boolean {
-  return !eobj(value);
+  if (def(value)) return !eobj(value);
+  return false;
 }

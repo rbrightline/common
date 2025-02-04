@@ -28,6 +28,10 @@ export type Names = {
    */
   snakeCase: string;
 
+  /**
+   * Dot case
+   * Example: 'dot.case.ts'
+   */
   dotCase: string;
 
   /**
@@ -36,6 +40,9 @@ export type Names = {
    */
   constCase: string;
 
+  /**
+   * Example: "Sentence case example."
+   */
   sentenceCase: string;
 
   /**
@@ -45,17 +52,50 @@ export type Names = {
   titleCase: string;
 
   /**
-   * ResourceController
+   * Example: ResourceNameController
    */
   controllerName: string;
+
   /**
-   * ResourceService
+   * Example: ResourceNameService
    */
   serviceName: string;
+
   /**
-   * ResourceModule
+   * Example: ResourceNameModule
    */
   moduleName: string;
+
+  /**
+   * Example: CreateResourceNameDto
+   */
+  createDtoName: string;
+
+  /**
+   * Example: UpdateResourceNameDto
+   */
+  updateDtoName: string;
+
+  /**
+   * Example: QueryResourceNameDto
+   */
+  queryDtoName: string;
+
+  /**
+   * Example: ResourceNameModel
+   */
+  modelName: string;
+
+  /**
+   * Example: ResourceNameOptions
+   */
+  optionsName: string;
+};
+
+export type NamesOption = {
+  prefix?: string;
+  suffix?: string;
+  wrapper?: string;
 };
 
 /**
@@ -73,7 +113,10 @@ export type Names = {
  * - `serviceName`: Nameservice.
  * - `moduleName`: NameModule.
  */
-export function names(resourceName: string): Names {
+export function names(resourceName: string, options?: NamesOption): Names {
+
+  
+  resourceName = `${}`
   const value = normalize(resourceName);
 
   const pascalCase = value
@@ -94,10 +137,16 @@ export function names(resourceName: string): Names {
       word.toUpperCase()
     ),
 
+    sentenceCase: value[0].toUpperCase() + value.slice(1),
+    dotCase: value.replace(/\s/g, '.'),
+
     controllerName: pascalCase + 'Controller',
     serviceName: pascalCase + 'Service',
     moduleName: pascalCase + 'Module',
-    sentenceCase: value[0].toUpperCase() + value.slice(1),
-    dotCase: value.replace(/\s/g, '.'),
+    createDtoName: `Create${pascalCase}Dto`,
+    updateDtoName: `Update${pascalCase}Dto`,
+    queryDtoName: `Query${pascalCase}Dto`,
+    modelName: `${pascalCase}Model`,
+    optionsName: `${pascalCase}Options`,
   };
 }

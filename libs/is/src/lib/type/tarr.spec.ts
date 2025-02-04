@@ -1,12 +1,20 @@
 import { tarr } from './tarr';
-
-describe('tarr', () => {
-  it('tarr(value) should return true when value is array', () => {
-    expect(tarr([false])).toEqual(true);
-    expect(tarr([1])).toEqual(true);
-    expect(tarr([])).toEqual(true);
-    expect(tarr(1)).toEqual(false);
-    expect(tarr('some')).toEqual(false);
-    expect(tarr('some')).toEqual(false);
+describe('tarr - is type of array', () => {
+  it.each`
+    value          | result
+    ${undefined}   | ${true}
+    ${null}        | ${true}
+    ${[]}          | ${true}
+    ${[null]}      | ${true}
+    ${[undefined]} | ${true}
+    ${1}           | ${false}
+    ${-1}          | ${false}
+    ${0}           | ${false}
+    ${''}          | ${false}
+    ${true}        | ${false}
+    ${false}       | ${false}
+    ${{}}          | ${false}
+  `('tarr($value) should return $result', ({ value, result }) => {
+    expect(tarr(value)).toEqual(result);
   });
 });

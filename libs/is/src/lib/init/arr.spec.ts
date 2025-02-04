@@ -1,35 +1,48 @@
 import { arr } from './arr';
 
-describe('array initializer', () => {
-  it('should initialize optional array', () => {
-    let value = arr([{ a: 1 }], { required: false });
-    expect(value).toEqual([{ a: 1 }]);
-
-    value = arr([{ a: 2 }]);
-    expect(value).toEqual([{ a: 2 }]);
-
-    value = arr(undefined);
-    expect(value).toEqual(undefined);
-
-    value = undefined;
-    expect(value).toEqual(undefined);
-
-    // compiler erorr
-    // value = null
+describe('arr - array init', () => {
+  describe('arr - with no options', () => {
+    it.each`
+      value          | result
+      ${[]}          | ${[]}
+      ${[undefined]} | ${[undefined]}
+      ${[null]}      | ${[null]}
+      ${undefined}   | ${undefined}
+      ${['some']}    | ${['some']}
+    `('arr($value) should return $result', ({ value, result }) => {
+      expect(arr(value)).toEqual(result);
+    });
   });
 
-  it('should initialize required arrray', () => {
-    let value = arr([{ a: 1 }], { required: true });
-    expect(value).toEqual([{ a: 1 }]);
+  describe('arr - with required values', () => {
+    it.each`
+      value          | result
+      ${[]}          | ${[]}
+      ${[undefined]} | ${[undefined]}
+      ${[null]}      | ${[null]}
+      ${['some']}    | ${['some']}
+    `(
+      'arr($value, { required: true } ) should return $result',
+      ({ value, result }) => {
+        expect(arr(value, { required: true })).toEqual(result);
+      }
+    );
+  });
 
-    value = [{ a: 3 }];
-
-    // Compiler error
-    // value = arr( [{ some: 'some' }]);
-    // value = [{ some: 'some' }];
-
-    // Compiler error
-    // value = undefined
-    // value = null
+  describe('arr - with required values throw', () => {
+    it.each`
+      value
+      ${undefined}
+      ${null}
+      ${''}
+      ${1}
+      ${true}
+      ${false}
+    `(
+      'arr($value, { required:true } ) should throw RequriedValueError',
+      ({ value }) => {
+        expect(() => arr(value, { required: true })).toThrow();
+      }
+    );
   });
 });

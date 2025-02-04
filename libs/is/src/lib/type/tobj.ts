@@ -1,13 +1,18 @@
-export type Obj = {
-  [key: string | symbol | number]: unknown;
-};
+import { Optional } from '../common';
+import { udef } from '../val';
 
 /**
- * is typeof object?
- * typeof value ==='object' && value !==null && !Array.isArray(value)
+ * Object type guard that return `true` if the value is typeof `object`, not-null, and array.
  * @param value
  * @returns
  */
-export function tobj(value: unknown): value is Obj {
-  return typeof value === 'object' && value !== null && !Array.isArray(value);
+export function tobj<T extends object>(
+  value: T | unknown
+): value is Optional<T> {
+  return (
+    udef(value) ||
+    (typeof value === 'object' &&
+      !Array.isArray(value) &&
+      typeof value !== 'number')
+  );
 }

@@ -1,20 +1,23 @@
 import { tstr } from './tstr';
 
-describe('tstr', () => {
-  it('tstr(value) should return true when value is string', () => {
-    expect(tstr('')).toEqual(true);
-    expect(tstr('1')).toEqual(true);
-    expect(tstr('-1')).toEqual(true);
-    expect(tstr('some')).toEqual(true);
-    expect(tstr(undefined)).toEqual(false);
-    expect(tstr(null)).toEqual(false);
-    expect(tstr(NaN)).toEqual(false);
-    expect(tstr(true)).toEqual(false);
-    expect(tstr(false)).toEqual(false);
-    expect(tstr({})).toEqual(false);
-    expect(tstr([])).toEqual(false);
-    expect(tstr([{}])).toEqual(false);
-    expect(tstr([1])).toEqual(false);
-    expect(tstr([true])).toEqual(false);
+describe('tstr - is tstr', () => {
+  it.each`
+    value               | result
+    ${undefined}        | ${true}
+    ${null}             | ${true}
+    ${''}               | ${true}
+    ${'some'}           | ${true}
+    ${1}                | ${false}
+    ${0}                | ${false}
+    ${-1}               | ${false}
+    ${0.5}              | ${false}
+    ${true}             | ${false}
+    ${false}            | ${false}
+    ${{}}               | ${false}
+    ${{ some: 'some' }} | ${false}
+    ${[]}               | ${false}
+    ${['some']}         | ${false}
+  `('tstr($value) should return $result', ({ value, result }) => {
+    expect(tstr(value)).toEqual(result);
   });
 });

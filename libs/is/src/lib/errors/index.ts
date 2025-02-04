@@ -5,3 +5,4 @@ export * from './invalid-boolean-value.error';
 export * from './invalid-number-value.error';
 export * from './invalid-object-value.error';
 export * from './invalid-string-value.error';
+export * from './required-value-error';

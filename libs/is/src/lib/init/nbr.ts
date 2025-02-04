@@ -1,7 +1,7 @@
 import { InitOptions } from '../common';
-import { InvalidNumberValueError } from '../errors';
+import { EmptyValueError, InvalidNumberValueError } from '../errors';
 import { tnbr } from '../type';
-import { nenbr, nil } from '../value';
+import { def, nenbr, nil } from '../value';
 
 /**
  * initialize number value or throw {@link InvalidNumberValueError}
@@ -10,21 +10,26 @@ import { nenbr, nil } from '../value';
  * @throws
  */
 export function nbr<
-  T extends boolean,
+  T extends number,
+  R extends boolean,
   A extends boolean,
-  V extends number,
-  V0 extends V | 0
+  T0 extends T | 0
 >(
-  value: T extends true
+  value: R extends true
     ? A extends true
-      ? V0
-      : V
-    : (A extends true ? V0 : V) | undefined,
-  options?: InitOptions<T>
-): T extends true ? number : number | undefined {
+      ? T0
+      : T
+    : (A extends true ? T0 : T) | undefined,
+  options?: InitOptions<number, R>
+): R extends true ? number : number | undefined {
   if (tnbr(value) && nenbr(value)) return value;
 
-  if (options?.required || nil(value)) throw new InvalidNumberValueError(value);
+  if (options?.notEmpty == true) throw new EmptyValueError();
+
+  if (options?.required || nil(value)) {
+    if (def(options?.default)) return options.default as T;
+    throw new InvalidNumberValueError(value);
+  }
 
   return value;
 }

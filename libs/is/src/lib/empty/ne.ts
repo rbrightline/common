@@ -1,5 +1,7 @@
+import { Optional } from '../common';
+import { ValueType } from '../common/value-type';
 import { tarr, tnbr, tobj, tstr } from '../type';
-import { def } from './def';
+import { def } from '../val/def';
 import { nearr } from './nearr';
 import { nenbr } from './nenbr';
 import { neobj } from './neobj';
@@ -14,7 +16,7 @@ import { nestr } from './nestr';
  * @param value
  * @returns
  */
-export function ne<T>(value: T | null | undefined): value is T {
+export function ne<T extends ValueType>(value?: Optional<T>): boolean {
   if (def(value)) {
     if (tstr(value)) return nestr(value);
     if (tnbr(value)) return nenbr(value);

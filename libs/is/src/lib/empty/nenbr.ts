@@ -1,3 +1,4 @@
+import { def } from '../val/def';
 import { enbr } from './enbr';
 
 /**
@@ -6,5 +7,7 @@ import { enbr } from './enbr';
  * @returns
  */
 export function nenbr(value: number): value is number {
-  return !enbr(value);
+  if (def(value)) return !enbr(value);
+
+  return false;
 }

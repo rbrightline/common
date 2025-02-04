@@ -20,5 +20,20 @@
             "   expect($2).toEqual($3);",
             "});",
         ]
+    },
+    "it each": {
+        "prefix": "it each",
+        "scope": "typescript,javascript",
+        "body": [
+            "describe('$1 - is $1', () => {",
+            "    it.each`",
+            "      value        | result",
+            "      \\${undefined} | \\${true}",
+            "      \\${null}      | \\${true}",
+            "    `('$1(\\$value) should return \\$result', ({ value, result }) => {",
+            "      expect($1(value)).toEqual(result);",
+            "    });",
+            "  });",
+        ]
     }
 }

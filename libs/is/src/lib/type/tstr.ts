@@ -1,8 +1,11 @@
+import { Optional } from '../common';
+import { udef } from '../val';
+
 /**
- * is typeof string?
+ * String type guard that return `true` if the value is typeof `string`
  * @param value
  * @returns
  */
-export function tstr(value: unknown): value is string {
-  return typeof value == 'string';
+export function tstr(value: unknown): value is Optional<string> {
+  return typeof value == 'string' || udef(value);
 }

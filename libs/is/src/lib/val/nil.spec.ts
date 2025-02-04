@@ -1,6 +1,6 @@
 import { nil } from './nil';
 
-describe('nil', () => {
+describe('nil - is value null', () => {
   it('nil(value) should return true if the value is null', () => {
     expect(nil(null)).toEqual(true);
     expect(nil([])).toEqual(false);

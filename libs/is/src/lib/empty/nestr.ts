@@ -1,3 +1,4 @@
+import { def } from '../val/def';
 import { estr } from './estr';
 
 /**
@@ -6,5 +7,6 @@ import { estr } from './estr';
  * @returns
  */
 export function nestr(value: string): boolean {
-  return !estr(value);
+  if (def(value)) return !estr(value);
+  return false;
 }

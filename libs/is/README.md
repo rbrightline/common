@@ -4,19 +4,7 @@
 
 # @rline/is
 
-Better and safer typescript
-
-## Goal
-
-1. any variable in the code must be one of valid string, number, boolean, object, or array. The variables must be able to use in their relative operations without any error. For example, `NaN` is typeof number but it does not work with any numeric operations.
-
-## Valid Values
-
-- string: none-empty string
-- number: none-zero
-- boolen
-- object: none-empty object
-- array: none-empty array, also throw error when all values are null or undefined
+The library provides a set of functions for variable asignments. Most of the time we have to check the value is defined or not, this library provides very useful functions to prevent the extensive usage of if-else statements
 
 ## Installation
 
@@ -24,33 +12,64 @@ Better and safer typescript
 pnpm add @rline/is
 ```
 
-## Naming Convention
+## Examples
 
-### Type and value checking functions
+### Requried value
 
-- First one or two letters are the type of the function such as `t` stands for `isType`, `e` is `isEmpty`, `ne` is `isNotEmpty`, any function starts with these prefixes return `boolean`
-
-## Usage
-
-- [ ] add example for the is library
+Old code
 
 ```typescript
-const strValue: string | undefiend = val('some');
-const strValue: number | undefiend = val(1);
-const boolValue: boolean | undefiend = val(true);
-const objectValue: Some | undefiend = val<Some>(undefined);
-const arrValue: [] | undefiend = val([]);
+function someFunction(value: T): T | never {
+  if (value == undefined) {
+    throw new Error('Value is required');
+  }
+  return value;
+}
+```
 
-const rstrValue: string = val('some', { required: true });
-const rstrValue: number = val(1, { required: true });
-const rboolValue: boolean = val(true, { required: true });
-const robjectValue: Some = val<Some>(undefined, { required: true });
-const rarrValue: O[] = val<O>([], { required: true });
+New Code
 
-const readonlyObjectValue: O[] = val<O>([], { required: true, readonly: true });
-const readonlyArrValue: O[] = val<O>([], { required: true, readonly: true });
+```typescript
+import { rval } from '@rline/is';
+
+function someFunction(value: T): T | never {
+  return rval(value);
+}
+```
+
+### Required Not Empty Value
+
+Old code
+
+```typescript
+function isEmpty(value: T): boolean {
+  // check the value is not empty
+  return true | false;
+}
+
+function someFunction(value: T): T | never {
+  if (value == undefined) throw new Error('Value is required');
+
+  if (isEmpty(value)) throw new Error('Value is empty');
+
+  return value;
+}
+```
+
+New Code
+
+```typescript
+import { rval } from '@rline/is';
+
+function someFunction(value: T): T | never {
+  return rval(value);
+}
 ```
 
 ## Documentation
 
 Detailed documentation [Documentation](https://rbrightline.github.io/common/is/)
+
+```
+
+```

@@ -1,16 +1,19 @@
 import { tobj } from './tobj';
 
-describe('tobj', () => {
-  it('tobj(value) should return truen if the value is object', () => {
-    expect(tobj({})).toEqual(true);
-    expect(tobj({ some: true })).toEqual(true);
-    expect(tobj([{ some: true }])).toEqual(false);
-    expect(tobj(1)).toEqual(false);
-    expect(tobj(2)).toEqual(false);
-    expect(tobj(-1)).toEqual(false);
-    expect(tobj(0)).toEqual(false);
-    expect(tobj(true)).toEqual(false);
-    expect(tobj(false)).toEqual(false);
-    expect(tobj(class A {})).toEqual(false);
+describe('tobj - is tobj', () => {
+  it.each`
+    value        | result
+    ${undefined} | ${true}
+    ${null}      | ${true}
+    ${{}}        | ${true}
+    ${[]}        | ${false}
+    ${1}         | ${false}
+    ${-1}        | ${false}
+    ${0}         | ${false}
+    ${true}      | ${false}
+    ${false}     | ${false}
+    ${NaN}       | ${false}
+  `('tobj($value) should return $result', ({ value, result }) => {
+    expect(tobj(value)).toEqual(result);
   });
 });

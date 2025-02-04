@@ -1,5 +1,6 @@
 /**
- * is null?
+ * Is value null?
+ * If `value === null` return `true`, else `false`
  * @param value
  * @returns
  */

@@ -1,7 +1,7 @@
 import { InitOptions } from '../common';
-import { InvalidBooleanValueError } from '../errors';
+import { InvalidBooleanValueError, RequiredValueError } from '../errors';
 import { tbln } from '../type';
-import { nil } from '../value';
+import { def } from '../value';
 
 /**
  * initialize boolean value or throw {@link InvalidBooleanValueError}
@@ -9,13 +9,16 @@ import { nil } from '../value';
  * @returns
  * @throws
  */
-export function bln<T extends boolean>(
-  value: T extends true ? boolean : boolean | undefined,
-  options?: InitOptions<T>
-): T extends true ? boolean : boolean | undefined {
-  if (tbln(value)) return value;
-  if (options?.required == true || nil(value))
-    throw new InvalidBooleanValueError(value);
+export function bln<
+  R extends boolean,
+  RT extends R extends true ? boolean : boolean | undefined | never
+>(
+  value?: R extends true ? boolean : boolean | undefined,
+  options?: InitOptions<boolean, R>
+): RT {
+  if (!tbln(value)) throw new InvalidBooleanValueError();
+  if (!def(value) && options?.required == true)
+    throw new RequiredValueError(value);
 
-  return value;
+  return value as RT;
 }
