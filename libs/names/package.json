@@ -1,6 +1,6 @@
 {
   "name": "@rline/names",
-  "version": "9.2.3",
+  "version": "9.3.0",
   "description": "All version of names and resource paths",
   "license": "MIT",
   "author": {
@@ -37,7 +37,7 @@
     "workspace": "pnpm workspace:remove && pnpm workspace:add"
   },
   "dependencies": {
-    "@rline/is": "9.2.2",
+    "@rline/is": "9.3.0",
     "@swc/helpers": "~0.5.11"
   },
   "type": "commonjs",

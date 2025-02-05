@@ -1,6 +1,6 @@
 {
   "name": "@rline/utils",
-  "version": "9.2.0",
+  "version": "9.3.0",
   "description": "Common utilities",
   "license": "MIT",
   "author": {
@@ -23,12 +23,15 @@
     "common"
   ],
   "scripts": {
+    "prepublish": "sh ./../../.scripts/pre-publish.sh",
+    "prebuild": "sh ./../../.scripts/pre-build.sh",
+    "preinstall": "sh ./../../.scripts/pre-install.sh",
     "workspace:remove": "pnpm remove  @rline/type",
     "workspace:add": "pnpm add --workspace  @rline/type",
     "workspace": "pnpm workspace:remove && pnpm workspace:add"
   },
   "dependencies": {
-    "@rline/type": "9.2.0",
+    "@rline/type": "9.3.0",
     "@swc/helpers": "~0.5.11"
   },
   "type": "commonjs",

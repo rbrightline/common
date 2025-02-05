@@ -1,6 +1,6 @@
 {
   "name": "@rline/barcode",
-  "version": "9.2.1",
+  "version": "9.3.0",
   "description": "Library provides a function to generate a valid `UPC-A` and `Code128` barcodes which are commonly used in commerce.",
   "license": "MIT",
   "author": {
