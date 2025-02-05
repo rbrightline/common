@@ -1,7 +1,12 @@
-import { InitOptions } from '../common';
-import { EmptyValueError, InvalidNumberValueError } from '../errors';
+import { InitOptions, Optional } from '../common';
+import { enbr } from '../empty';
+import {
+  EmptyValueError,
+  InvalidNumberValueError,
+  RequiredValueError,
+} from '../errors';
 import { tnbr } from '../type';
-import { def, nenbr, nil } from '../value';
+import { def, udef } from '../val';
 
 /**
  * initialize number value or throw {@link InvalidNumberValueError}
@@ -10,26 +15,16 @@ import { def, nenbr, nil } from '../value';
  * @throws
  */
 export function nbr<
-  T extends number,
   R extends boolean,
-  A extends boolean,
-  T0 extends T | 0
->(
-  value: R extends true
-    ? A extends true
-      ? T0
-      : T
-    : (A extends true ? T0 : T) | undefined,
-  options?: InitOptions<number, R>
-): R extends true ? number : number | undefined {
-  if (tnbr(value) && nenbr(value)) return value;
-
-  if (options?.notEmpty == true) throw new EmptyValueError();
-
-  if (options?.required || nil(value)) {
-    if (def(options?.default)) return options.default as T;
-    throw new InvalidNumberValueError(value);
+  RT extends R extends true ? number : number | undefined
+>(value?: Optional<number>, options?: InitOptions<number, R>): RT {
+  if (def(value)) {
+    if (!tnbr(value)) throw new InvalidNumberValueError(value);
+    if (options?.notEmpty && enbr(value)) throw new EmptyValueError(value);
+  } else {
+    if (def(options?.default)) return options?.default as unknown as RT;
+    if (options?.required && udef(value)) throw new RequiredValueError(value);
   }
 
-  return value;
+  return value as RT;
 }

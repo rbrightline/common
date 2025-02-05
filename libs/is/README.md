@@ -12,64 +12,13 @@ The library provides a set of functions for variable asignments. Most of the tim
 pnpm add @rline/is
 ```
 
-## Examples
+## Features
 
-### Requried value
-
-Old code
-
-```typescript
-function someFunction(value: T): T | never {
-  if (value == undefined) {
-    throw new Error('Value is required');
-  }
-  return value;
-}
-```
-
-New Code
-
-```typescript
-import { rval } from '@rline/is';
-
-function someFunction(value: T): T | never {
-  return rval(value);
-}
-```
-
-### Required Not Empty Value
-
-Old code
-
-```typescript
-function isEmpty(value: T): boolean {
-  // check the value is not empty
-  return true | false;
-}
-
-function someFunction(value: T): T | never {
-  if (value == undefined) throw new Error('Value is required');
-
-  if (isEmpty(value)) throw new Error('Value is empty');
-
-  return value;
-}
-```
-
-New Code
-
-```typescript
-import { rval } from '@rline/is';
-
-function someFunction(value: T): T | never {
-  return rval(value);
-}
-```
+- type check
+- empty value check
+- safe value initialization
+- default value
 
 ## Documentation
 
 Detailed documentation [Documentation](https://rbrightline.github.io/common/is/)
-
-```
-
-```

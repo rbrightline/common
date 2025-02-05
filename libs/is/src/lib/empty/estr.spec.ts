@@ -1,10 +1,15 @@
 import { estr } from './estr';
 
-describe('estr', () => {
-  it('estr(value) should return true if the vlaue is empty ', () => {
-    expect(estr('')).toEqual(true);
-    expect(estr('                     ')).toEqual(true);
-    expect(estr('                               ')).toEqual(true);
-    expect(estr('some')).toEqual(false);
+describe('estr - is empty string', () => {
+  it.each`
+    value                         | result
+    ${undefined}                  | ${false}
+    ${null}                       | ${false}
+    ${'some'}                     | ${false}
+    ${''}                         | ${true}
+    ${'  '}                       | ${true}
+    ${'                        '} | ${true}
+  `('estr($value) should return $result', ({ value, result }) => {
+    expect(estr(value)).toEqual(result);
   });
 });

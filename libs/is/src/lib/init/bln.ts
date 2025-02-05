@@ -1,7 +1,7 @@
 import { InitOptions } from '../common';
 import { InvalidBooleanValueError, RequiredValueError } from '../errors';
 import { tbln } from '../type';
-import { def } from '../value';
+import { def, udef } from '../val';
 
 /**
  * initialize boolean value or throw {@link InvalidBooleanValueError}
@@ -16,9 +16,12 @@ export function bln<
   value?: R extends true ? boolean : boolean | undefined,
   options?: InitOptions<boolean, R>
 ): RT {
-  if (!tbln(value)) throw new InvalidBooleanValueError();
-  if (!def(value) && options?.required == true)
-    throw new RequiredValueError(value);
+  if (def(value)) {
+    if (!tbln(value)) throw new InvalidBooleanValueError(value);
+  } else {
+    if (def(options?.default)) return options?.default as unknown as RT;
+    if (options?.required && udef(value)) throw new RequiredValueError(value);
+  }
 
   return value as RT;
 }

@@ -1,16 +1,17 @@
-import { nearr } from '../empty/nearr';
+import { nnil } from './nnil';
 
-describe('nearr - is nearr', () => {
+describe('nnill - is nnill', () => {
   it.each`
-    value         | result
-    ${undefined}  | ${true}
-    ${null}       | ${true}
-    ${[1]}        | ${true}
-    ${[0]}        | ${true}
-    ${[-1]}       | ${true}
-    ${[1, 23, 4]} | ${true}
-    ${[]}         | ${false}
-  `('nearr($value) should return $result', ({ value, result }) => {
-    expect(nearr(value)).toEqual(result);
+    value        | result
+    ${undefined} | ${true}
+    ${1}         | ${true}
+    ${-1}        | ${true}
+    ${0}         | ${true}
+    ${{}}        | ${true}
+    ${[]}        | ${true}
+    ${NaN}       | ${true}
+    ${null}      | ${false}
+  `('nnill($value) should return $result', ({ value, result }) => {
+    expect(nnil(value)).toEqual(result);
   });
 });

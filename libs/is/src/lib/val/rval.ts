@@ -1,3 +1,4 @@
+import { Optional, ValueType } from '../common';
 import { val } from './val';
 
 /**
@@ -6,9 +7,9 @@ import { val } from './val';
  * @param defaultValue
  * @returns
  */
-export function rval<T>(
-  value?: T | null | undefined,
+export function rval<T extends ValueType>(
+  value?: Optional<T>,
   defaultValue?: T
 ): T | never {
-  return val(value as T, { required: true, default: defaultValue });
+  return val(value, { required: true, default: defaultValue });
 }

@@ -1,6 +1,7 @@
-import { InitOptions } from '../common';
+import { InitOptions, Optional, ValueType } from '../common';
+import { ne } from '../empty';
 import { EmptyValueError, RequiredValueError } from '../errors';
-import { def, ne } from './value';
+import { def } from './def';
 
 /**
  * Initialize value. If `options.required == true` and the value is not defined or empty, then throw {@link EmptyValueError}
@@ -10,24 +11,21 @@ import { def, ne } from './value';
  * @returns value
  * @throws if the value does not meet the criteria
  */
-export function val<T, R extends boolean, RO extends boolean>(
-  value?: R extends true ? T : T | undefined,
-  options?: InitOptions<T, R, RO>
-): R extends true
-  ? RO extends true
-    ? Readonly<T>
-    : T
-  : RO extends true
-  ? Readonly<T | undefined>
-  : T | undefined {
-  if (ne(value)) return value;
-
-  if (options?.notEmpty == true) throw new EmptyValueError();
-
-  if (options?.required == true) {
-    if (def<T>(options?.default)) return options?.default as T;
-    throw new RequiredValueError(value);
+export function val<
+  T extends ValueType,
+  R extends boolean,
+  RO extends boolean,
+  RT extends R extends true ? T : Optional<T>
+>(value?: Optional<T>, options?: InitOptions<T, R, RO>): RT {
+  if (def(value)) {
+    if (options?.notEmpty && !ne(value)) throw new EmptyValueError(value);
+    if (options?.readonly) {
+      Object.freeze(value);
+    }
+  } else {
+    if (def(options?.default)) return options.default as unknown as RT;
+    if (options?.required == true) throw new RequiredValueError(value);
   }
 
-  return value as T;
+  return value as RT;
 }

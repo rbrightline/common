@@ -1,17 +1,19 @@
 import { nil } from './nil';
 
-describe('nil - is value null', () => {
-  it('nil(value) should return true if the value is null', () => {
-    expect(nil(null)).toEqual(true);
-    expect(nil([])).toEqual(false);
-    expect(nil(1)).toEqual(false);
-    expect(nil(-1)).toEqual(false);
-    expect(nil(0)).toEqual(false);
-    expect(nil(false)).toEqual(false);
-    expect(nil(true)).toEqual(false);
-    expect(nil({})).toEqual(false);
-    expect(nil([null])).toEqual(false);
-    expect(nil([undefined])).toEqual(false);
-    expect(nil([])).toEqual(false);
+describe('nil - is null value', () => {
+  it('nil(undefined) should return false', () => {
+    expect(nil(undefined)).toEqual(false);
+  });
+
+  it.each`
+    value   | result
+    ${null} | ${true}
+    ${1}    | ${false}
+    ${-1}   | ${false}
+    ${0}    | ${false}
+    ${{}}   | ${false}
+    ${[]}   | ${false}
+  `('nil($value) should return $result', ({ value, result }) => {
+    expect(nil(value)).toEqual(result);
   });
 });

@@ -140,7 +140,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(value?: Array<>)</code>
+<code>constructor(value?)</code>
                     </td>
                 </tr>
                         <tr>
@@ -157,7 +157,6 @@
                                         <thead>
                                             <tr>
                                                 <td>Name</td>
-                                                    <td>Type</td>
                                                 <td>Optional</td>
                                             </tr>
                                         </thead>
@@ -165,9 +164,6 @@
                                                 <tr>
                                                         <td>value</td>
                                                   
-                                                        <td>
-                                                                    <code>Array&lt;&gt;</code>
-                                                        </td>
                                                   
                                                     <td>
                                                             Yes
@@ -195,8 +191,8 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export class EmptyValueError extends Error {
-  constructor(value?: Array&lt;unknown&gt;) {
-    super(&#x60;Empty value: ${value ?? &#x27;value not provided&#x27;}&#x60;);
+  constructor(value?: unknown) {
+    super(&#x60;${value} is empty&#x60;);
   }
 }
 </code></pre>

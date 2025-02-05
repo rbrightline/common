@@ -1,5 +1,4 @@
-import { Obj } from '../type';
-import { def } from '../val/def';
+import { Optional } from '../common';
 import { eobj } from './eobj';
 
 /**
@@ -7,7 +6,6 @@ import { eobj } from './eobj';
  * @param value
  * @returns
  */
-export function neobj(value: Obj): boolean {
-  if (def(value)) return !eobj(value);
-  return false;
+export function neobj(value?: Optional<object>): boolean {
+  return !eobj(value);
 }

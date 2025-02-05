@@ -1,4 +1,4 @@
-import { def } from '../val/def';
+import { def } from '../val';
 
 /**
  * is empty string?

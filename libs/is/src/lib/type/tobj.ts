@@ -9,10 +9,7 @@ import { udef } from '../val';
 export function tobj<T extends object>(
   value: T | unknown
 ): value is Optional<T> {
-  return (
-    udef(value) ||
-    (typeof value === 'object' &&
-      !Array.isArray(value) &&
-      typeof value !== 'number')
-  );
+  if (typeof value == 'number') return false;
+
+  return udef(value) || (typeof value === 'object' && !Array.isArray(value));
 }

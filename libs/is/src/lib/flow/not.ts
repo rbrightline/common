@@ -1,12 +1,13 @@
+import { ValueType } from '../common';
 import { tbln, tnbr } from '../type';
-import { def } from '../value';
+import { def } from '../val';
 
 /**
  * reverse boolean value
  * @param value
  * @returns
  */
-export function not<T>(value: T): boolean {
+export function not<T extends ValueType>(value: T): boolean {
   if (def(value)) {
     if (tbln(value)) return !value;
 

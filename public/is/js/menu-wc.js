@@ -71,6 +71,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <li class="link">
                                 <a href="classes/InvalidStringValueError.html" data-type="entity-link" >InvalidStringValueError</a>
                             </li>
+                            <li class="link">
+                                <a href="classes/RequiredValueError.html" data-type="entity-link" >RequiredValueError</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="chapter">

@@ -22,9 +22,7 @@ export function ne<T extends ValueType>(value?: Optional<T>): boolean {
     if (tnbr(value)) return nenbr(value);
     if (tobj(value)) return neobj(value);
     if (tarr(value)) return nearr(value);
-
-    return true;
   }
 
-  return false;
+  return true;
 }

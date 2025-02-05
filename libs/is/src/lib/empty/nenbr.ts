@@ -1,4 +1,4 @@
-import { def } from '../val/def';
+import { Optional } from '../common';
 import { enbr } from './enbr';
 
 /**
@@ -6,8 +6,6 @@ import { enbr } from './enbr';
  * @param value
  * @returns
  */
-export function nenbr(value: number): value is number {
-  if (def(value)) return !enbr(value);
-
-  return false;
+export function nenbr(value?: Optional<number>): value is number {
+  return !enbr(value);
 }

@@ -1,6 +1,7 @@
+import { Optional, ValueType } from '../common';
+import { ne } from '../empty';
 import { EmptyValueError } from '../errors';
 import { rval } from './rval';
-import { ne } from './value';
 
 /**
  * Required and Not empty value. If the value is not defined or empty string, object, or array, thow {@link EmptyValueError}
@@ -8,8 +9,8 @@ import { ne } from './value';
  * @param defautlValue T
  * @returns
  */
-export function sval<T>(
-  value?: T | undefined | null,
+export function sval<T extends ValueType>(
+  value?: Optional<T>,
   defautlValue?: T
 ): T | never {
   if (ne(value)) return rval(value, defautlValue);

@@ -112,13 +112,16 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
-                            <a href="#EmptyArray" title="src/lib/value/earr.ts" ><b>EmptyArray</b>&nbsp;&nbsp;&nbsp;(src/.../earr.ts)</a>
+                            <a href="#EmptyArray" title="src/lib/empty/earr.ts" ><b>EmptyArray</b>&nbsp;&nbsp;&nbsp;(src/.../earr.ts)</a>
                         </li>
                         <li>
                             <a href="#InitOptions" title="src/lib/common/init-options.ts" ><b>InitOptions</b>&nbsp;&nbsp;&nbsp;(src/.../init-options.ts)</a>
                         </li>
                         <li>
-                            <a href="#Obj" title="src/lib/type/tobj.ts" ><b>Obj</b>&nbsp;&nbsp;&nbsp;(src/.../tobj.ts)</a>
+                            <a href="#Optional" title="src/lib/common/optional.ts" ><b>Optional</b>&nbsp;&nbsp;&nbsp;(src/.../optional.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ValueType" title="src/lib/common/value-type.ts" ><b>ValueType</b>&nbsp;&nbsp;&nbsp;(src/.../value-type.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -127,7 +130,7 @@
     </table>
 </section>
 
-    <h3>src/lib/value/earr.ts</h3>
+    <h3>src/lib/empty/earr.ts</h3>
     <section data-compodoc="block-typealias">
     <table class="table table-sm table-bordered">
         <tbody>
@@ -163,25 +166,54 @@
             </tr>
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Value initialization options that provides <code>requried</code>, <code>readonly</code>, and <code>default</code> options.</p>
+<ul>
+<li>requried: if set true, when the value is not defined, throw error</li>
+<li>readonly: if set ture, value cannot be changed</li>
+<li>default: if set, when the value is not defined or empty, then default value is used. if default value is not defiend, throw error</li>
+</ul>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
                     <code>    <code>literal type</code>
 </code>
                 </td>
             </tr>
         </tbody>
     </table>
-</section>    <h3>src/lib/type/tobj.ts</h3>
+</section>    <h3>src/lib/common/optional.ts</h3>
     <section data-compodoc="block-typealias">
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="Obj"></a>
-                    <span class="name "><b>Obj</b><a href="#Obj"><span class="icon ion-ios-link"></span></a></span>
+                    <a name="Optional"></a>
+                    <span class="name "><b>Optional</b><a href="#Optional"><span class="icon ion-ios-link"></span></a></span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <code>    <code>literal type</code>
+                    <code>    <code>T | null | undefined</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/lib/common/value-type.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ValueType"></a>
+                    <span class="name "><b>ValueType</b><a href="#ValueType"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>string | number | boolean | object | Array&lt;ArrayItem&gt;</code>
 </code>
                 </td>
             </tr>

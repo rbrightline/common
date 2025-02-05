@@ -1,29 +1,43 @@
 import { nbr } from './nbr';
 
-describe('nbr initializer', () => {
-  it('should initialize optional number', async () => {
-    let value = nbr(3);
-    value = 0;
-    value = 1;
-    value = 2;
-
-    value = undefined;
-
-    // compiler error
-    // value = null
+describe('nbr - initialize number', () => {
+  describe('nbr - initialize number with no options', () => {
+    it.each`
+      value        | result
+      ${undefined} | ${undefined}
+      ${null}      | ${null}
+      ${1}         | ${1}
+      ${0}         | ${0}
+      ${-1}        | ${-1}
+      ${NaN}       | ${NaN}
+    `('nbr($value) should return $result', ({ value, result }) => {
+      expect(nbr(value)).toEqual(result);
+    });
   });
 
-  it('should initialize required number', async () => {
-    let value = nbr(1, { required: true });
-    value = 0;
-    value = 1;
-    value = 2;
-
-    // compiler error
-    // value = undefined
+  describe('nbr - initialize with type check', () => {
+    it.each`
+      value
+      ${''}
+      ${true}
+      ${false}
+      ${{}}
+      ${[]}
+    `('nbr($value) should return $result', ({ value }) => {
+      expect(() => nbr(value, { required: true })).toThrow();
+    });
   });
 
-  it('should NOT initialize required number with 0', async () => {
-    expect(() => nbr(0, { required: true })).toThrow();
+  describe('nbr - initialize number with required option', () => {
+    it.each`
+      value
+      ${undefined}
+      ${null}
+      ${NaN}
+    `('nbr($value) should return $result', ({ value }) => {
+      expect(() => nbr(value, { required: true })).toThrow();
+    });
   });
+
+  //
 });

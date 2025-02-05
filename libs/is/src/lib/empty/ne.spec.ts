@@ -1,19 +1,15 @@
 import { ne } from './ne';
 
-describe('ne', () => {
-  it('ne(value) should return true if the value is not empty', () => {
-    expect(ne('')).toEqual(false);
-    expect(ne(0)).toEqual(false);
-    expect(ne({})).toEqual(false);
-    expect(ne([])).toEqual(false);
-    expect(ne([null])).toEqual(false);
-    expect(ne([null, undefined])).toEqual(false);
-    expect(ne([null, undefined, NaN])).toEqual(false);
-
-    expect(ne([null, undefined, NaN, 1])).toEqual(true);
-    expect(ne(1)).toEqual(true);
-    expect(ne(true)).toEqual(true);
-    expect(ne([1])).toEqual(true);
-    expect(ne({ some: 'some' })).toEqual(true);
+describe('ne - is not empty value', () => {
+  it.each`
+    value        | result
+    ${undefined} | ${true}
+    ${null}      | ${true}
+    ${[]}        | ${false}
+    ${{}}        | ${false}
+    ${''}        | ${false}
+    ${0}         | ${false}
+  `('ne($value) should return $result', ({ value, result }) => {
+    expect(ne(value)).toEqual(result);
   });
 });

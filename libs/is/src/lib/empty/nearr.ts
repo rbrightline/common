@@ -1,5 +1,5 @@
 import { Optional } from '../common';
-import { def } from '../val/def';
+import { def } from '../val';
 import { earr } from './earr';
 /**
  * is not empty array?
