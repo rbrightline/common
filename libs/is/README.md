@@ -4,7 +4,7 @@
 
 # @rline/is
 
-The library provides a set of functions for variable asignments. Most of the time we have to check the value is defined or not, this library provides very useful functions to prevent the extensive usage of if-else statements
+The library provides a set of functions to prevent the buggy code introduced by unkown, null, undefined, NaN, and empty strings.
 
 ## Installation
 
@@ -16,7 +16,7 @@ pnpm add @rline/is
 
 - type check
 - empty value check
-- safe value initialization
+- strict value initialization
 - default value
 
 ## Documentation

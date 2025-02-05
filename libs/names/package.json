@@ -1,6 +1,6 @@
 {
   "name": "@rline/names",
-  "version": "9.2.0",
+  "version": "9.2.3",
   "description": "All version of names and resource paths",
   "license": "MIT",
   "author": {
@@ -28,7 +28,16 @@
     "open-api",
     "api paths"
   ],
+  "scripts": {
+    "prepublish": "sh ./../../.scripts/pre-publish.sh",
+    "prebuild": "sh ./../../.scripts/pre-build.sh",
+    "preinstall": "sh ./../../.scripts/pre-install.sh",
+    "workspace:remove": "pnpm remove @rline/is",
+    "workspace:add": "pnpm add --workspace @rline/is",
+    "workspace": "pnpm workspace:remove && pnpm workspace:add"
+  },
   "dependencies": {
+    "@rline/is": "9.2.2",
     "@swc/helpers": "~0.5.11"
   },
   "type": "commonjs",

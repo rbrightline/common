@@ -4,31 +4,20 @@
 
 # @rline/rline
 
-Code generator
+NX workspace project generators
 
 ## Installation
 
 ```shell
-pnpm add @rline/rline
+pnpm add -D @rline/rline
 ```
 
-## Usage
+## Generators
 
-### Generate library project
-
-The command generates a library project under libs directory in the root nx workspace
-
-```shell
-npx nx g @rline/rline:library <library-name>
-```
-
-### Generate cli project
-
-The command generates a cli library project under libs directory in the root nx workspace
-
-```shell
-npx nx g @rline/rline:cli <cli-name>
-```
+- library: publishable typescript library with `swc compiler` and `vitest`
+  - `npx nx g @rline/rline:library my-library`
+- cli: publishable typescript cli tool with `commander` and basic project setup
+  - `npx nx g @rline/rline:cli my-cli`
 
 ## Documentation
 

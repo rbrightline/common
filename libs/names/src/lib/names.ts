@@ -1,5 +1,5 @@
+import { dval } from '@rline/is';
 import { normalize } from './normalize';
-
 /**
  * Represents different naming conventions for strings.
  */
@@ -114,16 +114,17 @@ export type NamesOption = {
  * - `moduleName`: NameModule.
  */
 export function names(resourceName: string, options?: NamesOption): Names {
+  const w = dval(options?.wrapper, undefined);
+  const p = dval(options?.prefix, undefined);
+  const s = dval(options?.suffix, undefined);
 
-  
-  resourceName = `${}`
   const value = normalize(resourceName);
 
   const pascalCase = value
     .replace(/(?:^\w|[A-Z]|\b\w)/g, (word) => word.toUpperCase())
     .replace(/\s+/g, '');
 
-  return {
+  const result = {
     camelCase: value
       .replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) =>
         index === 0 ? word.toLowerCase() : word.toUpperCase()
@@ -149,4 +150,14 @@ export function names(resourceName: string, options?: NamesOption): Names {
     modelName: `${pascalCase}Model`,
     optionsName: `${pascalCase}Options`,
   };
+
+  Object.entries(result).map(([key, value]) => {
+    if (p) value = `${p}${value}`;
+    if (s) value = `${value}${s}`;
+    if (w) value = `${w}${value}${w}`;
+
+    (result as any)[key] = value;
+  });
+
+  return result;
 }

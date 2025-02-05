@@ -4,7 +4,7 @@
  * @param type - The type of barcode to generate ("UPC-A" or "Code128").
  * @returns A string representing the barcode.
  */
-export function generateBarcode(type: 'UPC-A' | 'Code128' = 'UPC-A'): string {
+export function barcode(type: 'UPC-A' | 'Code128' = 'UPC-A'): string {
   if (type === 'UPC-A') {
     return generateUPCA();
   } else if (type === 'Code128') {

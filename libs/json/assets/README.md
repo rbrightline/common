@@ -1,0 +1,3 @@
+# Assets
+
+- schema configuration : `./schema

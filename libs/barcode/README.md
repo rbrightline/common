@@ -4,7 +4,7 @@
 
 # @rline/barcode
 
-Barcode generator
+Library provides a function to generate a valid `UPC-A` and `Code128` barcodes which are commonly used in commerce.
 
 ## Installation
 
@@ -15,11 +15,10 @@ pnpm add @rline/barcode
 ## Usage
 
 ```typescript
-import { generateBarcode } from '@rline/barcode';
+import { barcode } from '@rline/barcode';
 
-generateBarcode('UPC-A');
-
-generateBarcode('Code128');
+barcode('UPC-A'); // output: valid `UPC-A` barcode
+barcode('Code128'); // output: valid `Code128` barcode
 ```
 
 ## UPC-A

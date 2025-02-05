@@ -24,6 +24,11 @@
     "command", 
     "cmd"
   ],
+   "scripts": {
+    "prepublish": "sh ./../../.scripts/pre-publish.sh",
+    "prebuild": "sh ./../../.scripts/pre-build.sh",
+    "preinstall": "sh ./../../.scripts/pre-install.sh"
+  },
   "dependencies": {
     "@swc/helpers": "~0.5.11",
     "commander": "^13.1.0"

@@ -24,7 +24,7 @@ program
   .name('init')
   .description('Initialize the schema project')
   .action(async () => {
-    await init(cwd(), join(__dirname, '../../assets'));
+    await init(cwd(), join(__dirname, '../../assets/schema'));
   });
 
 program

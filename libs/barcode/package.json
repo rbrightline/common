@@ -1,7 +1,7 @@
 {
   "name": "@rline/barcode",
-  "version": "9.2.0",
-  "description": "Generate unique barcode",
+  "version": "9.2.1",
+  "description": "Library provides a function to generate a valid `UPC-A` and `Code128` barcodes which are commonly used in commerce.",
   "license": "MIT",
   "author": {
     "email": "robert.brightline@gmail.com",

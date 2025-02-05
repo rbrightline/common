@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=./bundle.schema.json
+properties:
+  - type: string
+    name: name
+    minLength: 0

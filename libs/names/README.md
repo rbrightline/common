@@ -17,20 +17,18 @@ pnpm add @rline/names
 ### Rest api paths
 
 ```typescript
-restPaths('category');
+let R = restPaths('category');
 
-const output: RestApiPaths = {
-  plural: 'categories',
-  singular: 'category',
-  id: 'category/:id',
-  increment: 'category/:id/increment',
-  decrement: 'category/:id/decrement',
-  count: 'categories/count',
-  relation: 'category/:id/:relationName',
-  relationId: 'category/:id/:relationName/:relationId',
-  file: 'category/:id/file',
-  img: 'category/:id/img',
-};
+R.plural; // output:  'categories',
+R.singular; // output:  'category',
+R.id; // output:  'category/:id',
+R.increment; // output:  'category/:id/increment',
+R.decrement; // output:  'category/:id/decrement',
+R.count; // output:  'categories/count',
+R.relation; // output:  'category/:id/:relationName',
+R.relationId; // output:  'category/:id/:relationName/:relationId',
+R.file; // output:  'category/:id/file',
+R.img; // output:  'category/:id/img',
 ```
 
 ### Pluralize
@@ -50,19 +48,76 @@ pluralize('church'); // output : 'churches'
 ### Names
 
 ```typescript
-const Names = names('example   name');
+import { names } from '@rline/names';
 
-Names.camelCase; // output:  'exampleName',
-Names.constCase; // output:  'EXAMPLE_NAME',
-Names.kebabCase; // output:  'example-name',
-Names.pascalCase; // output:  'ExampleName',
-Names.snakeCase; // output:  'example_name',
-Names.titleCase; // output:  'Example Name',
-Names.controllerName; // output:  'ExampleNameController',
-Names.serviceName; // output:  'ExampleNameService',
-Names.moduleName; // output:  'ExampleNameModule',
-Names.sentenceCase; // output:  'Example name',
-Names.dotCase; // output:  'example.name',
+let N = names('ab c');
+N.camelCase; // output:  'abC'
+N.constCase; // output:  'AB_C'
+N.dotCase; // output:  'ab.c'
+N.kebabCase; // output:  'ab-c'
+N.pascalCase; // output:  'AbC'
+N.titleCase; // output:  'Ab C'
+N.sentenceCase; // output:  'Ab c'
+
+N.moduleName; // output:  'AbCModule'
+N.serviceName; // output:  'AbCService'
+N.controllerName; // output:  'AbCController'
+N.optionsName; // output:  'AbCOptions'
+N.modelName; // output:  'AbCModel'
+N.createDtoName; // output:  'CreateAbCDto'
+N.updateDtoName; // output:  'UpdateAbCDto'
+N.queryDtoName; // output:  'QueryAbCDto'
+
+N = names('ab c', { prefix: 'SO' });
+N.camelCase; // output:  'SOabC'
+N.constCase; // output:  'SOAB_C'
+N.dotCase; // output:  'SOab.c'
+N.kebabCase; // output:  'SOab-c'
+N.pascalCase; // output:  'SOAbC'
+N.titleCase; // output:  'SOAb C'
+N.sentenceCase; // output:  'SOAb c'
+N.moduleName; // output:  'SOAbCModule'
+N.serviceName; // output:  'SOAbCService'
+N.controllerName; // output:  'SOAbCController'
+N.optionsName; // output:  'SOAbCOptions'
+N.modelName; // output:  'SOAbCModel'
+N.createDtoName; // output:  'SOCreateAbCDto'
+N.updateDtoName; // output:  'SOUpdateAbCDto'
+N.queryDtoName; // output:  'SOQueryAbCDto'
+
+N = names('ab c', { suffix: 'SO' });
+N.camelCase; // output:  'abCSO'
+N.constCase; // output:  'AB_CSO'
+N.dotCase; // output:  'ab.cSO'
+N.kebabCase; // output:  'ab-cSO'
+N.pascalCase; // output:  'AbCSO'
+N.titleCase; // output:  'Ab CSO'
+N.sentenceCase; // output:  'Ab cSO'
+N.moduleName; // output:  'AbCModuleSO'
+N.serviceName; // output:  'AbCServiceSO'
+N.controllerName; // output:  'AbCControllerSO'
+N.optionsName; // output:  'AbCOptionsSO'
+N.modelName; // output:  'AbCModelSO'
+N.createDtoName; // output:  'CreateAbCDtoSO'
+N.updateDtoName; // output:  'UpdateAbCDtoSO'
+N.queryDtoName; // output:  'QueryAbCDtoSO'
+
+N = names('ab c', { wrapper: '|' });
+N.camelCase; // output:  '|abC|'
+N.constCase; // output:  '|AB_C|'
+N.dotCase; // output:  '|ab.c|'
+N.kebabCase; // output:  '|ab-c|'
+N.pascalCase; // output:  '|AbC|'
+N.titleCase; // output:  '|Ab C|'
+N.sentenceCase; // output:  '|Ab c|'
+N.moduleName; // output:  '|AbCModule|'
+N.serviceName; // output:  '|AbCService|'
+N.controllerName; // output:  '|AbCController|'
+N.optionsName; // output:  '|AbCOptions|'
+N.modelName; // output:  '|AbCModel|'
+N.createDtoName; // output:  '|CreateAbCDto|'
+N.updateDtoName; // output:  '|UpdateAbCDto|'
+N.queryDtoName; // output:  '|QueryAbCDto|'
 ```
 
 ## Documentation

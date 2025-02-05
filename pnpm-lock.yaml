@@ -122,14 +122,14 @@ importers:
   libs/fs:
     dependencies:
       '@rline/names':
-        specifier: workspace:^
-        version: link:../names
+        specifier: 9.2.0
+        version: 9.2.0
       '@rline/type':
-        specifier: workspace:^
-        version: link:../type
+        specifier: 9.2.0
+        version: 9.2.0
       '@rline/utils':
-        specifier: workspace:^
-        version: link:../utils
+        specifier: 9.2.0
+        version: 9.2.0
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -155,8 +155,8 @@ importers:
         specifier: 9.2.0
         version: 9.2.0
       '@rline/utils':
-        specifier: 9.0.1
-        version: 9.0.1
+        specifier: 9.2.0
+        version: 9.2.0
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -178,6 +178,9 @@ importers:
 
   libs/names:
     dependencies:
+      '@rline/is':
+        specifier: 9.2.2
+        version: 9.2.2
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -1451,6 +1454,9 @@ packages:
 
   '@rline/is@9.2.0':
     resolution: {integrity: sha512-9chbfml+geSzn4ngSUD8efnyIlRbR/PsbfMrHkI6LYrDLMdlLyaOIQeOFi//SGNGtlni9V1UO9cyJ9t8LyOjUA==}
+
+  '@rline/is@9.2.2':
+    resolution: {integrity: sha512-QMSo+HgmiMjmaEekajdiMaVs2uIrK8JuIAUavQbjiBwVa3as3QSFT0kcSOSyfbdMYW0sVbDwc1srvdcpHVxiyQ==}
 
   '@rline/names@8.1.1':
     resolution: {integrity: sha512-94ZgUXwWTmsVqgqH6vo8d4FV2IF1XQdMvHWJHZWCki7OwDTHViFKpxD4dVXdvSfeZ05V8yWKns2HD/B9xbP7Lg==}
@@ -7421,6 +7427,10 @@ snapshots:
       '@swc/helpers': 0.5.15
 
   '@rline/is@9.2.0':
+    dependencies:
+      '@swc/helpers': 0.5.15
+
+  '@rline/is@9.2.2':
     dependencies:
       '@swc/helpers': 0.5.15
 
