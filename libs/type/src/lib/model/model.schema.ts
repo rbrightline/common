@@ -187,15 +187,10 @@ export type PropertyName =
   | 'category'
   | 'department';
 
-export type Property =
-  | (_CommonProperty & _UiProperty & _String)
-  | _Number
-  | _Integer
-  | _Boolean
-  | _Date
-  | _Object
-  | _Array;
-export type _Relation = _UiProperty & _RelationPropertyOptionsRaw;
+export type PropertyOptions = (_CommonProperty & _UiProperty) &
+  (_String | _Number | _Integer | _Boolean | _Date | _Object | _Array);
+
+export type RelationOptions = _UiProperty & _RelationPropertyOptionsRaw;
 export type _RelationType =
   | 'many-to-many'
   | 'many-to-one'
@@ -298,10 +293,10 @@ export type _Date = {
 export type _Object = { type: 'object'; target: ModelName; default: any };
 export type _Array = {
   type: 'array';
-  default: Property[];
+  default: PropertyOptions[];
   minSize: number;
   maxSize: number;
-  items: Property;
+  items: PropertyOptions;
 };
 export type _NumberFormat =
   | 'integer'
@@ -3927,9 +3922,11 @@ export type _Icon =
   | 'nest_gale_wifi';
 
 export type ModelSchema = {
+  type?: string;
+  name?: ModelName;
   implementings?: ModelName[];
   extendings?: ModelName[];
   uniques?: PropertyName[];
-  properties?: Property[];
-  relations?: _Relation[];
+  properties?: PropertyOptions[];
+  relations?: RelationOptions[];
 };

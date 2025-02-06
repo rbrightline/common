@@ -11,4 +11,19 @@
         ],
         "scope": "typescript,javascript"
     },
+    "throw not implemented": {
+        "prefix": "throw not implemented",
+        "body": "throw new NotImplementedError()",
+        "scope": "typescript,javascript"
+    },
+    "throw empty value": {
+        "prefix": "throw empty value",
+        "body": "throw new EmptyValueError()",
+        "scope": "typescript,javascript"
+    },
+    "throw required value": {
+        "prefix": "throw required value",
+        "body": "throw new RequiredValueError()",
+        "scope": "typescript,javascript"
+    },
 }

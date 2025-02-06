@@ -29,9 +29,15 @@
     "schema",
     "compiler"
   ],
+  "scripts": {
+    "workspace:remove": "pnpm remove  @rline/names @rline/type @rline/is",
+    "workspace:add": "pnpm add --workspace  @rline/names @rline/type @rline/is ",
+    "workspace": "pnpm workspace:remove && pnpm workspace:add"
+  },
   "dependencies": {
-    "@rline/type": "8.1.1",
-    "@rline/names": "8.1.1",
+    "@rline/is": "9.4.1",
+    "@rline/names": "9.4.0",
+    "@rline/type": "workspace:*",
     "@swc/helpers": "~0.5.11"
   },
   "type": "commonjs",
@@ -63,7 +69,7 @@
           "outputPath": "libs/printer/dist",
           "main": "libs/printer/src/index.ts",
           "tsConfig": "libs/printer/tsconfig.lib.json",
-          "skipTypeCheck": true,
+          "skipTypeCheck": false,
           "stripLeadingPaths": true
         }
       }
