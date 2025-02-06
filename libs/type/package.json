@@ -1,6 +1,6 @@
 {
   "name": "@rline/type",
-  "version": "9.4.0",
+  "version": "9.4.1",
   "description": "All types and interfaces utilized across the applications",
   "license": "MIT",
   "author": {
@@ -29,7 +29,6 @@
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
-    "schema",
     "!**/*.tsbuildinfo"
   ],
   "exports": {

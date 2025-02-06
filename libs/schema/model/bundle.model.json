@@ -1,16 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "ModelSchema",
+    "title": "Model",
+    "type": "object",
     "properties": {
-        "type": {
-            "enum": [
-                "class",
-                "enum",
-                "type",
-                "interface",
-                "constant"
-            ]
-        },
         "implementings": {
             "type": "array",
             "description": "Which abstract model is extended by the entity?",
@@ -35,22 +27,28 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-                "$ref": "#/definitions/PropertyOptions"
+                "allOf": [
+                    {
+                        "$ref": "#/definitions/Property"
+                    }
+                ],
+                "required": [
+                    "type"
+                ]
             }
         },
         "relations": {
             "type": "array",
             "uniqueItems": true,
             "items": {
-                "$ref": "#/definitions/RelationPropertyOptions"
+                "$ref": "#/definitions/Relation"
             }
         }
     },
     "additionalProperties": false,
     "definitions": {
         "ModelName": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "ModelName",
+            "type": "string",
             "enum": [
                 "User",
                 "Role",
@@ -115,8 +113,7 @@
             ]
         },
         "PropertyName": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "PropertyName",
+            "type": "string",
             "enum": [
                 "firstName",
                 "lastName",
@@ -245,464 +242,130 @@
                 "department"
             ]
         },
-        "PropertyOptions": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "PropertyOptions",
+        "Property": {
             "allOf": [
                 {
-                    "$ref": "src\\property\\common-property.schema.json"
+                    "$ref": "#/definitions/CommonProperty"
                 },
                 {
-                    "$ref": "src\\property\\ui-property.schema.json"
+                    "$ref": "#/definitions/UiProperty"
                 },
                 {
                     "oneOf": [
                         {
-                            "$ref": "src\\property\\string.schema.json"
+                            "$ref": "#/definitions/String"
                         },
                         {
-                            "$ref": "src\\property\\number.schema.json"
+                            "$ref": "#/definitions/Number"
                         },
                         {
-                            "$ref": "src\\property\\integer.schema.json"
+                            "$ref": "#/definitions/Integer"
                         },
                         {
-                            "$ref": "src\\property\\boolean.schema.json"
+                            "$ref": "#/definitions/Boolean"
                         },
                         {
-                            "$ref": "src\\property\\date.schema.json"
+                            "$ref": "#/definitions/Date"
                         },
                         {
-                            "$ref": "src\\property\\object.schema.json"
+                            "$ref": "#/definitions/Object"
                         },
                         {
-                            "$ref": "src\\property\\array.schema.json"
+                            "$ref": "#/definitions/Array"
                         }
                     ]
                 }
             ]
         },
-        "RelationPropertyOptions": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "RelationPropertyOptions",
+        "Relation": {
             "allOf": [
                 {
-                    "$ref": "src\\property\\ui-property.schema.json"
+                    "$ref": "#/definitions/UiProperty"
                 },
                 {
-                    "properties": {
-                        "name": {
-                            "$ref": "src\\name\\property.schema.json"
-                        },
-                        "type": {
-                            "$ref": "#/definitions/RelationType"
-                        },
-                        "target": {
-                            "$ref": "src\\name\\model.schema.json"
-                        },
-                        "targetProperty": {
-                            "description": "Reference property in the target entity",
-                            "$ref": "src\\name\\property.schema.json"
-                        },
-                        "eager": {
-                            "type": "boolean",
-                            "default": true
-                        },
-                        "join": {
-                            "description": "should join the column/table?",
-                            "type": "boolean",
-                            "default": true
-                        },
-                        "cascade": {
-                            "description": "should cascade the realtion during entity creation",
-                            "type": "boolean",
-                            "default": true
-                        },
-                        "onDelete": {
-                            "description": "what should happen when the relation is deleted?",
-                            "$ref": "#/definitions/OnDelete",
-                            "default": "SET NULL"
-                        },
-                        "onUpdate": {
-                            "description": "what should happen when the relation is udpated",
-                            "$ref": "#/definitions/OnUpdate"
-                        }
-                    },
-                    "additionalProperties": false,
-                    "required": [
-                        "type",
-                        "target"
-                    ]
+                    "$ref": "#/definitions/RelationPropertyOptionsRaw"
                 }
-            ],
-            "definitions": {
-                "RelationType": {
-                    "title": "Relation Type",
-                    "enum": [
-                        "many-to-many",
-                        "many-to-one",
-                        "one-to-one",
-                        "one-to-many"
-                    ]
-                },
-                "OnDelete": {
-                    "enum": [
-                        "RESTRICT",
-                        "CASCADE",
-                        "SET NULL",
-                        "DEFAULT",
-                        "NO ACTION"
-                    ],
-                    "default": "SET NULL"
-                },
-                "OnUpdate": {
-                    "enum": [
-                        "RESTRICT",
-                        "CASCADE",
-                        "SET NULL",
-                        "DEFAULT",
-                        "NO ACTION"
-                    ],
-                    "default": "SET NULL"
-                }
-            }
-        },
-        "NumberFormat": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "NumberFormat",
-            "description": "Number format such as rate (0-5), percentage (0-100)",
-            "enum": [
-                [
-                    "integer",
-                    "float",
-                    "double",
-                    "decimal",
-                    "positive-integer",
-                    "negative-integer",
-                    "non-negative-integer",
-                    "non-positive-integer",
-                    "percentage",
-                    "currency",
-                    "rate",
-                    "scientific-notation",
-                    "hexadecimal",
-                    "octal",
-                    "binary",
-                    "roman-numeral",
-                    "prime-number",
-                    "natural-number",
-                    "odd-number",
-                    "even-number",
-                    "latitude",
-                    "longitude",
-                    "timezone-offset",
-                    "temperature-celsius",
-                    "temperature-fahrenheit",
-                    "angle-degree",
-                    "angle-radian",
-                    "year",
-                    "month",
-                    "day",
-                    "age",
-                    "count",
-                    "rating",
-                    "probability",
-                    "weight",
-                    "height",
-                    "distance",
-                    "speed",
-                    "time-duration",
-                    "voltage",
-                    "current",
-                    "frequency",
-                    "acceleration"
-                ]
             ]
         },
-        "General": {
+        "RelationType": {
+            "title": "Relation Type",
+            "type": "string",
+            "enum": [
+                "many-to-many",
+                "many-to-one",
+                "one-to-one",
+                "one-to-many"
+            ]
+        },
+        "OnDelete": {
+            "type": "string",
+            "enum": [
+                "RESTRICT",
+                "CASCADE",
+                "SET NULL",
+                "DEFAULT",
+                "NO ACTION"
+            ],
+            "default": "SET NULL"
+        },
+        "OnUpdate": {
+            "type": "string",
+            "enum": [
+                "RESTRICT",
+                "CASCADE",
+                "SET NULL",
+                "DEFAULT",
+                "NO ACTION"
+            ],
+            "default": "SET NULL"
+        },
+        "RelationPropertyOptionsRaw": {
+            "type": "object",
             "properties": {
                 "name": {
                     "$ref": "#/definitions/PropertyName"
                 },
-                "description": {
-                    "type": "string"
+                "type": {
+                    "$ref": "#/definitions/RelationType"
                 },
-                "required": {
-                    "type": "boolean",
-                    "default": true
+                "target": {
+                    "$ref": "#/definitions/ModelName"
                 },
-                "unique": {
-                    "type": "boolean",
-                    "default": true
-                }
-            }
-        },
-        "Transform": {
-            "properties": {
-                "acceptString": {
-                    "type": "boolean",
-                    "description": "transform string values into the actual type before any operations",
-                    "default": true
-                }
-            }
-        },
-        "Validation": {
-            "properties": {
-                "equalToProperty": {
-                    "$ref": "#/definitions/PropertyName",
-                    "description": "Check the value is equal to the value of the property"
-                },
-                "notEqualToProperty": {
-                    "$ref": "#/definitions/PropertyName",
-                    "description": "Check the value is not equal to the value of the property"
-                }
-            }
-        },
-        "Encryption": {
-            "properties": {
-                "hash": {
-                    "type": "boolean",
-                    "default": true
-                },
-                "encrypt": {
-                    "type": "boolean",
-                    "default": true
-                }
-            }
-        },
-        "Dto": {
-            "properties": {
-                "write": {
-                    "type": "boolean",
-                    "description": "Is the property writable or internal"
-                },
-                "read": {
-                    "type": "boolean",
-                    "description": "Is the property visible in the data load?",
-                    "default": true
-                },
-                "udpate": {
-                    "type": "boolean",
-                    "description": "Is proprety updatable?",
-                    "default": true
-                }
-            }
-        },
-        "CommonNumberPropertyOptions": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "CommonNumberPropertyOptions",
-            "properties": {
-                "isEven": {
-                    "type": "boolean"
-                },
-                "isOdd": {
-                    "type": "boolean"
-                },
-                "numberFormat": {
-                    "$ref": "#/definitions/NumberFormat"
-                },
-                "minimum": {
-                    "type": "number"
-                },
-                "maximum": {
-                    "type": "number"
-                },
-                "moreThanProperty": {
+                "targetProperty": {
+                    "description": "Reference property in the target entity",
                     "$ref": "#/definitions/PropertyName"
                 },
-                "lessThanProperty": {
-                    "$ref": "#/definitions/PropertyName"
+                "eager": {
+                    "type": "boolean",
+                    "default": true
+                },
+                "join": {
+                    "description": "should join the column/table?",
+                    "type": "boolean",
+                    "default": true
+                },
+                "cascade": {
+                    "description": "should cascade the realtion during entity creation",
+                    "type": "boolean",
+                    "default": true
+                },
+                "onDelete": {
+                    "description": "what should happen when the relation is deleted?",
+                    "$ref": "#/definitions/OnDelete",
+                    "default": "SET NULL"
+                },
+                "onUpdate": {
+                    "description": "what should happen when the relation is udpated",
+                    "$ref": "#/definitions/OnUpdate"
                 }
             },
-            "definitions": {
-                "NumberFormat": {
-                    "$schema": "http://json-schema.org/draft-07/schema#",
-                    "title": "NumberFormat",
-                    "description": "Number format such as rate (0-5), percentage (0-100)",
-                    "enum": [
-                        [
-                            "integer",
-                            "float",
-                            "double",
-                            "decimal",
-                            "positive-integer",
-                            "negative-integer",
-                            "non-negative-integer",
-                            "non-positive-integer",
-                            "percentage",
-                            "currency",
-                            "rate",
-                            "scientific-notation",
-                            "hexadecimal",
-                            "octal",
-                            "binary",
-                            "roman-numeral",
-                            "prime-number",
-                            "natural-number",
-                            "odd-number",
-                            "even-number",
-                            "latitude",
-                            "longitude",
-                            "timezone-offset",
-                            "temperature-celsius",
-                            "temperature-fahrenheit",
-                            "angle-degree",
-                            "angle-radian",
-                            "year",
-                            "month",
-                            "day",
-                            "age",
-                            "count",
-                            "rating",
-                            "probability",
-                            "weight",
-                            "height",
-                            "distance",
-                            "speed",
-                            "time-duration",
-                            "voltage",
-                            "current",
-                            "frequency",
-                            "acceleration"
-                        ]
-                    ]
-                },
-                "PropertyName": {
-                    "$schema": "http://json-schema.org/draft-07/schema#",
-                    "title": "PropertyName",
-                    "enum": [
-                        "firstName",
-                        "lastName",
-                        "middleName",
-                        "fullName",
-                        "dob",
-                        "gender",
-                        "ssn",
-                        "dl",
-                        "etnicity",
-                        "salary",
-                        "salaryType",
-                        "username",
-                        "password",
-                        "email",
-                        "emails",
-                        "phone",
-                        "phones",
-                        "website",
-                        "websites",
-                        "socialMedia",
-                        "facebook",
-                        "instagram",
-                        "tiktok",
-                        "twitter",
-                        "linkedin",
-                        "sso",
-                        "permission",
-                        "permissions",
-                        "role",
-                        "roles",
-                        "clockIn",
-                        "clockOut",
-                        "employmentType",
-                        "schedule",
-                        "startTime",
-                        "endTime",
-                        "product",
-                        "products",
-                        "sku",
-                        "skus",
-                        "upc",
-                        "barcode",
-                        "model",
-                        "make",
-                        "attribute",
-                        "attributes",
-                        "price",
-                        "prices",
-                        "quantity",
-                        "quantities",
-                        "store",
-                        "stores",
-                        "priceLevel",
-                        "priceLevels",
-                        "inbox",
-                        "message",
-                        "messages",
-                        "receiver",
-                        "receivers",
-                        "sender",
-                        "isRead",
-                        "isSent",
-                        "draft",
-                        "drafts",
-                        "attachment",
-                        "attachments",
-                        "agent",
-                        "agents",
-                        "industry",
-                        "industries",
-                        "address",
-                        "addresses",
-                        "street",
-                        "city",
-                        "state",
-                        "country",
-                        "postalCode",
-                        "zip",
-                        "unit",
-                        "jobPost",
-                        "occupation",
-                        "occupations",
-                        "resume",
-                        "condicate",
-                        "skill",
-                        "skills",
-                        "experience",
-                        "experiences",
-                        "project",
-                        "projects",
-                        "task",
-                        "tasks",
-                        "sprint",
-                        "sprints",
-                        "due",
-                        "asignee",
-                        "asignees",
-                        "score",
-                        "priority",
-                        "balance",
-                        "type",
-                        "primary",
-                        "status",
-                        "name",
-                        "description",
-                        "id",
-                        "createdAt",
-                        "updatedAt",
-                        "deletedAt",
-                        "active",
-                        "owner",
-                        "lock",
-                        "canUpdate",
-                        "canDelete",
-                        "canRead",
-                        "tag",
-                        "tags",
-                        "count",
-                        "like",
-                        "dislike",
-                        "comment",
-                        "review",
-                        "rate",
-                        "category",
-                        "department"
-                    ]
-                }
-            }
+            "additionalProperties": false,
+            "required": [
+                "type",
+                "target"
+            ]
         },
-        "CommonPropertyOptions": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "CommonPropertyOptions",
+        "CommonProperty": {
             "allOf": [
                 {
                     "$ref": "#/definitions/General"
@@ -720,216 +383,89 @@
                     "$ref": "#/definitions/Dto"
                 }
             ],
-            "definitions": {
-                "General": {
-                    "properties": {
-                        "name": {
-                            "$ref": "#/definitions/PropertyName"
-                        },
-                        "description": {
-                            "type": "string"
-                        },
-                        "required": {
-                            "type": "boolean",
-                            "default": true
-                        },
-                        "unique": {
-                            "type": "boolean",
-                            "default": true
-                        }
-                    }
-                },
-                "Transform": {
-                    "properties": {
-                        "acceptString": {
-                            "type": "boolean",
-                            "description": "transform string values into the actual type before any operations",
-                            "default": true
-                        }
-                    }
-                },
-                "Validation": {
-                    "properties": {
-                        "equalToProperty": {
-                            "$ref": "#/definitions/PropertyName",
-                            "description": "Check the value is equal to the value of the property"
-                        },
-                        "notEqualToProperty": {
-                            "$ref": "#/definitions/PropertyName",
-                            "description": "Check the value is not equal to the value of the property"
-                        }
-                    }
-                },
-                "Encryption": {
-                    "properties": {
-                        "hash": {
-                            "type": "boolean",
-                            "default": true
-                        },
-                        "encrypt": {
-                            "type": "boolean",
-                            "default": true
-                        }
-                    }
-                },
-                "Dto": {
-                    "properties": {
-                        "write": {
-                            "type": "boolean",
-                            "description": "Is the property writable or internal"
-                        },
-                        "read": {
-                            "type": "boolean",
-                            "description": "Is the property visible in the data load?",
-                            "default": true
-                        },
-                        "udpate": {
-                            "type": "boolean",
-                            "description": "Is proprety updatable?",
-                            "default": true
-                        }
-                    }
-                },
-                "PropertyName": {
-                    "$schema": "http://json-schema.org/draft-07/schema#",
-                    "title": "PropertyName",
-                    "enum": [
-                        "firstName",
-                        "lastName",
-                        "middleName",
-                        "fullName",
-                        "dob",
-                        "gender",
-                        "ssn",
-                        "dl",
-                        "etnicity",
-                        "salary",
-                        "salaryType",
-                        "username",
-                        "password",
-                        "email",
-                        "emails",
-                        "phone",
-                        "phones",
-                        "website",
-                        "websites",
-                        "socialMedia",
-                        "facebook",
-                        "instagram",
-                        "tiktok",
-                        "twitter",
-                        "linkedin",
-                        "sso",
-                        "permission",
-                        "permissions",
-                        "role",
-                        "roles",
-                        "clockIn",
-                        "clockOut",
-                        "employmentType",
-                        "schedule",
-                        "startTime",
-                        "endTime",
-                        "product",
-                        "products",
-                        "sku",
-                        "skus",
-                        "upc",
-                        "barcode",
-                        "model",
-                        "make",
-                        "attribute",
-                        "attributes",
-                        "price",
-                        "prices",
-                        "quantity",
-                        "quantities",
-                        "store",
-                        "stores",
-                        "priceLevel",
-                        "priceLevels",
-                        "inbox",
-                        "message",
-                        "messages",
-                        "receiver",
-                        "receivers",
-                        "sender",
-                        "isRead",
-                        "isSent",
-                        "draft",
-                        "drafts",
-                        "attachment",
-                        "attachments",
-                        "agent",
-                        "agents",
-                        "industry",
-                        "industries",
-                        "address",
-                        "addresses",
-                        "street",
-                        "city",
-                        "state",
-                        "country",
-                        "postalCode",
-                        "zip",
-                        "unit",
-                        "jobPost",
-                        "occupation",
-                        "occupations",
-                        "resume",
-                        "condicate",
-                        "skill",
-                        "skills",
-                        "experience",
-                        "experiences",
-                        "project",
-                        "projects",
-                        "task",
-                        "tasks",
-                        "sprint",
-                        "sprints",
-                        "due",
-                        "asignee",
-                        "asignees",
-                        "score",
-                        "priority",
-                        "balance",
-                        "type",
-                        "primary",
-                        "status",
-                        "name",
-                        "description",
-                        "id",
-                        "createdAt",
-                        "updatedAt",
-                        "deletedAt",
-                        "active",
-                        "owner",
-                        "lock",
-                        "canUpdate",
-                        "canDelete",
-                        "canRead",
-                        "tag",
-                        "tags",
-                        "count",
-                        "like",
-                        "dislike",
-                        "comment",
-                        "review",
-                        "rate",
-                        "category",
-                        "department"
-                    ]
-                }
-            },
             "required": [
-                "type",
-                "name"
+                "type"
             ]
         },
-        "UIPropertyOptions": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "UIPropertyOptions",
+        "General": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "$ref": "#/definitions/PropertyName"
+                },
+                "type": {
+                    "$ref": "#/definitions/PropertyType"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "required": {
+                    "type": "boolean",
+                    "default": true
+                },
+                "unique": {
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        },
+        "Transform": {
+            "type": "object",
+            "properties": {
+                "acceptString": {
+                    "type": "boolean",
+                    "description": "transform string values into the actual type before any operations",
+                    "default": true
+                }
+            }
+        },
+        "Validation": {
+            "type": "object",
+            "properties": {
+                "equalToProperty": {
+                    "$ref": "#/definitions/PropertyName",
+                    "description": "Check the value is equal to the value of the property"
+                },
+                "notEqualToProperty": {
+                    "$ref": "#/definitions/PropertyName",
+                    "description": "Check the value is not equal to the value of the property"
+                }
+            }
+        },
+        "Encryption": {
+            "type": "object",
+            "properties": {
+                "hash": {
+                    "type": "boolean",
+                    "default": true
+                },
+                "encrypt": {
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        },
+        "Dto": {
+            "type": "object",
+            "properties": {
+                "write": {
+                    "type": "boolean",
+                    "description": "Is the property writable or internal"
+                },
+                "read": {
+                    "type": "boolean",
+                    "description": "Is the property visible in the data load?",
+                    "default": true
+                },
+                "udpate": {
+                    "type": "boolean",
+                    "description": "Is proprety updatable?",
+                    "default": true
+                }
+            }
+        },
+        "UiProperty": {
+            "type": "object",
             "properties": {
                 "label": {
                     "type": "string"
@@ -966,9 +502,8 @@
                 }
             }
         },
-        "StringPropertyOptions": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "StringPropertyOptions",
+        "String": {
+            "type": "object",
             "properties": {
                 "type": {
                     "const": "string"
@@ -977,7 +512,7 @@
                     "type": "string"
                 },
                 "stringFormat": {
-                    "$ref": "src\\enum\\string-format.schema.json"
+                    "$ref": "#/definitions/StringFormat"
                 },
                 "minLength": {
                     "type": "integer"
@@ -1026,27 +561,26 @@
                     "type": "string"
                 },
                 "containProperty": {
-                    "$ref": "src\\name\\property.schema.json"
+                    "$ref": "#/definitions/PropertyName"
                 },
                 "notContainProperty": {
-                    "$ref": "src\\name\\property.schema.json"
+                    "$ref": "#/definitions/PropertyName"
                 },
                 "longerThanProperty": {
-                    "$ref": "src\\name\\property.schema.json"
+                    "$ref": "#/definitions/PropertyName"
                 },
                 "shorterThanProperty": {
-                    "$ref": "src\\name\\property.schema.json"
+                    "$ref": "#/definitions/PropertyName"
                 }
             }
         },
-        "NumberPropertyOptions": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "NumberPropertyOptions",
+        "Number": {
             "allOf": [
                 {
-                    "$ref": "#/definitions/CommonNumberPropertyOptions"
+                    "$ref": "#/definitions/CommonNumber"
                 },
                 {
+                    "type": "object",
                     "properties": {
                         "type": {
                             "const": "number"
@@ -1079,481 +613,54 @@
                         "type"
                     ]
                 }
-            ],
-            "definitions": {
-                "CommonNumberPropertyOptions": {
-                    "$schema": "http://json-schema.org/draft-07/schema#",
-                    "title": "CommonNumberPropertyOptions",
-                    "properties": {
-                        "isEven": {
-                            "type": "boolean"
-                        },
-                        "isOdd": {
-                            "type": "boolean"
-                        },
-                        "numberFormat": {
-                            "$ref": "#/definitions/NumberFormat"
-                        },
-                        "minimum": {
-                            "type": "number"
-                        },
-                        "maximum": {
-                            "type": "number"
-                        },
-                        "moreThanProperty": {
-                            "$ref": "#/definitions/PropertyName"
-                        },
-                        "lessThanProperty": {
-                            "$ref": "#/definitions/PropertyName"
-                        }
-                    },
-                    "definitions": {
-                        "NumberFormat": {
-                            "$schema": "http://json-schema.org/draft-07/schema#",
-                            "title": "NumberFormat",
-                            "description": "Number format such as rate (0-5), percentage (0-100)",
-                            "enum": [
-                                [
-                                    "integer",
-                                    "float",
-                                    "double",
-                                    "decimal",
-                                    "positive-integer",
-                                    "negative-integer",
-                                    "non-negative-integer",
-                                    "non-positive-integer",
-                                    "percentage",
-                                    "currency",
-                                    "rate",
-                                    "scientific-notation",
-                                    "hexadecimal",
-                                    "octal",
-                                    "binary",
-                                    "roman-numeral",
-                                    "prime-number",
-                                    "natural-number",
-                                    "odd-number",
-                                    "even-number",
-                                    "latitude",
-                                    "longitude",
-                                    "timezone-offset",
-                                    "temperature-celsius",
-                                    "temperature-fahrenheit",
-                                    "angle-degree",
-                                    "angle-radian",
-                                    "year",
-                                    "month",
-                                    "day",
-                                    "age",
-                                    "count",
-                                    "rating",
-                                    "probability",
-                                    "weight",
-                                    "height",
-                                    "distance",
-                                    "speed",
-                                    "time-duration",
-                                    "voltage",
-                                    "current",
-                                    "frequency",
-                                    "acceleration"
-                                ]
-                            ]
-                        },
-                        "PropertyName": {
-                            "$schema": "http://json-schema.org/draft-07/schema#",
-                            "title": "PropertyName",
-                            "enum": [
-                                "firstName",
-                                "lastName",
-                                "middleName",
-                                "fullName",
-                                "dob",
-                                "gender",
-                                "ssn",
-                                "dl",
-                                "etnicity",
-                                "salary",
-                                "salaryType",
-                                "username",
-                                "password",
-                                "email",
-                                "emails",
-                                "phone",
-                                "phones",
-                                "website",
-                                "websites",
-                                "socialMedia",
-                                "facebook",
-                                "instagram",
-                                "tiktok",
-                                "twitter",
-                                "linkedin",
-                                "sso",
-                                "permission",
-                                "permissions",
-                                "role",
-                                "roles",
-                                "clockIn",
-                                "clockOut",
-                                "employmentType",
-                                "schedule",
-                                "startTime",
-                                "endTime",
-                                "product",
-                                "products",
-                                "sku",
-                                "skus",
-                                "upc",
-                                "barcode",
-                                "model",
-                                "make",
-                                "attribute",
-                                "attributes",
-                                "price",
-                                "prices",
-                                "quantity",
-                                "quantities",
-                                "store",
-                                "stores",
-                                "priceLevel",
-                                "priceLevels",
-                                "inbox",
-                                "message",
-                                "messages",
-                                "receiver",
-                                "receivers",
-                                "sender",
-                                "isRead",
-                                "isSent",
-                                "draft",
-                                "drafts",
-                                "attachment",
-                                "attachments",
-                                "agent",
-                                "agents",
-                                "industry",
-                                "industries",
-                                "address",
-                                "addresses",
-                                "street",
-                                "city",
-                                "state",
-                                "country",
-                                "postalCode",
-                                "zip",
-                                "unit",
-                                "jobPost",
-                                "occupation",
-                                "occupations",
-                                "resume",
-                                "condicate",
-                                "skill",
-                                "skills",
-                                "experience",
-                                "experiences",
-                                "project",
-                                "projects",
-                                "task",
-                                "tasks",
-                                "sprint",
-                                "sprints",
-                                "due",
-                                "asignee",
-                                "asignees",
-                                "score",
-                                "priority",
-                                "balance",
-                                "type",
-                                "primary",
-                                "status",
-                                "name",
-                                "description",
-                                "id",
-                                "createdAt",
-                                "updatedAt",
-                                "deletedAt",
-                                "active",
-                                "owner",
-                                "lock",
-                                "canUpdate",
-                                "canDelete",
-                                "canRead",
-                                "tag",
-                                "tags",
-                                "count",
-                                "like",
-                                "dislike",
-                                "comment",
-                                "review",
-                                "rate",
-                                "category",
-                                "department"
-                            ]
-                        }
-                    }
-                }
-            }
+            ]
         },
-        "IntegerPropertyOptions": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "IntegerPropertyOptions",
+        "Integer": {
             "allOf": [
                 {
-                    "$ref": "#/definitions/CommonNumberPropertyOptions"
+                    "$ref": "#/definitions/CommonNumber"
                 },
                 {
-                    "properties": {
-                        "type": {
-                            "const": "integer"
-                        },
-                        "default": {
-                            "type": "integer"
-                        },
-                        "isIn": {
-                            "type": "array",
-                            "items": {
-                                "oneOf": [
-                                    {
-                                        "type": "integer"
-                                    }
-                                ]
-                            }
-                        },
-                        "isNotIn": {
-                            "type": "array",
-                            "items": {
-                                "oneOf": [
-                                    {
-                                        "type": "integer"
-                                    }
-                                ]
-                            }
-                        }
-                    },
-                    "required": [
-                        "type"
-                    ]
+                    "$ref": "#/definitions/IntergerPropertyOptionsRaw"
                 }
-            ],
-            "definitions": {
-                "CommonNumberPropertyOptions": {
-                    "$schema": "http://json-schema.org/draft-07/schema#",
-                    "title": "CommonNumberPropertyOptions",
-                    "properties": {
-                        "isEven": {
-                            "type": "boolean"
-                        },
-                        "isOdd": {
-                            "type": "boolean"
-                        },
-                        "numberFormat": {
-                            "$ref": "#/definitions/NumberFormat"
-                        },
-                        "minimum": {
-                            "type": "number"
-                        },
-                        "maximum": {
-                            "type": "number"
-                        },
-                        "moreThanProperty": {
-                            "$ref": "#/definitions/PropertyName"
-                        },
-                        "lessThanProperty": {
-                            "$ref": "#/definitions/PropertyName"
-                        }
-                    },
-                    "definitions": {
-                        "NumberFormat": {
-                            "$schema": "http://json-schema.org/draft-07/schema#",
-                            "title": "NumberFormat",
-                            "description": "Number format such as rate (0-5), percentage (0-100)",
-                            "enum": [
-                                [
-                                    "integer",
-                                    "float",
-                                    "double",
-                                    "decimal",
-                                    "positive-integer",
-                                    "negative-integer",
-                                    "non-negative-integer",
-                                    "non-positive-integer",
-                                    "percentage",
-                                    "currency",
-                                    "rate",
-                                    "scientific-notation",
-                                    "hexadecimal",
-                                    "octal",
-                                    "binary",
-                                    "roman-numeral",
-                                    "prime-number",
-                                    "natural-number",
-                                    "odd-number",
-                                    "even-number",
-                                    "latitude",
-                                    "longitude",
-                                    "timezone-offset",
-                                    "temperature-celsius",
-                                    "temperature-fahrenheit",
-                                    "angle-degree",
-                                    "angle-radian",
-                                    "year",
-                                    "month",
-                                    "day",
-                                    "age",
-                                    "count",
-                                    "rating",
-                                    "probability",
-                                    "weight",
-                                    "height",
-                                    "distance",
-                                    "speed",
-                                    "time-duration",
-                                    "voltage",
-                                    "current",
-                                    "frequency",
-                                    "acceleration"
-                                ]
-                            ]
-                        },
-                        "PropertyName": {
-                            "$schema": "http://json-schema.org/draft-07/schema#",
-                            "title": "PropertyName",
-                            "enum": [
-                                "firstName",
-                                "lastName",
-                                "middleName",
-                                "fullName",
-                                "dob",
-                                "gender",
-                                "ssn",
-                                "dl",
-                                "etnicity",
-                                "salary",
-                                "salaryType",
-                                "username",
-                                "password",
-                                "email",
-                                "emails",
-                                "phone",
-                                "phones",
-                                "website",
-                                "websites",
-                                "socialMedia",
-                                "facebook",
-                                "instagram",
-                                "tiktok",
-                                "twitter",
-                                "linkedin",
-                                "sso",
-                                "permission",
-                                "permissions",
-                                "role",
-                                "roles",
-                                "clockIn",
-                                "clockOut",
-                                "employmentType",
-                                "schedule",
-                                "startTime",
-                                "endTime",
-                                "product",
-                                "products",
-                                "sku",
-                                "skus",
-                                "upc",
-                                "barcode",
-                                "model",
-                                "make",
-                                "attribute",
-                                "attributes",
-                                "price",
-                                "prices",
-                                "quantity",
-                                "quantities",
-                                "store",
-                                "stores",
-                                "priceLevel",
-                                "priceLevels",
-                                "inbox",
-                                "message",
-                                "messages",
-                                "receiver",
-                                "receivers",
-                                "sender",
-                                "isRead",
-                                "isSent",
-                                "draft",
-                                "drafts",
-                                "attachment",
-                                "attachments",
-                                "agent",
-                                "agents",
-                                "industry",
-                                "industries",
-                                "address",
-                                "addresses",
-                                "street",
-                                "city",
-                                "state",
-                                "country",
-                                "postalCode",
-                                "zip",
-                                "unit",
-                                "jobPost",
-                                "occupation",
-                                "occupations",
-                                "resume",
-                                "condicate",
-                                "skill",
-                                "skills",
-                                "experience",
-                                "experiences",
-                                "project",
-                                "projects",
-                                "task",
-                                "tasks",
-                                "sprint",
-                                "sprints",
-                                "due",
-                                "asignee",
-                                "asignees",
-                                "score",
-                                "priority",
-                                "balance",
-                                "type",
-                                "primary",
-                                "status",
-                                "name",
-                                "description",
-                                "id",
-                                "createdAt",
-                                "updatedAt",
-                                "deletedAt",
-                                "active",
-                                "owner",
-                                "lock",
-                                "canUpdate",
-                                "canDelete",
-                                "canRead",
-                                "tag",
-                                "tags",
-                                "count",
-                                "like",
-                                "dislike",
-                                "comment",
-                                "review",
-                                "rate",
-                                "category",
-                                "department"
-                            ]
-                        }
+            ]
+        },
+        "IntergerPropertyOptionsRaw": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "const": "integer"
+                },
+                "default": {
+                    "type": "integer"
+                },
+                "isIn": {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "type": "integer"
+                            }
+                        ]
+                    }
+                },
+                "isNotIn": {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "type": "integer"
+                            }
+                        ]
                     }
                 }
-            }
+            },
+            "required": [
+                "type"
+            ]
         },
-        "BooleanPropertyOptions": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "BooleanPropertyOptions",
+        "Boolean": {
+            "type": "object",
             "properties": {
                 "type": {
                     "const": "boolean"
@@ -1566,9 +673,8 @@
                 "type"
             ]
         },
-        "DatePropertyOptions": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "DatePropertyOptions",
+        "Date": {
+            "type": "object",
             "properties": {
                 "type": {
                     "const": "date"
@@ -1587,9 +693,8 @@
                 "type"
             ]
         },
-        "ObjectPropertyOptions": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "ObjectPropertyOptions",
+        "Object": {
+            "type": "object",
             "properties": {
                 "type": {
                     "const": "object"
@@ -1604,85 +709,19 @@
             "required": [
                 "type",
                 "target"
-            ],
-            "definitions": {
-                "ModelName": {
-                    "$schema": "http://json-schema.org/draft-07/schema#",
-                    "title": "ModelName",
-                    "enum": [
-                        "User",
-                        "Role",
-                        "Permission",
-                        "UserSession",
-                        "UserInfo",
-                        "UserDevice",
-                        "Department",
-                        "Product",
-                        "Category",
-                        "Price",
-                        "Quantity",
-                        "PriceLevel",
-                        "Store",
-                        "Warehouse",
-                        "Sku",
-                        "ProductAttribute",
-                        "Discount",
-                        "ProductReview",
-                        "ProductComment",
-                        "Customer",
-                        "CustomerAccount",
-                        "CustomerEmail",
-                        "CustomerPhone",
-                        "CustomerWebsite",
-                        "CustomerContact",
-                        "MessageDraft",
-                        "Message",
-                        "Inbox",
-                        "Company",
-                        "Agent",
-                        "SocialMedia",
-                        "Contact",
-                        "Email",
-                        "Addresss",
-                        "Phone",
-                        "Website",
-                        "Occupation",
-                        "JobPost",
-                        "Resume",
-                        "Candidate",
-                        "CoverLetter",
-                        "Certificate",
-                        "Skill",
-                        "Experience",
-                        "Project",
-                        "Task",
-                        "TaskComment",
-                        "Sprint",
-                        "Blog",
-                        "Article",
-                        "BlogComment",
-                        "BlogReview",
-                        "ArticleImage",
-                        "Menu",
-                        "MenuItem",
-                        "Resource",
-                        "Component",
-                        "Page",
-                        "Notification",
-                        "EmailEvent"
-                    ]
-                }
-            }
+            ]
         },
-        "ArrayPropertyOptions": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "ArrayPropertyOptions",
+        "Array": {
+            "type": "object",
             "properties": {
                 "type": {
                     "const": "array"
                 },
                 "default": {
-                    "type": "array"
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Property"
+                    }
                 },
                 "minSize": {
                     "type": "integer"
@@ -1691,85 +730,155 @@
                     "type": "integer"
                 },
                 "items": {
-                    "$ref": "#/definitions/PropertyOptions"
+                    "$ref": "#/definitions/Property"
                 }
             },
             "required": [
                 "type",
                 "items"
-            ],
-            "definitions": {
-                "PropertyOptions": {
-                    "$schema": "http://json-schema.org/draft-07/schema#",
-                    "title": "PropertyOptions",
-                    "allOf": [
-                        {
-                            "$ref": "src\\property\\common-property.schema.json"
-                        },
-                        {
-                            "$ref": "src\\property\\ui-property.schema.json"
-                        },
-                        {
-                            "oneOf": [
-                                {
-                                    "$ref": "src\\property\\string.schema.json"
-                                },
-                                {
-                                    "$ref": "src\\property\\number.schema.json"
-                                },
-                                {
-                                    "$ref": "src\\property\\integer.schema.json"
-                                },
-                                {
-                                    "$ref": "src\\property\\boolean.schema.json"
-                                },
-                                {
-                                    "$ref": "src\\property\\date.schema.json"
-                                },
-                                {
-                                    "$ref": "src\\property\\object.schema.json"
-                                },
-                                {
-                                    "$ref": "src\\property\\array.schema.json"
-                                }
-                            ]
-                        }
-                    ]
+            ]
+        },
+        "NumberFormat": {
+            "type": "string",
+            "description": "Number format such as rate (0-5), percentage (0-100)",
+            "enum": [
+                "integer",
+                "float",
+                "double",
+                "decimal",
+                "positive-integer",
+                "negative-integer",
+                "non-negative-integer",
+                "non-positive-integer",
+                "percentage",
+                "currency",
+                "rate",
+                "scientific-notation",
+                "hexadecimal",
+                "octal",
+                "binary",
+                "roman-numeral",
+                "prime-number",
+                "natural-number",
+                "odd-number",
+                "even-number",
+                "latitude",
+                "longitude",
+                "timezone-offset",
+                "temperature-celsius",
+                "temperature-fahrenheit",
+                "angle-degree",
+                "angle-radian",
+                "year",
+                "month",
+                "day",
+                "age",
+                "count",
+                "rating",
+                "probability",
+                "weight",
+                "height",
+                "distance",
+                "speed",
+                "time-duration",
+                "voltage",
+                "current",
+                "frequency",
+                "acceleration"
+            ]
+        },
+        "PropertyType": {
+            "type": "string",
+            "description": "Propert type",
+            "enum": [
+                "string",
+                "number",
+                "integer",
+                "boolean",
+                "date",
+                "object",
+                "array"
+            ]
+        },
+        "CommonNumber": {
+            "type": "object",
+            "properties": {
+                "isEven": {
+                    "type": "boolean"
+                },
+                "isOdd": {
+                    "type": "boolean"
+                },
+                "numberFormat": {
+                    "$ref": "#/definitions/NumberFormat"
+                },
+                "minimum": {
+                    "type": "number"
+                },
+                "maximum": {
+                    "type": "number"
+                },
+                "moreThanProperty": {
+                    "$ref": "#/definitions/PropertyName"
+                },
+                "lessThanProperty": {
+                    "$ref": "#/definitions/PropertyName"
                 }
             }
         },
-        "RelationType": {
-            "title": "Relation Type",
+        "StringFormat": {
+            "type": "string",
+            "description": "String format such as email, password, uuid, ip6, ip4 and so more",
             "enum": [
-                "many-to-many",
-                "many-to-one",
-                "one-to-one",
-                "one-to-many"
+                "short",
+                "long",
+                "email",
+                "hostname",
+                "ipv4",
+                "ipv6",
+                "uuid",
+                "url",
+                "uri",
+                "uri-reference",
+                "iri",
+                "iri-reference",
+                "date",
+                "time",
+                "date-time",
+                "regex",
+                "phone-number",
+                "credit-card",
+                "isbn",
+                "issn",
+                "zipcode",
+                "postal-code",
+                "currency",
+                "mac-address",
+                "alphanumeric",
+                "hexadecimal",
+                "base64",
+                "binary",
+                "json",
+                "slug",
+                "username",
+                "password",
+                "country-code",
+                "language-code",
+                "timezone",
+                "html-color",
+                "semver",
+                "domain-name",
+                "subdomain",
+                "file-path",
+                "sha256",
+                "sha512",
+                "md5",
+                "jwt",
+                "object-id"
             ]
         },
-        "OnDelete": {
-            "enum": [
-                "RESTRICT",
-                "CASCADE",
-                "SET NULL",
-                "DEFAULT",
-                "NO ACTION"
-            ],
-            "default": "SET NULL"
-        },
-        "OnUpdate": {
-            "enum": [
-                "RESTRICT",
-                "CASCADE",
-                "SET NULL",
-                "DEFAULT",
-                "NO ACTION"
-            ],
-            "default": "SET NULL"
-        },
         "InputType": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "InputType",
+            "type": "string",
             "description": "UI input type",
             "enum": [
                 "text",
@@ -1794,8 +903,7 @@
             ]
         },
         "Icon": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "Icon",
+            "type": "string",
             "enum": [
                 "search",
                 "home",
@@ -5291,58 +4399,6 @@
                 "farsight_digital",
                 "view_object_track",
                 "nest_gale_wifi"
-            ]
-        },
-        "StringFormat": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "StringFormat",
-            "description": "String format such as email, password, uuid, ip6, ip4 and so more",
-            "enum": [
-                "short",
-                "long",
-                "email",
-                "hostname",
-                "ipv4",
-                "ipv6",
-                "uuid",
-                "url",
-                "uri",
-                "uri-reference",
-                "iri",
-                "iri-reference",
-                "date",
-                "time",
-                "date-time",
-                "regex",
-                "phone-number",
-                "credit-card",
-                "isbn",
-                "issn",
-                "zipcode",
-                "postal-code",
-                "currency",
-                "mac-address",
-                "alphanumeric",
-                "hexadecimal",
-                "base64",
-                "binary",
-                "json",
-                "slug",
-                "username",
-                "password",
-                "country-code",
-                "language-code",
-                "timezone",
-                "html-color",
-                "semver",
-                "domain-name",
-                "subdomain",
-                "file-path",
-                "sha256",
-                "sha512",
-                "md5",
-                "jwt",
-                "object-id"
             ]
         }
     }

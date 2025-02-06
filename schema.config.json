@@ -1,9 +1,0 @@
-{
-    "$schema": "https://raw.githubusercontent.com/rbrightline/common/refs/heads/main/libs/schema/schema-config.schema.json",
-    "main": "schema/model/model.schema.json",
-    "root": "./libs",
-    "output": {
-        "schema": "./schema/model.schema.json",
-        "type": "./type/src/lib/model/model.ts"
-    }
-}
