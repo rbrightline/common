@@ -1,4 +1,4 @@
-import { ConstantPrinter } from './constant';
+import { ConstantPrinter } from './constant-printer';
 
 describe('constant - print constant asignment', () => {
   it('should print constant asignment', () => {

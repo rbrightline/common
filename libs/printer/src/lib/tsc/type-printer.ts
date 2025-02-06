@@ -1,8 +1,8 @@
 import { sval } from '@rline/is';
+import { names } from '@rline/names';
 import { ModelSchema, PropertyOptions, RelationOptions } from '@rline/type';
 import { Printable } from '../common';
-import { propertyType } from './property-type';
-import { relationType } from './relation-type';
+import { propertyType, relationType } from './utils';
 
 /**
  * Typescript type printer
@@ -16,6 +16,16 @@ export class TypePrinter implements Printable {
     sval(schema.name);
   }
 
+  /**
+   * Print generic types
+   * @returns
+   */
+  protected generics(): string {
+    const __generics = this.schema.relations
+      ?.map((e) => `${e.target}`)
+      .join(',');
+    return __generics ? `<${__generics}>` : '';
+  }
   /**
    * Print the property
    * @param options property options
@@ -54,13 +64,15 @@ export class TypePrinter implements Printable {
     return this.schema.relations?.map((e) => this.relation(e)).join('\n') ?? '';
   }
 
+  protected definition() {
+    const name = names(sval(this.schema.name)).pascalCase;
+    return `export type ${name}`;
+  }
   /**
    * Print type
    * @returns
    */
   print(): string {
-    return `export type ${
-      this.schema.name
-    } = { ${this.properties()} ${this.relations()} }`;
+    return `${this.definition()}${this.generics()} = { ${this.properties()} ${this.relations()} }`;
   }
 }
