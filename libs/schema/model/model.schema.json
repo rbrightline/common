@@ -3,16 +3,6 @@
     "title": "ModelSchema",
     "type": "object",
     "properties": {
-        "type": {
-            "type": "string",
-            "enum": [
-                "class",
-                "enum",
-                "type",
-                "interface",
-                "constant"
-            ]
-        },
         "implementings": {
             "type": "array",
             "description": "Which abstract model is extended by the entity?",
@@ -43,8 +33,7 @@
                     }
                 ],
                 "required": [
-                    "type",
-                    "name"
+                    "type"
                 ]
             }
         },

@@ -35,21 +35,22 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-                "$ref": "#/definitions/Property"
+                "$ref": "#/definitions/PropertyOptions"
             }
         },
         "relations": {
             "type": "array",
             "uniqueItems": true,
             "items": {
-                "$ref": "#/definitions/Relation"
+                "$ref": "#/definitions/RelationPropertyOptions"
             }
         }
     },
     "additionalProperties": false,
     "definitions": {
         "ModelName": {
-            "description": "Name of the models (class-names, entity-name) accross the projects.",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "ModelName",
             "enum": [
                 "User",
                 "Role",
@@ -114,7 +115,8 @@
             ]
         },
         "PropertyName": {
-            "description": "Name of the property names used accross the projects",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "PropertyName",
             "enum": [
                 "firstName",
                 "lastName",
@@ -243,7 +245,9 @@
                 "department"
             ]
         },
-        "Property": {
+        "PropertyOptions": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "PropertyOptions",
             "allOf": [
                 {
                     "$ref": "#/definitions/CommonProperty"
@@ -278,7 +282,9 @@
                 }
             ]
         },
-        "Relation": {
+        "RelationPropertyOptions": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "RelationPropertyOptions",
             "allOf": [
                 {
                     "$ref": "#/definitions/UiProperty"
@@ -286,22 +292,21 @@
                 {
                     "properties": {
                         "name": {
-                            "$ref": "#/definitions/PropertyName"
+                            "$ref": "#/definitions/Property"
                         },
                         "type": {
                             "$ref": "#/definitions/RelationType"
                         },
                         "target": {
-                            "$ref": "#/definitions/ModelName"
+                            "$ref": "#/definitions/Model"
                         },
                         "targetProperty": {
                             "description": "Reference property in the target entity",
-                            "$ref": "#/definitions/PropertyName"
+                            "$ref": "#/definitions/Property"
                         },
                         "eager": {
                             "type": "boolean",
-                            "default": true,
-                            "description": "Load the relation data by default"
+                            "default": true
                         },
                         "join": {
                             "description": "should join the column/table?",
@@ -329,409 +334,38 @@
                         "target"
                     ]
                 }
-            ]
-        },
-        "RelationType": {
-            "title": "RelationType",
-            "enum": [
-                "many-to-many",
-                "many-to-one",
-                "one-to-one",
-                "one-to-many"
-            ]
-        },
-        "OnDelete": {
-            "title": "OnDelete",
-            "enum": [
-                "RESTRICT",
-                "CASCADE",
-                "SET NULL",
-                "DEFAULT",
-                "NO ACTION"
             ],
-            "default": "SET NULL"
-        },
-        "OnUpdate": {
-            "title": "OnUpdate",
-            "enum": [
-                "RESTRICT",
-                "CASCADE",
-                "SET NULL",
-                "DEFAULT",
-                "NO ACTION"
-            ],
-            "default": "SET NULL"
-        },
-        "CommonProperty": {
-            "description": "Common property options",
-            "allOf": [
-                {
-                    "$ref": "#/definitions/General"
-                },
-                {
-                    "$ref": "#/definitions/Transform"
-                },
-                {
-                    "$ref": "#/definitions/Validation"
-                },
-                {
-                    "$ref": "#/definitions/Encryption"
-                },
-                {
-                    "$ref": "#/definitions/Dto"
-                }
-            ],
-            "required": [
-                "type"
-            ]
-        },
-        "General": {
-            "properties": {
-                "name": {
-                    "$ref": "#/definitions/PropertyName"
-                },
-                "description": {
-                    "type": "string",
-                    "description": "Property description"
-                },
-                "required": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Is property required?"
-                },
-                "unique": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Is property unique?"
-                }
-            }
-        },
-        "Transform": {
-            "properties": {
-                "acceptString": {
-                    "type": "boolean",
-                    "description": "transform string values into the actual type before any operations",
-                    "default": true
-                }
-            }
-        },
-        "Validation": {
-            "properties": {
-                "equalToProperty": {
-                    "$ref": "#/definitions/PropertyName",
-                    "description": "Check the value is equal to the value of the property"
-                },
-                "notEqualToProperty": {
-                    "$ref": "#/definitions/PropertyName",
-                    "description": "Check the value is not equal to the value of the property"
-                }
-            }
-        },
-        "Encryption": {
-            "properties": {
-                "hash": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Should hash value?"
-                },
-                "encrypt": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Should encrypt value?"
-                }
-            }
-        },
-        "Dto": {
-            "properties": {
-                "write": {
-                    "type": "boolean",
-                    "description": "Is the property writable or internal"
-                },
-                "read": {
-                    "type": "boolean",
-                    "description": "Is the property visible in the data load?",
-                    "default": true
-                },
-                "udpate": {
-                    "type": "boolean",
-                    "description": "Is proprety updatable?",
-                    "default": true
-                }
-            }
-        },
-        "UiProperty": {
-            "properties": {
-                "label": {
-                    "type": "string"
-                },
-                "mapTo": {
-                    "$ref": "#/definitions/PropertyName"
-                },
-                "inputType": {
-                    "$ref": "#/definitions/InputType"
-                },
-                "prefixText": {
-                    "type": "string"
-                },
-                "suffixText": {
-                    "type": "string"
-                },
-                "prefixIcon": {
-                    "$ref": "#/definitions/Icon"
-                },
-                "suffixIcon": {
-                    "$ref": "#/definitions/Icon"
-                },
-                "dependsOn": {
-                    "$ref": "#/definitions/PropertyName"
-                },
-                "group": {
-                    "type": "string"
-                },
-                "bold": {
-                    "type": "boolean"
-                },
-                "italic": {
-                    "type": "boolean"
-                }
-            }
-        },
-        "String": {
-            "properties": {
-                "type": {
-                    "const": "string"
-                },
-                "default": {
-                    "type": "string"
-                },
-                "stringFormat": {
-                    "$ref": "#/definitions/StringFormat"
-                },
-                "minLength": {
-                    "type": "integer",
-                    "description": "Minimum allowed length for the string value."
-                },
-                "maxLength": {
-                    "type": "integer",
-                    "description": "Maximum allowed length for the string value."
-                },
-                "isIn": {
-                    "type": "array",
-                    "uniqueItems": true,
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "isNotIn": {
-                    "type": "array",
-                    "uniqueItems": true,
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "contains": {
-                    "type": "array",
-                    "uniqueItems": true,
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "notContains": {
-                    "type": "array",
-                    "uniqueItems": true,
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "startWith": {
-                    "type": "string"
-                },
-                "notStartWith": {
-                    "type": "string"
-                },
-                "endWith": {
-                    "type": "string"
-                },
-                "notEndWith": {
-                    "type": "string"
-                },
-                "containProperty": {
-                    "$ref": "#/definitions/PropertyName"
-                },
-                "notContainProperty": {
-                    "$ref": "#/definitions/PropertyName"
-                },
-                "longerThanProperty": {
-                    "$ref": "#/definitions/PropertyName"
-                },
-                "shorterThanProperty": {
-                    "$ref": "#/definitions/PropertyName"
-                }
-            }
-        },
-        "Number": {
-            "allOf": [
-                {
-                    "$ref": "#/definitions/CommonNumber"
-                },
-                {
-                    "properties": {
-                        "type": {
-                            "const": "number"
-                        },
-                        "default": {
-                            "type": "number"
-                        },
-                        "isIn": {
-                            "type": "array",
-                            "items": {
-                                "oneOf": [
-                                    {
-                                        "type": "number"
-                                    }
-                                ]
-                            }
-                        },
-                        "isNotIn": {
-                            "type": "array",
-                            "items": {
-                                "oneOf": [
-                                    {
-                                        "type": "number"
-                                    }
-                                ]
-                            }
-                        }
-                    },
-                    "required": [
-                        "type"
+            "definitions": {
+                "RelationType": {
+                    "title": "Relation Type",
+                    "enum": [
+                        "many-to-many",
+                        "many-to-one",
+                        "one-to-one",
+                        "one-to-many"
                     ]
+                },
+                "OnDelete": {
+                    "enum": [
+                        "RESTRICT",
+                        "CASCADE",
+                        "SET NULL",
+                        "DEFAULT",
+                        "NO ACTION"
+                    ],
+                    "default": "SET NULL"
+                },
+                "OnUpdate": {
+                    "enum": [
+                        "RESTRICT",
+                        "CASCADE",
+                        "SET NULL",
+                        "DEFAULT",
+                        "NO ACTION"
+                    ],
+                    "default": "SET NULL"
                 }
-            ]
-        },
-        "Integer": {
-            "allOf": [
-                {
-                    "$ref": "#/definitions/CommonNumber"
-                },
-                {
-                    "properties": {
-                        "type": {
-                            "const": "integer"
-                        },
-                        "default": {
-                            "type": "integer"
-                        },
-                        "isIn": {
-                            "type": "array",
-                            "description": "Is the vlaue in the provided list?",
-                            "items": {
-                                "oneOf": [
-                                    {
-                                        "type": "integer"
-                                    }
-                                ]
-                            }
-                        },
-                        "isNotIn": {
-                            "type": "array",
-                            "description": "Is the value not in the provided list?",
-                            "items": {
-                                "oneOf": [
-                                    {
-                                        "type": "integer"
-                                    }
-                                ]
-                            }
-                        }
-                    },
-                    "required": [
-                        "type"
-                    ]
-                }
-            ]
-        },
-        "Boolean": {
-            "description": "Boolean property options",
-            "properties": {
-                "type": {
-                    "const": "boolean"
-                },
-                "default": {
-                    "type": "boolean"
-                }
-            },
-            "required": [
-                "type"
-            ]
-        },
-        "Date": {
-            "properties": {
-                "type": {
-                    "const": "date"
-                },
-                "isFutureDate": {
-                    "type": "boolean"
-                },
-                "isPastDate": {
-                    "type": "boolean"
-                },
-                "default": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "type"
-            ]
-        },
-        "Object": {
-            "properties": {
-                "type": {
-                    "const": "object"
-                },
-                "target": {
-                    "$ref": "#/definitions/ModelName"
-                },
-                "default": {
-                    "type": "object"
-                }
-            },
-            "required": [
-                "type",
-                "target"
-            ]
-        },
-        "Array": {
-            "description": "Array property options",
-            "properties": {
-                "type": {
-                    "const": "array"
-                },
-                "default": {
-                    "type": "array"
-                },
-                "minSize": {
-                    "type": "integer"
-                },
-                "maxSize": {
-                    "type": "integer"
-                },
-                "items": {
-                    "$ref": "#/definitions/Property"
-                },
-                "contain": {
-                    "type": "array",
-                    "description": "Should the array contain a list of value?"
-                },
-                "notContain": {
-                    "type": "array",
-                    "description": "Should the array NOT contain a list of value?"
-                }
-            },
-            "required": [
-                "type",
-                "items"
-            ]
+            }
         },
         "NumberFormat": {
             "description": "Number format such as rate (0-5), percentage (0-100)",
@@ -783,93 +417,1353 @@
                 ]
             ]
         },
-        "CommonNumber": {
-            "description": "Common number property options",
+        "General": {
+            "properties": {
+                "name": {
+                    "$ref": "#/definitions/Property"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "required": {
+                    "type": "boolean",
+                    "default": true
+                },
+                "unique": {
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        },
+        "Transform": {
+            "properties": {
+                "acceptString": {
+                    "type": "boolean",
+                    "description": "transform string values into the actual type before any operations",
+                    "default": true
+                }
+            }
+        },
+        "Validation": {
+            "properties": {
+                "equalToProperty": {
+                    "$ref": "#/definitions/Property",
+                    "description": "Check the value is equal to the value of the property"
+                },
+                "notEqualToProperty": {
+                    "$ref": "#/definitions/Property",
+                    "description": "Check the value is not equal to the value of the property"
+                }
+            }
+        },
+        "Encryption": {
+            "properties": {
+                "hash": {
+                    "type": "boolean",
+                    "default": true
+                },
+                "encrypt": {
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        },
+        "Dto": {
+            "properties": {
+                "write": {
+                    "type": "boolean",
+                    "description": "Is the property writable or internal"
+                },
+                "read": {
+                    "type": "boolean",
+                    "description": "Is the property visible in the data load?",
+                    "default": true
+                },
+                "udpate": {
+                    "type": "boolean",
+                    "description": "Is proprety updatable?",
+                    "default": true
+                }
+            }
+        },
+        "CommonNumberPropertyOptions": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "CommonNumberPropertyOptions",
             "properties": {
                 "isEven": {
-                    "type": "boolean",
-                    "description": "Is the number even?"
+                    "type": "boolean"
                 },
                 "isOdd": {
-                    "type": "boolean",
-                    "description": "Is the number odd?"
+                    "type": "boolean"
                 },
                 "numberFormat": {
                     "$ref": "#/definitions/NumberFormat"
                 },
                 "minimum": {
-                    "type": "number",
-                    "description": "Minimum allowed value for the number"
+                    "type": "number"
                 },
                 "maximum": {
-                    "type": "number",
-                    "description": "Maximum allowed value for the number"
+                    "type": "number"
                 },
                 "moreThanProperty": {
-                    "type": "array",
-                    "description": "Is the value more than the provided properties' value?",
-                    "items": {
-                        "$ref": "#/definitions/PropertyName"
-                    }
+                    "$ref": "#/definitions/PropertyName"
                 },
                 "lessThanProperty": {
+                    "$ref": "#/definitions/PropertyName"
+                }
+            },
+            "definitions": {
+                "NumberFormat": {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "title": "NumberFormat",
+                    "description": "Number format such as rate (0-5), percentage (0-100)",
+                    "enum": [
+                        [
+                            "integer",
+                            "float",
+                            "double",
+                            "decimal",
+                            "positive-integer",
+                            "negative-integer",
+                            "non-negative-integer",
+                            "non-positive-integer",
+                            "percentage",
+                            "currency",
+                            "rate",
+                            "scientific-notation",
+                            "hexadecimal",
+                            "octal",
+                            "binary",
+                            "roman-numeral",
+                            "prime-number",
+                            "natural-number",
+                            "odd-number",
+                            "even-number",
+                            "latitude",
+                            "longitude",
+                            "timezone-offset",
+                            "temperature-celsius",
+                            "temperature-fahrenheit",
+                            "angle-degree",
+                            "angle-radian",
+                            "year",
+                            "month",
+                            "day",
+                            "age",
+                            "count",
+                            "rating",
+                            "probability",
+                            "weight",
+                            "height",
+                            "distance",
+                            "speed",
+                            "time-duration",
+                            "voltage",
+                            "current",
+                            "frequency",
+                            "acceleration"
+                        ]
+                    ]
+                },
+                "PropertyName": {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "title": "PropertyName",
+                    "enum": [
+                        "firstName",
+                        "lastName",
+                        "middleName",
+                        "fullName",
+                        "dob",
+                        "gender",
+                        "ssn",
+                        "dl",
+                        "etnicity",
+                        "salary",
+                        "salaryType",
+                        "username",
+                        "password",
+                        "email",
+                        "emails",
+                        "phone",
+                        "phones",
+                        "website",
+                        "websites",
+                        "socialMedia",
+                        "facebook",
+                        "instagram",
+                        "tiktok",
+                        "twitter",
+                        "linkedin",
+                        "sso",
+                        "permission",
+                        "permissions",
+                        "role",
+                        "roles",
+                        "clockIn",
+                        "clockOut",
+                        "employmentType",
+                        "schedule",
+                        "startTime",
+                        "endTime",
+                        "product",
+                        "products",
+                        "sku",
+                        "skus",
+                        "upc",
+                        "barcode",
+                        "model",
+                        "make",
+                        "attribute",
+                        "attributes",
+                        "price",
+                        "prices",
+                        "quantity",
+                        "quantities",
+                        "store",
+                        "stores",
+                        "priceLevel",
+                        "priceLevels",
+                        "inbox",
+                        "message",
+                        "messages",
+                        "receiver",
+                        "receivers",
+                        "sender",
+                        "isRead",
+                        "isSent",
+                        "draft",
+                        "drafts",
+                        "attachment",
+                        "attachments",
+                        "agent",
+                        "agents",
+                        "industry",
+                        "industries",
+                        "address",
+                        "addresses",
+                        "street",
+                        "city",
+                        "state",
+                        "country",
+                        "postalCode",
+                        "zip",
+                        "unit",
+                        "jobPost",
+                        "occupation",
+                        "occupations",
+                        "resume",
+                        "condicate",
+                        "skill",
+                        "skills",
+                        "experience",
+                        "experiences",
+                        "project",
+                        "projects",
+                        "task",
+                        "tasks",
+                        "sprint",
+                        "sprints",
+                        "due",
+                        "asignee",
+                        "asignees",
+                        "score",
+                        "priority",
+                        "balance",
+                        "type",
+                        "primary",
+                        "status",
+                        "name",
+                        "description",
+                        "id",
+                        "createdAt",
+                        "updatedAt",
+                        "deletedAt",
+                        "active",
+                        "owner",
+                        "lock",
+                        "canUpdate",
+                        "canDelete",
+                        "canRead",
+                        "tag",
+                        "tags",
+                        "count",
+                        "like",
+                        "dislike",
+                        "comment",
+                        "review",
+                        "rate",
+                        "category",
+                        "department"
+                    ]
+                }
+            }
+        },
+        "CommonPropertyOptions": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "CommonPropertyOptions",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/General"
+                },
+                {
+                    "$ref": "#/definitions/Transform"
+                },
+                {
+                    "$ref": "#/definitions/Validation"
+                },
+                {
+                    "$ref": "#/definitions/Encryption"
+                },
+                {
+                    "$ref": "#/definitions/Dto"
+                }
+            ],
+            "definitions": {
+                "General": {
+                    "properties": {
+                        "name": {
+                            "$ref": "#/definitions/PropertyName"
+                        },
+                        "description": {
+                            "type": "string"
+                        },
+                        "required": {
+                            "type": "boolean",
+                            "default": true
+                        },
+                        "unique": {
+                            "type": "boolean",
+                            "default": true
+                        }
+                    }
+                },
+                "Transform": {
+                    "properties": {
+                        "acceptString": {
+                            "type": "boolean",
+                            "description": "transform string values into the actual type before any operations",
+                            "default": true
+                        }
+                    }
+                },
+                "Validation": {
+                    "properties": {
+                        "equalToProperty": {
+                            "$ref": "#/definitions/PropertyName",
+                            "description": "Check the value is equal to the value of the property"
+                        },
+                        "notEqualToProperty": {
+                            "$ref": "#/definitions/PropertyName",
+                            "description": "Check the value is not equal to the value of the property"
+                        }
+                    }
+                },
+                "Encryption": {
+                    "properties": {
+                        "hash": {
+                            "type": "boolean",
+                            "default": true
+                        },
+                        "encrypt": {
+                            "type": "boolean",
+                            "default": true
+                        }
+                    }
+                },
+                "Dto": {
+                    "properties": {
+                        "write": {
+                            "type": "boolean",
+                            "description": "Is the property writable or internal"
+                        },
+                        "read": {
+                            "type": "boolean",
+                            "description": "Is the property visible in the data load?",
+                            "default": true
+                        },
+                        "udpate": {
+                            "type": "boolean",
+                            "description": "Is proprety updatable?",
+                            "default": true
+                        }
+                    }
+                },
+                "PropertyName": {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "title": "PropertyName",
+                    "enum": [
+                        "firstName",
+                        "lastName",
+                        "middleName",
+                        "fullName",
+                        "dob",
+                        "gender",
+                        "ssn",
+                        "dl",
+                        "etnicity",
+                        "salary",
+                        "salaryType",
+                        "username",
+                        "password",
+                        "email",
+                        "emails",
+                        "phone",
+                        "phones",
+                        "website",
+                        "websites",
+                        "socialMedia",
+                        "facebook",
+                        "instagram",
+                        "tiktok",
+                        "twitter",
+                        "linkedin",
+                        "sso",
+                        "permission",
+                        "permissions",
+                        "role",
+                        "roles",
+                        "clockIn",
+                        "clockOut",
+                        "employmentType",
+                        "schedule",
+                        "startTime",
+                        "endTime",
+                        "product",
+                        "products",
+                        "sku",
+                        "skus",
+                        "upc",
+                        "barcode",
+                        "model",
+                        "make",
+                        "attribute",
+                        "attributes",
+                        "price",
+                        "prices",
+                        "quantity",
+                        "quantities",
+                        "store",
+                        "stores",
+                        "priceLevel",
+                        "priceLevels",
+                        "inbox",
+                        "message",
+                        "messages",
+                        "receiver",
+                        "receivers",
+                        "sender",
+                        "isRead",
+                        "isSent",
+                        "draft",
+                        "drafts",
+                        "attachment",
+                        "attachments",
+                        "agent",
+                        "agents",
+                        "industry",
+                        "industries",
+                        "address",
+                        "addresses",
+                        "street",
+                        "city",
+                        "state",
+                        "country",
+                        "postalCode",
+                        "zip",
+                        "unit",
+                        "jobPost",
+                        "occupation",
+                        "occupations",
+                        "resume",
+                        "condicate",
+                        "skill",
+                        "skills",
+                        "experience",
+                        "experiences",
+                        "project",
+                        "projects",
+                        "task",
+                        "tasks",
+                        "sprint",
+                        "sprints",
+                        "due",
+                        "asignee",
+                        "asignees",
+                        "score",
+                        "priority",
+                        "balance",
+                        "type",
+                        "primary",
+                        "status",
+                        "name",
+                        "description",
+                        "id",
+                        "createdAt",
+                        "updatedAt",
+                        "deletedAt",
+                        "active",
+                        "owner",
+                        "lock",
+                        "canUpdate",
+                        "canDelete",
+                        "canRead",
+                        "tag",
+                        "tags",
+                        "count",
+                        "like",
+                        "dislike",
+                        "comment",
+                        "review",
+                        "rate",
+                        "category",
+                        "department"
+                    ]
+                }
+            },
+            "required": [
+                "type",
+                "name"
+            ]
+        },
+        "UIPropertyOptions": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "UIPropertyOptions",
+            "properties": {
+                "label": {
+                    "type": "string"
+                },
+                "mapTo": {
+                    "$ref": "#/definitions/PropertyName"
+                },
+                "inputType": {
+                    "$ref": "#/definitions/InputType"
+                },
+                "prefixText": {
+                    "type": "string"
+                },
+                "suffixText": {
+                    "type": "string"
+                },
+                "prefixIcon": {
+                    "$ref": "#/definitions/Icon"
+                },
+                "suffixIcon": {
+                    "$ref": "#/definitions/Icon"
+                },
+                "dependsOn": {
+                    "$ref": "#/definitions/PropertyName"
+                },
+                "group": {
+                    "type": "string"
+                },
+                "bold": {
+                    "type": "boolean"
+                },
+                "italic": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "StringPropertyOptions": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "StringPropertyOptions",
+            "properties": {
+                "type": {
+                    "const": "string"
+                },
+                "default": {
+                    "type": "string"
+                },
+                "stringFormat": {
+                    "$ref": "#/definitions/StringFormat"
+                },
+                "minLength": {
+                    "type": "integer"
+                },
+                "maxLength": {
+                    "type": "integer"
+                },
+                "isIn": {
                     "type": "array",
-                    "description": "Is the value less than the provided properties' value?",
+                    "uniqueItems": true,
                     "items": {
-                        "$ref": "#/definitions/PropertyName"
+                        "type": "string"
+                    }
+                },
+                "isNotIn": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "contains": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "notContains": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "startWith": {
+                    "type": "string"
+                },
+                "notStartWith": {
+                    "type": "string"
+                },
+                "endWith": {
+                    "type": "string"
+                },
+                "notEndWith": {
+                    "type": "string"
+                },
+                "containProperty": {
+                    "$ref": "#/definitions/Property"
+                },
+                "notContainProperty": {
+                    "$ref": "#/definitions/Property"
+                },
+                "longerThanProperty": {
+                    "$ref": "#/definitions/Property"
+                },
+                "shorterThanProperty": {
+                    "$ref": "#/definitions/Property"
+                }
+            }
+        },
+        "NumberPropertyOptions": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "NumberPropertyOptions",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/CommonNumberPropertyOptions"
+                },
+                {
+                    "properties": {
+                        "type": {
+                            "const": "number"
+                        },
+                        "default": {
+                            "type": "number"
+                        },
+                        "isIn": {
+                            "type": "array",
+                            "items": {
+                                "oneOf": [
+                                    {
+                                        "type": "number"
+                                    }
+                                ]
+                            }
+                        },
+                        "isNotIn": {
+                            "type": "array",
+                            "items": {
+                                "oneOf": [
+                                    {
+                                        "type": "number"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "type"
+                    ]
+                }
+            ],
+            "definitions": {
+                "CommonNumberPropertyOptions": {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "title": "CommonNumberPropertyOptions",
+                    "properties": {
+                        "isEven": {
+                            "type": "boolean"
+                        },
+                        "isOdd": {
+                            "type": "boolean"
+                        },
+                        "numberFormat": {
+                            "$ref": "#/definitions/NumberFormat"
+                        },
+                        "minimum": {
+                            "type": "number"
+                        },
+                        "maximum": {
+                            "type": "number"
+                        },
+                        "moreThanProperty": {
+                            "$ref": "#/definitions/PropertyName"
+                        },
+                        "lessThanProperty": {
+                            "$ref": "#/definitions/PropertyName"
+                        }
+                    },
+                    "definitions": {
+                        "NumberFormat": {
+                            "$schema": "http://json-schema.org/draft-07/schema#",
+                            "title": "NumberFormat",
+                            "description": "Number format such as rate (0-5), percentage (0-100)",
+                            "enum": [
+                                [
+                                    "integer",
+                                    "float",
+                                    "double",
+                                    "decimal",
+                                    "positive-integer",
+                                    "negative-integer",
+                                    "non-negative-integer",
+                                    "non-positive-integer",
+                                    "percentage",
+                                    "currency",
+                                    "rate",
+                                    "scientific-notation",
+                                    "hexadecimal",
+                                    "octal",
+                                    "binary",
+                                    "roman-numeral",
+                                    "prime-number",
+                                    "natural-number",
+                                    "odd-number",
+                                    "even-number",
+                                    "latitude",
+                                    "longitude",
+                                    "timezone-offset",
+                                    "temperature-celsius",
+                                    "temperature-fahrenheit",
+                                    "angle-degree",
+                                    "angle-radian",
+                                    "year",
+                                    "month",
+                                    "day",
+                                    "age",
+                                    "count",
+                                    "rating",
+                                    "probability",
+                                    "weight",
+                                    "height",
+                                    "distance",
+                                    "speed",
+                                    "time-duration",
+                                    "voltage",
+                                    "current",
+                                    "frequency",
+                                    "acceleration"
+                                ]
+                            ]
+                        },
+                        "PropertyName": {
+                            "$schema": "http://json-schema.org/draft-07/schema#",
+                            "title": "PropertyName",
+                            "enum": [
+                                "firstName",
+                                "lastName",
+                                "middleName",
+                                "fullName",
+                                "dob",
+                                "gender",
+                                "ssn",
+                                "dl",
+                                "etnicity",
+                                "salary",
+                                "salaryType",
+                                "username",
+                                "password",
+                                "email",
+                                "emails",
+                                "phone",
+                                "phones",
+                                "website",
+                                "websites",
+                                "socialMedia",
+                                "facebook",
+                                "instagram",
+                                "tiktok",
+                                "twitter",
+                                "linkedin",
+                                "sso",
+                                "permission",
+                                "permissions",
+                                "role",
+                                "roles",
+                                "clockIn",
+                                "clockOut",
+                                "employmentType",
+                                "schedule",
+                                "startTime",
+                                "endTime",
+                                "product",
+                                "products",
+                                "sku",
+                                "skus",
+                                "upc",
+                                "barcode",
+                                "model",
+                                "make",
+                                "attribute",
+                                "attributes",
+                                "price",
+                                "prices",
+                                "quantity",
+                                "quantities",
+                                "store",
+                                "stores",
+                                "priceLevel",
+                                "priceLevels",
+                                "inbox",
+                                "message",
+                                "messages",
+                                "receiver",
+                                "receivers",
+                                "sender",
+                                "isRead",
+                                "isSent",
+                                "draft",
+                                "drafts",
+                                "attachment",
+                                "attachments",
+                                "agent",
+                                "agents",
+                                "industry",
+                                "industries",
+                                "address",
+                                "addresses",
+                                "street",
+                                "city",
+                                "state",
+                                "country",
+                                "postalCode",
+                                "zip",
+                                "unit",
+                                "jobPost",
+                                "occupation",
+                                "occupations",
+                                "resume",
+                                "condicate",
+                                "skill",
+                                "skills",
+                                "experience",
+                                "experiences",
+                                "project",
+                                "projects",
+                                "task",
+                                "tasks",
+                                "sprint",
+                                "sprints",
+                                "due",
+                                "asignee",
+                                "asignees",
+                                "score",
+                                "priority",
+                                "balance",
+                                "type",
+                                "primary",
+                                "status",
+                                "name",
+                                "description",
+                                "id",
+                                "createdAt",
+                                "updatedAt",
+                                "deletedAt",
+                                "active",
+                                "owner",
+                                "lock",
+                                "canUpdate",
+                                "canDelete",
+                                "canRead",
+                                "tag",
+                                "tags",
+                                "count",
+                                "like",
+                                "dislike",
+                                "comment",
+                                "review",
+                                "rate",
+                                "category",
+                                "department"
+                            ]
+                        }
                     }
                 }
             }
         },
-        "StringFormat": {
-            "description": "String format such as email, password, uuid, ip6, ip4 and so more",
-            "enum": [
-                "short",
-                "long",
-                "email",
-                "hostname",
-                "ipv4",
-                "ipv6",
-                "uuid",
-                "url",
-                "uri",
-                "uri-reference",
-                "iri",
-                "iri-reference",
-                "date",
-                "time",
-                "date-time",
-                "regex",
-                "phone-number",
-                "credit-card",
-                "isbn",
-                "issn",
-                "zipcode",
-                "postal-code",
-                "currency",
-                "mac-address",
-                "alphanumeric",
-                "hexadecimal",
-                "base64",
-                "binary",
-                "json",
-                "slug",
-                "username",
-                "password",
-                "country-code",
-                "language-code",
-                "timezone",
-                "html-color",
-                "semver",
-                "domain-name",
-                "subdomain",
-                "file-path",
-                "sha256",
-                "sha512",
-                "md5",
-                "jwt",
-                "object-id"
+        "IntegerPropertyOptions": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "IntegerPropertyOptions",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/CommonNumberPropertyOptions"
+                },
+                {
+                    "properties": {
+                        "type": {
+                            "const": "integer"
+                        },
+                        "default": {
+                            "type": "integer"
+                        },
+                        "isIn": {
+                            "type": "array",
+                            "items": {
+                                "oneOf": [
+                                    {
+                                        "type": "integer"
+                                    }
+                                ]
+                            }
+                        },
+                        "isNotIn": {
+                            "type": "array",
+                            "items": {
+                                "oneOf": [
+                                    {
+                                        "type": "integer"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "type"
+                    ]
+                }
+            ],
+            "definitions": {
+                "CommonNumberPropertyOptions": {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "title": "CommonNumberPropertyOptions",
+                    "properties": {
+                        "isEven": {
+                            "type": "boolean"
+                        },
+                        "isOdd": {
+                            "type": "boolean"
+                        },
+                        "numberFormat": {
+                            "$ref": "#/definitions/NumberFormat"
+                        },
+                        "minimum": {
+                            "type": "number"
+                        },
+                        "maximum": {
+                            "type": "number"
+                        },
+                        "moreThanProperty": {
+                            "$ref": "#/definitions/PropertyName"
+                        },
+                        "lessThanProperty": {
+                            "$ref": "#/definitions/PropertyName"
+                        }
+                    },
+                    "definitions": {
+                        "NumberFormat": {
+                            "$schema": "http://json-schema.org/draft-07/schema#",
+                            "title": "NumberFormat",
+                            "description": "Number format such as rate (0-5), percentage (0-100)",
+                            "enum": [
+                                [
+                                    "integer",
+                                    "float",
+                                    "double",
+                                    "decimal",
+                                    "positive-integer",
+                                    "negative-integer",
+                                    "non-negative-integer",
+                                    "non-positive-integer",
+                                    "percentage",
+                                    "currency",
+                                    "rate",
+                                    "scientific-notation",
+                                    "hexadecimal",
+                                    "octal",
+                                    "binary",
+                                    "roman-numeral",
+                                    "prime-number",
+                                    "natural-number",
+                                    "odd-number",
+                                    "even-number",
+                                    "latitude",
+                                    "longitude",
+                                    "timezone-offset",
+                                    "temperature-celsius",
+                                    "temperature-fahrenheit",
+                                    "angle-degree",
+                                    "angle-radian",
+                                    "year",
+                                    "month",
+                                    "day",
+                                    "age",
+                                    "count",
+                                    "rating",
+                                    "probability",
+                                    "weight",
+                                    "height",
+                                    "distance",
+                                    "speed",
+                                    "time-duration",
+                                    "voltage",
+                                    "current",
+                                    "frequency",
+                                    "acceleration"
+                                ]
+                            ]
+                        },
+                        "PropertyName": {
+                            "$schema": "http://json-schema.org/draft-07/schema#",
+                            "title": "PropertyName",
+                            "enum": [
+                                "firstName",
+                                "lastName",
+                                "middleName",
+                                "fullName",
+                                "dob",
+                                "gender",
+                                "ssn",
+                                "dl",
+                                "etnicity",
+                                "salary",
+                                "salaryType",
+                                "username",
+                                "password",
+                                "email",
+                                "emails",
+                                "phone",
+                                "phones",
+                                "website",
+                                "websites",
+                                "socialMedia",
+                                "facebook",
+                                "instagram",
+                                "tiktok",
+                                "twitter",
+                                "linkedin",
+                                "sso",
+                                "permission",
+                                "permissions",
+                                "role",
+                                "roles",
+                                "clockIn",
+                                "clockOut",
+                                "employmentType",
+                                "schedule",
+                                "startTime",
+                                "endTime",
+                                "product",
+                                "products",
+                                "sku",
+                                "skus",
+                                "upc",
+                                "barcode",
+                                "model",
+                                "make",
+                                "attribute",
+                                "attributes",
+                                "price",
+                                "prices",
+                                "quantity",
+                                "quantities",
+                                "store",
+                                "stores",
+                                "priceLevel",
+                                "priceLevels",
+                                "inbox",
+                                "message",
+                                "messages",
+                                "receiver",
+                                "receivers",
+                                "sender",
+                                "isRead",
+                                "isSent",
+                                "draft",
+                                "drafts",
+                                "attachment",
+                                "attachments",
+                                "agent",
+                                "agents",
+                                "industry",
+                                "industries",
+                                "address",
+                                "addresses",
+                                "street",
+                                "city",
+                                "state",
+                                "country",
+                                "postalCode",
+                                "zip",
+                                "unit",
+                                "jobPost",
+                                "occupation",
+                                "occupations",
+                                "resume",
+                                "condicate",
+                                "skill",
+                                "skills",
+                                "experience",
+                                "experiences",
+                                "project",
+                                "projects",
+                                "task",
+                                "tasks",
+                                "sprint",
+                                "sprints",
+                                "due",
+                                "asignee",
+                                "asignees",
+                                "score",
+                                "priority",
+                                "balance",
+                                "type",
+                                "primary",
+                                "status",
+                                "name",
+                                "description",
+                                "id",
+                                "createdAt",
+                                "updatedAt",
+                                "deletedAt",
+                                "active",
+                                "owner",
+                                "lock",
+                                "canUpdate",
+                                "canDelete",
+                                "canRead",
+                                "tag",
+                                "tags",
+                                "count",
+                                "like",
+                                "dislike",
+                                "comment",
+                                "review",
+                                "rate",
+                                "category",
+                                "department"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "BooleanPropertyOptions": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "BooleanPropertyOptions",
+            "properties": {
+                "type": {
+                    "const": "boolean"
+                },
+                "default": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "type"
             ]
+        },
+        "DatePropertyOptions": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "DatePropertyOptions",
+            "properties": {
+                "type": {
+                    "const": "date"
+                },
+                "isFutureDate": {
+                    "type": "boolean"
+                },
+                "isPastDate": {
+                    "type": "boolean"
+                },
+                "default": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type"
+            ]
+        },
+        "ObjectPropertyOptions": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "ObjectPropertyOptions",
+            "properties": {
+                "type": {
+                    "const": "object"
+                },
+                "target": {
+                    "$ref": "#/definitions/ModelName"
+                },
+                "default": {
+                    "type": "object"
+                }
+            },
+            "required": [
+                "type",
+                "target"
+            ],
+            "definitions": {
+                "ModelName": {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "title": "ModelName",
+                    "enum": [
+                        "User",
+                        "Role",
+                        "Permission",
+                        "UserSession",
+                        "UserInfo",
+                        "UserDevice",
+                        "Department",
+                        "Product",
+                        "Category",
+                        "Price",
+                        "Quantity",
+                        "PriceLevel",
+                        "Store",
+                        "Warehouse",
+                        "Sku",
+                        "ProductAttribute",
+                        "Discount",
+                        "ProductReview",
+                        "ProductComment",
+                        "Customer",
+                        "CustomerAccount",
+                        "CustomerEmail",
+                        "CustomerPhone",
+                        "CustomerWebsite",
+                        "CustomerContact",
+                        "MessageDraft",
+                        "Message",
+                        "Inbox",
+                        "Company",
+                        "Agent",
+                        "SocialMedia",
+                        "Contact",
+                        "Email",
+                        "Addresss",
+                        "Phone",
+                        "Website",
+                        "Occupation",
+                        "JobPost",
+                        "Resume",
+                        "Candidate",
+                        "CoverLetter",
+                        "Certificate",
+                        "Skill",
+                        "Experience",
+                        "Project",
+                        "Task",
+                        "TaskComment",
+                        "Sprint",
+                        "Blog",
+                        "Article",
+                        "BlogComment",
+                        "BlogReview",
+                        "ArticleImage",
+                        "Menu",
+                        "MenuItem",
+                        "Resource",
+                        "Component",
+                        "Page",
+                        "Notification",
+                        "EmailEvent"
+                    ]
+                }
+            }
+        },
+        "ArrayPropertyOptions": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "ArrayPropertyOptions",
+            "properties": {
+                "type": {
+                    "const": "array"
+                },
+                "default": {
+                    "type": "array"
+                },
+                "minSize": {
+                    "type": "integer"
+                },
+                "maxSize": {
+                    "type": "integer"
+                },
+                "items": {
+                    "$ref": "#/definitions/PropertyOptions"
+                }
+            },
+            "required": [
+                "type",
+                "items"
+            ],
+            "definitions": {
+                "PropertyOptions": {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "title": "PropertyOptions",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/CommonProperty"
+                        },
+                        {
+                            "$ref": "#/definitions/UiProperty"
+                        },
+                        {
+                            "oneOf": [
+                                {
+                                    "$ref": "#/definitions/String"
+                                },
+                                {
+                                    "$ref": "#/definitions/Number"
+                                },
+                                {
+                                    "$ref": "#/definitions/Integer"
+                                },
+                                {
+                                    "$ref": "#/definitions/Boolean"
+                                },
+                                {
+                                    "$ref": "#/definitions/Date"
+                                },
+                                {
+                                    "$ref": "#/definitions/Object"
+                                },
+                                {
+                                    "$ref": "#/definitions/Array"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "RelationType": {
+            "title": "Relation Type",
+            "enum": [
+                "many-to-many",
+                "many-to-one",
+                "one-to-one",
+                "one-to-many"
+            ]
+        },
+        "OnDelete": {
+            "enum": [
+                "RESTRICT",
+                "CASCADE",
+                "SET NULL",
+                "DEFAULT",
+                "NO ACTION"
+            ],
+            "default": "SET NULL"
+        },
+        "OnUpdate": {
+            "enum": [
+                "RESTRICT",
+                "CASCADE",
+                "SET NULL",
+                "DEFAULT",
+                "NO ACTION"
+            ],
+            "default": "SET NULL"
         },
         "InputType": {
             "description": "UI input type",
@@ -896,7 +1790,6 @@
             ]
         },
         "Icon": {
-            "description": "Google Material Symbols",
             "enum": [
                 "search",
                 "home",
@@ -4393,6 +5286,447 @@
                 "view_object_track",
                 "nest_gale_wifi"
             ]
+        },
+        "StringFormat": {
+            "description": "String format such as email, password, uuid, ip6, ip4 and so more",
+            "enum": [
+                "short",
+                "long",
+                "email",
+                "hostname",
+                "ipv4",
+                "ipv6",
+                "uuid",
+                "url",
+                "uri",
+                "uri-reference",
+                "iri",
+                "iri-reference",
+                "date",
+                "time",
+                "date-time",
+                "regex",
+                "phone-number",
+                "credit-card",
+                "isbn",
+                "issn",
+                "zipcode",
+                "postal-code",
+                "currency",
+                "mac-address",
+                "alphanumeric",
+                "hexadecimal",
+                "base64",
+                "binary",
+                "json",
+                "slug",
+                "username",
+                "password",
+                "country-code",
+                "language-code",
+                "timezone",
+                "html-color",
+                "semver",
+                "domain-name",
+                "subdomain",
+                "file-path",
+                "sha256",
+                "sha512",
+                "md5",
+                "jwt",
+                "object-id"
+            ]
+        },
+        "CommonProperty": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/General"
+                },
+                {
+                    "$ref": "#/definitions/Transform"
+                },
+                {
+                    "$ref": "#/definitions/Validation"
+                },
+                {
+                    "$ref": "#/definitions/Encryption"
+                },
+                {
+                    "$ref": "#/definitions/Dto"
+                }
+            ],
+            "required": [
+                "type",
+                "name"
+            ]
+        },
+        "UiProperty": {
+            "properties": {
+                "label": {
+                    "type": "string"
+                },
+                "mapTo": {
+                    "$ref": "#/definitions/Property"
+                },
+                "inputType": {
+                    "$ref": "#/definitions/InputType"
+                },
+                "prefixText": {
+                    "type": "string"
+                },
+                "suffixText": {
+                    "type": "string"
+                },
+                "prefixIcon": {
+                    "$ref": "#/definitions/Icon"
+                },
+                "suffixIcon": {
+                    "$ref": "#/definitions/Icon"
+                },
+                "dependsOn": {
+                    "$ref": "#/definitions/Property"
+                },
+                "group": {
+                    "type": "string"
+                },
+                "bold": {
+                    "type": "boolean"
+                },
+                "italic": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "String": {
+            "properties": {
+                "type": {
+                    "const": "string"
+                },
+                "default": {
+                    "type": "string"
+                },
+                "stringFormat": {
+                    "$ref": "#/definitions/StringFormat"
+                },
+                "minLength": {
+                    "type": "integer"
+                },
+                "maxLength": {
+                    "type": "integer"
+                },
+                "isIn": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "isNotIn": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "contains": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "notContains": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "startWith": {
+                    "type": "string"
+                },
+                "notStartWith": {
+                    "type": "string"
+                },
+                "endWith": {
+                    "type": "string"
+                },
+                "notEndWith": {
+                    "type": "string"
+                },
+                "containProperty": {
+                    "$ref": "#/definitions/Property"
+                },
+                "notContainProperty": {
+                    "$ref": "#/definitions/Property"
+                },
+                "longerThanProperty": {
+                    "$ref": "#/definitions/Property"
+                },
+                "shorterThanProperty": {
+                    "$ref": "#/definitions/Property"
+                }
+            }
+        },
+        "Number": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/CommonNumber"
+                },
+                {
+                    "properties": {
+                        "type": {
+                            "const": "number"
+                        },
+                        "default": {
+                            "type": "number"
+                        },
+                        "isIn": {
+                            "type": "array",
+                            "items": {
+                                "oneOf": [
+                                    {
+                                        "type": "number"
+                                    }
+                                ]
+                            }
+                        },
+                        "isNotIn": {
+                            "type": "array",
+                            "items": {
+                                "oneOf": [
+                                    {
+                                        "type": "number"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "type"
+                    ]
+                }
+            ]
+        },
+        "Integer": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/CommonNumber"
+                },
+                {
+                    "properties": {
+                        "type": {
+                            "const": "integer"
+                        },
+                        "default": {
+                            "type": "integer"
+                        },
+                        "isIn": {
+                            "type": "array",
+                            "items": {
+                                "oneOf": [
+                                    {
+                                        "type": "integer"
+                                    }
+                                ]
+                            }
+                        },
+                        "isNotIn": {
+                            "type": "array",
+                            "items": {
+                                "oneOf": [
+                                    {
+                                        "type": "integer"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "type"
+                    ]
+                }
+            ]
+        },
+        "Boolean": {
+            "properties": {
+                "type": {
+                    "const": "boolean"
+                },
+                "default": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "type"
+            ]
+        },
+        "Date": {
+            "properties": {
+                "type": {
+                    "const": "date"
+                },
+                "isFutureDate": {
+                    "type": "boolean"
+                },
+                "isPastDate": {
+                    "type": "boolean"
+                },
+                "default": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type"
+            ]
+        },
+        "Object": {
+            "properties": {
+                "type": {
+                    "const": "object"
+                },
+                "target": {
+                    "$ref": "#/definitions/Model"
+                },
+                "default": {
+                    "type": "object"
+                }
+            },
+            "required": [
+                "type",
+                "target"
+            ]
+        },
+        "Array": {
+            "properties": {
+                "type": {
+                    "const": "array"
+                },
+                "default": {
+                    "type": "array"
+                },
+                "minSize": {
+                    "type": "integer"
+                },
+                "maxSize": {
+                    "type": "integer"
+                },
+                "items": {
+                    "$ref": "#/definitions/Property"
+                }
+            },
+            "required": [
+                "type",
+                "items"
+            ]
+        },
+        "Property": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/CommonProperty"
+                },
+                {
+                    "$ref": "#/definitions/UiProperty"
+                },
+                {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/String"
+                        },
+                        {
+                            "$ref": "#/definitions/Number"
+                        },
+                        {
+                            "$ref": "#/definitions/Integer"
+                        },
+                        {
+                            "$ref": "#/definitions/Boolean"
+                        },
+                        {
+                            "$ref": "#/definitions/Date"
+                        },
+                        {
+                            "$ref": "#/definitions/Object"
+                        },
+                        {
+                            "$ref": "#/definitions/Array"
+                        }
+                    ]
+                }
+            ]
+        },
+        "Model": {
+            "properties": {
+                "type": {
+                    "enum": [
+                        "class",
+                        "enum",
+                        "type",
+                        "interface",
+                        "constant"
+                    ]
+                },
+                "implementings": {
+                    "type": "array",
+                    "description": "Which abstract model is extended by the entity?",
+                    "items": {
+                        "$ref": "#/definitions/ModelName"
+                    }
+                },
+                "extendings": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ModelName",
+                        "description": "Which abstract model is extended by the entity?"
+                    }
+                },
+                "uniques": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PropertyName"
+                    }
+                },
+                "properties": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "$ref": "#/definitions/PropertyOptions"
+                    }
+                },
+                "relations": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "$ref": "#/definitions/RelationPropertyOptions"
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "CommonNumber": {
+            "properties": {
+                "isEven": {
+                    "type": "boolean"
+                },
+                "isOdd": {
+                    "type": "boolean"
+                },
+                "numberFormat": {
+                    "$ref": "#/definitions/NumberFormat"
+                },
+                "minimum": {
+                    "type": "number"
+                },
+                "maximum": {
+                    "type": "number"
+                },
+                "moreThanProperty": {
+                    "$ref": "#/definitions/Property"
+                },
+                "lessThanProperty": {
+                    "$ref": "#/definitions/Property"
+                }
+            }
         }
     }
 }
