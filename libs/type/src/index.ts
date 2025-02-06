@@ -37,6 +37,7 @@ export * from './lib/json/raw/object';
 export * from './lib/json/raw/primitive';
 export * from './lib/json/raw/string';
 export * from './lib/json/raw/type';
+export * from './lib/model/model';
 export * from './lib/num/byte';
 export * from './lib/num/fraction';
 export * from './lib/num/int-range';

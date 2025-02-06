@@ -21,9 +21,6 @@
     "rline",
     "library"
   ],
-  "dependencies": {
-    "@swc/helpers": "~0.5.11"
-  },
   "files": [
     "*.schema.json"
   ],

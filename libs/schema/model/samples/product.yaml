@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=../model.schema.json
+properties:
+  - name: name
+    type: array
+    items:
+      type: string
+
+relations:
+  - type: many-to-many
+    target: Category
+    eager: true
+
+uniques:
+  - name

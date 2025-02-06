@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "ServerSchema",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "port": {
+            "type": "number",
+            "minimum": 3000,
+            "maximum": 5000
+        }
+    },
+    "additionalProperties": false
+}
