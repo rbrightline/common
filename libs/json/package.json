@@ -1,6 +1,6 @@
 {
   "name": "@rline/json",
-  "version": "9.3.2",
+  "version": "9.4.0",
   "description": "JSON Schema compiler",
   "license": "MIT",
   "author": {
@@ -34,19 +34,16 @@
     "json-to-typescript"
   ],
   "scripts": {
-    "prepublish": "sh ./../../.scripts/pre-publish.sh",
-    "prebuild": "sh ./../../.scripts/pre-build.sh",
-    "preinstall": "sh ./../../.scripts/pre-install.sh",
     "workspace:remove": "pnpm remove @rline/fs @rline/names @rline/type @rline/utils",
     "workspace:add": "pnpm add --workspace @rline/fs @rline/names @rline/type @rline/utils",
     "workspace": "pnpm workspace:remove && pnpm workspace:add"
   },
   "dependencies": {
-    "@rline/fs": "9.3.0",
-    "@rline/is": "9.3.0",
-    "@rline/names": "9.3.0",
-    "@rline/type": "9.3.0",
-    "@rline/utils": "9.3.0",
+    "@rline/fs": "9.4.0",
+    "@rline/is": "9.4.0",
+    "@rline/names": "9.4.0",
+    "@rline/type": "9.4.0",
+    "@rline/utils": "9.4.0",
     "@swc/helpers": "~0.5.11",
     "commander": "^13.1.0"
   },
