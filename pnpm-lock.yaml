@@ -188,11 +188,11 @@ importers:
   libs/printer:
     dependencies:
       '@rline/is':
-        specifier: 9.4.1
-        version: 9.4.1
+        specifier: workspace:*
+        version: link:../is
       '@rline/names':
-        specifier: 9.4.0
-        version: 9.4.0
+        specifier: workspace:*
+        version: link:../names
       '@rline/type':
         specifier: workspace:*
         version: link:../type
@@ -1453,9 +1453,6 @@ packages:
 
   '@rline/is@9.4.0':
     resolution: {integrity: sha512-TB3Naaw0ItHurACULmXPh2zP2rlz1cw7uI3utcylWhK51z78KMWa6jp/htrUIhtrvZMfXA9gNlP/aeni8Kqwiw==}
-
-  '@rline/is@9.4.1':
-    resolution: {integrity: sha512-p0frJnQ67K0nBKHh7gNr1KiNgP3A10AqEwv+kWKTXuTB9DRu2VWoU7DILOOKG5mZOASZVmCY0b1nQjaXawc2dA==}
 
   '@rline/names@9.4.0':
     resolution: {integrity: sha512-nfUtpC1h50epJRD5d40kYgP8HLgIJ/R7Fg+l1nYxLOXFYIP/AXZ1YQvsZfkAXPZbLHgpe9HRKeSXsf6ceXl9Gw==}
@@ -7411,10 +7408,6 @@ snapshots:
       '@swc/helpers': 0.5.15
 
   '@rline/is@9.4.0':
-    dependencies:
-      '@swc/helpers': 0.5.15
-
-  '@rline/is@9.4.1':
     dependencies:
       '@swc/helpers': 0.5.15
 

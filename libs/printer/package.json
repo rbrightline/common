@@ -35,8 +35,8 @@
     "workspace": "pnpm workspace:remove && pnpm workspace:add"
   },
   "dependencies": {
-    "@rline/is": "9.4.1",
-    "@rline/names": "9.4.0",
+    "@rline/is": "workspace:*",
+    "@rline/names": "workspace:*",
     "@rline/type": "workspace:*",
     "@swc/helpers": "~0.5.11"
   },

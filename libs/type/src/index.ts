@@ -16,6 +16,8 @@ export * from './lib/constant/mark';
 export * from './lib/errors/access-denied.error';
 export * from './lib/errors/empty-array';
 export * from './lib/errors/empty-object.error';
+export * from './lib/errors/invalid-input.error';
+export * from './lib/errors/invalid-property-type.error';
 export * from './lib/errors/invalid-schema.error';
 export * from './lib/errors/item-not-found.error';
 export * from './lib/errors/key-not-found.error';

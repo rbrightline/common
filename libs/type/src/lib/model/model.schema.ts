@@ -272,28 +272,28 @@ export type _String = {
 };
 export type _Number = _CommonNumber & {
   type: 'number';
-  default: number;
+  default?: number;
   isIn: number[];
   isNotIn: number[];
 };
 export type _Integer = _CommonNumber & _IntergerPropertyOptionsRaw;
 export type _IntergerPropertyOptionsRaw = {
   type: 'integer';
-  default: number;
+  default?: number;
   isIn: number[];
   isNotIn: number[];
 };
-export type _Boolean = { type: 'boolean'; default: boolean };
+export type _Boolean = { type: 'boolean'; default?: boolean };
 export type _Date = {
   type: 'date';
   isFutureDate: boolean;
   isPastDate: boolean;
-  default: string;
+  default?: string;
 };
-export type _Object = { type: 'object'; target: ModelName; default: any };
+export type _Object = { type: 'object'; target: ModelName; default?: any };
 export type _Array = {
   type: 'array';
-  default: PropertyOptions[];
+  default?: PropertyOptions[];
   minSize: number;
   maxSize: number;
   items: PropertyOptions;

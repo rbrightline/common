@@ -1,3 +1,3 @@
 export interface Printable {
-  print(): string;
+  print(options?: string): string;
 }

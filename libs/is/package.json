@@ -1,6 +1,6 @@
 {
   "name": "@rline/is",
-  "version": "9.4.1",
+  "version": "9.4.2",
   "description": "Utilities for better typescript types",
   "author": {
     "email": "robert.brightline@gmail.com",
