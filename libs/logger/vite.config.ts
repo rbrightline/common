@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite';
 
+process.env.LOG_LEVEL = 'DEBUG';
+
 export default defineConfig({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/libs/logger',

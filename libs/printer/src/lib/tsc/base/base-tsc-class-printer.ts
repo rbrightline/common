@@ -1,7 +1,9 @@
 import { ne } from '@rline/is';
-import { ClassPrinter } from '../../printer';
+import { ClassPrinter, ClassPrinterOptions } from '../../printer';
 
-export class BaseTscClassPrinter extends ClassPrinter {
+export class BaseTscClassPrinter<
+  T extends ClassPrinterOptions = ClassPrinterOptions
+> extends ClassPrinter<T> {
   protected override asignment(): string {
     return '';
   }
@@ -18,7 +20,7 @@ export class BaseTscClassPrinter extends ClassPrinter {
   }
 
   protected override extendings(): string {
-    return ``;
+    return '';
   }
 
   protected override generics(): string {
@@ -26,7 +28,7 @@ export class BaseTscClassPrinter extends ClassPrinter {
   }
 
   protected override implements(): string {
-    return ``;
+    return '';
   }
 
   protected override opening(): string {
@@ -38,7 +40,14 @@ export class BaseTscClassPrinter extends ClassPrinter {
   }
 
   protected override decleration(): string {
-    return [this.exporting(), this.type(), this.className(), this.asignment()]
+    return [
+      this.exporting(),
+      this.type(),
+      this.className(),
+      this.extendings(),
+      this.implements(),
+      this.asignment(),
+    ]
       .filter(ne)
       .join(' ');
   }

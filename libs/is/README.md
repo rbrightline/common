@@ -14,9 +14,12 @@ pnpm add @rline/is
 
 ## Features
 
-- type check
-- empty value check
-- strict value initialization
+- type
+- empty value
+- not empty value
+- required value
+- optional value
+- required value
 - default value
 
 ## Documentation

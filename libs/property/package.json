@@ -1,0 +1,73 @@
+{
+  "name": "@rline/property",
+  "version": "9.4.0",
+  "description": "Property decorator for data transfer objects",
+  "author": {
+    "email": "robert.brightline@gmail.com",
+    "name": "Robert Brightline",
+    "url": "https://rbrightline.github.io"
+  },
+  "homepage": "https://rbrightline.github.io/common/property",
+  "repository": {
+    "url": "https://github.com/rbrightline/common/tree/main/libs/property",
+    "type": "github"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "keywords": [
+    "rline",
+    "library"
+  ],
+  "scripts": {
+    "workspace:remove": "pnpm remove @rline/is",
+    "workspace:add": "pnpm add --workspace @rline/is",
+    "workspace": "pnpm workspace:remove && pnpm workspace:add"
+  },
+  "peerDependencies": {
+    "@nestjs/swagger": "^11.0.3"
+  },
+  "dependencies": {
+    "@rline/is": "workspace:*",
+    "@rline/type": "workspace:^",
+    "@rline/validation": "workspace:^",
+    "@swc/helpers": "~0.5.11"
+  },
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "module": "./dist/index.js",
+  "nx": {
+    "sourceRoot": "libs/property/src",
+    "projectType": "library",
+    "targets": {
+      "build": {
+        "executor": "@nx/js:swc",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "libs/property/dist",
+          "main": "libs/property/src/index.ts",
+          "tsConfig": "libs/property/tsconfig.lib.json",
+          "skipTypeCheck": false,
+          "stripLeadingPaths": true
+        }
+      }
+    },
+    "name": "property"
+  }
+}

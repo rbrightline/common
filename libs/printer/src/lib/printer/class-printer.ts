@@ -8,8 +8,11 @@ export type ClassPrinterOptions = {
   name: string;
 };
 
-export abstract class ClassPrinter implements Printable {
-  constructor(protected readonly options: ClassPrinterOptions) {}
+export abstract class ClassPrinter<
+  T extends ClassPrinterOptions = ClassPrinterOptions
+> implements Printable
+{
+  constructor(protected readonly options: T) {}
   /**
    * print the export keyword
    */

@@ -32,7 +32,7 @@ export type ModelName =
   | 'SocialMedia'
   | 'Contact'
   | 'Email'
-  | 'Addresss'
+  | 'Address'
   | 'Phone'
   | 'Website'
   | 'Occupation'
@@ -190,6 +190,16 @@ export type PropertyName =
 export type PropertyOptions = (_CommonProperty & _UiProperty) &
   (_String | _Number | _Integer | _Boolean | _Date | _Object | _Array);
 
+export type StringOptions = (_CommonProperty & _UiProperty) & _String;
+export type NumberOptions = (_CommonNumber & _CommonProperty & _UiProperty) &
+  _Number;
+export type IntegerOptions = (_CommonNumber & _CommonProperty & _UiProperty) &
+  _Integer;
+export type BooleanOptions = (_CommonProperty & _UiProperty) & _Boolean;
+export type DateOptions = (_CommonProperty & _UiProperty) & _Date;
+export type ObjectOptions = (_CommonProperty & _UiProperty) & _Object;
+export type ArrayOptions = (_CommonProperty & _UiProperty) & _Array;
+
 export type RelationOptions = _UiProperty & _RelationPropertyOptionsRaw;
 export type _RelationType =
   | 'many-to-many'
@@ -244,8 +254,8 @@ export type _UiProperty = {
   inputType?: _InputType;
   prefixText?: string;
   suffixText?: string;
-  prefixIcon?: _Icon;
-  suffixIcon?: _Icon;
+  prefixIcon?: Icon;
+  suffixIcon?: Icon;
   dependsOn?: PropertyName;
   group?: string;
   bold?: boolean;
@@ -254,7 +264,7 @@ export type _UiProperty = {
 export type _String = {
   type?: 'string';
   default?: string;
-  stringFormat?: _StringFormat;
+  stringFormat?: StringFormat;
   minLength?: number;
   maxLength?: number;
   isIn?: string[];
@@ -298,7 +308,7 @@ export type _Array = {
   maxSize: number;
   items: PropertyOptions;
 };
-export type _NumberFormat =
+export type NumberFormat =
   | 'integer'
   | 'float'
   | 'double'
@@ -353,13 +363,13 @@ export type _PropertyType =
 export type _CommonNumber = {
   isEven?: boolean;
   isOdd?: boolean;
-  numberFormat?: _NumberFormat;
+  numberFormat?: NumberFormat;
   minimum?: number;
   maximum?: number;
   moreThanProperty?: PropertyName;
   lessThanProperty?: PropertyName;
 };
-export type _StringFormat =
+export type StringFormat =
   | 'short'
   | 'long'
   | 'email'
@@ -425,7 +435,7 @@ export type _InputType =
   | 'checkbox-group'
   | 'radio'
   | 'radio-group';
-export type _Icon =
+export type Icon =
   | 'search'
   | 'home'
   | 'menu'

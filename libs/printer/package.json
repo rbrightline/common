@@ -35,9 +35,9 @@
     "workspace": "pnpm workspace:remove && pnpm workspace:add"
   },
   "dependencies": {
-    "@rline/is": "workspace:*",
-    "@rline/names": "workspace:*",
-    "@rline/type": "workspace:*",
+    "@rline/is": "workspace:^",
+    "@rline/names": "workspace:^",
+    "@rline/type": "workspace:^",
     "@swc/helpers": "~0.5.11"
   },
   "type": "commonjs",

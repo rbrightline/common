@@ -20,16 +20,14 @@
     "rline", 
     "library"
   ],
-  "scripts": {
-    "prepublish": "sh ./../../.scripts/pre-publish.sh",
-    "prebuild": "sh ./../../.scripts/pre-build.sh",
-    "preinstall": "sh ./../../.scripts/pre-install.sh",
-    "workspace:remove": "pnpm remove @rline/is",
-    "workspace:add": "pnpm add --workspace @rline/is",
+    "scripts": {
+    "workspace:remove": "pnpm remove @rline/is @rline/type",
+    "workspace:add": "pnpm add --workspace @rline/is @rline/type",
     "workspace": "pnpm workspace:remove && pnpm workspace:add"
   },
   "dependencies": {
-    "@rline/is": "9.2.2",
+    "@rline/is": "workspace:^",
+    "@rline/type": "workspace:^",
     "@swc/helpers": "~0.5.11"
   },
   "type": "commonjs",
