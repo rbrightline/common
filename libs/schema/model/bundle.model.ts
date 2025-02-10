@@ -1,4 +1,4 @@
-export type ModelNameOptions =
+export type _ModelName =
   | 'User'
   | 'Role'
   | 'Permission'
@@ -32,7 +32,7 @@ export type ModelNameOptions =
   | 'SocialMedia'
   | 'Contact'
   | 'Email'
-  | 'Addresss'
+  | 'Address'
   | 'Phone'
   | 'Website'
   | 'Occupation'
@@ -59,7 +59,7 @@ export type ModelNameOptions =
   | 'Page'
   | 'Notification'
   | 'EmailEvent';
-export type PropertyNameOptions =
+export type _PropertyName =
   | 'firstName'
   | 'lastName'
   | 'middleName'
@@ -185,82 +185,79 @@ export type PropertyNameOptions =
   | 'rate'
   | 'category'
   | 'department';
-export type PropertyOptions = CommonPropertyOptions &
-  UiPropertyOptions &
-  (
-    | StringOptions
-    | NumberOptions
-    | IntegerOptions
-    | BooleanOptions
-    | DateOptions
-    | ObjectOptions
-    | ArrayOptions
-  );
-export type RelationOptions = UiPropertyOptions & RelationPropertyOptionsRaw;
-export type RelationType =
+export type _Property =
+  | (_CommonProperty & _UiProperty & _String)
+  | _Number
+  | _Integer
+  | _Boolean
+  | _Date
+  | _Object
+  | _Array;
+export type _Relation = _UiProperty & _RelationPropertyOptionsRaw;
+export type _RelationType =
   | 'many-to-many'
   | 'many-to-one'
   | 'one-to-one'
   | 'one-to-many';
-export type OnDelete =
+export type _OnDelete =
   | 'RESTRICT'
   | 'CASCADE'
   | 'SET NULL'
   | 'DEFAULT'
   | 'NO ACTION';
-export type OnUpdate =
+export type _OnUpdate =
   | 'RESTRICT'
   | 'CASCADE'
   | 'SET NULL'
   | 'DEFAULT'
   | 'NO ACTION';
-export type RelationPropertyOptionsRaw = {
-  name: PropertyNameOptions;
-  type: RelationType;
-  target: ModelNameOptions;
-  targetProperty: PropertyNameOptions;
+export type _RelationPropertyOptionsRaw = {
+  name: _PropertyName;
+  type: _RelationType;
+  target: _ModelName;
+  targetProperty: _PropertyName;
   eager: boolean;
   join: boolean;
   cascade: boolean;
-  onDelete: OnDelete;
-  onUpdate: OnUpdate;
+  onDelete: _OnDelete;
+  onUpdate: _OnUpdate;
 };
-export type CommonPropertyOptions = General &
-  Transform &
-  Validation &
-  Encryption &
-  Dto;
-export type General = {
-  name?: PropertyNameOptions;
-  type?: PropertyTypeOptions;
+export type _CommonProperty = _General &
+  _Transform &
+  _Validation &
+  _Encryption &
+  _Dto;
+export type _General = {
+  name?: _PropertyName;
+  type?: _PropertyType;
   description?: string;
   required?: boolean;
   unique?: boolean;
 };
-export type Transform = { acceptString?: boolean };
-export type Validation = {
-  equalToProperty?: PropertyNameOptions;
-  notEqualToProperty?: PropertyNameOptions;
+export type _Transform = { acceptString?: boolean };
+export type _Validation = {
+  equalToProperty?: _PropertyName;
+  notEqualToProperty?: _PropertyName;
 };
-export type Encryption = { hash?: boolean; encrypt?: boolean };
-export type Dto = { write?: boolean; read?: boolean; udpate?: boolean };
-export type UiPropertyOptions = {
+export type _Encryption = { hash?: boolean; encrypt?: boolean };
+export type _Dto = { write?: boolean; read?: boolean; udpate?: boolean };
+export type _UiProperty = {
   label?: string;
-  mapTo?: PropertyNameOptions;
-  inputType?: InputTypeOptions;
+  mapTo?: _PropertyName;
+  inputType?: _InputType;
   prefixText?: string;
   suffixText?: string;
-  prefixIcon?: IconOptions;
-  suffixIcon?: IconOptions;
-  dependsOn?: PropertyNameOptions;
+  prefixIcon?: _Icon;
+  suffixIcon?: _Icon;
+  dependsOn?: _PropertyName;
   group?: string;
   bold?: boolean;
   italic?: boolean;
 };
-export type StringOptions = {
+export type _String = {
   type?: 'string';
   default?: string;
-  stringFormat?: StringFormatOptions;
+  stringFormat?: _StringFormat;
   minLength?: number;
   maxLength?: number;
   isIn?: string[];
@@ -271,44 +268,40 @@ export type StringOptions = {
   notStartWith?: string;
   endWith?: string;
   notEndWith?: string;
-  containProperty?: PropertyNameOptions;
-  notContainProperty?: PropertyNameOptions;
-  longerThanProperty?: PropertyNameOptions;
-  shorterThanProperty?: PropertyNameOptions;
+  containProperty?: _PropertyName;
+  notContainProperty?: _PropertyName;
+  longerThanProperty?: _PropertyName;
+  shorterThanProperty?: _PropertyName;
 };
-export type NumberOptions = CommonNumberOptions & {
+export type _Number = _CommonNumber & {
   type: 'number';
   default: number;
   isIn: number[];
   isNotIn: number[];
 };
-export type IntegerOptions = CommonNumberOptions & IntergerPropertyOptionsRaw;
-export type IntergerPropertyOptionsRaw = {
+export type _Integer = _CommonNumber & _IntergerPropertyOptionsRaw;
+export type _IntergerPropertyOptionsRaw = {
   type: 'integer';
   default: number;
   isIn: number[];
   isNotIn: number[];
 };
-export type BooleanOptions = { type: 'boolean'; default: boolean };
-export type DateOptions = {
+export type _Boolean = { type: 'boolean'; default: boolean };
+export type _Date = {
   type: 'date';
   isFutureDate: boolean;
   isPastDate: boolean;
   default: string;
 };
-export type ObjectOptions = {
-  type: 'object';
-  target: ModelNameOptions;
-  default: any;
-};
-export type ArrayOptions = {
+export type _Object = { type: 'object'; target: _ModelName; default: any };
+export type _Array = {
   type: 'array';
-  default: PropertyOptions[];
+  default: _Property[];
   minSize: number;
   maxSize: number;
-  items: PropertyOptions;
+  items: _Property;
 };
-export type NumberFormatOptions =
+export type _NumberFormat =
   | 'integer'
   | 'float'
   | 'double'
@@ -352,7 +345,7 @@ export type NumberFormatOptions =
   | 'current'
   | 'frequency'
   | 'acceleration';
-export type PropertyTypeOptions =
+export type _PropertyType =
   | 'string'
   | 'number'
   | 'integer'
@@ -360,16 +353,16 @@ export type PropertyTypeOptions =
   | 'date'
   | 'object'
   | 'array';
-export type CommonNumberOptions = {
+export type _CommonNumber = {
   isEven?: boolean;
   isOdd?: boolean;
-  numberFormat?: NumberFormatOptions;
+  numberFormat?: _NumberFormat;
   minimum?: number;
   maximum?: number;
-  moreThanProperty?: PropertyNameOptions;
-  lessThanProperty?: PropertyNameOptions;
+  moreThanProperty?: _PropertyName;
+  lessThanProperty?: _PropertyName;
 };
-export type StringFormatOptions =
+export type _StringFormat =
   | 'short'
   | 'long'
   | 'email'
@@ -415,7 +408,7 @@ export type StringFormatOptions =
   | 'md5'
   | 'jwt'
   | 'object-id';
-export type InputTypeOptions =
+export type _InputType =
   | 'text'
   | 'textarea'
   | 'texteditor'
@@ -435,7 +428,7 @@ export type InputTypeOptions =
   | 'checkbox-group'
   | 'radio'
   | 'radio-group';
-export type IconOptions =
+export type _Icon =
   | 'search'
   | 'home'
   | 'menu'
@@ -3930,13 +3923,10 @@ export type IconOptions =
   | 'farsight_digital'
   | 'view_object_track'
   | 'nest_gale_wifi';
-export type ModelOptions = {
-  type?: 'class' | 'enum' | 'type' | 'interface' | 'constant';
-  implementings?: ModelNameOptions[];
-  extendings?: ModelNameOptions[];
-  uniques?: PropertyNameOptions[];
-  properties?: PropertyOptions[];
-  relations?: RelationOptions[];
+export type _Model = {
+  implementings?: _ModelName[];
+  extendings?: _ModelName[];
+  uniques?: _PropertyName[];
+  properties?: _Property[];
+  relations?: _Relation[];
 };
-
-const m: ModelOptions = {};

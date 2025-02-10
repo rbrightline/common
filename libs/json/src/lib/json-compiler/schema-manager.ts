@@ -77,8 +77,11 @@ export class SchemaManager {
    * @returns
    */
   protected title(filepath: string): string {
-    return names(getLastSegment(filepath).replace('.schema.json', ''))
-      .pascalCase;
+    return names(
+      getLastSegment(filepath)
+        .replace('.json', '')
+        .replace('.schema', 'Options')
+    ).pascalCase;
   }
 
   /**

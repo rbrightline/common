@@ -10,6 +10,14 @@
             "type": "string",
             "description": "Project's root directory, the relative path to the directory of the main schema file such as `./schemas` and `./src`"
         },
+        "prefix": {
+            "type": "string",
+            "minLength": 1
+        },
+        "suffix": {
+            "type": "string",
+            "minLength": 1
+        },
         "main": {
             "type": "string",
             "description": "The entity file such as `main.schema.json` or `schema.json` or `model.schema.json`"

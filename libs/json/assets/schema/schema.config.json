@@ -2,6 +2,8 @@
     "$schema": "https://raw.githubusercontent.com/rbrightline/common/refs/heads/main/libs/schema/schema-config.schema.json",
     "main": "model.schema.json",
     "root": "./",
+    "suffix": "",
+    "prefix": "",
     "output": {
         "schema": "./bundle.schema.json",
         "type": "./bundle.schema.ts"

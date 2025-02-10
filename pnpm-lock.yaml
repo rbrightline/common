@@ -143,19 +143,19 @@ importers:
   libs/json:
     dependencies:
       '@rline/fs':
-        specifier: 9.4.0
+        specifier: ^9.4.0
         version: 9.4.0
       '@rline/is':
         specifier: 9.4.0
         version: 9.4.0
       '@rline/names':
-        specifier: 9.4.0
+        specifier: ^9.4.0
         version: 9.4.0
       '@rline/type':
-        specifier: 9.4.0
-        version: 9.4.0
+        specifier: ^9.4.7
+        version: 9.4.7
       '@rline/utils':
-        specifier: 9.4.0
+        specifier: ^9.4.0
         version: 9.4.0
       '@swc/helpers':
         specifier: ~0.5.11
@@ -1571,6 +1571,9 @@ packages:
 
   '@rline/type@9.4.0':
     resolution: {integrity: sha512-gITxS8wNl44zy3pI1vOFA+/HngOhCFSKzyIC0Pe7cTbeP7kG37OrsxfZrBV8GlT708RgClTbDe2gGJ1Ggio4HQ==}
+
+  '@rline/type@9.4.7':
+    resolution: {integrity: sha512-APTYiPddqbrlStYhfvEiVEis/RPpTUh/UPVsM9adstgQpR4pEt5xoTPkXzut0U0R5mpYbyQPcbQIYhfO4zPRuQ==}
 
   '@rline/utils@9.4.0':
     resolution: {integrity: sha512-fMOM3UFhfzv6muHKRFTaHt1MHLSD9V9KJBfido8O1t/WiQJb2la4eL50GWCMlyGv2PObU7W+iFSodO9F2qTN8g==}
@@ -7620,6 +7623,10 @@ snapshots:
       '@swc/helpers': 0.5.15
 
   '@rline/type@9.4.0':
+    dependencies:
+      '@swc/helpers': 0.5.15
+
+  '@rline/type@9.4.7':
     dependencies:
       '@swc/helpers': 0.5.15
 

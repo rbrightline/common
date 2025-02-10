@@ -6,7 +6,7 @@ export class TypeManager {
   constructor(protected schema: JSONSchema) {}
 
   protected typeName(title: string) {
-    return `_${title}`;
+    return `${title}`;
   }
 
   /**
@@ -25,9 +25,9 @@ export class TypeManager {
     if (schema.$ref) {
       return this.typeName(schema.$ref.split('/').pop());
     } else if (schema.oneOf) {
-      return schema.oneOf.map((e) => this.getType(e)).join('|');
+      return `(${schema.oneOf.map((e) => this.getType(e)).join('|')})`;
     } else if (schema.allOf) {
-      return schema.allOf.map((e) => this.getType(e)).join('&');
+      return `(${schema.allOf.map((e) => this.getType(e)).join('&')})`;
     }
 
     const __getEnumType = (enums: (string | number)[]) =>
