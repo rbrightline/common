@@ -21,15 +21,15 @@
     "library"
   ],
   "scripts": {
-    "workspace:remove": "pnpm remove @rline/is",
-    "workspace:add": "pnpm add --workspace @rline/is",
+    "workspace:remove": "pnpm remove @rline/is @rline/type @rline/validation",
+    "workspace:add": "pnpm add --workspace  @rline/is@latest @rline/type@latest @rline/validation@latest",
     "workspace": "pnpm workspace:remove && pnpm workspace:add"
   },
   "peerDependencies": {
     "@nestjs/swagger": "^11.0.3"
   },
   "dependencies": {
-    "@rline/is": "workspace:*",
+    "@rline/is": "workspace:^",
     "@rline/type": "workspace:^",
     "@rline/validation": "workspace:^",
     "@swc/helpers": "~0.5.11"

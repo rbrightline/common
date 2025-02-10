@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=./bundle.model.json
+relations:
+  - type: many-to-many
+    target: Address
+    join: true

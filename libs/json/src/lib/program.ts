@@ -17,7 +17,7 @@ program
   .description(
     'CLI to compile json schemas into a single schema file and typescript types'
   )
-  .version('9.3.1');
+  .version('9.4.1');
 
 program
   .command('init')

@@ -206,7 +206,7 @@ importers:
         specifier: ^11.0.3
         version: 11.0.3(@nestjs/common@11.0.8(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@11.0.8(@nestjs/common@11.0.8(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1))(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)
       '@rline/is':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../is
       '@rline/type':
         specifier: workspace:^
@@ -268,14 +268,14 @@ importers:
   libs/validation:
     dependencies:
       '@rline/is':
-        specifier: workspace:^
-        version: link:../is
+        specifier: ^9.4.4
+        version: 9.4.4
       '@rline/logger':
-        specifier: workspace:^
-        version: link:../logger
+        specifier: ^9.4.0
+        version: 9.4.0
       '@rline/type':
-        specifier: workspace:^
-        version: link:../type
+        specifier: ^9.4.8
+        version: 9.4.8
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -1566,6 +1566,12 @@ packages:
   '@rline/is@9.4.0':
     resolution: {integrity: sha512-TB3Naaw0ItHurACULmXPh2zP2rlz1cw7uI3utcylWhK51z78KMWa6jp/htrUIhtrvZMfXA9gNlP/aeni8Kqwiw==}
 
+  '@rline/is@9.4.4':
+    resolution: {integrity: sha512-9zbu19A2UaEbfsyc6etOT82jxl30JQtlgckxJVZSgynP4fslo6xR4b+4LvcQttD4sGHXpbSEYkzaei+zijQrww==}
+
+  '@rline/logger@9.4.0':
+    resolution: {integrity: sha512-6eC48QCV60csTNnQDzvYkrcZR2WPpHu5oxUtJc3Hh0dcOu3PSZh5vQA5dvDZPLigyc0eKPEA8JCIIIpAt4yyaw==}
+
   '@rline/names@9.4.0':
     resolution: {integrity: sha512-nfUtpC1h50epJRD5d40kYgP8HLgIJ/R7Fg+l1nYxLOXFYIP/AXZ1YQvsZfkAXPZbLHgpe9HRKeSXsf6ceXl9Gw==}
 
@@ -1574,6 +1580,9 @@ packages:
 
   '@rline/type@9.4.7':
     resolution: {integrity: sha512-APTYiPddqbrlStYhfvEiVEis/RPpTUh/UPVsM9adstgQpR4pEt5xoTPkXzut0U0R5mpYbyQPcbQIYhfO4zPRuQ==}
+
+  '@rline/type@9.4.8':
+    resolution: {integrity: sha512-6S19XHxKdtUS2xbruGj2PsOCBgrg8xU6rwicCML8itY8n2z8oogaq28CCV3r0q+bMX6SKWxbUaYHRsTH4ZxCFw==}
 
   '@rline/utils@9.4.0':
     resolution: {integrity: sha512-fMOM3UFhfzv6muHKRFTaHt1MHLSD9V9KJBfido8O1t/WiQJb2la4eL50GWCMlyGv2PObU7W+iFSodO9F2qTN8g==}
@@ -7617,6 +7626,16 @@ snapshots:
     dependencies:
       '@swc/helpers': 0.5.15
 
+  '@rline/is@9.4.4':
+    dependencies:
+      '@swc/helpers': 0.5.15
+
+  '@rline/logger@9.4.0':
+    dependencies:
+      '@rline/color': 9.4.0
+      '@rline/type': 9.4.0
+      '@swc/helpers': 0.5.15
+
   '@rline/names@9.4.0':
     dependencies:
       '@rline/is': 9.4.0
@@ -7627,6 +7646,10 @@ snapshots:
       '@swc/helpers': 0.5.15
 
   '@rline/type@9.4.7':
+    dependencies:
+      '@swc/helpers': 0.5.15
+
+  '@rline/type@9.4.8':
     dependencies:
       '@swc/helpers': 0.5.15
 

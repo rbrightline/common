@@ -3,25 +3,9 @@
     "title": "ModelSchema",
     "type": "object",
     "properties": {
-        "implementings": {
-            "type": "array",
-            "description": "Which abstract model is extended by the entity?",
-            "items": {
-                "$ref": "./name/model-name.schema.json"
-            }
-        },
-        "extendings": {
-            "type": "array",
-            "items": {
-                "$ref": "./name/model-name.schema.json",
-                "description": "Which abstract model is extended by the entity?"
-            }
-        },
-        "uniques": {
-            "type": "array",
-            "items": {
-                "$ref": "./name/property-name.schema.json"
-            }
+        "name": {
+            "type": "string",
+            "$ref": "./name/model-name.schema.json"
         },
         "properties": {
             "type": "array",
@@ -42,6 +26,18 @@
             "uniqueItems": true,
             "items": {
                 "$ref": "./property/relation.schema.json"
+            }
+        },
+        "uniques": {
+            "type": "array",
+            "items": {
+                "$ref": "./name/property-name.schema.json"
+            }
+        },
+        "required": {
+            "type": "array",
+            "items": {
+                "$ref": "./name/property-name.schema.json"
             }
         }
     },

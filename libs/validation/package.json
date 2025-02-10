@@ -22,13 +22,13 @@
   ],
   "scripts": {
     "workspace:remove": "pnpm remove @rline/is @rline/type @rline/logger",
-    "workspace:add": "pnpm add --workspace @rline/is @rline/type @rline/logger",
+    "workspace:add": "pnpm add --workspace  @rline/is@latest @rline/type@latest @rline/logger@latest",
     "workspace": "pnpm workspace:remove && pnpm workspace:add"
   },
   "dependencies": {
-    "@rline/is": "workspace:^",
-    "@rline/logger": "workspace:^",
-    "@rline/type": "workspace:^",
+    "@rline/is": "^9.4.4",
+    "@rline/logger": "^9.4.0",
+    "@rline/type": "^9.4.8",
     "@swc/helpers": "~0.5.11",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1"
