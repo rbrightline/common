@@ -30,6 +30,9 @@ import {
   ObjectString,
 } from './transformer';
 
+/**
+ * Property validation options
+ */
 export type PropertyValidationOptions<
   T extends PropertyOptions = PropertyOptions
 > = T extends { type: 'object' }
@@ -38,6 +41,12 @@ export type PropertyValidationOptions<
   ? Omit<T, 'items'> & { items: PropertyValidationOptions }
   : T;
 
+/**
+ * Property validation decorator
+ * @param options {@link PropertyValidationOptions}
+ * @param validationOptions {@link ValidationOptions}
+ * @returns
+ */
 export function PropertyValidation(
   options: PropertyValidationOptions,
   validationOptions?: ValidationOptions

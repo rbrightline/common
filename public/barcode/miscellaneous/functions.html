@@ -112,10 +112,10 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
-                            <a href="#calculateUPCAChecksum" title="src/lib/barcode.ts" ><b>calculateUPCAChecksum</b>&nbsp;&nbsp;&nbsp;(src/.../barcode.ts)</a>
+                            <a href="#barcode" title="src/lib/barcode.ts" ><b>barcode</b>&nbsp;&nbsp;&nbsp;(src/.../barcode.ts)</a>
                         </li>
                         <li>
-                            <a href="#generateBarcode" title="src/lib/barcode.ts" ><b>generateBarcode</b>&nbsp;&nbsp;&nbsp;(src/.../barcode.ts)</a>
+                            <a href="#calculateUPCAChecksum" title="src/lib/barcode.ts" ><b>calculateUPCAChecksum</b>&nbsp;&nbsp;&nbsp;(src/.../barcode.ts)</a>
                         </li>
                         <li>
                             <a href="#generateCode128" title="src/lib/barcode.ts" ><b>generateCode128</b>&nbsp;&nbsp;&nbsp;(src/.../barcode.ts)</a>
@@ -133,6 +133,78 @@
     <h3>src/lib/barcode.ts</h3>
     <section data-compodoc="block-methods">
     <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="barcode"></a>
+                    <span class="name">
+                        <span ><b>barcode</b></span>
+                        <a href="#barcode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>barcode(type)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Generates a valid, readable barcode string compatible with USA standards.
+Default is a UPC-A barcode (12 digits).</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>type</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>&#x27;UPC-A&#x27;</code>
+                                            </td>
+
+                                            <td>
+                                                    <ul>
+<li>The type of barcode to generate (&quot;UPC-A&quot; or &quot;Code128&quot;).</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A string representing the barcode.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
@@ -197,78 +269,6 @@
                         </div>
                             <div class="io-description">
                                 <p>The checksum digit as a string.</p>
-
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="generateBarcode"></a>
-                    <span class="name">
-                        <span ><b>generateBarcode</b></span>
-                        <a href="#generateBarcode"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>generateBarcode(type)</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-description"><p>Generates a valid, readable barcode string compatible with USA standards.
-Default is a UPC-A barcode (12 digits).</p>
-</div>
-
-                            <div class="io-description">
-                                <b>Parameters :</b>
-                                
-                                <table class="params">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                            <td>Optional</td>
-                                                <td>Default value</td>
-                                                <td>Description</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                                <td>type</td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-                                            <td>
-                                                    <code>&#x27;UPC-A&#x27;</code>
-                                            </td>
-
-                                            <td>
-                                                    <ul>
-<li>The type of barcode to generate (&quot;UPC-A&quot; or &quot;Code128&quot;).</li>
-</ul>
-
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                        </div>
-                            <div class="io-description">
-                                <p>A string representing the barcode.</p>
 
                             </div>
                 </td>

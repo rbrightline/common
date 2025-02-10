@@ -122,14 +122,14 @@ importers:
   libs/fs:
     dependencies:
       '@rline/names':
-        specifier: 9.4.0
-        version: 9.4.0
+        specifier: 9.5.0
+        version: 9.5.0
       '@rline/type':
         specifier: 9.4.0
         version: 9.4.0
       '@rline/utils':
-        specifier: 9.4.0
-        version: 9.4.0
+        specifier: 9.5.0
+        version: 9.5.0
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -143,20 +143,20 @@ importers:
   libs/json:
     dependencies:
       '@rline/fs':
-        specifier: ^9.4.0
-        version: 9.4.0
+        specifier: ^9.5.0
+        version: 9.5.0
       '@rline/is':
         specifier: 9.4.0
         version: 9.4.0
       '@rline/names':
-        specifier: ^9.4.0
-        version: 9.4.0
+        specifier: ^9.5.0
+        version: 9.5.0
       '@rline/type':
-        specifier: ^9.4.7
-        version: 9.4.7
+        specifier: ^9.5.0
+        version: 9.5.0
       '@rline/utils':
-        specifier: ^9.4.0
-        version: 9.4.0
+        specifier: ^9.5.0
+        version: 9.5.0
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -167,8 +167,8 @@ importers:
   libs/logger:
     dependencies:
       '@rline/color':
-        specifier: 9.4.0
-        version: 9.4.0
+        specifier: 9.5.0
+        version: 9.5.0
       '@rline/type':
         specifier: 9.4.0
         version: 9.4.0
@@ -206,17 +206,23 @@ importers:
         specifier: ^11.0.3
         version: 11.0.3(@nestjs/common@11.0.8(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@11.0.8(@nestjs/common@11.0.8(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1))(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)
       '@rline/is':
-        specifier: workspace:^
-        version: link:../is
+        specifier: 9.5.0
+        version: 9.5.0
       '@rline/type':
-        specifier: workspace:^
-        version: link:../type
+        specifier: 9.5.0
+        version: 9.5.0
       '@rline/validation':
-        specifier: workspace:^
-        version: link:../validation
+        specifier: 9.5.0
+        version: 9.5.0
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
+      class-transformer:
+        specifier: ^0.5.1
+        version: 0.5.1
+      class-validator:
+        specifier: ^0.14.1
+        version: 0.14.1
 
   libs/rline:
     dependencies:
@@ -232,17 +238,17 @@ importers:
   libs/tools:
     dependencies:
       '@rline/fs':
-        specifier: 9.4.0
-        version: 9.4.0
+        specifier: 9.5.0
+        version: 9.5.0
       '@rline/names':
-        specifier: 9.4.0
-        version: 9.4.0
+        specifier: 9.5.0
+        version: 9.5.0
       '@rline/type':
         specifier: 9.4.0
         version: 9.4.0
       '@rline/utils':
-        specifier: 9.4.0
-        version: 9.4.0
+        specifier: 9.5.0
+        version: 9.5.0
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -268,14 +274,14 @@ importers:
   libs/validation:
     dependencies:
       '@rline/is':
-        specifier: ^9.4.4
-        version: 9.4.4
+        specifier: ^9.5.0
+        version: 9.5.0
       '@rline/logger':
-        specifier: ^9.4.0
-        version: 9.4.0
+        specifier: ^9.5.0
+        version: 9.5.0
       '@rline/type':
-        specifier: ^9.4.8
-        version: 9.4.8
+        specifier: ^9.5.0
+        version: 9.5.0
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -1557,35 +1563,35 @@ packages:
   '@polka/url@1.0.0-next.28':
     resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==}
 
-  '@rline/color@9.4.0':
-    resolution: {integrity: sha512-qp4yUrLdO0Dr0oL40W+V6d9N8CFIjZHAApJ4iF7HoeVBBQsWh093iFNl8QPMdD+g2DLTZspDhxeyBRXJBZfW1g==}
+  '@rline/color@9.5.0':
+    resolution: {integrity: sha512-9NorJ79br9bCnvlu/PMeuapLfH4yyed8OfuLgGWPnjvf7ixiSbb3wkNjNpTGXaiOWuHE8XXZNI1EGnEOpYLePQ==}
 
-  '@rline/fs@9.4.0':
-    resolution: {integrity: sha512-nRCgzI28z9Hb1smK8hYuOaqiOuQfAVuGri+vBwgMUSfeYfKmbY2W7gA1F4n0g5iloToOghegA4MQVh/lgKXx+A==}
+  '@rline/fs@9.5.0':
+    resolution: {integrity: sha512-GfWyi6LzENGhT5PcH2i1Cx0164LGdUqJ/7GBvwGZhzsyisG5Af8ALpI428V0vuCDRQ/a2OlcnR7gja89Yv2U3A==}
 
   '@rline/is@9.4.0':
     resolution: {integrity: sha512-TB3Naaw0ItHurACULmXPh2zP2rlz1cw7uI3utcylWhK51z78KMWa6jp/htrUIhtrvZMfXA9gNlP/aeni8Kqwiw==}
 
-  '@rline/is@9.4.4':
-    resolution: {integrity: sha512-9zbu19A2UaEbfsyc6etOT82jxl30JQtlgckxJVZSgynP4fslo6xR4b+4LvcQttD4sGHXpbSEYkzaei+zijQrww==}
+  '@rline/is@9.5.0':
+    resolution: {integrity: sha512-hBHY3bxXxXqL8akecBlKQ73UmlzXfLNCoW8Khvt1xnGTornkI/8vzyGTmVKa5B8Jo54INKuMeiNcDuCIeAptLQ==}
 
-  '@rline/logger@9.4.0':
-    resolution: {integrity: sha512-6eC48QCV60csTNnQDzvYkrcZR2WPpHu5oxUtJc3Hh0dcOu3PSZh5vQA5dvDZPLigyc0eKPEA8JCIIIpAt4yyaw==}
+  '@rline/logger@9.5.0':
+    resolution: {integrity: sha512-ZUvYeY/kdD0xG0RzvdtUTgYAMDH7pnyeRbe8FpQ05xNQzYu+sCjL80HBt5Gb0xI15IOsS10WH2w5+RWwCU9FFg==}
 
-  '@rline/names@9.4.0':
-    resolution: {integrity: sha512-nfUtpC1h50epJRD5d40kYgP8HLgIJ/R7Fg+l1nYxLOXFYIP/AXZ1YQvsZfkAXPZbLHgpe9HRKeSXsf6ceXl9Gw==}
+  '@rline/names@9.5.0':
+    resolution: {integrity: sha512-cbmEgKwN3Ezt3b+y6uQV4MjIPVndckv/fXm33jSMKIStnCsw/Byj7G0s1gKH5+xv2Ryp6m6TnhF3NauPeP6A/w==}
 
   '@rline/type@9.4.0':
     resolution: {integrity: sha512-gITxS8wNl44zy3pI1vOFA+/HngOhCFSKzyIC0Pe7cTbeP7kG37OrsxfZrBV8GlT708RgClTbDe2gGJ1Ggio4HQ==}
 
-  '@rline/type@9.4.7':
-    resolution: {integrity: sha512-APTYiPddqbrlStYhfvEiVEis/RPpTUh/UPVsM9adstgQpR4pEt5xoTPkXzut0U0R5mpYbyQPcbQIYhfO4zPRuQ==}
+  '@rline/type@9.5.0':
+    resolution: {integrity: sha512-wsLBTNo6rpDYTENwXPY2mPwvjAgwZAEbkf+bomHKaUW30jHAJOrbc79tD2nWWqf8WBS7Av1+2y7kjdN7yXhtqg==}
 
-  '@rline/type@9.4.8':
-    resolution: {integrity: sha512-6S19XHxKdtUS2xbruGj2PsOCBgrg8xU6rwicCML8itY8n2z8oogaq28CCV3r0q+bMX6SKWxbUaYHRsTH4ZxCFw==}
+  '@rline/utils@9.5.0':
+    resolution: {integrity: sha512-GgW8EMrR8XjZ7MwcCEZYv2JvLxTuf/ezr+dFy12plAwhtuMdvz/uUu9KWvIbovsijXmgWSXbGkii0vx6c5VPEA==}
 
-  '@rline/utils@9.4.0':
-    resolution: {integrity: sha512-fMOM3UFhfzv6muHKRFTaHt1MHLSD9V9KJBfido8O1t/WiQJb2la4eL50GWCMlyGv2PObU7W+iFSodO9F2qTN8g==}
+  '@rline/validation@9.5.0':
+    resolution: {integrity: sha512-Ri2dcte+InDccCKRfSUkcUpVrpG0hzDYNu4q85B3A/JgG0DHge0jIR7D+FkVU/S9Sl0bAEedxo34xi3ANG/MBg==}
 
   '@rollup/rollup-android-arm-eabi@4.31.0':
     resolution: {integrity: sha512-9NrR4033uCbUBRgvLcBrJofa2KY9DzxL2UKZ1/4xA/mnTNyhZCWBuD8X3tPm1n4KxcgaraOYgrFKSgwjASfmlA==}
@@ -7611,32 +7617,32 @@ snapshots:
 
   '@polka/url@1.0.0-next.28': {}
 
-  '@rline/color@9.4.0':
+  '@rline/color@9.5.0':
     dependencies:
       '@swc/helpers': 0.5.15
 
-  '@rline/fs@9.4.0':
+  '@rline/fs@9.5.0':
     dependencies:
-      '@rline/names': 9.4.0
+      '@rline/names': 9.5.0
       '@rline/type': 9.4.0
-      '@rline/utils': 9.4.0
+      '@rline/utils': 9.5.0
       '@swc/helpers': 0.5.15
 
   '@rline/is@9.4.0':
     dependencies:
       '@swc/helpers': 0.5.15
 
-  '@rline/is@9.4.4':
+  '@rline/is@9.5.0':
     dependencies:
       '@swc/helpers': 0.5.15
 
-  '@rline/logger@9.4.0':
+  '@rline/logger@9.5.0':
     dependencies:
-      '@rline/color': 9.4.0
+      '@rline/color': 9.5.0
       '@rline/type': 9.4.0
       '@swc/helpers': 0.5.15
 
-  '@rline/names@9.4.0':
+  '@rline/names@9.5.0':
     dependencies:
       '@rline/is': 9.4.0
       '@swc/helpers': 0.5.15
@@ -7645,18 +7651,23 @@ snapshots:
     dependencies:
       '@swc/helpers': 0.5.15
 
-  '@rline/type@9.4.7':
+  '@rline/type@9.5.0':
     dependencies:
       '@swc/helpers': 0.5.15
 
-  '@rline/type@9.4.8':
-    dependencies:
-      '@swc/helpers': 0.5.15
-
-  '@rline/utils@9.4.0':
+  '@rline/utils@9.5.0':
     dependencies:
       '@rline/type': 9.4.0
       '@swc/helpers': 0.5.15
+
+  '@rline/validation@9.5.0':
+    dependencies:
+      '@rline/is': 9.5.0
+      '@rline/logger': 9.5.0
+      '@rline/type': 9.5.0
+      '@swc/helpers': 0.5.15
+      class-transformer: 0.5.1
+      class-validator: 0.14.1
 
   '@rollup/rollup-android-arm-eabi@4.31.0':
     optional: true

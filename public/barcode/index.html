@@ -87,14 +87,13 @@
 </div>
 
 <h1>@rline/barcode</h1>
-<p>Barcode generator</p>
+<p>Library provides a function to generate a valid <code>UPC-A</code> and <code>Code128</code> barcodes which are commonly used in commerce.</p>
 <h2>Installation</h2>
 <b>Example :</b><div><pre class="line-numbers"><code class="language-shell">pnpm add &#64;rline/barcode</code></pre></div><h2>Usage</h2>
-<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">import { generateBarcode } from &#39;&#64;rline/barcode&#39;;
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">import { barcode } from &#39;&#64;rline/barcode&#39;;
 
-generateBarcode(&#39;UPC-A&#39;);
-
-generateBarcode(&#39;Code128&#39;);</code></pre></div><h2>UPC-A</h2>
+barcode(&#39;UPC-A&#39;); // output: valid `UPC-A` barcode
+barcode(&#39;Code128&#39;); // output: valid `Code128` barcode</code></pre></div><h2>UPC-A</h2>
 <p>The <strong>UPC-A (Universal Product Code-A)</strong> barcode is a 12-digit barcode used primarily in the retail industry for tracking and identifying products at the point of sale. It is the most common barcode format in the United States and Canada.</p>
 <h3><strong>Key Features of UPC-A:</strong></h3>
 <ol>

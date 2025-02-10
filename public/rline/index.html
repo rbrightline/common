@@ -87,14 +87,20 @@
 </div>
 
 <h1>@rline/rline</h1>
-<p>Code generator</p>
+<p>NX workspace project generators</p>
 <h2>Installation</h2>
-<b>Example :</b><div><pre class="line-numbers"><code class="language-shell">pnpm add &#64;rline/rline</code></pre></div><h2>Usage</h2>
-<h3>Generate library project</h3>
-<p>The command generates a library project under libs directory in the root nx workspace</p>
-<b>Example :</b><div><pre class="line-numbers"><code class="language-shell">npx nx g &#64;rline/rline:library &lt;library-name&gt;</code></pre></div><h3>Generate cli project</h3>
-<p>The command generates a cli library project under libs directory in the root nx workspace</p>
-<b>Example :</b><div><pre class="line-numbers"><code class="language-shell">npx nx g &#64;rline/rline:cli &lt;cli-name&gt;</code></pre></div><h2>Documentation</h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-shell">pnpm add -D &#64;rline/rline</code></pre></div><h2>Generators</h2>
+<ul>
+<li>library: publishable typescript library with <code>swc compiler</code> and <code>vitest</code><ul>
+<li><code>npx nx g @rline/rline:library my-library</code></li>
+</ul>
+</li>
+<li>cli: publishable typescript cli tool with <code>commander</code> and basic project setup<ul>
+<li><code>npx nx g @rline/rline:cli my-cli</code></li>
+</ul>
+</li>
+</ul>
+<h2>Documentation</h2>
 <p>Detailed documentation <a href="https://rbrightline.github.io/common/rline/">Documentation</a></p>
 
 

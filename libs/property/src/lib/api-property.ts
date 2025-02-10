@@ -4,6 +4,11 @@ import {
 } from '@nestjs/swagger';
 import { PropertyValidationOptions } from '@rline/validation';
 
+/**
+ * Swagger options decroator
+ * @param options
+ * @returns
+ */
 export function ApiProperty(
   options: PropertyValidationOptions
 ): PropertyDecorator {

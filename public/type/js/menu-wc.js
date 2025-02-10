@@ -63,6 +63,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/EmptyObjectError.html" data-type="entity-link" >EmptyObjectError</a>
                             </li>
                             <li class="link">
+                                <a href="classes/InvalidInputError.html" data-type="entity-link" >InvalidInputError</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/InvalidPropertyTypeError.html" data-type="entity-link" >InvalidPropertyTypeError</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/InvalidSchemaError.html" data-type="entity-link" >InvalidSchemaError</a>
                             </li>
                             <li class="link">

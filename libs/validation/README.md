@@ -4,7 +4,7 @@
 
 # @rline/validation
 
-- [ ] add description for the library
+Wrapper decorator around `class-validator` library.
 
 ## Installation
 
@@ -14,10 +14,19 @@ pnpm add @rline/validation
 
 ## Usage
 
-- [ ] add example for the validation library
-
 ```typescript
-validation(); // output: validation
+
+class Abc {
+
+  // Old version
+  @MinLength(3)
+  @MaxLength(400)
+
+  // New Version
+  @PropertyValidation({ type:"string", minLength:3, maxLength:400 });
+  name: string;
+}
+
 ```
 
 ## Documentation

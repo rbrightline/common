@@ -1,6 +1,6 @@
 {
   "name": "@rline/validation",
-  "version": "9.4.0",
+  "version": "9.5.0",
   "description": "Property decorator for class validation",
   "author": {
     "email": "robert.brightline@gmail.com",
@@ -26,9 +26,9 @@
     "workspace": "pnpm workspace:remove && pnpm workspace:add"
   },
   "dependencies": {
-    "@rline/is": "^9.4.4",
-    "@rline/logger": "^9.4.0",
-    "@rline/type": "^9.4.8",
+    "@rline/is": "^9.5.0",
+    "@rline/logger": "^9.5.0",
+    "@rline/type": "^9.5.0",
     "@swc/helpers": "~0.5.11",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1"

@@ -91,20 +91,18 @@
 <h2>Installation</h2>
 <b>Example :</b><div><pre class="line-numbers"><code class="language-shell">pnpm add &#64;rline/names</code></pre></div><h2>Usage</h2>
 <h3>Rest api paths</h3>
-<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">restPaths(&#39;category&#39;);
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">let R = restPaths(&#39;category&#39;);
 
-const output: RestApiPaths = {
-  plural: &#39;categories&#39;,
-  singular: &#39;category&#39;,
-  id: &#39;category/:id&#39;,
-  increment: &#39;category/:id/increment&#39;,
-  decrement: &#39;category/:id/decrement&#39;,
-  count: &#39;categories/count&#39;,
-  relation: &#39;category/:id/:relationName&#39;,
-  relationId: &#39;category/:id/:relationName/:relationId&#39;,
-  file: &#39;category/:id/file&#39;,
-  img: &#39;category/:id/img&#39;,
-};</code></pre></div><h3>Pluralize</h3>
+R.plural; // output:  &#39;categories&#39;,
+R.singular; // output:  &#39;category&#39;,
+R.id; // output:  &#39;category/:id&#39;,
+R.increment; // output:  &#39;category/:id/increment&#39;,
+R.decrement; // output:  &#39;category/:id/decrement&#39;,
+R.count; // output:  &#39;categories/count&#39;,
+R.relation; // output:  &#39;category/:id/:relationName&#39;,
+R.relationId; // output:  &#39;category/:id/:relationName/:relationId&#39;,
+R.file; // output:  &#39;category/:id/file&#39;,
+R.img; // output:  &#39;category/:id/img&#39;,</code></pre></div><h3>Pluralize</h3>
 <b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">pluralize(&#39;person&#39;); // output : &#39;people&#39;
 pluralize(&#39;cat&#39;); // output : &#39;cats&#39;
 pluralize(&#39;category&#39;); // output : &#39;categories&#39;
@@ -114,19 +112,76 @@ pluralize(&#39;buzz&#39;); // output : &#39;buzzes&#39;
 pluralize(&#39;brush&#39;); // output : &#39;brushes&#39;
 pluralize(&#39;church&#39;); // output : &#39;churches&#39;
 // ...</code></pre></div><h3>Names</h3>
-<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">const Names = names(&#39;example   name&#39;);
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">import { names } from &#39;&#64;rline/names&#39;;
 
-Names.camelCase; // output:  &#39;exampleName&#39;,
-Names.constCase; // output:  &#39;EXAMPLE_NAME&#39;,
-Names.kebabCase; // output:  &#39;example-name&#39;,
-Names.pascalCase; // output:  &#39;ExampleName&#39;,
-Names.snakeCase; // output:  &#39;example_name&#39;,
-Names.titleCase; // output:  &#39;Example Name&#39;,
-Names.controllerName; // output:  &#39;ExampleNameController&#39;,
-Names.serviceName; // output:  &#39;ExampleNameService&#39;,
-Names.moduleName; // output:  &#39;ExampleNameModule&#39;,
-Names.sentenceCase; // output:  &#39;Example name&#39;,
-Names.dotCase; // output:  &#39;example.name&#39;,</code></pre></div><h2>Documentation</h2>
+let N = names(&#39;ab c&#39;);
+N.camelCase; // output:  &#39;abC&#39;
+N.constCase; // output:  &#39;AB_C&#39;
+N.dotCase; // output:  &#39;ab.c&#39;
+N.kebabCase; // output:  &#39;ab-c&#39;
+N.pascalCase; // output:  &#39;AbC&#39;
+N.titleCase; // output:  &#39;Ab C&#39;
+N.sentenceCase; // output:  &#39;Ab c&#39;
+
+N.moduleName; // output:  &#39;AbCModule&#39;
+N.serviceName; // output:  &#39;AbCService&#39;
+N.controllerName; // output:  &#39;AbCController&#39;
+N.optionsName; // output:  &#39;AbCOptions&#39;
+N.modelName; // output:  &#39;AbCModel&#39;
+N.createDtoName; // output:  &#39;CreateAbCDto&#39;
+N.updateDtoName; // output:  &#39;UpdateAbCDto&#39;
+N.queryDtoName; // output:  &#39;QueryAbCDto&#39;
+
+N = names(&#39;ab c&#39;, { prefix: &#39;SO&#39; });
+N.camelCase; // output:  &#39;SOabC&#39;
+N.constCase; // output:  &#39;SOAB_C&#39;
+N.dotCase; // output:  &#39;SOab.c&#39;
+N.kebabCase; // output:  &#39;SOab-c&#39;
+N.pascalCase; // output:  &#39;SOAbC&#39;
+N.titleCase; // output:  &#39;SOAb C&#39;
+N.sentenceCase; // output:  &#39;SOAb c&#39;
+N.moduleName; // output:  &#39;SOAbCModule&#39;
+N.serviceName; // output:  &#39;SOAbCService&#39;
+N.controllerName; // output:  &#39;SOAbCController&#39;
+N.optionsName; // output:  &#39;SOAbCOptions&#39;
+N.modelName; // output:  &#39;SOAbCModel&#39;
+N.createDtoName; // output:  &#39;SOCreateAbCDto&#39;
+N.updateDtoName; // output:  &#39;SOUpdateAbCDto&#39;
+N.queryDtoName; // output:  &#39;SOQueryAbCDto&#39;
+
+N = names(&#39;ab c&#39;, { suffix: &#39;SO&#39; });
+N.camelCase; // output:  &#39;abCSO&#39;
+N.constCase; // output:  &#39;AB_CSO&#39;
+N.dotCase; // output:  &#39;ab.cSO&#39;
+N.kebabCase; // output:  &#39;ab-cSO&#39;
+N.pascalCase; // output:  &#39;AbCSO&#39;
+N.titleCase; // output:  &#39;Ab CSO&#39;
+N.sentenceCase; // output:  &#39;Ab cSO&#39;
+N.moduleName; // output:  &#39;AbCModuleSO&#39;
+N.serviceName; // output:  &#39;AbCServiceSO&#39;
+N.controllerName; // output:  &#39;AbCControllerSO&#39;
+N.optionsName; // output:  &#39;AbCOptionsSO&#39;
+N.modelName; // output:  &#39;AbCModelSO&#39;
+N.createDtoName; // output:  &#39;CreateAbCDtoSO&#39;
+N.updateDtoName; // output:  &#39;UpdateAbCDtoSO&#39;
+N.queryDtoName; // output:  &#39;QueryAbCDtoSO&#39;
+
+N = names(&#39;ab c&#39;, { wrapper: &#39;|&#39; });
+N.camelCase; // output:  &#39;|abC|&#39;
+N.constCase; // output:  &#39;|AB_C|&#39;
+N.dotCase; // output:  &#39;|ab.c|&#39;
+N.kebabCase; // output:  &#39;|ab-c|&#39;
+N.pascalCase; // output:  &#39;|AbC|&#39;
+N.titleCase; // output:  &#39;|Ab C|&#39;
+N.sentenceCase; // output:  &#39;|Ab c|&#39;
+N.moduleName; // output:  &#39;|AbCModule|&#39;
+N.serviceName; // output:  &#39;|AbCService|&#39;
+N.controllerName; // output:  &#39;|AbCController|&#39;
+N.optionsName; // output:  &#39;|AbCOptions|&#39;
+N.modelName; // output:  &#39;|AbCModel|&#39;
+N.createDtoName; // output:  &#39;|CreateAbCDto|&#39;
+N.updateDtoName; // output:  &#39;|UpdateAbCDto|&#39;
+N.queryDtoName; // output:  &#39;|QueryAbCDto|&#39;</code></pre></div><h2>Documentation</h2>
 <p>Detailed documentation <a href="https://rbrightline.github.io/common/names/">Documentation</a></p>
 
 

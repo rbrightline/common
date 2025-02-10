@@ -4,7 +4,7 @@
 
 # @rline/property
 
-- [ ] add description for the library
+Property decorator for data transfer objects that feed data to both `@nestjs/swagger` and `class-validator`
 
 ## Installation
 
@@ -14,10 +14,19 @@ pnpm add @rline/property
 
 ## Usage
 
-- [ ] add example for the property library
-
 ```typescript
-property(); // output: property
+export class Abc {
+  // Old way
+  @ApiProperty({ type: 'string', minLength: 3, maxLength: 400 })
+  @IsString()
+  @IsNotEmpty()
+  @MinLength(3)
+  @MaxLength(400)
+
+  // New way
+  @Property({ type: 'string', required: true, minLength: 3, maxLength: 400 })
+  value: string;
+}
 ```
 
 ## Documentation

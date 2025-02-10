@@ -1,6 +1,6 @@
 {
   "name": "@rline/json",
-  "version": "9.4.1",
+  "version": "9.5.0",
   "description": "JSON Schema compiler",
   "license": "MIT",
   "author": {
@@ -39,11 +39,11 @@
     "workspace": "pnpm workspace:remove && pnpm workspace:add"
   },
   "dependencies": {
-    "@rline/fs": "^9.4.0",
+    "@rline/fs": "^9.5.0",
     "@rline/is": "9.4.0",
-    "@rline/names": "^9.4.0",
-    "@rline/type": "^9.4.7",
-    "@rline/utils": "^9.4.0",
+    "@rline/names": "^9.5.0",
+    "@rline/type": "^9.5.0",
+    "@rline/utils": "^9.5.0",
     "@swc/helpers": "~0.5.11",
     "commander": "^13.1.0"
   },
