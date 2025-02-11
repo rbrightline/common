@@ -122,13 +122,13 @@ importers:
   libs/fs:
     dependencies:
       '@rline/names':
-        specifier: 9.5.0
+        specifier: ^9.5.0
         version: 9.5.0
       '@rline/type':
-        specifier: 9.4.0
-        version: 9.4.0
+        specifier: ^9.5.0
+        version: 9.5.0
       '@rline/utils':
-        specifier: 9.5.0
+        specifier: ^9.5.0
         version: 9.5.0
       '@swc/helpers':
         specifier: ~0.5.11
@@ -146,8 +146,8 @@ importers:
         specifier: ^9.5.0
         version: 9.5.0
       '@rline/is':
-        specifier: 9.4.0
-        version: 9.4.0
+        specifier: ^9.5.0
+        version: 9.5.0
       '@rline/names':
         specifier: ^9.5.0
         version: 9.5.0
@@ -167,11 +167,11 @@ importers:
   libs/logger:
     dependencies:
       '@rline/color':
-        specifier: 9.5.0
+        specifier: ^9.5.0
         version: 9.5.0
       '@rline/type':
-        specifier: 9.4.0
-        version: 9.4.0
+        specifier: ^9.5.0
+        version: 9.5.0
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -179,23 +179,8 @@ importers:
   libs/names:
     dependencies:
       '@rline/is':
-        specifier: 9.4.0
-        version: 9.4.0
-      '@swc/helpers':
-        specifier: ~0.5.11
-        version: 0.5.15
-
-  libs/printer:
-    dependencies:
-      '@rline/is':
-        specifier: workspace:^
-        version: link:../is
-      '@rline/names':
-        specifier: workspace:^
-        version: link:../names
-      '@rline/type':
-        specifier: workspace:^
-        version: link:../type
+        specifier: ^9.5.0
+        version: 9.5.0
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15
@@ -238,16 +223,16 @@ importers:
   libs/tools:
     dependencies:
       '@rline/fs':
-        specifier: 9.5.0
+        specifier: ^9.5.0
         version: 9.5.0
       '@rline/names':
-        specifier: 9.5.0
+        specifier: ^9.5.0
         version: 9.5.0
       '@rline/type':
-        specifier: 9.4.0
-        version: 9.4.0
+        specifier: ^9.5.0
+        version: 9.5.0
       '@rline/utils':
-        specifier: 9.5.0
+        specifier: ^9.5.0
         version: 9.5.0
       '@swc/helpers':
         specifier: ~0.5.11
@@ -265,8 +250,8 @@ importers:
   libs/utils:
     dependencies:
       '@rline/type':
-        specifier: 9.4.0
-        version: 9.4.0
+        specifier: ^9.5.0
+        version: 9.5.0
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.15

@@ -73,3 +73,21 @@ export function ObjectString(
     })(t, p);
   };
 }
+
+export function DateString(
+  validationOptions?: ValidationOptions
+): PropertyDecorator {
+  return (t, p) => {
+    if (validationOptions?.each == true) return;
+
+    Transform(({ value }) => {
+      if (tstr(value) && def(value)) {
+        const r = new Date(value);
+        if (r.toString() != 'Invalid Date') {
+          return r;
+        }
+      }
+      return value;
+    })(t, p);
+  };
+}

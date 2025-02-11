@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "@rline/fs": "^9.5.0",
-    "@rline/is": "9.4.0",
+    "@rline/is": "^9.5.0",
     "@rline/names": "^9.5.0",
     "@rline/type": "^9.5.0",
     "@rline/utils": "^9.5.0",
