@@ -1,6 +1,6 @@
 {
   "name": "@rline/column",
-  "version": "0.0.1",
+  "version": "9.6.0",
   "description": " library",
   "author": {
     "email": "robert.brightline@gmail.com",
@@ -29,9 +29,9 @@
     "typeorm": "^0.3.20"
   },
   "dependencies": {
-    "@rline/is": "workspace:^",
-    "@rline/property": "workspace:^",
-    "@rline/type": "workspace:^",
+    "@rline/is": "9.6.0",
+    "@rline/property": "9.6.0",
+    "@rline/type": "9.6.0",
     "@swc/helpers": "~0.5.11"
   },
   "type": "commonjs",

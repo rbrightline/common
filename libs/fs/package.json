@@ -1,6 +1,6 @@
 {
   "name": "@rline/fs",
-  "version": "9.5.0",
+  "version": "9.6.0",
   "description": "Async IO and Utilities",
   "license": "MIT",
   "author": {
@@ -33,9 +33,9 @@
     "workspace": "pnpm workspace:remove && pnpm workspace:add"
   },
   "dependencies": {
-    "@rline/names": "^9.5.0",
-    "@rline/type": "^9.5.0",
-    "@rline/utils": "^9.5.0",
+    "@rline/names": "^9.6.0",
+    "@rline/type": "^9.6.0",
+    "@rline/utils": "^9.6.0",
     "@swc/helpers": "~0.5.11"
   },
   "type": "commonjs",

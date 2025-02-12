@@ -1,1 +1,49 @@
-{"extends":"./tsconfig.base.json","compileOnSave":false,"files":[],"references":[{"path":"./libs/json"},{"path":"./libs/names"},{"path":"./libs/crypto"},{"path":"./libs/barcode"},{"path":"./libs/printer"},{"path":"./libs/type"},{"path":"./libs/tools"},{"path":"./libs/utils"},{"path":"./libs/fs"},{"path":"./libs/logger"},{"path":"./libs/is"},{"path":"./libs/color"},{"path":"./libs/property"},{"path":"./libs/validation"},{"path":"./libs/column"}]}
+{
+    "extends": "./tsconfig.base.json",
+    "compileOnSave": false,
+    "files": [],
+    "references": [
+        {
+            "path": "./libs/json"
+        },
+        {
+            "path": "./libs/names"
+        },
+        {
+            "path": "./libs/crypto"
+        },
+        {
+            "path": "./libs/barcode"
+        },
+        {
+            "path": "./libs/type"
+        },
+        {
+            "path": "./libs/tools"
+        },
+        {
+            "path": "./libs/utils"
+        },
+        {
+            "path": "./libs/fs"
+        },
+        {
+            "path": "./libs/logger"
+        },
+        {
+            "path": "./libs/is"
+        },
+        {
+            "path": "./libs/color"
+        },
+        {
+            "path": "./libs/property"
+        },
+        {
+            "path": "./libs/validation"
+        },
+        {
+            "path": "./libs/column"
+        }
+    ]
+}
