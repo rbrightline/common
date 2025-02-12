@@ -2,7 +2,7 @@ import {
   ApiProperty as __ApiProperty,
   ApiPropertyOptions,
 } from '@nestjs/swagger';
-import { PropertyValidationOptions } from '@rline/validation';
+import { PropertyValidationOptions } from '@rline/type';
 
 /**
  * Swagger options decroator

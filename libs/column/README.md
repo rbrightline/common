@@ -4,7 +4,7 @@
 
 # @rline/column
 
-- [ ] add description for the library
+TypeORM decorators
 
 ## Installation
 
@@ -13,8 +13,6 @@ pnpm add @rline/column
 ```
 
 ## Usage
-
-- [ ] add example for the column library
 
 ```typescript
 column(); // output: column
