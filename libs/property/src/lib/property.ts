@@ -1,7 +1,5 @@
-import {
-  PropertyValidation,
-  PropertyValidationOptions,
-} from '@rline/validation';
+import { PropertyValidationOptions } from '@rline/type';
+import { PropertyValidation } from '@rline/validation';
 import { Exclude, Expose } from 'class-transformer';
 import { ApiProperty } from './api-property';
 
@@ -21,7 +19,7 @@ export function Dto(): ClassDecorator {
  * @returns
  */
 export function Property(
-  options: PropertyValidationOptions
+  options: Partial<PropertyValidationOptions>
 ): PropertyDecorator {
   return (t, p) => {
     Expose()(t, p);

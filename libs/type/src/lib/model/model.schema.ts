@@ -71,6 +71,7 @@ export type PropertyOptions = CommonPropertyOptions &
     | ArrayOptions
   );
 export type RelationOptions = UiPropertyOptions & RelationPropertyOptionsRaw;
+
 export type RelationType =
   | 'many-to-many'
   | 'many-to-one'
@@ -98,6 +99,7 @@ export type RelationPropertyOptionsRaw = {
   cascade: boolean;
   onDelete: OnDelete;
   onUpdate: OnUpdate;
+  required: boolean;
 };
 export type PropertyNameOptions =
   | 'firstName'
@@ -243,7 +245,7 @@ export type Validation = {
   notEqualToProperty?: PropertyNameOptions;
 };
 export type Encryption = { hash?: boolean; encrypt?: boolean };
-export type Dto = { write?: boolean; read?: boolean; udpate?: boolean };
+export type Dto = { write?: boolean; read?: boolean; update?: boolean };
 export type UiPropertyOptions = {
   label?: string;
   mapTo?: PropertyNameOptions;

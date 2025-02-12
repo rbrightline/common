@@ -1,15 +1,15 @@
 {
-  "name": "@rline/property",
-  "version": "9.5.0",
-  "description": "Property decorator for data transfer objects",
+  "name": "@rline/column",
+  "version": "0.0.1",
+  "description": " library",
   "author": {
     "email": "robert.brightline@gmail.com",
     "name": "Robert Brightline",
     "url": "https://rbrightline.github.io"
   },
-  "homepage": "https://rbrightline.github.io/common/property",
+  "homepage": "https://rbrightline.github.io/common/column",
   "repository": {
-    "url": "https://github.com/rbrightline/common/tree/main/libs/property",
+    "url": "https://github.com/rbrightline/common/tree/main/libs/column",
     "type": "github"
   },
   "publishConfig": {
@@ -21,20 +21,18 @@
     "library"
   ],
   "scripts": {
-    "workspace:remove": "pnpm remove @rline/is @rline/type @rline/validation",
-    "workspace:add": "pnpm add --workspace  @rline/is @rline/type @rline/validation",
+    "workspace:remove": "pnpm remove @rline/is @rline/type",
+    "workspace:add": "pnpm add --workspace @rline/is @rline/type",
     "workspace": "pnpm workspace:remove && pnpm workspace:add"
   },
   "peerDependencies": {
-    "@nestjs/swagger": "^11.0.3"
+    "typeorm": "^0.3.20"
   },
   "dependencies": {
     "@rline/is": "workspace:^",
+    "@rline/property": "workspace:^",
     "@rline/type": "workspace:^",
-    "@rline/validation": "workspace:^",
-    "@swc/helpers": "~0.5.11",
-    "class-transformer": "^0.5.1",
-    "class-validator": "^0.14.1"
+    "@swc/helpers": "~0.5.11"
   },
   "type": "commonjs",
   "main": "./dist/index.js",
@@ -53,7 +51,7 @@
   },
   "module": "./dist/index.js",
   "nx": {
-    "sourceRoot": "libs/property/src",
+    "sourceRoot": "libs/column/src",
     "projectType": "library",
     "targets": {
       "build": {
@@ -62,14 +60,14 @@
           "{options.outputPath}"
         ],
         "options": {
-          "outputPath": "libs/property/dist",
-          "main": "libs/property/src/index.ts",
-          "tsConfig": "libs/property/tsconfig.lib.json",
+          "outputPath": "libs/column/dist",
+          "main": "libs/column/src/index.ts",
+          "tsConfig": "libs/column/tsconfig.lib.json",
           "skipTypeCheck": false,
           "stripLeadingPaths": true
         }
       }
     },
-    "name": "property"
+    "name": "column"
   }
 }

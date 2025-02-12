@@ -40,6 +40,8 @@ export * from './lib/json/raw/primitive';
 export * from './lib/json/raw/string';
 export * from './lib/json/raw/type';
 export * from './lib/model/model.schema';
+export * from './lib/model/property-validation-options';
+export * from './lib/model/relation-column-options';
 export * from './lib/num/byte';
 export * from './lib/num/fraction';
 export * from './lib/num/int-range';

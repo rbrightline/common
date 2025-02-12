@@ -89,7 +89,7 @@
                     "description": "Is the property visible in the data load?",
                     "default": true
                 },
-                "udpate": {
+                "update": {
                     "type": "boolean",
                     "description": "Is proprety updatable?",
                     "default": true

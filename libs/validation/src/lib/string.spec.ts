@@ -4,7 +4,7 @@ import { plainToInstance } from 'class-transformer';
 import { validateSync } from 'class-validator';
 import { PropertyValidation } from './validation';
 
-describe('Validation', () => {
+describe('String Validation', () => {
   it.each`
     value               | options                                                                      | errors
     ${{}}               | ${{ type: 'string' } as O}                                                   | ${undefined}
@@ -36,8 +36,6 @@ describe('Validation', () => {
           ],
         ])
         .flat();
-
-      console.log('FOund: ', foundErrors);
 
       if (tarr(errors) && def(errors) && errors.length > 0) {
         expect(foundErrors.length).toEqual(errors.length);

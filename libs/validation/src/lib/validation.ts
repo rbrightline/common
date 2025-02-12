@@ -1,5 +1,5 @@
-import { def } from '@rline/is';
-import { PropertyOptions, Type } from '@rline/type';
+import { def, ne, rval } from '@rline/is';
+import { PropertyValidationOptions } from '@rline/type';
 import { Type as ClasType } from 'class-transformer';
 import {
   ArrayMaxSize,
@@ -52,24 +52,13 @@ import {
 } from './transformer';
 
 /**
- * Property validation options
- */
-export type PropertyValidationOptions<
-  T extends PropertyOptions = PropertyOptions
-> = T extends { type: 'object' }
-  ? Omit<T, 'target'> & { target: () => Type<any> }
-  : T extends { type: 'array' }
-  ? Omit<T, 'items'> & { items: PropertyValidationOptions }
-  : T;
-
-/**
  * Property validation decorator
  * @param options {@link PropertyValidationOptions}
  * @param validationOptions {@link ValidationOptions}
  * @returns
  */
 export function PropertyValidation(
-  options: PropertyValidationOptions,
+  options: Partial<PropertyValidationOptions>,
   validationOptions?: ValidationOptions
 ): PropertyDecorator {
   return (t, p) => {
@@ -85,13 +74,42 @@ export function PropertyValidation(
     PropertyTypeSwitch: switch (type) {
       case 'string': {
         IsString(vo)(t, p);
-        const { minLength, maxLength, stringFormat, contains, notContains } =
-          options;
+        const {
+          minLength,
+          maxLength,
+          stringFormat,
+          contains,
+          notContains,
+          startWith,
+          endWith,
+        } = options;
+
         if (def(minLength)) MinLength(minLength, vo)(t, p);
         if (def(maxLength)) MaxLength(maxLength, vo)(t, p);
 
-        if (def(contains?.[0])) Contains(contains[0], vo)(t, p);
-        if (def(notContains?.[0])) NotContains(notContains[0], vo)(t, p);
+        if (def(startWith))
+          Matches(new RegExp(`/^${startWith}/`), {
+            ...vo,
+            message: `$property should start with ${startWith}`,
+          })(t, p);
+
+        if (def(endWith))
+          Matches(new RegExp(`/${endWith}$/`), {
+            ...vo,
+            message: `$property should end with ${endWith}`,
+          })(t, p);
+
+        if (def(contains) && ne(contains)) {
+          contains.forEach((e: string) => {
+            Contains(e, vo)(t, p);
+          });
+        }
+
+        if (def(notContains) && ne(notContains)) {
+          notContains.forEach((e: string) => {
+            NotContains(e, vo)(t, p);
+          });
+        }
 
         if (def(stringFormat)) {
           StringFormatSwitch: switch (stringFormat) {
@@ -242,7 +260,7 @@ export function PropertyValidation(
       case 'integer':
       case 'number': {
         if (type === 'integer') {
-          IsInt(vo);
+          IsInt(vo)(t, p);
           if (acceptString === true) IntString(vo)(t, p);
         } else {
           IsNumber(undefined, vo)(t, p);
@@ -259,7 +277,8 @@ export function PropertyValidation(
       }
       case 'array': {
         IsArray()(t, p);
-        PropertyValidation(options.items, { each: true })(t, p);
+
+        PropertyValidation(rval(options.items), { each: true })(t, p);
 
         const { minSize, maxSize } = options;
 
