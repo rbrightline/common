@@ -20,6 +20,9 @@
     "rline",
     "library"
   ],
+  "funding": [
+    "https://cash.app/$puqlib"
+  ],
   "scripts": {
     "workspace:remove": "pnpm remove @rline/is @rline/type @rline/validation",
     "workspace:add": "pnpm add --workspace  @rline/is @rline/type @rline/validation",

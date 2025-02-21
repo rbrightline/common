@@ -27,6 +27,9 @@
     "files",
     "foreach"
   ],
+  "funding": [
+    "https://cash.app/$puqlib"
+  ],
   "scripts": {
     "workspace:remove": "pnpm remove @rline/names @rline/type @rline/utils",
     "workspace:add": "pnpm add --workspace @rline/names @rline/type @rline/utils",

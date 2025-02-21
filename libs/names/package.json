@@ -28,6 +28,9 @@
     "open-api",
     "api paths"
   ],
+  "funding": [
+    "https://cash.app/$puqlib"
+  ],
   "scripts": {
     "workspace:remove": "pnpm remove @rline/is",
     "workspace:add": "pnpm add --workspace @rline/is",

@@ -25,6 +25,9 @@
     "json",
     "schema"
   ],
+  "funding": [
+    "https://cash.app/$puqlib"
+  ],
   "dependencies": {
     "@nx/devkit": "20.3.2",
     "tslib": "^2.3.0"

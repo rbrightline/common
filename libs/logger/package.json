@@ -20,6 +20,9 @@
     "rline",
     "library"
   ],
+  "funding": [
+    "https://cash.app/$puqlib"
+  ],
   "scripts": {
     "workspace:remove": "pnpm remove @rline/color",
     "workspace:add": "pnpm add --workspace @rline/color",

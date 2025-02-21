@@ -21,6 +21,9 @@
     "rline",
     "library"
   ],
+  "funding": [
+    "https://cash.app/$puqlib"
+  ],
   "files": [
     "*.schema.json"
   ],

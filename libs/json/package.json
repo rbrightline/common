@@ -33,6 +33,9 @@
     "type generator",
     "json-to-typescript"
   ],
+  "funding": [
+    "https://cash.app/$puqlib"
+  ],
   "scripts": {
     "workspace:remove": "pnpm remove @rline/fs @rline/names @rline/type @rline/utils",
     "workspace:add": "pnpm add  @rline/fs@latest @rline/names@latest @rline/type@latest @rline/utils@latest",

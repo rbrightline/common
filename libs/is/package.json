@@ -22,6 +22,9 @@
     "type-safety",
     "typescript"
   ],
+  "funding": [
+    "https://cash.app/$puqlib"
+  ],
   "dependencies": {
     "@swc/helpers": "~0.5.11"
   },

@@ -22,6 +22,9 @@
     "helpers",
     "common"
   ],
+  "funding": [
+    "https://cash.app/$puqlib"
+  ],
   "scripts": {
     "workspace:remove": "pnpm remove  @rline/type",
     "workspace:add": "pnpm add --workspace  @rline/type",
